@@ -2,14 +2,18 @@ import type { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+// Use internal URL for server-side calls (inside Docker), public URL as fallback
+const API_URL = process.env.INTERNAL_API_URL || process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+
+const googleClientId = process.env.GOOGLE_CLIENT_ID;
+const googleClientSecret = process.env.GOOGLE_CLIENT_SECRET;
+const hasGoogle = googleClientId && googleClientId !== "placeholder" && googleClientSecret && googleClientSecret !== "placeholder";
 
 export const authOptions: NextAuthOptions = {
   providers: [
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID!,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-    }),
+    ...(hasGoogle
+      ? [GoogleProvider({ clientId: googleClientId!, clientSecret: googleClientSecret! })]
+      : []),
     CredentialsProvider({
       name: "credentials",
       credentials: {

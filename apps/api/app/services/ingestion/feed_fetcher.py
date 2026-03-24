@@ -68,8 +68,13 @@ def _extract_content(entry) -> str | None:
 async def fetch_feed(rss_url: str, source_id: int) -> list[RawArticle]:
     """Fetch and parse an RSS/Atom feed, return list of raw articles."""
     try:
+        headers = {
+            "User-Agent": "Mozilla/5.0 (compatible; Feedfetcher-Google; +http://www.google.com/feedfetcher.html)",
+            "Accept": "application/rss+xml, application/xml, application/atom+xml, text/xml, */*",
+            "Accept-Language": "en-US,en;q=0.9",
+        }
         async with httpx.AsyncClient(timeout=30, follow_redirects=True) as client:
-            resp = await client.get(rss_url, headers={"User-Agent": "InsurTechIntelligence/1.0"})
+            resp = await client.get(rss_url, headers=headers)
             resp.raise_for_status()
             content = resp.content
     except Exception as e:

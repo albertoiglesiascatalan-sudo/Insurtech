@@ -9,6 +9,8 @@ class SourceRef(BaseModel):
     logo_url: str | None = None
     region: str
 
+    model_config = {"from_attributes": True}
+
 
 class ArticleOut(BaseModel):
     id: int
