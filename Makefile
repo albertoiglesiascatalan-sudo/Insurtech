@@ -17,6 +17,11 @@ migrate:
 seed:
 	docker compose exec api python -m app.scripts.seed_sources
 
+# Create first admin user
+make-admin:
+	@email=$${email:-admin@insurtech.news}; \
+	docker compose exec api python -m app.scripts.make_admin --email=$$email
+
 # ── Ingestion ──────────────────────────────────────────────────────────────────
 ingest:
 	docker compose exec api python -m app.scripts.run_ingestion
