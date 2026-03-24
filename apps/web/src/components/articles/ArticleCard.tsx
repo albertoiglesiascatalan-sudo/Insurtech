@@ -1,8 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import { ExternalLink, Clock, TrendingUp, TrendingDown, Minus } from "lucide-react";
+import { ExternalLink, Clock, TrendingUp, TrendingDown, Minus, Bookmark, BookmarkCheck } from "lucide-react";
+import { useState, useEffect } from "react";
 import { Article } from "@/lib/api";
 import { cn, timeAgo, TOPIC_LABELS, REGION_LABELS, SENTIMENT_COLORS } from "@/lib/utils";
+import { saveBookmark, removeBookmark, isBookmarked } from "@/app/bookmarks/page";
 
 interface ArticleCardProps {
   article: Article;
@@ -16,6 +20,22 @@ const SENTIMENT_ICONS = {
 };
 
 export function ArticleCard({ article, compact = false }: ArticleCardProps) {
+  const [bookmarked, setBookmarked] = useState(false);
+
+  useEffect(() => {
+    setBookmarked(isBookmarked(article.id));
+  }, [article.id]);
+
+  const toggleBookmark = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (bookmarked) {
+      removeBookmark(article.id);
+    } else {
+      saveBookmark(article);
+    }
+    setBookmarked(!bookmarked);
+  };
+
   const SentimentIcon = article.sentiment
     ? SENTIMENT_ICONS[article.sentiment as keyof typeof SENTIMENT_ICONS] || Minus
     : null;
@@ -74,9 +94,9 @@ export function ArticleCard({ article, compact = false }: ArticleCardProps) {
 
         {/* Title */}
         <h2 className={cn("font-semibold text-slate-900 leading-snug group-hover:text-brand transition-colors", compact ? "text-sm line-clamp-2" : "text-base line-clamp-3")}>
-          <a href={article.url} target="_blank" rel="noopener noreferrer">
+          <Link href={`/news/${article.slug}`}>
             {article.title}
-          </a>
+          </Link>
         </h2>
 
         {/* AI Summary */}
@@ -114,14 +134,23 @@ export function ArticleCard({ article, compact = false }: ArticleCardProps) {
               </Link>
             ))}
           </div>
-          <a
-            href={article.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-slate-400 hover:text-brand flex items-center gap-1 transition-colors"
-          >
-            Read <ExternalLink className="w-3 h-3" />
-          </a>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={toggleBookmark}
+              className={cn("p-1 rounded transition-colors", bookmarked ? "text-amber-500" : "text-slate-300 hover:text-amber-400")}
+              title={bookmarked ? "Remove bookmark" : "Save article"}
+            >
+              {bookmarked ? <BookmarkCheck className="w-3.5 h-3.5" /> : <Bookmark className="w-3.5 h-3.5" />}
+            </button>
+            <a
+              href={article.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-slate-400 hover:text-brand flex items-center gap-1 transition-colors"
+            >
+              Read <ExternalLink className="w-3 h-3" />
+            </a>
+          </div>
         </div>
       </div>
     </article>

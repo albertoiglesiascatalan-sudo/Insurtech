@@ -11,6 +11,7 @@ const NAV_LINKS = [
   { href: "/for/investor", label: "Investors" },
   { href: "/for/founder", label: "Founders" },
   { href: "/newsletter", label: "Newsletter" },
+  { href: "/bookmarks", label: "Saved" },
 ];
 
 export function Header() {

@@ -1,8 +1,7 @@
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/auth-options";
-import { ExternalLink, Star, EyeOff, Shield } from "lucide-react";
+import { ExternalLink, Shield } from "lucide-react";
 import { timeAgo } from "@/lib/utils";
 import Link from "next/link";
+import { ArticleActions } from "./ArticleActions";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
@@ -114,8 +113,7 @@ export default async function AdminArticlesPage({ searchParams }: PageProps) {
                       >
                         <ExternalLink className="w-3.5 h-3.5" />
                       </a>
-                      <FeatureButton article={article} />
-                      <UnpublishButton article={article} />
+                      <ArticleActions articleId={article.id} isFeatured={article.is_featured} />
                     </div>
                   </td>
                 </tr>
@@ -142,28 +140,3 @@ export default async function AdminArticlesPage({ searchParams }: PageProps) {
   );
 }
 
-function FeatureButton({ article }: { article: any }) {
-  return (
-    <button
-      title={article.is_featured ? "Unfeature" : "Feature"}
-      className={`p-1.5 rounded-lg transition-colors ${
-        article.is_featured
-          ? "text-amber-500 bg-amber-50 hover:bg-amber-100"
-          : "text-slate-400 hover:text-amber-500 hover:bg-amber-50"
-      }`}
-    >
-      <Star className="w-3.5 h-3.5" />
-    </button>
-  );
-}
-
-function UnpublishButton({ article }: { article: any }) {
-  return (
-    <button
-      title="Unpublish"
-      className="p-1.5 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors"
-    >
-      <EyeOff className="w-3.5 h-3.5" />
-    </button>
-  );
-}
