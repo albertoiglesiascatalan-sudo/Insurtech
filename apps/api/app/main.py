@@ -11,13 +11,20 @@ settings = get_settings()
 async def lifespan(app: FastAPI):
     # Startup
     if settings.environment != "test":
-        from app.services.ingestion.scheduler import start_scheduler
-        start_scheduler()
+        try:
+            from app.services.ingestion.scheduler import start_scheduler
+            start_scheduler()
+        except Exception as e:
+            import logging
+            logging.getLogger(__name__).warning(f"Scheduler failed to start: {e}")
     yield
     # Shutdown
     if settings.environment != "test":
-        from app.services.ingestion.scheduler import stop_scheduler
-        stop_scheduler()
+        try:
+            from app.services.ingestion.scheduler import stop_scheduler
+            stop_scheduler()
+        except Exception:
+            pass
 
 
 app = FastAPI(
