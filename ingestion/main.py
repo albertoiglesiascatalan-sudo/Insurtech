@@ -126,7 +126,7 @@ def main():
         if new_count >= MAX_NEW_PER_RUN:
             break
         log.info(f"Fetching: {source['name']}")
-        items = fetch_recent(source)
+        items = fetch_recent(source, since_hours=72)
         for item in items:
             if new_count >= MAX_NEW_PER_RUN:
                 break
