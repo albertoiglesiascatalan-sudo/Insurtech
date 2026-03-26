@@ -1,9 +1,12 @@
-name: Insurtech Ingestion
+name: InsurTech Ingestion
 
 on:
   schedule:
     - cron: "0 */6 * * *"   # every 6 hours
   workflow_dispatch:          # manual trigger from GitHub UI
+
+permissions:
+  contents: write
 
 jobs:
   ingest:
@@ -21,6 +24,13 @@ jobs:
       - name: Run ingestion
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          GHOST_URL: ${{ secrets.GHOST_URL }}
-          GHOST_ADMIN_API_KEY: ${{ secrets.GHOST_ADMIN_API_KEY }}
-        run: python ingestion/main.py
+        working-directory: ingestion
+        run: python main.py
+
+      - name: Commit & push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ingestion/articles.json docs/
+          git diff --staged --quiet || git commit -m "chore: update articles [skip ci]"
+          git push
