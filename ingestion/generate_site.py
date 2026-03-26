@@ -22,7 +22,7 @@ def _card(a: dict) -> str:
       </h2>
       <p class="card-summary">{a.get('summary', '')}</p>
       <a href="{a['url']}" target="_blank" rel="noopener" class="card-link">
-        Read full article →
+        Leer artículo completo →
       </a>
     </article>"""
 
@@ -33,12 +33,12 @@ def generate_site(articles: list):
     cards_html = "\n".join(_card(a) for a in articles)
 
     html = f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>InsurTech Intelligence</title>
-  <meta name="description" content="Global insurtech news, AI-powered summaries, updated every 6 hours." />
+  <meta name="description" content="Noticias globales de insurtech con resúmenes en español generados por IA, actualizadas cada 6 horas." />
   <style>
     *, *::before, *::after {{ box-sizing: border-box; margin: 0; padding: 0; }}
     body {{
@@ -93,16 +93,16 @@ def generate_site(articles: list):
 <body>
   <header>
     <h1>InsurTech Intelligence</h1>
-    <p>Global insurtech news · AI-powered summaries · {len(articles)} articles</p>
-    <div class="updated">Updated {updated}</div>
+    <p>Noticias globales de insurtech · Resúmenes en español con IA · {len(articles)} artículos</p>
+    <div class="updated">Actualizado el {updated}</div>
   </header>
 
   <main>
-    {cards_html if articles else '<p style="text-align:center;color:#718096;padding:3rem">No articles yet. Check back soon.</p>'}
+    {cards_html if articles else '<p style="text-align:center;color:#718096;padding:3rem">Sin artículos por ahora. Vuelve pronto.</p>'}
   </main>
 
   <footer>
-    InsurTech Intelligence · Powered by AI · Updated every 6 hours
+    InsurTech Intelligence · Impulsado por IA · Actualizado cada 6 horas
   </footer>
 </body>
 </html>"""
