@@ -98,22 +98,26 @@ def fetch_recent(source: dict, since_hours: int = 7) -> list:
     return results
 
 
-def summarize(title: str, content: str) -> str:
+def summarize(title: str, content: str) -> dict:
     try:
         resp = openai.chat.completions.create(
             model="gpt-4o-mini",
             messages=[{"role": "user", "content": (
-                "You are an insurtech analyst. Summarize this article in 2-3 sentences "
-                "for insurance professionals. Be concise and factual. Return plain text only.\n\n"
+                "Eres un analista de insurtech. Traduce el título al español y resume el artículo "
+                "en 2-3 frases en español para profesionales del seguro. "
+                "Sé conciso y objetivo. Responde SOLO con JSON válido con este formato:\n"
+                '{"title_es": "...", "summary_es": "..."}\n\n'
                 f"Title: {title}\n\nContent: {content[:2000]}"
             )}],
-            max_tokens=150,
+            max_tokens=200,
             temperature=0.3,
         )
-        return resp.choices[0].message.content.strip()
+        import json as _json
+        data = _json.loads(resp.choices[0].message.content.strip())
+        return {"title_es": data.get("title_es", title), "summary_es": data.get("summary_es", "")}
     except Exception as e:
         log.warning(f"OpenAI error: {e}")
-        return ""
+        return {"title_es": title, "summary_es": ""}
 
 
 def main():
@@ -132,12 +136,13 @@ def main():
                 break
             if item["url"] in existing_urls:
                 continue
-            summary = summarize(item["title"], item["content"])
+            translated = summarize(item["title"], item["content"])
             article = {
                 "id": slugify(item["title"])[:80],
-                "title": item["title"],
+                "title": translated["title_es"],
+                "title_original": item["title"],
                 "url": item["url"],
-                "summary": summary,
+                "summary": translated["summary_es"],
                 "source": source["name"],
                 "published_at": datetime.now(timezone.utc).isoformat(),
             }
