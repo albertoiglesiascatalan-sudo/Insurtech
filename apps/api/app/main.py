@@ -1,10 +1,28 @@
+import logging
+import traceback
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import articles, sources, auth, subscriptions, search, admin, verify, ingestion_logs
-from app.config import get_settings
 
-settings = get_settings()
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+logger.info("=== Starting InsurTech API ===")
+
+try:
+    from app.config import get_settings
+    settings = get_settings()
+    logger.info(f"Settings loaded. environment={settings.environment}")
+except Exception as e:
+    logger.error(f"FATAL: Failed to load settings: {e}\n{traceback.format_exc()}")
+    raise
+
+try:
+    from app.routers import articles, sources, auth, subscriptions, search, admin, verify, ingestion_logs
+    logger.info("All routers imported successfully")
+except Exception as e:
+    logger.error(f"FATAL: Failed to import routers: {e}\n{traceback.format_exc()}")
+    raise
 
 
 @asynccontextmanager
