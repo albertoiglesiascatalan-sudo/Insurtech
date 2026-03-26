@@ -11,7 +11,7 @@ _engine = None
 _session_factory = None
 
 
-def get_engine():
+def _get_engine():
     global _engine
     if _engine is None:
         settings = get_settings()
@@ -24,19 +24,28 @@ def get_engine():
     return _engine
 
 
-def get_session_factory():
+def _get_session_factory():
     global _session_factory
     if _session_factory is None:
         _session_factory = async_sessionmaker(
-            get_engine(),
+            _get_engine(),
             class_=AsyncSession,
             expire_on_commit=False,
         )
     return _session_factory
 
 
+class _LazySessionLocal:
+    """Callable proxy so `AsyncSessionLocal()` still works across the codebase."""
+    def __call__(self, *args, **kwargs):
+        return _get_session_factory()(*args, **kwargs)
+
+
+AsyncSessionLocal = _LazySessionLocal()
+
+
 async def get_db():
-    async with get_session_factory()() as session:
+    async with _get_session_factory()() as session:
         try:
             yield session
         finally:
