@@ -56,6 +56,9 @@ def generate_site(articles: list):
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>InsurTech Intelligence</title>
   <meta name="description" content="Noticias globales de insurtech con resúmenes en español generados por IA, actualizadas cada 6 horas." />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <style>
     *, *::before, *::after {{ box-sizing: border-box; margin: 0; padding: 0; }}
     body {{
