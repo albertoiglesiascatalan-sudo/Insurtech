@@ -76,31 +76,29 @@ def generate_site(articles: list):
     header h1 {{ font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; }}
     header p  {{ margin-top: .5rem; color: #a0aec0; font-size: .95rem; }}
     .updated  {{ margin-top: .75rem; font-size: .8rem; color: #718096; }}
+    /* Google Translate widget */
     #google_translate_element {{
       margin-top: 1.25rem;
       display: flex;
       justify-content: center;
     }}
-    .goog-te-gadget {{ font-family: inherit !important; color: transparent !important; }}
+    .goog-te-gadget {{ font-family: inherit !important; color: transparent !important; font-size: 0 !important; }}
     .goog-te-gadget-simple {{
       background: transparent !important;
-      border: 1.5px solid rgba(255,255,255,0.25) !important;
+      border: 1.5px solid rgba(255,255,255,0.2) !important;
       border-radius: 20px !important;
-      padding: .4rem 1rem !important;
+      padding: .4rem 1.1rem !important;
       font-size: .82rem !important;
       font-family: inherit !important;
       cursor: pointer !important;
     }}
-    .goog-te-gadget-simple .goog-te-menu-value {{
-      color: #a0aec0 !important;
-      letter-spacing: .3px;
-    }}
-    .goog-te-gadget-simple .goog-te-menu-value span:first-child {{
-      color: white !important;
-      font-weight: 500 !important;
-    }}
+    .goog-te-gadget-simple .goog-te-menu-value {{ color: #a0aec0 !important; }}
+    .goog-te-gadget-simple .goog-te-menu-value span:first-child {{ color: white !important; font-weight: 500 !important; }}
+    .goog-te-gadget-simple .goog-te-menu-value span[style] {{ color: rgba(255,255,255,0.25) !important; }}
     .goog-te-gadget-simple img {{ display: none !important; }}
-    .goog-te-gadget-simple .goog-te-menu-value span[style] {{ color: rgba(255,255,255,0.3) !important; }}
+    /* Hide Google top banner when translation is active */
+    .goog-te-banner-frame {{ display: none !important; }}
+    body {{ top: 0 !important; }}
     .filters {{
       max-width: 860px;
       margin: 1.5rem auto 0;
