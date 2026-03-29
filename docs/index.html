@@ -26,21 +26,30 @@
     header p  { margin-top: .5rem; color: #a0aec0; font-size: .95rem; }
     .updated  { margin-top: .75rem; font-size: .8rem; color: #718096; }
     #google_translate_element {
-      margin-top: 1rem;
+      margin-top: 1.25rem;
       display: flex;
       justify-content: center;
     }
-    /* Style the Google Translate dropdown */
+    .goog-te-gadget { font-family: inherit !important; color: transparent !important; }
     .goog-te-gadget-simple {
-      background: rgba(255,255,255,0.1) !important;
-      border: 1px solid rgba(255,255,255,0.2) !important;
-      border-radius: 6px !important;
-      padding: .3rem .6rem !important;
+      background: transparent !important;
+      border: 1.5px solid rgba(255,255,255,0.25) !important;
+      border-radius: 20px !important;
+      padding: .4rem 1rem !important;
       font-size: .82rem !important;
-      color: white !important;
+      font-family: inherit !important;
+      cursor: pointer !important;
     }
-    .goog-te-gadget-simple span { color: #a0aec0 !important; }
-    .goog-te-gadget-simple .goog-te-menu-value span { color: white !important; }
+    .goog-te-gadget-simple .goog-te-menu-value {
+      color: #a0aec0 !important;
+      letter-spacing: .3px;
+    }
+    .goog-te-gadget-simple .goog-te-menu-value span:first-child {
+      color: white !important;
+      font-weight: 500 !important;
+    }
+    .goog-te-gadget-simple img { display: none !important; }
+    .goog-te-gadget-simple .goog-te-menu-value span[style] { color: rgba(255,255,255,0.3) !important; }
     .filters {
       max-width: 860px;
       margin: 1.5rem auto 0;
@@ -133,7 +142,7 @@
   <header>
     <h1>InsurTech Intelligence</h1>
     <p>Noticias globales de insurtech · Resúmenes en español con IA · 85 artículos</p>
-    <div class="updated">Actualizado el 29 Mar 2026 a las 09:07 UTC</div>
+    <div class="updated">Actualizado el 29 Mar 2026 a las 09:09 UTC</div>
     <div id="google_translate_element"></div>
   </header>
 
