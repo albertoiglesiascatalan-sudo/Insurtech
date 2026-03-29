@@ -60,9 +60,10 @@ def _card(a: dict, featured: bool = False) -> str:
     searchable = f"{a['title']} {summary} {a['source']}".lower().replace('"', '')
     article_id = a.get("id", "")
 
+    region = "ibero" if a.get("source", "") in IBERO_SOURCES else "global"
     extra_class = " card-featured" if featured else ""
     return f"""
-    <article class="card{extra_class}" data-category="{category}" data-search="{searchable}" data-id="{article_id}">
+    <article class="card{extra_class}" data-category="{category}" data-region="{region}" data-search="{searchable}" data-id="{article_id}">
       <div class="card-meta">
         <span class="card-source">{a['source']}</span>
         <span class="card-dot">·</span>
@@ -291,6 +292,12 @@ def generate_site(articles: list):
     .filter-btn.active .count, .filter-btn.all-active .count {{ background: rgba(255,255,255,.25); }}
     .rss-link {{ margin-left: auto; font-size: .78rem; color: var(--muted); text-decoration: none; display: flex; align-items: center; gap: .3rem; white-space: nowrap; }}
     .rss-link:hover {{ color: var(--accent); }}
+    .region-filters {{ border-top: 1px solid var(--border); padding-top: .5rem; }}
+    .region-btn {{ background: var(--surface); border: 1.5px solid var(--border); border-radius: 20px; padding: .3rem .85rem; font-size: .8rem; font-weight: 500; color: var(--muted); cursor: pointer; transition: all .15s; display: flex; align-items: center; gap: .3rem; }}
+    .region-btn:hover {{ border-color: var(--accent); color: var(--accent); }}
+    .region-btn.region-active {{ background: var(--accent); border-color: var(--accent); color: white; }}
+    .region-btn .count {{ font-size: .7rem; background: rgba(0,0,0,.08); border-radius: 10px; padding: .05rem .4rem; font-weight: 600; }}
+    .region-btn.region-active .count {{ background: rgba(255,255,255,.25); }}
 
     /* Subscribe bar */
     .subscribe-bar {{ max-width: 900px; margin: 1rem auto 0; padding: 0 1rem; }}
@@ -406,6 +413,11 @@ def generate_site(articles: list):
     <div class="filters">
       <button class="filter-btn all-active" data-filter="all">Todos <span class="count">{len(articles)}</span></button>
       {filter_buttons}
+    </div>
+    <div class="filters region-filters">
+      <button class="region-btn region-active" data-region="all">🌍 Todo el mundo</button>
+      <button class="region-btn" data-region="ibero">🌎 Iberoamérica <span class="count">{ibero_count}</span></button>
+      <button class="region-btn" data-region="global">🌐 Global <span class="count">{len(articles) - ibero_count}</span></button>
       <a href="{SITE_URL}/feed.xml" class="rss-link" target="_blank">&#x2609; RSS</a>
     </div>
   </div>
@@ -445,20 +457,23 @@ def generate_site(articles: list):
 
   <script>
     // ── Filters + Search ──
-    const cards      = Array.from(document.querySelectorAll('.card'));
-    const filterBtns = Array.from(document.querySelectorAll('.filter-btn'));
-    const search     = document.getElementById('search');
-    const noResults  = document.getElementById('no-results');
-    const mainEl     = document.getElementById('main');
-    let activeFilter = 'all';
-    let searchQuery  = '';
+    const cards       = Array.from(document.querySelectorAll('.card'));
+    const filterBtns  = Array.from(document.querySelectorAll('.filter-btn'));
+    const regionBtns  = Array.from(document.querySelectorAll('.region-btn'));
+    const search      = document.getElementById('search');
+    const noResults   = document.getElementById('no-results');
+    const mainEl      = document.getElementById('main');
+    let activeFilter  = 'all';
+    let activeRegion  = 'all';
+    let searchQuery   = '';
 
     function update() {{
       let visible = 0;
       cards.forEach(card => {{
         const matchFilter = activeFilter === 'all' || card.dataset.category === activeFilter;
+        const matchRegion = activeRegion === 'all' || card.dataset.region === activeRegion;
         const matchSearch = !searchQuery || card.dataset.search.includes(searchQuery);
-        const show = matchFilter && matchSearch;
+        const show = matchFilter && matchRegion && matchSearch;
         card.classList.toggle('hidden', !show);
         if (show) visible++;
       }});
@@ -470,6 +485,15 @@ def generate_site(articles: list):
         activeFilter = btn.dataset.filter;
         filterBtns.forEach(b => b.classList.remove('active', 'all-active'));
         btn.classList.add(activeFilter === 'all' ? 'all-active' : 'active');
+        update();
+      }});
+    }});
+
+    regionBtns.forEach(btn => {{
+      btn.addEventListener('click', () => {{
+        activeRegion = btn.dataset.region;
+        regionBtns.forEach(b => b.classList.remove('region-active'));
+        btn.classList.add('region-active');
         update();
       }});
     }});
