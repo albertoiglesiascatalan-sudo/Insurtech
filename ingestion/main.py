@@ -24,6 +24,7 @@ MAX_NEW_PER_RUN = 20
 KEEP_ARTICLES = 500   # max articles stored
 
 SOURCES = [
+    # ── Global ──────────────────────────────────────────────────────────────
     {"name": "InsurTech Magazine",           "rss": "https://www.insurtechmagazine.com/rss"},
     {"name": "Coverager",                    "rss": "https://coverager.com/feed/"},
     {"name": "Insurance Thought Leadership", "rss": "https://insurancethoughtleadership.com/feed/"},
@@ -56,6 +57,15 @@ SOURCES = [
     {"name": "Insurance Innovation Reporter","rss": "https://iireporter.com/feed/"},
     {"name": "Embedded Insurance News",      "rss": "https://embedded-insurance.news/feed/"},
     {"name": "Parametric Insurance Review",  "rss": "https://www.parametricinsurancereview.com/feed/"},
+    # ── España & Iberoamérica ────────────────────────────────────────────────
+    {"name": "INESE",                        "rss": "https://www.inese.es/feed/"},
+    {"name": "Actualidad Aseguradora",       "rss": "https://www.actualidadaseguradora.com/feed/"},
+    {"name": "Aseguranza",                   "rss": "https://www.aseguranza.com/feed/"},
+    {"name": "El Economista Seguros",        "rss": "https://www.eleconomista.es/rss/rss-seguros.php"},
+    {"name": "Fintech.es",                   "rss": "https://fintech.es/feed/"},
+    {"name": "iupana (Latam Fintech)",       "rss": "https://iupana.com/feed/"},
+    {"name": "Fitch Ratings Insurance",      "rss": "https://www.fitchratings.com/rss/filter?sectorCode=Insurance"},
+    {"name": "Latin Insurance",              "rss": "https://latininsurance.com/feed/"},
 ]
 
 

@@ -3,6 +3,7 @@ import os
 import json
 from datetime import datetime, timezone, timedelta
 from collections import Counter
+
 from xml.sax.saxutils import escape as xml_escape
 
 DOCS_DIR = os.path.join(os.path.dirname(__file__), "..", "docs")
@@ -12,6 +13,11 @@ CATEGORIES = [
     "Tecnología", "Regulación", "Inversión", "Vida y Salud",
     "Automóvil", "Catástrofes", "Fraude", "Embebido", "General",
 ]
+
+IBERO_SOURCES = {
+    "INESE", "Actualidad Aseguradora", "Aseguranza",
+    "El Economista Seguros", "Fintech.es", "iupana (Latam Fintech)", "Latin Insurance",
+}
 
 
 def _date(iso: str) -> str:
@@ -121,10 +127,95 @@ def generate_feed(articles: list):
     print(f"RSS feed generated: {feed_path}")
 
 
+def _thermometer(articles: list) -> str:
+    """Weekly pulse widget — counts by category over last 7 days."""
+    cutoff = datetime.now(timezone.utc) - timedelta(days=7)
+    week = []
+    for a in articles:
+        try:
+            pub = datetime.fromisoformat(a.get("published_at", ""))
+            if pub.tzinfo is None:
+                pub = pub.replace(tzinfo=timezone.utc)
+            if pub >= cutoff:
+                week.append(a)
+        except Exception:
+            pass
+
+    if not week:
+        return ""
+
+    counts = Counter(a.get("category", "General") for a in week)
+    ibero  = sum(1 for a in week if a.get("source", "") in IBERO_SOURCES)
+    total  = len(week)
+
+    metrics = [
+        ("💰", "Inversión",   counts.get("Inversión", 0),   "Rondas y M&A"),
+        ("⚖️",  "Regulación", counts.get("Regulación", 0),  "Noticias regulatorias"),
+        ("🚀", "Tecnología",  counts.get("Tecnología", 0),  "Lanzamientos tech"),
+        ("🌎", "Iberoamérica",ibero,                         "Noticias España/Latam"),
+    ]
+
+    bars = ""
+    for icon, label, n, desc in metrics:
+        pct = min(100, int(n / max(total, 1) * 100 * 4))  # scale to make it visible
+        pct = max(4, pct)
+        bars += f"""
+      <div class="therm-row">
+        <span class="therm-icon">{icon}</span>
+        <div class="therm-info">
+          <span class="therm-label">{label}</span>
+          <span class="therm-desc">{desc}</span>
+        </div>
+        <div class="therm-bar-wrap">
+          <div class="therm-bar" style="width:{pct}%"></div>
+        </div>
+        <span class="therm-n">{n}</span>
+      </div>"""
+
+    return f"""
+  <section class="thermometer">
+    <div class="therm-header">
+      <span class="therm-title">🌡️ Termómetro Insurtech</span>
+      <span class="therm-sub">Últimos 7 días · {total} artículos analizados</span>
+    </div>
+    <div class="therm-body">{bars}
+    </div>
+  </section>"""
+
+
+def _startup_card(articles: list) -> str:
+    """Pick the most recent Inversión article as Startup de la semana."""
+    candidates = [a for a in articles if a.get("category") == "Inversión"]
+    if not candidates:
+        return ""
+    a = candidates[0]
+    summary = a.get("summary", "")
+    twitter_url, linkedin_url = _share_urls(a["title"], a["url"])
+    return f"""
+  <section class="startup-card">
+    <div class="startup-label">🚀 Startup / Deal de la semana</div>
+    <h3 class="startup-title">
+      <a href="{a['url']}" target="_blank" rel="noopener">{a['title']}</a>
+    </h3>
+    {"<p class='startup-summary'>" + summary + "</p>" if summary else ""}
+    <div class="startup-footer">
+      <span class="startup-source">{a['source']} · {_date(a['published_at'])}</span>
+      <div class="card-share">
+        <a href="{twitter_url}" target="_blank" rel="noopener" class="share-btn share-x" title="Compartir en X">𝕏</a>
+        <a href="{linkedin_url}" target="_blank" rel="noopener" class="share-btn share-li" title="Compartir en LinkedIn">in</a>
+      </div>
+    </div>
+  </section>"""
+
+
 def generate_site(articles: list):
     os.makedirs(DOCS_DIR, exist_ok=True)
     updated = datetime.utcnow().strftime("%d %b %Y · %H:%M UTC")
     new_count = sum(1 for a in articles if _is_new(a.get("published_at", "")))
+
+    thermometer_html = _thermometer(articles)
+    startup_html     = _startup_card(articles)
+    ibero_count      = sum(1 for a in articles if a.get("source", "") in IBERO_SOURCES)
 
     featured = articles[0] if articles else None
     rest     = articles[1:] if articles else []
@@ -238,6 +329,47 @@ def generate_site(articles: list):
     .save-btn.saved {{ background: var(--accent); border-color: var(--accent); color: white; }}
     .no-results {{ text-align: center; color: var(--muted); padding: 3rem; display: none; grid-column: 1/-1; }}
 
+    /* Thermometer */
+    .thermometer {{
+      max-width: 900px; margin: 1.25rem auto 0; padding: 0 1rem;
+    }}
+    .thermometer > div {{
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.1rem 1.4rem;
+    }}
+    .therm-header {{ display: flex; align-items: baseline; justify-content: space-between; margin-bottom: .9rem; flex-wrap: wrap; gap: .3rem; }}
+    .therm-title {{ font-size: .95rem; font-weight: 700; color: var(--text); }}
+    .therm-sub   {{ font-size: .75rem; color: var(--muted); }}
+    .therm-row   {{ display: flex; align-items: center; gap: .7rem; margin-bottom: .55rem; }}
+    .therm-icon  {{ font-size: 1rem; width: 1.4rem; text-align: center; flex-shrink: 0; }}
+    .therm-info  {{ display: flex; flex-direction: column; width: 110px; flex-shrink: 0; }}
+    .therm-label {{ font-size: .78rem; font-weight: 600; color: var(--text); line-height: 1.2; }}
+    .therm-desc  {{ font-size: .68rem; color: var(--muted); line-height: 1.2; }}
+    .therm-bar-wrap {{ flex: 1; background: var(--border); border-radius: 4px; height: 7px; overflow: hidden; }}
+    .therm-bar  {{ height: 100%; background: var(--accent); border-radius: 4px; transition: width .4s; }}
+    .therm-n    {{ font-size: .82rem; font-weight: 700; color: var(--accent); width: 1.8rem; text-align: right; flex-shrink: 0; }}
+
+    /* Startup de la semana */
+    .startup-card {{
+      max-width: 900px; margin: 1rem auto 0; padding: 0 1rem;
+    }}
+    .startup-card > section, .startup-card {{
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d3561 100%);
+      border-radius: 12px; padding: 1.4rem; color: white;
+    }}
+    @media (prefers-color-scheme: dark) {{
+      .startup-card {{ background: linear-gradient(135deg, #0d0f18 0%, #1e2340 100%); }}
+    }}
+    .startup-label {{ font-size: .75rem; font-weight: 700; color: #a0aec0; text-transform: uppercase; letter-spacing: .5px; margin-bottom: .5rem; }}
+    .startup-title {{ font-size: 1.1rem; font-weight: 700; line-height: 1.4; margin-bottom: .6rem; }}
+    .startup-title a {{ color: white; text-decoration: none; }}
+    .startup-title a:hover {{ text-decoration: underline; }}
+    .startup-summary {{ font-size: .88rem; color: #a0aec0; margin-bottom: .9rem; line-height: 1.5; }}
+    .startup-footer {{ display: flex; align-items: center; justify-content: space-between; }}
+    .startup-source {{ font-size: .75rem; color: #718096; }}
+    .startup-card .share-btn {{ border-color: rgba(255,255,255,.2); color: #a0aec0; background: transparent; }}
+    .startup-card .share-btn:hover {{ border-color: white; color: white; }}
+
     footer {{ text-align: center; padding: 2rem; font-size: .8rem; color: var(--muted); border-top: 1px solid var(--border); }}
     footer a {{ color: var(--accent); text-decoration: none; }}
 
@@ -256,7 +388,8 @@ def generate_site(articles: list):
     <div class="header-stats">
       <span class="stat"><strong>{len(articles)}</strong> artículos</span>
       <span class="stat"><strong>{new_count}</strong> nuevos hoy</span>
-      <span class="stat"><strong>32</strong> fuentes monitorizadas</span>
+      <span class="stat"><strong>40</strong> fuentes monitorizadas</span>
+      <span class="stat"><strong>{ibero_count}</strong> noticias iberoamérica</span>
     </div>
     <div class="updated">Actualizado el {updated}</div>
     <div id="google_translate_element"></div>
@@ -276,6 +409,9 @@ def generate_site(articles: list):
       <a href="{SITE_URL}/feed.xml" class="rss-link" target="_blank">&#x2609; RSS</a>
     </div>
   </div>
+
+  {thermometer_html}
+  {startup_html}
 
   <div class="subscribe-bar">
     <form class="subscribe-form" action="https://buttondown.email/api/emails/embed-subscribe/insurtechintelligence" method="post" target="_blank">

@@ -98,6 +98,47 @@
     .save-btn.saved { background: var(--accent); border-color: var(--accent); color: white; }
     .no-results { text-align: center; color: var(--muted); padding: 3rem; display: none; grid-column: 1/-1; }
 
+    /* Thermometer */
+    .thermometer {
+      max-width: 900px; margin: 1.25rem auto 0; padding: 0 1rem;
+    }
+    .thermometer > div {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.1rem 1.4rem;
+    }
+    .therm-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: .9rem; flex-wrap: wrap; gap: .3rem; }
+    .therm-title { font-size: .95rem; font-weight: 700; color: var(--text); }
+    .therm-sub   { font-size: .75rem; color: var(--muted); }
+    .therm-row   { display: flex; align-items: center; gap: .7rem; margin-bottom: .55rem; }
+    .therm-icon  { font-size: 1rem; width: 1.4rem; text-align: center; flex-shrink: 0; }
+    .therm-info  { display: flex; flex-direction: column; width: 110px; flex-shrink: 0; }
+    .therm-label { font-size: .78rem; font-weight: 600; color: var(--text); line-height: 1.2; }
+    .therm-desc  { font-size: .68rem; color: var(--muted); line-height: 1.2; }
+    .therm-bar-wrap { flex: 1; background: var(--border); border-radius: 4px; height: 7px; overflow: hidden; }
+    .therm-bar  { height: 100%; background: var(--accent); border-radius: 4px; transition: width .4s; }
+    .therm-n    { font-size: .82rem; font-weight: 700; color: var(--accent); width: 1.8rem; text-align: right; flex-shrink: 0; }
+
+    /* Startup de la semana */
+    .startup-card {
+      max-width: 900px; margin: 1rem auto 0; padding: 0 1rem;
+    }
+    .startup-card > section, .startup-card {
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d3561 100%);
+      border-radius: 12px; padding: 1.4rem; color: white;
+    }
+    @media (prefers-color-scheme: dark) {
+      .startup-card { background: linear-gradient(135deg, #0d0f18 0%, #1e2340 100%); }
+    }
+    .startup-label { font-size: .75rem; font-weight: 700; color: #a0aec0; text-transform: uppercase; letter-spacing: .5px; margin-bottom: .5rem; }
+    .startup-title { font-size: 1.1rem; font-weight: 700; line-height: 1.4; margin-bottom: .6rem; }
+    .startup-title a { color: white; text-decoration: none; }
+    .startup-title a:hover { text-decoration: underline; }
+    .startup-summary { font-size: .88rem; color: #a0aec0; margin-bottom: .9rem; line-height: 1.5; }
+    .startup-footer { display: flex; align-items: center; justify-content: space-between; }
+    .startup-source { font-size: .75rem; color: #718096; }
+    .startup-card .share-btn { border-color: rgba(255,255,255,.2); color: #a0aec0; background: transparent; }
+    .startup-card .share-btn:hover { border-color: white; color: white; }
+
     footer { text-align: center; padding: 2rem; font-size: .8rem; color: var(--muted); border-top: 1px solid var(--border); }
     footer a { color: var(--accent); text-decoration: none; }
 
@@ -116,9 +157,10 @@
     <div class="header-stats">
       <span class="stat"><strong>85</strong> artículos</span>
       <span class="stat"><strong>7</strong> nuevos hoy</span>
-      <span class="stat"><strong>32</strong> fuentes monitorizadas</span>
+      <span class="stat"><strong>40</strong> fuentes monitorizadas</span>
+      <span class="stat"><strong>0</strong> noticias iberoamérica</span>
     </div>
-    <div class="updated">Actualizado el 29 Mar 2026 · 10:44 UTC</div>
+    <div class="updated">Actualizado el 29 Mar 2026 · 10:54 UTC</div>
     <div id="google_translate_element"></div>
   </header>
 
@@ -143,6 +185,75 @@
       <a href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" class="rss-link" target="_blank">&#x2609; RSS</a>
     </div>
   </div>
+
+  
+  <section class="thermometer">
+    <div class="therm-header">
+      <span class="therm-title">🌡️ Termómetro Insurtech</span>
+      <span class="therm-sub">Últimos 7 días · 85 artículos analizados</span>
+    </div>
+    <div class="therm-body">
+      <div class="therm-row">
+        <span class="therm-icon">💰</span>
+        <div class="therm-info">
+          <span class="therm-label">Inversión</span>
+          <span class="therm-desc">Rondas y M&A</span>
+        </div>
+        <div class="therm-bar-wrap">
+          <div class="therm-bar" style="width:42%"></div>
+        </div>
+        <span class="therm-n">9</span>
+      </div>
+      <div class="therm-row">
+        <span class="therm-icon">⚖️</span>
+        <div class="therm-info">
+          <span class="therm-label">Regulación</span>
+          <span class="therm-desc">Noticias regulatorias</span>
+        </div>
+        <div class="therm-bar-wrap">
+          <div class="therm-bar" style="width:18%"></div>
+        </div>
+        <span class="therm-n">4</span>
+      </div>
+      <div class="therm-row">
+        <span class="therm-icon">🚀</span>
+        <div class="therm-info">
+          <span class="therm-label">Tecnología</span>
+          <span class="therm-desc">Lanzamientos tech</span>
+        </div>
+        <div class="therm-bar-wrap">
+          <div class="therm-bar" style="width:100%"></div>
+        </div>
+        <span class="therm-n">27</span>
+      </div>
+      <div class="therm-row">
+        <span class="therm-icon">🌎</span>
+        <div class="therm-info">
+          <span class="therm-label">Iberoamérica</span>
+          <span class="therm-desc">Noticias España/Latam</span>
+        </div>
+        <div class="therm-bar-wrap">
+          <div class="therm-bar" style="width:4%"></div>
+        </div>
+        <span class="therm-n">0</span>
+      </div>
+    </div>
+  </section>
+  
+  <section class="startup-card">
+    <div class="startup-label">🚀 Startup / Deal de la semana</div>
+    <h3 class="startup-title">
+      <a href="https://www.insurtechinsights.com/china-life-insurance-posts-strong-profit-growth-driven-by-investment-performance-and-product-innovation/" target="_blank" rel="noopener">China Life Insurance posts strong profit growth driven by investment performance and product innovation</a>
+    </h3>
+    
+    <div class="startup-footer">
+      <span class="startup-source">InsurTech Insights · 28 Mar 2026</span>
+      <div class="card-share">
+        <a href="https://twitter.com/intent/tweet?text=China+Life+Insurance+posts+strong+profit+growth+driven+by+investment+performance+and+product+innovat&url=https%3A%2F%2Fwww.insurtechinsights.com%2Fchina-life-insurance-posts-strong-profit-growth-driven-by-investment-performance-and-product-innovation%2F" target="_blank" rel="noopener" class="share-btn share-x" title="Compartir en X">𝕏</a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.insurtechinsights.com%2Fchina-life-insurance-posts-strong-profit-growth-driven-by-investment-performance-and-product-innovation%2F" target="_blank" rel="noopener" class="share-btn share-li" title="Compartir en LinkedIn">in</a>
+      </div>
+    </div>
+  </section>
 
   <div class="subscribe-bar">
     <form class="subscribe-form" action="https://buttondown.email/api/emails/embed-subscribe/insurtechintelligence" method="post" target="_blank">
