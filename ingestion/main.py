@@ -136,19 +136,39 @@ def fetch_article_text(url: str) -> str:
 
 
 def extractive_summary(text: str, sentences: int = 3) -> str:
-    """Return first N meaningful sentences from text (strips HTML first)."""
+    """
+    Summarize text by selecting the most representative sentences (LexRank).
+    Falls back to first-sentences if text is too short.
+    Strips HTML first.
+    """
     if not text:
         return ""
-    # Strip HTML tags
+    # Strip HTML
     text = re.sub(r'<[^>]+>', ' ', text)
     text = re.sub(r'\s+', ' ', text).strip()
-    # Split on sentence boundaries
+    if not text:
+        return ""
+
+    try:
+        from sumy.parsers.plaintext import PlaintextParser
+        from sumy.nlp.tokenizers import Tokenizer
+        from sumy.summarizers.lex_rank import LexRankSummarizer
+
+        parser = PlaintextParser.from_string(text, Tokenizer("english"))
+        summarizer = LexRankSummarizer()
+        result = summarizer(parser.document, sentences_count=sentences)
+        summary = " ".join(str(s) for s in result).strip()
+        if summary:
+            return summary
+    except Exception as e:
+        log.debug(f"LexRank error: {e}")
+
+    # Fallback: first meaningful sentences
     parts = re.split(r'(?<=[.!?])\s+', text)
     result = []
     for part in parts:
-        part = part.strip()
-        if len(part) > 40:
-            result.append(part)
+        if len(part.strip()) > 40:
+            result.append(part.strip())
         if len(result) >= sentences:
             break
     return " ".join(result)

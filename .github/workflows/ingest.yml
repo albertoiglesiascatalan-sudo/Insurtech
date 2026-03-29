@@ -19,7 +19,9 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install -r ingestion/requirements.txt
+        run: |
+          pip install -r ingestion/requirements.txt
+          python -c "import nltk; nltk.download('punkt', quiet=True); nltk.download('punkt_tab', quiet=True); nltk.download('stopwords', quiet=True)"
 
       - name: Backfill missing summaries from RSS
         working-directory: ingestion
