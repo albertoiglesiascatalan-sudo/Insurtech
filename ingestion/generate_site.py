@@ -70,12 +70,28 @@ def generate_site(articles: list):
     header {{
       background: #1a1a2e;
       color: white;
-      padding: 2rem 1rem;
+      padding: 2rem 1rem 1.5rem;
       text-align: center;
     }}
     header h1 {{ font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; }}
     header p  {{ margin-top: .5rem; color: #a0aec0; font-size: .95rem; }}
     .updated  {{ margin-top: .75rem; font-size: .8rem; color: #718096; }}
+    #google_translate_element {{
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+    }}
+    /* Style the Google Translate dropdown */
+    .goog-te-gadget-simple {{
+      background: rgba(255,255,255,0.1) !important;
+      border: 1px solid rgba(255,255,255,0.2) !important;
+      border-radius: 6px !important;
+      padding: .3rem .6rem !important;
+      font-size: .82rem !important;
+      color: white !important;
+    }}
+    .goog-te-gadget-simple span {{ color: #a0aec0 !important; }}
+    .goog-te-gadget-simple .goog-te-menu-value span {{ color: white !important; }}
     .filters {{
       max-width: 860px;
       margin: 1.5rem auto 0;
@@ -169,6 +185,7 @@ def generate_site(articles: list):
     <h1>InsurTech Intelligence</h1>
     <p>Noticias globales de insurtech · Resúmenes en español con IA · {len(articles)} artículos</p>
     <div class="updated">Actualizado el {updated}</div>
+    <div id="google_translate_element"></div>
   </header>
 
   <div class="filters">
@@ -184,6 +201,18 @@ def generate_site(articles: list):
   <footer>
     InsurTech Intelligence · Impulsado por IA · Actualizado cada 6 horas
   </footer>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {{
+      new google.translate.TranslateElement({{
+        pageLanguage: 'en',
+        includedLanguages: 'es,fr,de,pt,it,zh-CN,ar',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false,
+      }}, 'google_translate_element');
+    }}
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
   <script>
     const btns = document.querySelectorAll('.filter-btn');
