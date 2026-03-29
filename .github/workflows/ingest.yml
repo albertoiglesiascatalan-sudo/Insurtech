@@ -21,6 +21,10 @@ jobs:
       - name: Install dependencies
         run: pip install -r ingestion/requirements.txt
 
+      - name: Backfill missing summaries from RSS
+        working-directory: ingestion
+        run: python backfill_summaries.py
+
       - name: Run ingestion
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}

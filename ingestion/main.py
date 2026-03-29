@@ -4,8 +4,11 @@ Runs every 6 hours via GitHub Actions.
 """
 import os
 import json
+import re
 import logging
 import feedparser
+import httpx
+from bs4 import BeautifulSoup
 from datetime import datetime, timezone, timedelta
 from slugify import slugify
 from openai import OpenAI
@@ -108,6 +111,49 @@ def fetch_recent(source: dict, since_hours: int = 7) -> list:
     return results
 
 
+def fetch_article_text(url: str) -> str:
+    """Fetch full article and extract main text."""
+    try:
+        headers = {"User-Agent": "Mozilla/5.0 (compatible; InsurTechBot/1.0)"}
+        r = httpx.get(url, headers=headers, timeout=8, follow_redirects=True)
+        if r.status_code != 200:
+            return ""
+        soup = BeautifulSoup(r.text, "lxml")
+        # Remove noise
+        for tag in soup(["script", "style", "nav", "header", "footer", "aside", "form", "figure"]):
+            tag.decompose()
+        # Try article/main first, fallback to body
+        container = soup.find("article") or soup.find("main") or soup.find("body")
+        if not container:
+            return ""
+        paragraphs = [p.get_text(" ", strip=True) for p in container.find_all("p")]
+        # Keep only meaningful paragraphs (>40 chars)
+        paragraphs = [p for p in paragraphs if len(p) > 40]
+        return " ".join(paragraphs[:10])
+    except Exception as e:
+        log.debug(f"fetch_article_text error [{url[:60]}]: {e}")
+        return ""
+
+
+def extractive_summary(text: str, sentences: int = 3) -> str:
+    """Return first N meaningful sentences from text (strips HTML first)."""
+    if not text:
+        return ""
+    # Strip HTML tags
+    text = re.sub(r'<[^>]+>', ' ', text)
+    text = re.sub(r'\s+', ' ', text).strip()
+    # Split on sentence boundaries
+    parts = re.split(r'(?<=[.!?])\s+', text)
+    result = []
+    for part in parts:
+        part = part.strip()
+        if len(part) > 40:
+            result.append(part)
+        if len(result) >= sentences:
+            break
+    return " ".join(result)
+
+
 def summarize(title: str, content: str) -> dict:
     try:
         resp = openai.chat.completions.create(
@@ -132,7 +178,7 @@ def summarize(title: str, content: str) -> dict:
         }
     except Exception as e:
         log.warning(f"OpenAI error: {e}")
-        return {"title_es": title, "summary_es": "", "category": "General"}
+        return {"title_es": title, "summary_es": None, "category": "General"}
 
 
 def main():
@@ -152,12 +198,20 @@ def main():
             if item["url"] in existing_urls:
                 continue
             translated = summarize(item["title"], item["content"])
+            # If OpenAI didn't produce a summary, use RSS content directly
+            summary = translated["summary_es"]
+            if not summary:
+                # Try scraping the article, fallback to RSS content
+                full_text = fetch_article_text(item["url"]) or item["content"]
+                summary = extractive_summary(full_text)
+                if summary:
+                    log.info(f"  Extractive summary used for: {item['title'][:50]}")
             article = {
                 "id": slugify(item["title"])[:80],
                 "title": translated["title_es"],
                 "title_original": item["title"],
                 "url": item["url"],
-                "summary": translated["summary_es"],
+                "summary": summary,
                 "category": translated["category"],
                 "source": source["name"],
                 "published_at": datetime.now(timezone.utc).isoformat(),
