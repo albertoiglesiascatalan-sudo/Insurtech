@@ -1,10 +1,12 @@
-"""Generates static HTML for GitHub Pages from articles list."""
+"""Generates static HTML + RSS feed for GitHub Pages from articles list."""
 import os
 import json
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from collections import Counter
+from xml.sax.saxutils import escape as xml_escape
 
 DOCS_DIR = os.path.join(os.path.dirname(__file__), "..", "docs")
+SITE_URL = "https://albertoiglesiascatalan-sudo.github.io/Insurtech"
 
 CATEGORIES = [
     "Tecnología", "Regulación", "Inversión", "Vida y Salud",
@@ -19,39 +21,122 @@ def _date(iso: str) -> str:
         return ""
 
 
-def _card(a: dict) -> str:
+def _is_new(iso: str, hours: int = 24) -> bool:
+    try:
+        pub = datetime.fromisoformat(iso)
+        if pub.tzinfo is None:
+            pub = pub.replace(tzinfo=timezone.utc)
+        return (datetime.now(timezone.utc) - pub) < timedelta(hours=hours)
+    except Exception:
+        return False
+
+
+def _read_minutes(text: str) -> int:
+    words = len(text.split())
+    return max(1, round(words / 200))
+
+
+def _share_urls(title: str, url: str) -> tuple:
+    import urllib.parse
+    t = urllib.parse.quote_plus(title[:100])
+    u = urllib.parse.quote_plus(url)
+    twitter = f"https://twitter.com/intent/tweet?text={t}&url={u}"
+    linkedin = f"https://www.linkedin.com/sharing/share-offsite/?url={u}"
+    return twitter, linkedin
+
+
+def _card(a: dict, featured: bool = False) -> str:
     category = a.get("category", "General")
-    title = a['title'].replace('"', '&quot;')
-    summary = a.get('summary', '')
+    summary  = a.get("summary", "")
+    read_min = _read_minutes(a["title"] + " " + summary)
+    new_badge = '<span class="badge-new">Nuevo</span>' if _is_new(a.get("published_at", "")) else ""
+    twitter_url, linkedin_url = _share_urls(a["title"], a["url"])
     searchable = f"{a['title']} {summary} {a['source']}".lower().replace('"', '')
+    article_id = a.get("id", "")
+
+    extra_class = " card-featured" if featured else ""
     return f"""
-    <article class="card" data-category="{category}" data-search="{searchable}">
+    <article class="card{extra_class}" data-category="{category}" data-search="{searchable}" data-id="{article_id}">
       <div class="card-meta">
         <span class="card-source">{a['source']}</span>
         <span class="card-dot">·</span>
         <span class="card-date">{_date(a['published_at'])}</span>
+        <span class="card-dot">·</span>
+        <span class="card-read">{read_min} min</span>
+        {new_badge}
         <span class="card-tag">{category}</span>
       </div>
       <h2 class="card-title">
         <a href="{a['url']}" target="_blank" rel="noopener">{a['title']}</a>
       </h2>
       {"<p class='card-summary'>" + summary + "</p>" if summary else ""}
-      <a href="{a['url']}" target="_blank" rel="noopener" class="card-link">
-        Leer artículo completo →
-      </a>
+      <div class="card-actions">
+        <a href="{a['url']}" target="_blank" rel="noopener" class="card-link">Leer artículo →</a>
+        <div class="card-share">
+          <a href="{twitter_url}" target="_blank" rel="noopener" class="share-btn share-x" title="Compartir en X">𝕏</a>
+          <a href="{linkedin_url}" target="_blank" rel="noopener" class="share-btn share-li" title="Compartir en LinkedIn">in</a>
+          <button class="share-btn save-btn" data-id="{article_id}" title="Guardar artículo">🔖</button>
+        </div>
+      </div>
     </article>"""
+
+
+def generate_feed(articles: list):
+    """Generate RSS feed XML."""
+    now_rfc = datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S +0000")
+    items = []
+    for a in articles[:50]:
+        try:
+            pub = datetime.fromisoformat(a["published_at"])
+            if pub.tzinfo is None:
+                pub = pub.replace(tzinfo=timezone.utc)
+            pub_rfc = pub.strftime("%a, %d %b %Y %H:%M:%S +0000")
+        except Exception:
+            pub_rfc = now_rfc
+        desc = xml_escape(a.get("summary") or a["title"])
+        items.append(f"""  <item>
+    <title>{xml_escape(a['title'])}</title>
+    <link>{xml_escape(a['url'])}</link>
+    <description>{desc}</description>
+    <pubDate>{pub_rfc}</pubDate>
+    <guid>{xml_escape(a['url'])}</guid>
+    <category>{xml_escape(a.get('category', 'General'))}</category>
+  </item>""")
+
+    feed = f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>InsurTech Intelligence</title>
+  <link>{SITE_URL}</link>
+  <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
+  <language>en</language>
+  <lastBuildDate>{now_rfc}</lastBuildDate>
+  <atom:link href="{SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>
+{chr(10).join(items)}
+</channel>
+</rss>"""
+    feed_path = os.path.join(DOCS_DIR, "feed.xml")
+    with open(feed_path, "w", encoding="utf-8") as f:
+        f.write(feed)
+    print(f"RSS feed generated: {feed_path}")
 
 
 def generate_site(articles: list):
     os.makedirs(DOCS_DIR, exist_ok=True)
     updated = datetime.utcnow().strftime("%d %b %Y · %H:%M UTC")
-    cards_html = "\n".join(_card(a) for a in articles)
+    new_count = sum(1 for a in articles if _is_new(a.get("published_at", "")))
+
+    featured = articles[0] if articles else None
+    rest     = articles[1:] if articles else []
 
     counts = Counter(a.get("category", "General") for a in articles)
-    filter_buttons = '\n    '.join(
+    filter_buttons = '\n      '.join(
         f'<button class="filter-btn" data-filter="{c}">{c} <span class="count">{counts[c]}</span></button>'
         for c in CATEGORIES if counts[c] > 0
     )
+
+    featured_html = _card(featured, featured=True) if featured else ""
+    cards_html    = "\n".join(_card(a) for a in rest)
 
     html = f"""<!DOCTYPE html>
 <html lang="es">
@@ -60,225 +145,119 @@ def generate_site(articles: list):
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>InsurTech Intelligence</title>
   <meta name="description" content="Noticias globales de insurtech, actualizadas cada 6 horas." />
+  <link rel="alternate" type="application/rss+xml" title="InsurTech Intelligence RSS" href="{SITE_URL}/feed.xml" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <style>
     *, *::before, *::after {{ box-sizing: border-box; margin: 0; padding: 0; }}
-
-    /* ── Colour tokens ── */
     :root {{
-      --bg: #f4f6f9;
-      --surface: #ffffff;
-      --border: #e2e8f0;
-      --text: #1a1a2e;
-      --text-muted: #64748b;
-      --accent: #4a6fa5;
-      --header-bg: #1a1a2e;
-      --tag-bg: #eef2ff;
-      --tag-color: #4a6fa5;
-      --count-bg: rgba(255,255,255,0.15);
+      --bg: #f4f6f9; --surface: #fff; --border: #e2e8f0;
+      --text: #1a1a2e; --muted: #64748b; --accent: #4a6fa5;
+      --header: #1a1a2e; --tag-bg: #eef2ff; --tag-color: #4a6fa5;
     }}
     @media (prefers-color-scheme: dark) {{
       :root {{
-        --bg: #0f1117;
-        --surface: #1a1d27;
-        --border: #2d3148;
-        --text: #e2e8f0;
-        --text-muted: #8892a4;
-        --accent: #7aa2d4;
-        --header-bg: #0d0f18;
-        --tag-bg: #1e2340;
-        --tag-color: #7aa2d4;
-        --count-bg: rgba(0,0,0,0.25);
+        --bg: #0f1117; --surface: #1a1d27; --border: #2d3148;
+        --text: #e2e8f0; --muted: #8892a4; --accent: #7aa2d4;
+        --header: #0d0f18; --tag-bg: #1e2340; --tag-color: #7aa2d4;
       }}
     }}
+    body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }}
 
-    body {{
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }}
+    /* Header */
+    header {{ background: var(--header); color: white; padding: 2rem 1rem 1.5rem; text-align: center; }}
+    header h1 {{ font-size: 2rem; font-weight: 700; letter-spacing: -.5px; }}
+    .header-sub {{ margin-top: .4rem; color: #a0aec0; font-size: .9rem; }}
+    .header-stats {{ display: flex; justify-content: center; gap: 1.25rem; margin-top: .6rem; flex-wrap: wrap; }}
+    .stat {{ font-size: .78rem; color: #718096; }}
+    .stat strong {{ color: #a0aec0; }}
+    .updated {{ font-size: .75rem; color: #4a5568; margin-top: .3rem; }}
 
-    /* ── Header ── */
-    header {{
-      background: var(--header-bg);
-      color: white;
-      padding: 2rem 1rem 1.5rem;
-      text-align: center;
-    }}
-    header h1 {{ font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; }}
-    header p   {{ margin-top: .4rem; color: #a0aec0; font-size: .92rem; }}
-    .updated   {{ margin-top: .5rem; font-size: .78rem; color: #718096; }}
-
-    /* ── Translate widget ── */
-    #google_translate_element {{ margin-top: 1.1rem; display: flex; justify-content: center; }}
+    /* Translate */
+    #google_translate_element {{ margin-top: 1rem; display: flex; justify-content: center; }}
     .goog-te-gadget {{ font-family: inherit !important; color: transparent !important; font-size: 0 !important; }}
-    .goog-te-gadget-simple {{
-      background: transparent !important;
-      border: 1.5px solid rgba(255,255,255,0.2) !important;
-      border-radius: 20px !important;
-      padding: .35rem 1rem !important;
-      font-size: .8rem !important;
-      font-family: inherit !important;
-      cursor: pointer !important;
-    }}
+    .goog-te-gadget-simple {{ background: transparent !important; border: 1.5px solid rgba(255,255,255,.2) !important; border-radius: 20px !important; padding: .35rem 1rem !important; font-size: .8rem !important; font-family: inherit !important; cursor: pointer !important; }}
     .goog-te-gadget-simple .goog-te-menu-value {{ color: #a0aec0 !important; }}
     .goog-te-gadget-simple .goog-te-menu-value span:first-child {{ color: white !important; font-weight: 500 !important; }}
-    .goog-te-gadget-simple .goog-te-menu-value span[style] {{ color: rgba(255,255,255,0.2) !important; }}
+    .goog-te-gadget-simple .goog-te-menu-value span[style] {{ color: rgba(255,255,255,.2) !important; }}
     .goog-te-gadget-simple img {{ display: none !important; }}
     .goog-te-banner-frame {{ display: none !important; }}
     body {{ top: 0 !important; }}
 
-    /* ── Toolbar (search + filters + view toggle) ── */
-    .toolbar {{
-      max-width: 900px;
-      margin: 1.5rem auto 0;
-      padding: 0 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: .75rem;
-    }}
-    .search-row {{
-      display: flex;
-      align-items: center;
-      gap: .6rem;
-    }}
-    #search {{
-      flex: 1;
-      padding: .5rem 1rem;
-      border: 1.5px solid var(--border);
-      border-radius: 20px;
-      background: var(--surface);
-      color: var(--text);
-      font-size: .88rem;
-      font-family: inherit;
-      outline: none;
-      transition: border-color .15s;
-    }}
+    /* Toolbar */
+    .toolbar {{ max-width: 900px; margin: 1.5rem auto 0; padding: 0 1rem; display: flex; flex-direction: column; gap: .7rem; }}
+    .search-row {{ display: flex; align-items: center; gap: .6rem; }}
+    #search {{ flex: 1; padding: .5rem 1rem; border: 1.5px solid var(--border); border-radius: 20px; background: var(--surface); color: var(--text); font-size: .88rem; font-family: inherit; outline: none; transition: border-color .15s; }}
     #search:focus {{ border-color: var(--accent); }}
-    #search::placeholder {{ color: var(--text-muted); }}
-    .view-toggle {{
-      display: flex;
-      gap: .3rem;
-    }}
-    .view-btn {{
-      background: var(--surface);
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      padding: .4rem .55rem;
-      cursor: pointer;
-      color: var(--text-muted);
-      transition: all .15s;
-      line-height: 1;
-      font-size: 1rem;
-    }}
+    #search::placeholder {{ color: var(--muted); }}
+    .view-toggle {{ display: flex; gap: .3rem; }}
+    .view-btn {{ background: var(--surface); border: 1.5px solid var(--border); border-radius: 8px; padding: .4rem .55rem; cursor: pointer; color: var(--muted); transition: all .15s; font-size: 1rem; line-height: 1; }}
     .view-btn.active {{ border-color: var(--accent); color: var(--accent); }}
-    .filters {{
-      display: flex;
-      flex-wrap: wrap;
-      gap: .45rem;
-    }}
-    .filter-btn {{
-      background: var(--surface);
-      border: 1.5px solid var(--border);
-      border-radius: 20px;
-      padding: .3rem .85rem;
-      font-size: .8rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      cursor: pointer;
-      transition: all .15s;
-      display: flex;
-      align-items: center;
-      gap: .35rem;
-    }}
+    .filters {{ display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; }}
+    .filter-btn {{ background: var(--surface); border: 1.5px solid var(--border); border-radius: 20px; padding: .3rem .85rem; font-size: .8rem; font-weight: 500; color: var(--muted); cursor: pointer; transition: all .15s; display: flex; align-items: center; gap: .3rem; }}
     .filter-btn:hover {{ border-color: var(--accent); color: var(--accent); }}
-    .filter-btn.active, .filter-btn.all-active {{
-      background: var(--accent);
-      border-color: var(--accent);
-      color: white;
-    }}
-    .filter-btn .count {{
-      font-size: .72rem;
-      background: var(--count-bg);
-      border-radius: 10px;
-      padding: .05rem .4rem;
-      font-weight: 600;
-    }}
-    .filter-btn.active .count, .filter-btn.all-active .count {{
-      background: rgba(255,255,255,0.25);
-    }}
+    .filter-btn.active, .filter-btn.all-active {{ background: var(--accent); border-color: var(--accent); color: white; }}
+    .filter-btn .count {{ font-size: .7rem; background: rgba(0,0,0,.08); border-radius: 10px; padding: .05rem .4rem; font-weight: 600; }}
+    .filter-btn.active .count, .filter-btn.all-active .count {{ background: rgba(255,255,255,.25); }}
+    .rss-link {{ margin-left: auto; font-size: .78rem; color: var(--muted); text-decoration: none; display: flex; align-items: center; gap: .3rem; white-space: nowrap; }}
+    .rss-link:hover {{ color: var(--accent); }}
 
-    /* ── Cards grid ── */
-    main {{
-      max-width: 900px;
-      margin: 1.25rem auto 2rem;
-      padding: 0 1rem;
-      display: grid;
-      gap: 1rem;
-    }}
+    /* Subscribe bar */
+    .subscribe-bar {{ max-width: 900px; margin: 1rem auto 0; padding: 0 1rem; }}
+    .subscribe-form {{ background: var(--surface); border: 1.5px solid var(--border); border-radius: 12px; padding: .8rem 1rem; display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }}
+    .subscribe-form span {{ font-size: .85rem; color: var(--muted); flex-shrink: 0; }}
+    .subscribe-form input {{ flex: 1; min-width: 180px; padding: .4rem .9rem; border: 1.5px solid var(--border); border-radius: 20px; background: var(--bg); color: var(--text); font-size: .85rem; font-family: inherit; outline: none; }}
+    .subscribe-form input:focus {{ border-color: var(--accent); }}
+    .subscribe-form button {{ padding: .4rem 1.1rem; background: var(--accent); color: white; border: none; border-radius: 20px; font-size: .85rem; font-weight: 600; cursor: pointer; white-space: nowrap; }}
+    .subscribe-form button:hover {{ opacity: .85; }}
+
+    /* Cards */
+    main {{ max-width: 900px; margin: 1.25rem auto 2rem; padding: 0 1rem; display: grid; gap: 1rem; }}
     main.list-view {{ grid-template-columns: 1fr; }}
     main.grid-view {{ grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); }}
-    .card {{
-      background: var(--surface);
-      border-radius: 12px;
-      padding: 1.4rem;
-      border: 1px solid var(--border);
-      transition: box-shadow .2s, transform .15s;
-    }}
+    .card {{ background: var(--surface); border-radius: 12px; padding: 1.4rem; border: 1px solid var(--border); transition: box-shadow .2s, transform .15s; }}
     .card:hover {{ box-shadow: 0 4px 20px rgba(0,0,0,.08); transform: translateY(-1px); }}
     .card.hidden {{ display: none; }}
-    .card-meta {{
-      display: flex;
-      align-items: center;
-      gap: .4rem;
-      flex-wrap: wrap;
-      margin-bottom: .55rem;
-    }}
-    .card-source {{ font-size: .75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .5px; font-weight: 600; }}
-    .card-dot    {{ color: var(--border); font-size: .75rem; }}
-    .card-date   {{ font-size: .75rem; color: var(--text-muted); }}
-    .card-tag {{
-      font-size: .7rem;
-      font-weight: 600;
-      background: var(--tag-bg);
-      color: var(--tag-color);
-      border-radius: 10px;
-      padding: .12rem .5rem;
-      margin-left: auto;
-    }}
+    .card-featured {{ border-left: 4px solid var(--accent); }}
+    .card-meta {{ display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; margin-bottom: .55rem; }}
+    .card-source {{ font-size: .73rem; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; font-weight: 600; }}
+    .card-dot {{ color: var(--border); font-size: .7rem; }}
+    .card-date, .card-read {{ font-size: .73rem; color: var(--muted); }}
+    .badge-new {{ font-size: .65rem; font-weight: 700; background: #22c55e; color: white; border-radius: 8px; padding: .1rem .45rem; text-transform: uppercase; letter-spacing: .3px; }}
+    .card-tag {{ font-size: .68rem; font-weight: 600; background: var(--tag-bg); color: var(--tag-color); border-radius: 10px; padding: .1rem .5rem; margin-left: auto; }}
     .card-title {{ font-size: 1.05rem; font-weight: 600; margin-bottom: .6rem; line-height: 1.45; }}
     .card-title a {{ color: var(--text); text-decoration: none; }}
     .card-title a:hover {{ color: var(--accent); }}
-    .card-summary {{ font-size: .88rem; color: var(--text-muted); margin-bottom: .9rem; }}
+    .card-featured .card-title {{ font-size: 1.2rem; }}
+    .card-summary {{ font-size: .88rem; color: var(--muted); margin-bottom: .9rem; }}
+    .card-actions {{ display: flex; align-items: center; justify-content: space-between; }}
     .card-link {{ font-size: .82rem; color: var(--accent); font-weight: 500; text-decoration: none; }}
     .card-link:hover {{ text-decoration: underline; }}
-    .no-results {{
-      text-align: center;
-      color: var(--text-muted);
-      padding: 3rem;
-      display: none;
-      grid-column: 1/-1;
-    }}
+    .card-share {{ display: flex; gap: .4rem; align-items: center; }}
+    .share-btn {{ display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 6px; font-size: .75rem; font-weight: 700; text-decoration: none; border: 1.5px solid var(--border); background: var(--surface); color: var(--muted); cursor: pointer; transition: all .15s; }}
+    .share-btn:hover {{ border-color: var(--accent); color: var(--accent); }}
+    .save-btn.saved {{ background: var(--accent); border-color: var(--accent); color: white; }}
+    .no-results {{ text-align: center; color: var(--muted); padding: 3rem; display: none; grid-column: 1/-1; }}
 
-    footer {{
-      text-align: center;
-      padding: 2rem;
-      font-size: .8rem;
-      color: var(--text-muted);
-      border-top: 1px solid var(--border);
-    }}
+    footer {{ text-align: center; padding: 2rem; font-size: .8rem; color: var(--muted); border-top: 1px solid var(--border); }}
+    footer a {{ color: var(--accent); text-decoration: none; }}
+
     @media (max-width: 600px) {{
       header h1 {{ font-size: 1.5rem; }}
       .card {{ padding: 1rem; }}
       main.grid-view {{ grid-template-columns: 1fr; }}
+      .rss-link {{ display: none; }}
     }}
   </style>
 </head>
 <body>
   <header>
     <h1>InsurTech Intelligence</h1>
-    <p>Noticias globales de insurtech · {len(articles)} artículos</p>
+    <p class="header-sub">Noticias globales de insurtech, actualizadas cada 6 horas</p>
+    <div class="header-stats">
+      <span class="stat"><strong>{len(articles)}</strong> artículos</span>
+      <span class="stat"><strong>{new_count}</strong> nuevos hoy</span>
+      <span class="stat"><strong>32</strong> fuentes monitorizadas</span>
+    </div>
     <div class="updated">Actualizado el {updated}</div>
     <div id="google_translate_element"></div>
   </header>
@@ -294,16 +273,26 @@ def generate_site(articles: list):
     <div class="filters">
       <button class="filter-btn all-active" data-filter="all">Todos <span class="count">{len(articles)}</span></button>
       {filter_buttons}
+      <a href="{SITE_URL}/feed.xml" class="rss-link" target="_blank">&#x2609; RSS</a>
     </div>
   </div>
 
+  <div class="subscribe-bar">
+    <form class="subscribe-form" action="https://buttondown.email/api/emails/embed-subscribe/insurtechintelligence" method="post" target="_blank">
+      <span>📬 Recibe las noticias en tu email:</span>
+      <input type="email" name="email" placeholder="tu@email.com" required />
+      <button type="submit">Suscribirse gratis</button>
+    </form>
+  </div>
+
   <main class="list-view" id="main">
-    {cards_html if articles else '<p style="text-align:center;color:var(--text-muted);padding:3rem">Sin artículos por ahora.</p>'}
+    {featured_html}
+    {cards_html if articles else '<p style="text-align:center;color:var(--muted);padding:3rem">Sin artículos por ahora.</p>'}
     <p class="no-results" id="no-results">No hay artículos que coincidan.</p>
   </main>
 
   <footer>
-    InsurTech Intelligence · Impulsado por IA · Actualizado cada 6 horas
+    InsurTech Intelligence · Impulsado por IA · <a href="{SITE_URL}/feed.xml">RSS Feed</a>
   </footer>
 
   <script type="text/javascript">
@@ -319,11 +308,12 @@ def generate_site(articles: list):
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
   <script>
-    const cards     = Array.from(document.querySelectorAll('.card'));
+    // ── Filters + Search ──
+    const cards      = Array.from(document.querySelectorAll('.card'));
     const filterBtns = Array.from(document.querySelectorAll('.filter-btn'));
-    const search    = document.getElementById('search');
-    const noResults = document.getElementById('no-results');
-    const mainEl    = document.getElementById('main');
+    const search     = document.getElementById('search');
+    const noResults  = document.getElementById('no-results');
+    const mainEl     = document.getElementById('main');
     let activeFilter = 'all';
     let searchQuery  = '';
 
@@ -347,12 +337,9 @@ def generate_site(articles: list):
         update();
       }});
     }});
+    search.addEventListener('input', () => {{ searchQuery = search.value.trim().toLowerCase(); update(); }});
 
-    search.addEventListener('input', () => {{
-      searchQuery = search.value.trim().toLowerCase();
-      update();
-    }});
-
+    // ── View toggle ──
     document.getElementById('btn-list').addEventListener('click', () => {{
       mainEl.className = 'list-view';
       document.getElementById('btn-list').classList.add('active');
@@ -363,6 +350,26 @@ def generate_site(articles: list):
       document.getElementById('btn-grid').classList.add('active');
       document.getElementById('btn-list').classList.remove('active');
     }});
+
+    // ── Bookmarks (localStorage) ──
+    const SAVED_KEY = 'insurtech_saved';
+    function getSaved() {{ try {{ return JSON.parse(localStorage.getItem(SAVED_KEY) || '[]'); }} catch {{ return []; }} }}
+    function setSaved(ids) {{ localStorage.setItem(SAVED_KEY, JSON.stringify(ids)); }}
+
+    function initBookmarks() {{
+      const saved = getSaved();
+      document.querySelectorAll('.save-btn').forEach(btn => {{
+        const id = btn.dataset.id;
+        if (saved.includes(id)) btn.classList.add('saved');
+        btn.addEventListener('click', () => {{
+          let s = getSaved();
+          if (s.includes(id)) {{ s = s.filter(x => x !== id); btn.classList.remove('saved'); }}
+          else {{ s.push(id); btn.classList.add('saved'); }}
+          setSaved(s);
+        }});
+      }});
+    }}
+    initBookmarks();
   </script>
 </body>
 </html>"""
@@ -371,6 +378,8 @@ def generate_site(articles: list):
     with open(index_path, "w", encoding="utf-8") as f:
         f.write(html)
     print(f"Site generated: {index_path} ({len(articles)} articles)")
+
+    generate_feed(articles)
 
 
 if __name__ == "__main__":
