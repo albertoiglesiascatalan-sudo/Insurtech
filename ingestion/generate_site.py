@@ -54,6 +54,7 @@ def _share_urls(title: str, url: str) -> tuple:
 def _card(a: dict, featured: bool = False) -> str:
     category = a.get("category", "General")
     summary  = a.get("summary", "")
+    image_url = a.get("image_url", "")
     read_min = _read_minutes(a["title"] + " " + summary)
     new_badge = '<span class="badge-new">Nuevo</span>' if _is_new(a.get("published_at", "")) else ""
     twitter_url, linkedin_url = _share_urls(a["title"], a["url"])
@@ -62,8 +63,10 @@ def _card(a: dict, featured: bool = False) -> str:
 
     region = "ibero" if a.get("source", "") in IBERO_SOURCES else "global"
     extra_class = " card-featured" if featured else ""
+    img_html = f'<a href="{a["url"]}" target="_blank" rel="noopener"><img class="card-image" src="{image_url}" alt="" loading="lazy" onerror="this.parentElement.style.display=\'none\'"></a>' if image_url else ""
     return f"""
     <article class="card{extra_class}" data-category="{category}" data-region="{region}" data-search="{searchable}" data-id="{article_id}">
+      {img_html}
       <div class="card-meta">
         <span class="card-source">{a['source']}</span>
         <span class="card-dot">·</span>
@@ -89,7 +92,7 @@ def _card(a: dict, featured: bool = False) -> str:
 
 
 def generate_feed(articles: list):
-    """Generate RSS feed XML."""
+    """Generate RSS feed XML with images."""
     now_rfc = datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S +0000")
     items = []
     for a in articles[:50]:
@@ -101,6 +104,9 @@ def generate_feed(articles: list):
         except Exception:
             pub_rfc = now_rfc
         desc = xml_escape(a.get("summary") or a["title"])
+        enclosure = ""
+        if a.get("image_url"):
+            enclosure = f'    <enclosure url="{xml_escape(a["image_url"])}" type="image/jpeg" length="0"/>\n'
         items.append(f"""  <item>
     <title>{xml_escape(a['title'])}</title>
     <link>{xml_escape(a['url'])}</link>
@@ -108,15 +114,15 @@ def generate_feed(articles: list):
     <pubDate>{pub_rfc}</pubDate>
     <guid>{xml_escape(a['url'])}</guid>
     <category>{xml_escape(a.get('category', 'General'))}</category>
-  </item>""")
+{enclosure}  </item>""")
 
     feed = f"""<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
 <channel>
   <title>InsurTech Intelligence</title>
   <link>{SITE_URL}</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
-  <language>en</language>
+  <language>es</language>
   <lastBuildDate>{now_rfc}</lastBuildDate>
   <atom:link href="{SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>
 {chr(10).join(items)}
@@ -126,6 +132,25 @@ def generate_feed(articles: list):
     with open(feed_path, "w", encoding="utf-8") as f:
         f.write(feed)
     print(f"RSS feed generated: {feed_path}")
+
+
+def generate_sitemap(articles: list):
+    """Generate sitemap.xml for SEO."""
+    now_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    urls = [f"""  <url>
+    <loc>{SITE_URL}/</loc>
+    <lastmod>{now_date}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>"""]
+    sitemap = f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{chr(10).join(urls)}
+</urlset>"""
+    sitemap_path = os.path.join(DOCS_DIR, "sitemap.xml")
+    with open(sitemap_path, "w", encoding="utf-8") as f:
+        f.write(sitemap)
+    print(f"Sitemap generated: {sitemap_path}")
 
 
 def _thermometer(articles: list) -> str:
@@ -230,14 +255,28 @@ def generate_site(articles: list):
     featured_html = _card(featured, featured=True) if featured else ""
     cards_html    = "\n".join(_card(a) for a in rest)
 
+    og_image = next((a.get("image_url") for a in articles if a.get("image_url")), "")
     html = f"""<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>InsurTech Intelligence</title>
-  <meta name="description" content="Noticias globales de insurtech, actualizadas cada 6 horas." />
+  <title>InsurTech Intelligence — Noticias globales de insurtech</title>
+  <meta name="description" content="Noticias globales de insurtech con resúmenes en español, actualizadas cada 6 horas. Tecnología, regulación, inversión y más." />
+  <link rel="canonical" href="{SITE_URL}/" />
   <link rel="alternate" type="application/rss+xml" title="InsurTech Intelligence RSS" href="{SITE_URL}/feed.xml" />
+  <link rel="sitemap" type="application/xml" href="{SITE_URL}/sitemap.xml" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{SITE_URL}/" />
+  <meta property="og:title" content="InsurTech Intelligence" />
+  <meta property="og:description" content="Noticias globales de insurtech con resúmenes en español, actualizadas cada 6 horas." />
+  {"<meta property='og:image' content='" + og_image + "' />" if og_image else ""}
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="InsurTech Intelligence" />
+  <meta name="twitter:description" content="Noticias globales de insurtech con resúmenes en español, actualizadas cada 6 horas." />
+  {"<meta name='twitter:image' content='" + og_image + "' />" if og_image else ""}
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <style>
     *, *::before, *::after {{ box-sizing: border-box; margin: 0; padding: 0; }}
@@ -276,7 +315,7 @@ def generate_site(articles: list):
     body {{ top: 0 !important; }}
 
     /* Toolbar */
-    .toolbar {{ max-width: 900px; margin: 1.5rem auto 0; padding: 0 1rem; display: flex; flex-direction: column; gap: .7rem; }}
+    .toolbar {{ max-width: 900px; margin: 1.5rem auto 0; padding: .75rem 1rem; display: flex; flex-direction: column; gap: .7rem; position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); }}
     .search-row {{ display: flex; align-items: center; gap: .6rem; }}
     #search {{ flex: 1; padding: .5rem 1rem; border: 1.5px solid var(--border); border-radius: 20px; background: var(--surface); color: var(--text); font-size: .88rem; font-family: inherit; outline: none; transition: border-color .15s; }}
     #search:focus {{ border-color: var(--accent); }}
@@ -326,8 +365,19 @@ def generate_site(articles: list):
     .card-title a {{ color: var(--text); text-decoration: none; }}
     .card-title a:hover {{ color: var(--accent); }}
     .card-featured .card-title {{ font-size: 1.2rem; }}
+    .card-image {{ width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: .75rem; display: block; }}
+    .card-featured .card-image {{ height: 220px; }}
     .card-summary {{ font-size: .88rem; color: var(--muted); margin-bottom: .9rem; }}
     .card-actions {{ display: flex; align-items: center; justify-content: space-between; }}
+
+    /* Compact view */
+    main.compact-view .card {{ padding: .65rem 1rem; border-radius: 8px; }}
+    main.compact-view .card-image {{ display: none; }}
+    main.compact-view .card-summary {{ display: none; }}
+    main.compact-view .card-actions {{ display: none; }}
+    main.compact-view .card-title {{ font-size: .92rem; margin-bottom: 0; }}
+    main.compact-view .card-meta {{ margin-bottom: .25rem; }}
+    main.compact-view {{ gap: .3rem; }}
     .card-link {{ font-size: .82rem; color: var(--accent); font-weight: 500; text-decoration: none; }}
     .card-link:hover {{ text-decoration: underline; }}
     .card-share {{ display: flex; gap: .4rem; align-items: center; }}
@@ -408,6 +458,7 @@ def generate_site(articles: list):
       <div class="view-toggle">
         <button class="view-btn active" id="btn-list" title="Vista lista">&#9776;</button>
         <button class="view-btn" id="btn-grid" title="Vista grid">&#9638;</button>
+        <button class="view-btn" id="btn-compact" title="Vista compacta">&#9472;</button>
       </div>
     </div>
     <div class="filters">
@@ -438,6 +489,9 @@ def generate_site(articles: list):
     {cards_html if articles else '<p style="text-align:center;color:var(--muted);padding:3rem">Sin artículos por ahora.</p>'}
     <p class="no-results" id="no-results">No hay artículos que coincidan.</p>
   </main>
+  <div style="text-align:center;padding:1rem 1rem 2rem">
+    <button id="load-more" style="display:none;padding:.55rem 2rem;background:var(--accent);color:white;border:none;border-radius:20px;font-size:.88rem;font-weight:600;cursor:pointer;transition:opacity .15s" onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">Cargar más artículos</button>
+  </div>
 
   <footer>
     InsurTech Intelligence · Impulsado por IA · <a href="{SITE_URL}/feed.xml">RSS Feed</a>
@@ -456,33 +510,43 @@ def generate_site(articles: list):
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
   <script>
-    // ── Filters + Search ──
+    // ── Filters + Search + Pagination ──
     const cards       = Array.from(document.querySelectorAll('.card'));
     const filterBtns  = Array.from(document.querySelectorAll('.filter-btn'));
     const regionBtns  = Array.from(document.querySelectorAll('.region-btn'));
     const search      = document.getElementById('search');
     const noResults   = document.getElementById('no-results');
     const mainEl      = document.getElementById('main');
+    const loadMoreBtn = document.getElementById('load-more');
     let activeFilter  = 'all';
     let activeRegion  = 'all';
     let searchQuery   = '';
+    const PAGE_SIZE   = 20;
+    let loadedCount   = PAGE_SIZE;
 
     function update() {{
-      let visible = 0;
+      let visible = 0, filtered = 0;
       cards.forEach(card => {{
         const matchFilter = activeFilter === 'all' || card.dataset.category === activeFilter;
         const matchRegion = activeRegion === 'all' || card.dataset.region === activeRegion;
         const matchSearch = !searchQuery || card.dataset.search.includes(searchQuery);
-        const show = matchFilter && matchRegion && matchSearch;
-        card.classList.toggle('hidden', !show);
-        if (show) visible++;
+        if (matchFilter && matchRegion && matchSearch) {{
+          filtered++;
+          const show = filtered <= loadedCount;
+          card.classList.toggle('hidden', !show);
+          if (show) visible++;
+        }} else {{
+          card.classList.add('hidden');
+        }}
       }});
       noResults.style.display = visible === 0 ? 'block' : 'none';
+      loadMoreBtn.style.display = filtered > loadedCount ? 'block' : 'none';
     }}
 
     filterBtns.forEach(btn => {{
       btn.addEventListener('click', () => {{
         activeFilter = btn.dataset.filter;
+        loadedCount = PAGE_SIZE;
         filterBtns.forEach(b => b.classList.remove('active', 'all-active'));
         btn.classList.add(activeFilter === 'all' ? 'all-active' : 'active');
         update();
@@ -492,24 +556,38 @@ def generate_site(articles: list):
     regionBtns.forEach(btn => {{
       btn.addEventListener('click', () => {{
         activeRegion = btn.dataset.region;
+        loadedCount = PAGE_SIZE;
         regionBtns.forEach(b => b.classList.remove('region-active'));
         btn.classList.add('region-active');
         update();
       }});
     }});
-    search.addEventListener('input', () => {{ searchQuery = search.value.trim().toLowerCase(); update(); }});
+
+    search.addEventListener('input', () => {{
+      searchQuery = search.value.trim().toLowerCase();
+      loadedCount = PAGE_SIZE;
+      update();
+    }});
+
+    loadMoreBtn.addEventListener('click', () => {{
+      loadedCount += PAGE_SIZE;
+      update();
+      loadMoreBtn.scrollIntoView({{ behavior: 'smooth', block: 'center' }});
+    }});
+
+    // initial pagination
+    update();
 
     // ── View toggle ──
-    document.getElementById('btn-list').addEventListener('click', () => {{
-      mainEl.className = 'list-view';
-      document.getElementById('btn-list').classList.add('active');
-      document.getElementById('btn-grid').classList.remove('active');
-    }});
-    document.getElementById('btn-grid').addEventListener('click', () => {{
-      mainEl.className = 'grid-view';
-      document.getElementById('btn-grid').classList.add('active');
-      document.getElementById('btn-list').classList.remove('active');
-    }});
+    function setView(mode) {{
+      mainEl.className = mode + '-view';
+      ['list','grid','compact'].forEach(m => {{
+        document.getElementById('btn-' + m).classList.toggle('active', m === mode);
+      }});
+    }}
+    document.getElementById('btn-list').addEventListener('click', () => setView('list'));
+    document.getElementById('btn-grid').addEventListener('click', () => setView('grid'));
+    document.getElementById('btn-compact').addEventListener('click', () => setView('compact'));
 
     // ── Bookmarks (localStorage) ──
     const SAVED_KEY = 'insurtech_saved';
@@ -540,6 +618,7 @@ def generate_site(articles: list):
     print(f"Site generated: {index_path} ({len(articles)} articles)")
 
     generate_feed(articles)
+    generate_sitemap(articles)
 
 
 if __name__ == "__main__":

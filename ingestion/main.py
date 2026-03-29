@@ -85,6 +85,22 @@ def save_articles(articles: list):
         json.dump(articles, f, indent=2, ensure_ascii=False)
 
 
+def _extract_image(entry) -> str:
+    """Extract best image URL from a feed entry."""
+    for thumb in entry.get("media_thumbnail", []):
+        if thumb.get("url"):
+            return thumb["url"]
+    for mc in entry.get("media_content", []):
+        if "image" in mc.get("type", "") or mc.get("medium") == "image":
+            if mc.get("url"):
+                return mc["url"]
+    for enc in entry.get("enclosures", []):
+        if "image" in enc.get("type", ""):
+            if enc.get("href"):
+                return enc["href"]
+    return ""
+
+
 def fetch_recent(source: dict, since_hours: int = 7) -> list:
     cutoff = datetime.now(timezone.utc) - timedelta(hours=since_hours)
     results = []
@@ -102,8 +118,9 @@ def fetch_recent(source: dict, since_hours: int = 7) -> list:
                 entry.get("summary", "")
                 or (entry.get("content") or [{}])[0].get("value", "")
             )
+            image_url = _extract_image(entry)
             if title and url:
-                results.append({"title": title, "url": url, "content": content})
+                results.append({"title": title, "url": url, "content": content, "image_url": image_url})
             if len(results) >= MAX_PER_SOURCE:
                 break
     except Exception as e:
@@ -201,10 +218,17 @@ def summarize(title: str, content: str) -> dict:
         return {"title_es": title, "summary_es": None, "category": "General"}
 
 
+def _title_key(title: str) -> str:
+    """Normalize title for deduplication: first 50 chars, lowercase, no punctuation."""
+    import re as _re
+    return _re.sub(r'[^a-z0-9 ]', '', title.lower())[:50].strip()
+
+
 def main():
     log.info("=== InsurTech ingestion started ===")
     articles = load_articles()
     existing_urls = {a["url"] for a in articles}
+    existing_title_keys = {_title_key(a.get("title_original", a["title"])) for a in articles}
     new_count = 0
 
     for source in SOURCES:
@@ -217,11 +241,13 @@ def main():
                 break
             if item["url"] in existing_urls:
                 continue
+            tkey = _title_key(item["title"])
+            if tkey in existing_title_keys:
+                log.info(f"  Duplicate title skipped: {item['title'][:60]}")
+                continue
             translated = summarize(item["title"], item["content"])
-            # If OpenAI didn't produce a summary, use RSS content directly
             summary = translated["summary_es"]
             if not summary:
-                # Try scraping the article, fallback to RSS content
                 full_text = fetch_article_text(item["url"]) or item["content"]
                 summary = extractive_summary(full_text)
                 if summary:
@@ -235,9 +261,11 @@ def main():
                 "category": translated["category"],
                 "source": source["name"],
                 "published_at": datetime.now(timezone.utc).isoformat(),
+                "image_url": item.get("image_url", ""),
             }
             articles.insert(0, article)
             existing_urls.add(item["url"])
+            existing_title_keys.add(tkey)
             new_count += 1
             log.info(f"  + {item['title'][:70]}")
 
