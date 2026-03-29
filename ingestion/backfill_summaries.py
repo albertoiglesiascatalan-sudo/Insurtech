@@ -54,35 +54,50 @@ SOURCES = [
 ]
 
 
+_BOILERPLATE = re.compile(
+    r'(continue reading|read more|click here|subscribe|the post .{0,80} appeared first on'
+    r'|this article (originally )?appeared|view full post|full story|related articles?'
+    r'|\[…\]|\[\.{3}\]|&hellip;|&#8230;|\.\.\.\s*$)',
+    re.IGNORECASE,
+)
+
+_STOPS = {"the","a","an","of","in","on","to","for","is","are","was","were",
+          "and","or","but","with","at","by","from","as","its","it","that",
+          "this","be","have","has","had","will","de","la","el","en","los","las",
+          "un","una","por","para","con","del","se","que","su","sus"}
+
+
 def clean(text: str) -> str:
     text = re.sub(r'<[^>]+>', ' ', text)
-    return re.sub(r'\s+', ' ', text).strip()
+    text = re.sub(r'\s+', ' ', text).strip()
+    parts = re.split(r'(?<=[.!?])\s+', text)
+    return " ".join(s for s in parts if s and not _BOILERPLATE.search(s) and len(s) > 20)
 
 
-def extractive_summary(text: str, sentences: int = 3) -> str:
+def extractive_summary(text: str, sentences: int = 3, title: str = "") -> str:
     if not text:
         return ""
+    title_words = {w.lower() for w in re.findall(r'\w+', title) if w.lower() not in _STOPS and len(w) > 3}
     try:
         from sumy.parsers.plaintext import PlaintextParser
         from sumy.nlp.tokenizers import Tokenizer
         from sumy.summarizers.lex_rank import LexRankSummarizer
         parser = PlaintextParser.from_string(text, Tokenizer("english"))
         summarizer = LexRankSummarizer()
-        result = summarizer(parser.document, sentences_count=sentences)
-        summary = " ".join(str(s) for s in result).strip()
+        n_candidates = min(sentences + 3, max(sentences, len(parser.document.sentences)))
+        result = summarizer(parser.document, sentences_count=n_candidates)
+        candidates = [str(s) for s in result]
+        if title_words:
+            candidates.sort(key=lambda s: len({w.lower() for w in re.findall(r'\w+', s)} & title_words), reverse=True)
+        summary = " ".join(candidates[:sentences]).strip()
         if summary:
             return summary
     except Exception:
         pass
-    # Fallback
-    parts = re.split(r'(?<=[.!?])\s+', text)
-    result = []
-    for part in parts:
-        if len(part.strip()) > 40:
-            result.append(part.strip())
-        if len(result) >= sentences:
-            break
-    return " ".join(result)
+    parts = [p.strip() for p in re.split(r'(?<=[.!?])\s+', text) if len(p.strip()) > 40]
+    if title_words:
+        parts.sort(key=lambda s: len({w.lower() for w in re.findall(r'\w+', s)} & title_words), reverse=True)
+    return " ".join(parts[:sentences])
 
 
 def main():
@@ -106,11 +121,11 @@ def main():
                 url = entry.get("link", "")
                 if url not in need_summary:
                     continue
-                raw = (
-                    entry.get("summary", "")
-                    or (entry.get("content") or [{}])[0].get("value", "")
-                )
-                summary = extractive_summary(clean(raw))
+                candidates = [b.get("value", "") for b in entry.get("content", [])]
+                candidates.append(entry.get("summary", ""))
+                raw = max(candidates, key=len) if candidates else ""
+                article_title = need_summary[url].get("title_original") or need_summary[url].get("title", "")
+                summary = extractive_summary(clean(raw), title=article_title)
                 if summary:
                     need_summary[url]["summary"] = summary
                     del need_summary[url]
