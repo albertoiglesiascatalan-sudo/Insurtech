@@ -23,7 +23,7 @@ jobs:
 
       - name: Run ingestion
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         working-directory: ingestion
         run: python main.py
 

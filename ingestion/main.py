@@ -8,14 +8,14 @@ import logging
 import feedparser
 from datetime import datetime, timezone, timedelta
 from slugify import slugify
-from openai import OpenAI
+import anthropic
 from generate_site import generate_site
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger(__name__)
 
-OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
-openai = OpenAI(api_key=OPENAI_API_KEY)
+ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"]
+claude = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
 ARTICLES_FILE = os.path.join(os.path.dirname(__file__), "articles.json")
 
@@ -100,24 +100,28 @@ def fetch_recent(source: dict, since_hours: int = 7) -> list:
 
 def summarize(title: str, content: str) -> dict:
     try:
-        resp = openai.chat.completions.create(
-            model="gpt-4o-mini",
+        resp = claude.messages.create(
+            model="claude-haiku-4-5",
+            max_tokens=350,
             messages=[{"role": "user", "content": (
-                "Eres un analista de insurtech. Traduce el título al español y resume el artículo "
-                "en 2-3 frases en español para profesionales del seguro. "
+                "Eres un analista de insurtech. Traduce el título al español, resume el artículo "
+                "en 2-3 frases en español para profesionales del seguro, y clasifícalo en UNA de estas categorías:\n"
+                "Tecnología, Regulación, Inversión, Vida y Salud, Automóvil, Catástrofes, Fraude, Embebido, General\n\n"
                 "Sé conciso y objetivo. Responde SOLO con JSON válido con este formato:\n"
-                '{"title_es": "...", "summary_es": "..."}\n\n'
+                '{"title_es": "...", "summary_es": "...", "category": "..."}\n\n'
                 f"Title: {title}\n\nContent: {content[:2000]}"
             )}],
-            max_tokens=200,
-            temperature=0.3,
         )
         import json as _json
-        data = _json.loads(resp.choices[0].message.content.strip())
-        return {"title_es": data.get("title_es", title), "summary_es": data.get("summary_es", "")}
+        data = _json.loads(resp.content[0].text.strip())
+        return {
+            "title_es": data.get("title_es", title),
+            "summary_es": data.get("summary_es", ""),
+            "category": data.get("category", "General"),
+        }
     except Exception as e:
-        log.warning(f"OpenAI error: {e}")
-        return {"title_es": title, "summary_es": ""}
+        log.warning(f"Claude API error: {e}")
+        return {"title_es": title, "summary_es": None, "category": "General"}
 
 
 def main():
