@@ -716,6 +716,9 @@ def generate_site(articles: list):
     .stat {{ font-size: .78rem; color: #718096; }}
     .stat strong {{ color: #a0aec0; }}
     .updated {{ font-size: .75rem; color: #4a5568; margin-top: .3rem; }}
+    .header-cta {{ margin-top: .85rem; }}
+    .newsletter-btn {{ display: inline-block; padding: .45rem 1.25rem; background: #c0392b; color: white; border-radius: 20px; font-size: .82rem; font-weight: 700; text-decoration: none; letter-spacing: .2px; transition: opacity .15s; }}
+    .newsletter-btn:hover {{ opacity: .85; }}
 
     /* Translate */
     #google_translate_element {{ margin-top: 1rem; display: flex; justify-content: center; }}
@@ -994,6 +997,9 @@ def generate_site(articles: list):
       <span class="stat"><strong>{ibero_count}</strong> iberoamérica</span>
     </div>
     <div class="updated">Actualizado el {updated}</div>
+    <div class="header-cta">
+      <a href="{SITE_URL}/newsletter.html" class="newsletter-btn" target="_blank">📬 Ver newsletter del día</a>
+    </div>
     <div id="google_translate_element"></div>
   </header>
 
