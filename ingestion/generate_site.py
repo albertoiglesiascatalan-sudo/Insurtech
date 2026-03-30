@@ -5,6 +5,7 @@ from datetime import datetime, timezone, timedelta
 from collections import Counter
 
 from xml.sax.saxutils import escape as xml_escape
+from signal_engine import detect_trends
 
 DOCS_DIR = os.path.join(os.path.dirname(__file__), "..", "docs")
 SITE_URL = "https://albertoiglesiascatalan-sudo.github.io/Insurtech"
@@ -51,35 +52,81 @@ def _share_urls(title: str, url: str) -> tuple:
     return twitter, linkedin
 
 
+def _rel_date(iso: str) -> tuple:
+    """Returns (relative_label, absolute_for_tooltip)."""
+    try:
+        pub = datetime.fromisoformat(iso)
+        if pub.tzinfo is None:
+            pub = pub.replace(tzinfo=timezone.utc)
+        delta = datetime.now(timezone.utc) - pub
+        abs_date = pub.strftime("%d %b %Y %H:%M")
+        secs = delta.total_seconds()
+        if secs < 60:
+            return "ahora mismo", abs_date
+        elif secs < 3600:
+            return f"hace {int(secs/60)} min", abs_date
+        elif secs < 86400:
+            return f"hace {int(secs/3600)}h", abs_date
+        elif delta.days == 1:
+            return "ayer", abs_date
+        elif delta.days < 7:
+            return f"hace {delta.days} días", abs_date
+        else:
+            return pub.strftime("%d %b"), abs_date
+    except Exception:
+        return "", ""
+
+
 def _card(a: dict, featured: bool = False) -> str:
-    category = a.get("category", "General")
-    summary  = a.get("summary", "")
+    category  = a.get("category", "General")
+    summary   = a.get("summary", "")
     image_url = a.get("image_url", "")
-    read_min = _read_minutes(a["title"] + " " + summary)
-    new_badge = '<span class="badge-new">Nuevo</span>' if _is_new(a.get("published_at", "")) else ""
+    read_min  = _read_minutes(a["title"] + " " + summary)
+    rel_date, abs_date = _rel_date(a.get("published_at", ""))
     twitter_url, linkedin_url = _share_urls(a["title"], a["url"])
     searchable = f"{a['title']} {summary} {a['source']}".lower().replace('"', '')
     article_id = a.get("id", "")
-
     region = "ibero" if a.get("source", "") in IBERO_SOURCES else "global"
-    extra_class = " card-featured" if featured else ""
-    img_html = f'<a href="{a["url"]}" target="_blank" rel="noopener"><img class="card-image" src="{image_url}" alt="" loading="lazy" onerror="this.parentElement.style.display=\'none\'"></a>' if image_url else ""
+
+    # Badges
+    badges = []
+    if _is_new(a.get("published_at", "")):
+        badges.append('<span class="badge-new">Nuevo</span>')
+    if a.get("is_signal"):
+        icon = a.get("signal_icon", "⚡")
+        label = a.get("signal_label", "Señal")
+        badges.append(f'<span class="badge-signal" title="Señal detectada: {label}">{icon} {label}</span>')
+    if a.get("amplified"):
+        badges.append('<span class="badge-amp" title="Cubierto por 3+ fuentes">🔥 Tendencia</span>')
+    if a.get("deal") and a["deal"].get("amount_str"):
+        d = a["deal"]
+        deal_txt = d["amount_str"]
+        if d.get("round") and d["round"] != "—":
+            deal_txt += f' · {d["round"]}'
+        badges.append(f'<span class="badge-deal">💰 {deal_txt}</span>')
+
+    badges_html = " ".join(badges)
+    why_html = f'<p class="card-why"><span class="why-icon">💡</span>{a["why_matters"]}</p>' if a.get("why_matters") and a.get("is_signal") else ""
+    img_html  = f'<a href="{a["url"]}" target="_blank" rel="noopener"><img class="card-image" src="{image_url}" alt="" loading="lazy" onerror="this.parentElement.style.display=\'none\'"></a>' if image_url else ""
+    extra_class = " card-featured" if featured else (" card-signal" if a.get("is_signal") else "")
+
     return f"""
-    <article class="card{extra_class}" data-category="{category}" data-region="{region}" data-search="{searchable}" data-id="{article_id}">
+    <article class="card{extra_class}" data-category="{category}" data-region="{region}" data-search="{searchable}" data-id="{article_id}" data-url="{a['url']}">
       {img_html}
       <div class="card-meta">
         <span class="card-source">{a['source']}</span>
         <span class="card-dot">·</span>
-        <span class="card-date">{_date(a['published_at'])}</span>
+        <span class="card-date" title="{abs_date}">{rel_date}</span>
         <span class="card-dot">·</span>
         <span class="card-read">{read_min} min</span>
-        {new_badge}
+        {badges_html}
         <span class="card-tag">{category}</span>
       </div>
       <h2 class="card-title">
         <a href="{a['url']}" target="_blank" rel="noopener">{a['title']}</a>
       </h2>
       {"<p class='card-summary'>" + summary + "</p>" if summary else ""}
+      {why_html}
       <div class="card-actions">
         <a href="{a['url']}" target="_blank" rel="noopener" class="card-link">Leer artículo →</a>
         <div class="card-share">
@@ -151,6 +198,134 @@ def generate_sitemap(articles: list):
     with open(sitemap_path, "w", encoding="utf-8") as f:
         f.write(sitemap)
     print(f"Sitemap generated: {sitemap_path}")
+
+
+def _radar_section(articles: list) -> str:
+    """Top signals of the week — highest scored articles."""
+    cutoff = datetime.now(timezone.utc) - timedelta(days=7)
+    signals = []
+    for a in articles:
+        if not a.get("is_signal"):
+            continue
+        try:
+            pub = datetime.fromisoformat(a.get("published_at", ""))
+            if pub.tzinfo is None:
+                pub = pub.replace(tzinfo=timezone.utc)
+            if pub < cutoff:
+                continue
+        except Exception:
+            pass
+        signals.append(a)
+
+    signals.sort(key=lambda x: x.get("signal_score", 0), reverse=True)
+    signals = signals[:6]
+    if not signals:
+        return ""
+
+    rows = ""
+    for a in signals:
+        icon  = a.get("signal_icon", "⚡")
+        label = a.get("signal_label", "Señal")
+        score = a.get("signal_score", 0)
+        rel, abs_d = _rel_date(a.get("published_at", ""))
+        amp_badge = ' <span class="radar-amp">🔥</span>' if a.get("amplified") else ""
+        deal = a.get("deal")
+        deal_badge = f' <span class="radar-deal">💰 {deal["amount_str"]}</span>' if deal and deal.get("amount_str") else ""
+        rows += f"""
+      <a href="{a['url']}" target="_blank" rel="noopener" class="radar-row">
+        <span class="radar-icon" title="{label}">{icon}</span>
+        <div class="radar-content">
+          <span class="radar-title">{a['title']}</span>
+          <span class="radar-meta">{a['source']} · {rel}{amp_badge}{deal_badge}</span>
+          {"<span class='radar-why'>" + a['why_matters'] + "</span>" if a.get('why_matters') else ""}
+        </div>
+        <span class="radar-score" title="Puntuación de señal">{score}</span>
+      </a>"""
+
+    return f"""
+  <section class="radar-section">
+    <div class="radar-header">
+      <span class="radar-title-main">⚡ Radar de Señales</span>
+      <span class="radar-sub">Artículos de mayor impacto esta semana · ordenados por relevancia</span>
+    </div>
+    <div class="radar-body">{rows}
+    </div>
+  </section>"""
+
+
+def _trends_section(articles: list) -> str:
+    """Trending topics this week vs last 4 weeks."""
+    trends = detect_trends(articles)
+    if not trends:
+        return ""
+
+    pills = ""
+    for t in trends:
+        if t["change_pct"] == 999:
+            label = f'{t["topic"]} <span class="trend-badge new">Nuevo</span>'
+        elif t["change_pct"] > 0:
+            label = f'{t["topic"]} <span class="trend-badge up">↑ {t["change_pct"]}%</span>'
+        else:
+            continue
+        pills += f'<span class="trend-pill">{label} <small>{t["this_week"]} art.</small></span>'
+
+    if not pills:
+        return ""
+
+    return f"""
+  <section class="trends-section">
+    <span class="trends-label">📈 Esta semana se habla más de:</span>
+    <div class="trends-pills">{pills}</div>
+  </section>"""
+
+
+def _deal_tracker(articles: list) -> str:
+    """Auto-extracted deal flow from articles."""
+    cutoff = datetime.now(timezone.utc) - timedelta(days=30)
+    deals = []
+    for a in articles:
+        if not a.get("deal"):
+            continue
+        d = a["deal"]
+        if not d.get("amount_str") and not d.get("round"):
+            continue
+        try:
+            pub = datetime.fromisoformat(a.get("published_at", ""))
+            if pub.tzinfo is None:
+                pub = pub.replace(tzinfo=timezone.utc)
+            if pub < cutoff:
+                continue
+        except Exception:
+            pass
+        deals.append(a)
+
+    deals.sort(key=lambda x: x["deal"].get("amount_m", 0), reverse=True)
+    deals = deals[:8]
+    if not deals:
+        return ""
+
+    rows = ""
+    for a in deals:
+        d = a["deal"]
+        rel, _ = _rel_date(a.get("published_at", ""))
+        round_badge = f'<span class="deal-round">{d["round"]}</span>' if d.get("round") and d["round"] != "—" else ""
+        rows += f"""
+      <a href="{a['url']}" target="_blank" rel="noopener" class="deal-row">
+        <span class="deal-amount">{d['amount_str']}</span>
+        {round_badge}
+        <span class="deal-title">{a['title']}</span>
+        <span class="deal-meta">{a['source']} · {rel}</span>
+      </a>"""
+
+    return f"""
+  <section class="deal-section">
+    <div class="deal-header">
+      <span class="deal-title-main">💰 Deal Flow</span>
+      <span class="deal-sub">Rondas e inversiones detectadas · últimos 30 días</span>
+    </div>
+    <div class="deal-body">{rows}
+    </div>
+  </section>"""
 
 
 def _thermometer(articles: list) -> str:
@@ -241,7 +416,11 @@ def generate_site(articles: list):
 
     thermometer_html = _thermometer(articles)
     startup_html     = _startup_card(articles)
+    radar_html       = _radar_section(articles)
+    trends_html      = _trends_section(articles)
+    deals_html       = _deal_tracker(articles)
     ibero_count      = sum(1 for a in articles if a.get("source", "") in IBERO_SOURCES)
+    signal_count     = sum(1 for a in articles if a.get("is_signal") and _is_new(a.get("published_at",""), 168))
 
     featured = articles[0] if articles else None
     rest     = articles[1:] if articles else []
@@ -427,6 +606,57 @@ def generate_site(articles: list):
     .startup-card .share-btn {{ border-color: rgba(255,255,255,.2); color: #a0aec0; background: transparent; }}
     .startup-card .share-btn:hover {{ border-color: white; color: white; }}
 
+    /* Signal & amplification badges */
+    .badge-signal {{ font-size: .65rem; font-weight: 700; background: #f59e0b22; color: #d97706; border: 1px solid #f59e0b44; border-radius: 8px; padding: .1rem .45rem; }}
+    .badge-amp    {{ font-size: .65rem; font-weight: 700; background: #ef444422; color: #dc2626; border: 1px solid #ef444444; border-radius: 8px; padding: .1rem .45rem; }}
+    .badge-deal   {{ font-size: .65rem; font-weight: 700; background: #22c55e22; color: #16a34a; border: 1px solid #22c55e44; border-radius: 8px; padding: .1rem .45rem; }}
+    .card-signal  {{ border-left: 3px solid #f59e0b; }}
+    .card-why     {{ font-size: .8rem; color: #d97706; margin: .4rem 0 .7rem; display: flex; align-items: flex-start; gap: .35rem; line-height: 1.4; }}
+    .why-icon     {{ flex-shrink: 0; }}
+
+    /* Radar de Señales */
+    .radar-section {{ max-width: 900px; margin: 1.25rem auto 0; padding: 0 1rem; }}
+    .radar-section > * {{ background: var(--surface); border: 1.5px solid #f59e0b55; border-radius: 12px; overflow: hidden; }}
+    .radar-header {{ display: flex; align-items: baseline; justify-content: space-between; padding: 1rem 1.2rem .7rem; flex-wrap: wrap; gap: .3rem; border-bottom: 1px solid var(--border); }}
+    .radar-title-main {{ font-size: .95rem; font-weight: 700; color: var(--text); }}
+    .radar-sub    {{ font-size: .72rem; color: var(--muted); }}
+    .radar-body   {{ display: flex; flex-direction: column; }}
+    .radar-row    {{ display: flex; align-items: flex-start; gap: .9rem; padding: .85rem 1.2rem; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; transition: background .15s; }}
+    .radar-row:last-child {{ border-bottom: none; }}
+    .radar-row:hover {{ background: var(--bg); }}
+    .radar-icon   {{ font-size: 1.2rem; flex-shrink: 0; padding-top: .1rem; }}
+    .radar-content {{ flex: 1; min-width: 0; }}
+    .radar-title  {{ display: block; font-size: .9rem; font-weight: 600; color: var(--text); line-height: 1.4; margin-bottom: .2rem; }}
+    .radar-meta   {{ font-size: .72rem; color: var(--muted); }}
+    .radar-why    {{ display: block; font-size: .75rem; color: #d97706; margin-top: .25rem; }}
+    .radar-score  {{ font-size: .75rem; font-weight: 700; color: #f59e0b; background: #f59e0b18; border-radius: 6px; padding: .2rem .5rem; flex-shrink: 0; align-self: center; }}
+    .radar-amp    {{ font-size: .7rem; }}
+    .radar-deal   {{ font-size: .7rem; color: #16a34a; }}
+
+    /* Trends */
+    .trends-section {{ max-width: 900px; margin: .75rem auto 0; padding: 0 1rem; display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }}
+    .trends-label {{ font-size: .8rem; font-weight: 600; color: var(--muted); white-space: nowrap; }}
+    .trends-pills {{ display: flex; flex-wrap: wrap; gap: .4rem; }}
+    .trend-pill   {{ font-size: .75rem; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: .25rem .75rem; color: var(--text); display: flex; align-items: center; gap: .35rem; }}
+    .trend-badge  {{ font-size: .65rem; font-weight: 700; border-radius: 6px; padding: .05rem .35rem; }}
+    .trend-badge.up  {{ background: #22c55e22; color: #16a34a; }}
+    .trend-badge.new {{ background: #6366f122; color: #6366f1; }}
+
+    /* Deal Flow */
+    .deal-section {{ max-width: 900px; margin: .75rem auto 0; padding: 0 1rem; }}
+    .deal-section > * {{ background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }}
+    .deal-header  {{ display: flex; align-items: baseline; justify-content: space-between; padding: .9rem 1.2rem .65rem; border-bottom: 1px solid var(--border); flex-wrap: wrap; gap: .3rem; }}
+    .deal-title-main {{ font-size: .95rem; font-weight: 700; color: var(--text); }}
+    .deal-sub     {{ font-size: .72rem; color: var(--muted); }}
+    .deal-body    {{ display: flex; flex-direction: column; }}
+    .deal-row     {{ display: grid; grid-template-columns: 70px auto 1fr auto; align-items: center; gap: .7rem; padding: .65rem 1.2rem; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; transition: background .15s; }}
+    .deal-row:last-child {{ border-bottom: none; }}
+    .deal-row:hover {{ background: var(--bg); }}
+    .deal-amount  {{ font-size: .9rem; font-weight: 700; color: #16a34a; white-space: nowrap; }}
+    .deal-round   {{ font-size: .68rem; font-weight: 700; background: #22c55e22; color: #16a34a; border-radius: 6px; padding: .1rem .4rem; white-space: nowrap; }}
+    .deal-title   {{ font-size: .82rem; font-weight: 500; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }}
+    .deal-meta    {{ font-size: .7rem; color: var(--muted); white-space: nowrap; }}
+
     footer {{ text-align: center; padding: 2rem; font-size: .8rem; color: var(--muted); border-top: 1px solid var(--border); }}
     footer a {{ color: var(--accent); text-decoration: none; }}
 
@@ -445,8 +675,9 @@ def generate_site(articles: list):
     <div class="header-stats">
       <span class="stat"><strong>{len(articles)}</strong> artículos</span>
       <span class="stat"><strong>{new_count}</strong> nuevos hoy</span>
+      <span class="stat"><strong>{signal_count}</strong> señales esta semana</span>
       <span class="stat"><strong>40</strong> fuentes monitorizadas</span>
-      <span class="stat"><strong>{ibero_count}</strong> noticias iberoamérica</span>
+      <span class="stat"><strong>{ibero_count}</strong> iberoamérica</span>
     </div>
     <div class="updated">Actualizado el {updated}</div>
     <div id="google_translate_element"></div>
@@ -473,6 +704,9 @@ def generate_site(articles: list):
     </div>
   </div>
 
+  {radar_html}
+  {trends_html}
+  {deals_html}
   {thermometer_html}
   {startup_html}
 

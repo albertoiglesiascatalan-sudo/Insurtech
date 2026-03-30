@@ -12,6 +12,7 @@ from bs4 import BeautifulSoup
 from datetime import datetime, timezone, timedelta
 from slugify import slugify
 from generate_site import generate_site
+from signal_engine import enrich_articles, score_article
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger(__name__)
@@ -320,11 +321,15 @@ def main():
                 "published_at": datetime.now(timezone.utc).isoformat(),
                 "image_url": item.get("image_url", ""),
             }
+            score_article(article)
             articles.insert(0, article)
             existing_urls.add(item["url"])
             existing_title_keys.add(tkey)
             new_count += 1
-            log.info(f"  + {item['title'][:70]}")
+            log.info(f"  + [{article['signal_score']:2d}] {item['title'][:65]}")
+
+    # Enrich all articles (cross-source amplification + re-score existing)
+    articles = enrich_articles(articles)
 
     # Keep only the latest KEEP_ARTICLES
     articles = articles[:KEEP_ARTICLES]
