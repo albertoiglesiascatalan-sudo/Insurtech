@@ -52,6 +52,36 @@ def _share_urls(title: str, url: str) -> tuple:
     return twitter, linkedin
 
 
+def _group_label(iso: str) -> str:
+    try:
+        pub = datetime.fromisoformat(iso)
+        if pub.tzinfo is None:
+            pub = pub.replace(tzinfo=timezone.utc)
+        delta = datetime.now(timezone.utc) - pub
+        if delta.total_seconds() < 86400:
+            return "Hoy"
+        elif delta.days == 1:
+            return "Ayer"
+        elif delta.days < 7:
+            return "Esta semana"
+        else:
+            return "Anteriores"
+    except Exception:
+        return "Anteriores"
+
+
+def _cards_grouped(articles: list) -> str:
+    parts = []
+    current_group = None
+    for a in articles:
+        group = _group_label(a.get("published_at", ""))
+        if group != current_group:
+            current_group = group
+            parts.append(f'<div class="time-sep" data-group="{group}"><span>{group}</span></div>')
+        parts.append(_card(a))
+    return "\n".join(parts)
+
+
 def _rel_date(iso: str) -> tuple:
     """Returns (relative_label, absolute_for_tooltip)."""
     try:
@@ -110,11 +140,18 @@ def _card(a: dict, featured: bool = False) -> str:
     img_html  = f'<a href="{a["url"]}" target="_blank" rel="noopener"><img class="card-image" src="{image_url}" alt="" loading="lazy" onerror="this.parentElement.style.display=\'none\'"></a>' if image_url else ""
     extra_class = " card-featured" if featured else (" card-signal" if a.get("is_signal") else "")
 
+    try:
+        from urllib.parse import urlparse as _up
+        _domain = _up(a["url"]).netloc
+        favicon_html = f'<img class="source-favicon" src="https://www.google.com/s2/favicons?domain={_domain}&sz=16" alt="" loading="lazy">'
+    except Exception:
+        favicon_html = ""
+
     return f"""
     <article class="card{extra_class}" data-category="{category}" data-region="{region}" data-search="{searchable}" data-id="{article_id}" data-url="{a['url']}">
       {img_html}
       <div class="card-meta">
-        <span class="card-source">{a['source']}</span>
+        {favicon_html}<span class="card-source">{a['source']}</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="{abs_date}">{rel_date}</span>
         <span class="card-dot">·</span>
@@ -432,7 +469,7 @@ def generate_site(articles: list):
     )
 
     featured_html = _card(featured, featured=True) if featured else ""
-    cards_html    = "\n".join(_card(a) for a in rest)
+    cards_html    = _cards_grouped(rest)
 
     og_image = next((a.get("image_url") for a in articles if a.get("image_url")), "")
     html = f"""<!DOCTYPE html>
@@ -657,6 +694,63 @@ def generate_site(articles: list):
     .deal-title   {{ font-size: .82rem; font-weight: 500; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }}
     .deal-meta    {{ font-size: .7rem; color: var(--muted); white-space: nowrap; }}
 
+    /* Favicon */
+    .source-favicon {{ width: 14px; height: 14px; border-radius: 2px; vertical-align: middle; margin-right: .25rem; flex-shrink: 0; }}
+
+    /* Read articles */
+    .card.read {{ opacity: .55; }}
+    .card.read .card-title a {{ text-decoration: line-through; text-decoration-color: var(--muted); }}
+    .card.read:hover {{ opacity: .8; }}
+
+    /* Saved filter btn */
+    #btn-saved {{ transition: all .15s; }}
+    #btn-saved.saved-active {{ background: #f59e0b; border-color: #f59e0b; color: white; }}
+
+    /* Share filter btn */
+    .share-filter-btn {{ background: var(--surface); border: 1.5px solid var(--border); border-radius: 20px; padding: .3rem .85rem; font-size: .8rem; font-weight: 500; color: var(--muted); cursor: pointer; transition: all .15s; }}
+    .share-filter-btn:hover {{ border-color: var(--accent); color: var(--accent); }}
+    .share-filter-btn.copied {{ background: #22c55e; border-color: #22c55e; color: white; }}
+
+    /* Results counter */
+    #results-info {{ max-width: 900px; margin: .5rem auto 0; padding: 0 1.25rem; font-size: .78rem; color: var(--muted); min-height: 1.2rem; }}
+
+    /* Time separators */
+    .time-sep {{ max-width: 900px; margin: 1.5rem auto 0; padding: 0 1rem; display: flex; align-items: center; gap: .75rem; grid-column: 1/-1; }}
+    .time-sep span {{ font-size: .75rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .8px; white-space: nowrap; }}
+    .time-sep::after {{ content: ''; flex: 1; height: 1px; background: var(--border); }}
+
+    /* Keyboard focus highlight */
+    .card.kbd-focus {{ outline: 2px solid var(--accent); outline-offset: 2px; }}
+
+    /* Empty state */
+    .no-results {{ text-align: center; color: var(--muted); padding: 3rem; display: none; grid-column: 1/-1; }}
+    .no-results p {{ margin-bottom: 1rem; }}
+    .no-results button {{ padding: .45rem 1.2rem; background: var(--accent); color: white; border: none; border-radius: 20px; font-size: .85rem; font-weight: 600; cursor: pointer; }}
+
+    /* Back to top */
+    #back-to-top {{ position: fixed; bottom: 5rem; right: 1.25rem; width: 40px; height: 40px; background: var(--accent); color: white; border: none; border-radius: 50%; font-size: 1.1rem; font-weight: 700; cursor: pointer; display: none; box-shadow: 0 2px 12px rgba(0,0,0,.2); z-index: 200; transition: opacity .2s; }}
+    #back-to-top:hover {{ opacity: .85; }}
+
+    /* Keyboard hint */
+    .kbd-hint {{ margin-top: .6rem; font-size: .72rem; color: var(--border); }}
+    kbd {{ background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: .1rem .35rem; font-size: .7rem; font-family: monospace; color: var(--muted); }}
+
+    /* Mobile FAB + sheet */
+    .mobile-fab {{ display: none; position: fixed; bottom: 1.25rem; right: 1.25rem; padding: .6rem 1.2rem; background: var(--accent); color: white; border: none; border-radius: 24px; font-size: .88rem; font-weight: 600; cursor: pointer; box-shadow: 0 2px 16px rgba(0,0,0,.25); z-index: 200; }}
+    .mobile-overlay {{ display: none; position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 300; }}
+    .mobile-sheet {{ display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--surface); border-radius: 20px 20px 0 0; z-index: 400; padding: 0 0 2rem; max-height: 80vh; overflow-y: auto; box-shadow: 0 -4px 32px rgba(0,0,0,.2); }}
+    .mobile-sheet.open, .mobile-overlay.open {{ display: block; }}
+    .mobile-sheet-header {{ display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem .75rem; border-bottom: 1px solid var(--border); font-weight: 700; font-size: .95rem; }}
+    .mobile-sheet-close {{ background: none; border: none; font-size: 1.1rem; cursor: pointer; color: var(--muted); padding: .2rem; }}
+    .mobile-sheet-body {{ padding: 1rem 1.25rem; }}
+    .mobile-sheet-label {{ font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin-bottom: .5rem; }}
+    .mobile-filter-group {{ display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1.25rem; }}
+    @media (max-width: 640px) {{
+      .toolbar .filters {{ display: none; }}
+      .mobile-fab {{ display: flex; align-items: center; gap: .4rem; }}
+      #back-to-top {{ bottom: 4.5rem; }}
+    }}
+
     footer {{ text-align: center; padding: 2rem; font-size: .8rem; color: var(--muted); border-top: 1px solid var(--border); }}
     footer a {{ color: var(--accent); text-decoration: none; }}
 
@@ -685,24 +779,27 @@ def generate_site(articles: list):
 
   <div class="toolbar">
     <div class="search-row">
-      <input id="search" type="search" placeholder="Buscar artículos..." autocomplete="off" />
+      <input id="search" type="search" placeholder="Buscar artículos... (o pulsa /)" autocomplete="off" />
       <div class="view-toggle">
-        <button class="view-btn active" id="btn-list" title="Vista lista">&#9776;</button>
-        <button class="view-btn" id="btn-grid" title="Vista grid">&#9638;</button>
-        <button class="view-btn" id="btn-compact" title="Vista compacta">&#9472;</button>
+        <button class="view-btn active" id="btn-list" title="Vista lista [1]">&#9776;</button>
+        <button class="view-btn" id="btn-grid" title="Vista grid [2]">&#9638;</button>
+        <button class="view-btn" id="btn-compact" title="Vista compacta [3]">&#9472;</button>
       </div>
     </div>
     <div class="filters">
       <button class="filter-btn all-active" data-filter="all">Todos <span class="count">{len(articles)}</span></button>
       {filter_buttons}
+      <button class="filter-btn" id="btn-saved">🔖 Guardados</button>
     </div>
     <div class="filters region-filters">
       <button class="region-btn region-active" data-region="all">🌍 Todo el mundo</button>
       <button class="region-btn" data-region="ibero">🌎 Iberoamérica <span class="count">{ibero_count}</span></button>
       <button class="region-btn" data-region="global">🌐 Global <span class="count">{len(articles) - ibero_count}</span></button>
+      <button class="share-filter-btn" id="btn-share-filter" title="Copiar enlace con filtros activos">🔗 Compartir</button>
       <a href="{SITE_URL}/feed.xml" class="rss-link" target="_blank">&#x2609; RSS</a>
     </div>
   </div>
+  <div id="results-info"></div>
 
   {radar_html}
   {trends_html}
@@ -721,15 +818,38 @@ def generate_site(articles: list):
   <main class="list-view" id="main">
     {featured_html}
     {cards_html if articles else '<p style="text-align:center;color:var(--muted);padding:3rem">Sin artículos por ahora.</p>'}
-    <p class="no-results" id="no-results">No hay artículos que coincidan.</p>
+    <div class="no-results" id="no-results">
+      <p>No hay artículos que coincidan con los filtros actuales.</p>
+      <button id="btn-clear-filters">Quitar todos los filtros</button>
+    </div>
   </main>
   <div style="text-align:center;padding:1rem 1rem 2rem">
-    <button id="load-more" style="display:none;padding:.55rem 2rem;background:var(--accent);color:white;border:none;border-radius:20px;font-size:.88rem;font-weight:600;cursor:pointer;transition:opacity .15s" onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">Cargar más artículos</button>
+    <button id="load-more" style="display:none;padding:.55rem 2rem;background:var(--accent);color:white;border:none;border-radius:20px;font-size:.88rem;font-weight:600;cursor:pointer;transition:opacity .15s">Cargar más artículos</button>
   </div>
 
   <footer>
     InsurTech Intelligence · Impulsado por IA · <a href="{SITE_URL}/feed.xml">RSS Feed</a>
+    <div class="kbd-hint">Atajos: <kbd>/</kbd> buscar · <kbd>J</kbd>/<kbd>K</kbd> navegar · <kbd>O</kbd> abrir · <kbd>B</kbd> guardar</div>
   </footer>
+
+  <!-- Back to top -->
+  <button id="back-to-top" title="Volver arriba">↑</button>
+
+  <!-- Mobile filter FAB -->
+  <button class="mobile-fab" id="mobile-fab">⚙ Filtros</button>
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+  <div class="mobile-sheet" id="mobile-sheet">
+    <div class="mobile-sheet-header">
+      <span>Filtros</span>
+      <button class="mobile-sheet-close" id="mobile-sheet-close">✕</button>
+    </div>
+    <div class="mobile-sheet-body">
+      <p class="mobile-sheet-label">Categoría</p>
+      <div class="mobile-filter-group" id="mobile-cats"></div>
+      <p class="mobile-sheet-label">Región</p>
+      <div class="mobile-filter-group" id="mobile-regions"></div>
+    </div>
+  </div>
 
   <script type="text/javascript">
     function googleTranslateElementInit() {{
@@ -744,27 +864,57 @@ def generate_site(articles: list):
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
   <script>
-    // ── Filters + Search + Pagination ──
-    const cards       = Array.from(document.querySelectorAll('.card'));
-    const filterBtns  = Array.from(document.querySelectorAll('.filter-btn'));
-    const regionBtns  = Array.from(document.querySelectorAll('.region-btn'));
-    const search      = document.getElementById('search');
-    const noResults   = document.getElementById('no-results');
-    const mainEl      = document.getElementById('main');
-    const loadMoreBtn = document.getElementById('load-more');
-    let activeFilter  = 'all';
-    let activeRegion  = 'all';
-    let searchQuery   = '';
-    const PAGE_SIZE   = 20;
-    let loadedCount   = PAGE_SIZE;
+    // ── State ──
+    const cards      = Array.from(document.querySelectorAll('.card'));
+    const filterBtns = Array.from(document.querySelectorAll('.filter-btn:not(#btn-saved)'));
+    const regionBtns = Array.from(document.querySelectorAll('.region-btn'));
+    const search     = document.getElementById('search');
+    const mainEl     = document.getElementById('main');
+    const loadMoreBtn= document.getElementById('load-more');
+    const resultsInfo= document.getElementById('results-info');
+    const noResults  = document.getElementById('no-results');
+    const PAGE_SIZE  = 20;
+    let activeFilter = 'all';
+    let activeRegion = 'all';
+    let searchQuery  = '';
+    let showSavedOnly= false;
+    let loadedCount  = PAGE_SIZE;
+    let focusedIdx   = -1;
 
+    // ── localStorage helpers ──
+    const SAVED_KEY = 'insurtech_saved';
+    const READ_KEY  = 'insurtech_read';
+    const ls = k => {{ try {{ return JSON.parse(localStorage.getItem(k) || '[]'); }} catch {{ return []; }} }};
+    const lsSet = (k,v) => localStorage.setItem(k, JSON.stringify(v));
+
+    // ── URL sync ──
+    function syncURL() {{
+      const p = new URLSearchParams();
+      if (activeFilter !== 'all') p.set('cat', activeFilter);
+      if (activeRegion !== 'all') p.set('region', activeRegion);
+      if (showSavedOnly) p.set('saved', '1');
+      if (searchQuery) p.set('q', searchQuery);
+      history.replaceState(null, '', p.toString() ? '?' + p.toString() : location.pathname);
+    }}
+
+    function readURL() {{
+      const p = new URLSearchParams(location.search);
+      if (p.get('cat'))    activeFilter = p.get('cat');
+      if (p.get('region')) activeRegion = p.get('region');
+      if (p.get('saved'))  showSavedOnly = true;
+      if (p.get('q'))      {{ searchQuery = p.get('q'); search.value = searchQuery; }}
+    }}
+
+    // ── Main update ──
     function update() {{
+      const saved = ls(SAVED_KEY);
       let visible = 0, filtered = 0;
       cards.forEach(card => {{
         const matchFilter = activeFilter === 'all' || card.dataset.category === activeFilter;
         const matchRegion = activeRegion === 'all' || card.dataset.region === activeRegion;
         const matchSearch = !searchQuery || card.dataset.search.includes(searchQuery);
-        if (matchFilter && matchRegion && matchSearch) {{
+        const matchSaved  = !showSavedOnly || saved.includes(card.dataset.id);
+        if (matchFilter && matchRegion && matchSearch && matchSaved) {{
           filtered++;
           const show = filtered <= loadedCount;
           card.classList.toggle('hidden', !show);
@@ -773,75 +923,255 @@ def generate_site(articles: list):
           card.classList.add('hidden');
         }}
       }});
-      noResults.style.display = visible === 0 ? 'block' : 'none';
+
+      // Time separators: hide if no visible cards follow
+      document.querySelectorAll('.time-sep').forEach(sep => {{
+        let el = sep.nextElementSibling, has = false;
+        while (el && !el.classList.contains('time-sep')) {{
+          if (el.classList.contains('card') && !el.classList.contains('hidden')) {{ has = true; break; }}
+          el = el.nextElementSibling;
+        }}
+        sep.style.display = has ? '' : 'none';
+      }});
+
+      noResults.style.display = visible === 0 ? 'flex' : 'none';
       loadMoreBtn.style.display = filtered > loadedCount ? 'block' : 'none';
+
+      // Results counter
+      const total = cards.length;
+      if (filtered === total && !searchQuery)
+        resultsInfo.textContent = '';
+      else
+        resultsInfo.textContent = `Mostrando ${{Math.min(visible, filtered)}} de ${{filtered}} artículos`;
+
+      syncURL();
     }}
 
+    // ── Category filters ──
     filterBtns.forEach(btn => {{
       btn.addEventListener('click', () => {{
         activeFilter = btn.dataset.filter;
-        loadedCount = PAGE_SIZE;
-        filterBtns.forEach(b => b.classList.remove('active', 'all-active'));
+        loadedCount = PAGE_SIZE; focusedIdx = -1;
+        filterBtns.forEach(b => b.classList.remove('active','all-active'));
         btn.classList.add(activeFilter === 'all' ? 'all-active' : 'active');
         update();
       }});
     }});
 
+    // ── Region filters ──
     regionBtns.forEach(btn => {{
       btn.addEventListener('click', () => {{
         activeRegion = btn.dataset.region;
-        loadedCount = PAGE_SIZE;
+        loadedCount = PAGE_SIZE; focusedIdx = -1;
         regionBtns.forEach(b => b.classList.remove('region-active'));
         btn.classList.add('region-active');
+        // Mirror to mobile sheet
+        document.querySelectorAll('#mobile-regions .filter-btn').forEach(b => {{
+          b.classList.toggle('active', b.dataset.region === activeRegion);
+        }});
         update();
       }});
     }});
 
+    // ── Search ──
     search.addEventListener('input', () => {{
       searchQuery = search.value.trim().toLowerCase();
-      loadedCount = PAGE_SIZE;
+      loadedCount = PAGE_SIZE; focusedIdx = -1;
       update();
     }});
 
+    // ── Load more ──
     loadMoreBtn.addEventListener('click', () => {{
       loadedCount += PAGE_SIZE;
       update();
-      loadMoreBtn.scrollIntoView({{ behavior: 'smooth', block: 'center' }});
+      loadMoreBtn.scrollIntoView({{ behavior:'smooth', block:'center' }});
     }});
-
-    // initial pagination
-    update();
 
     // ── View toggle ──
     function setView(mode) {{
       mainEl.className = mode + '-view';
-      ['list','grid','compact'].forEach(m => {{
-        document.getElementById('btn-' + m).classList.toggle('active', m === mode);
-      }});
+      ['list','grid','compact'].forEach(m =>
+        document.getElementById('btn-'+m).classList.toggle('active', m===mode));
     }}
     document.getElementById('btn-list').addEventListener('click', () => setView('list'));
     document.getElementById('btn-grid').addEventListener('click', () => setView('grid'));
     document.getElementById('btn-compact').addEventListener('click', () => setView('compact'));
 
-    // ── Bookmarks (localStorage) ──
-    const SAVED_KEY = 'insurtech_saved';
-    function getSaved() {{ try {{ return JSON.parse(localStorage.getItem(SAVED_KEY) || '[]'); }} catch {{ return []; }} }}
-    function setSaved(ids) {{ localStorage.setItem(SAVED_KEY, JSON.stringify(ids)); }}
-
+    // ── Bookmarks ──
     function initBookmarks() {{
-      const saved = getSaved();
+      const saved = ls(SAVED_KEY);
       document.querySelectorAll('.save-btn').forEach(btn => {{
-        const id = btn.dataset.id;
-        if (saved.includes(id)) btn.classList.add('saved');
-        btn.addEventListener('click', () => {{
-          let s = getSaved();
-          if (s.includes(id)) {{ s = s.filter(x => x !== id); btn.classList.remove('saved'); }}
-          else {{ s.push(id); btn.classList.add('saved'); }}
-          setSaved(s);
+        if (saved.includes(btn.dataset.id)) btn.classList.add('saved');
+        btn.addEventListener('click', e => {{
+          e.stopPropagation();
+          let s = ls(SAVED_KEY);
+          if (s.includes(btn.dataset.id)) {{ s = s.filter(x => x !== btn.dataset.id); btn.classList.remove('saved'); }}
+          else {{ s.push(btn.dataset.id); btn.classList.add('saved'); }}
+          lsSet(SAVED_KEY, s);
+          if (showSavedOnly) update();
         }});
       }});
     }}
+
+    // ── Read tracking ──
+    function initReadTracking() {{
+      const read = ls(READ_KEY);
+      cards.forEach(card => {{
+        if (read.includes(card.dataset.id)) card.classList.add('read');
+        card.querySelectorAll('a[href]').forEach(a => {{
+          a.addEventListener('click', () => {{
+            let r = ls(READ_KEY);
+            if (!r.includes(card.dataset.id)) {{ r.push(card.dataset.id); lsSet(READ_KEY, r); }}
+            card.classList.add('read');
+          }});
+        }});
+      }});
+    }}
+
+    // ── Saved-only filter toggle ──
+    const btnSaved = document.getElementById('btn-saved');
+    btnSaved.addEventListener('click', () => {{
+      showSavedOnly = !showSavedOnly;
+      btnSaved.classList.toggle('saved-active', showSavedOnly);
+      loadedCount = PAGE_SIZE; focusedIdx = -1;
+      update();
+    }});
+
+    // ── Clear filters ──
+    document.getElementById('btn-clear-filters').addEventListener('click', () => {{
+      activeFilter = 'all'; activeRegion = 'all'; showSavedOnly = false;
+      searchQuery = ''; search.value = ''; loadedCount = PAGE_SIZE; focusedIdx = -1;
+      filterBtns.forEach(b => b.classList.remove('active','all-active'));
+      document.querySelector('[data-filter="all"]').classList.add('all-active');
+      regionBtns.forEach(b => b.classList.remove('region-active'));
+      document.querySelector('[data-region="all"]').classList.add('region-active');
+      btnSaved.classList.remove('saved-active');
+      update();
+    }});
+
+    // ── Share filter URL ──
+    document.getElementById('btn-share-filter').addEventListener('click', async () => {{
+      const btn = document.getElementById('btn-share-filter');
+      try {{
+        await navigator.clipboard.writeText(location.href);
+      }} catch (e) {{
+        const inp = document.createElement('input');
+        inp.value = location.href; document.body.appendChild(inp); inp.select();
+        document.execCommand('copy'); document.body.removeChild(inp);
+      }}
+      btn.textContent = '✓ Copiado'; btn.classList.add('copied');
+      setTimeout(() => {{ btn.textContent = '🔗 Compartir'; btn.classList.remove('copied'); }}, 2000);
+    }});
+
+    // ── Back to top ──
+    const btt = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {{
+      btt.style.display = window.scrollY > 400 ? 'block' : 'none';
+    }}, {{ passive: true }});
+    btt.addEventListener('click', () => window.scrollTo({{ top:0, behavior:'smooth' }}));
+
+    // ── Keyboard shortcuts ──
+    document.addEventListener('keydown', e => {{
+      const tag = document.activeElement.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA') {{
+        if (e.key === 'Escape') {{ search.blur(); search.value=''; searchQuery=''; loadedCount=PAGE_SIZE; update(); }}
+        return;
+      }}
+      const visible = cards.filter(c => !c.classList.contains('hidden'));
+      switch(e.key) {{
+        case '/':
+          e.preventDefault(); search.focus(); break;
+        case 'j': case 'J':
+          e.preventDefault();
+          focusedIdx = Math.min(visible.length-1, focusedIdx+1);
+          cards.forEach(c => c.classList.remove('kbd-focus'));
+          if (visible[focusedIdx]) {{ visible[focusedIdx].classList.add('kbd-focus'); visible[focusedIdx].scrollIntoView({{behavior:'smooth',block:'center'}}); }}
+          break;
+        case 'k': case 'K':
+          e.preventDefault();
+          focusedIdx = Math.max(0, focusedIdx-1);
+          cards.forEach(c => c.classList.remove('kbd-focus'));
+          if (visible[focusedIdx]) {{ visible[focusedIdx].classList.add('kbd-focus'); visible[focusedIdx].scrollIntoView({{behavior:'smooth',block:'center'}}); }}
+          break;
+        case 'o': case 'O': case 'Enter':
+          if (focusedIdx >= 0 && visible[focusedIdx]) {{
+            window.open(visible[focusedIdx].dataset.url, '_blank');
+          }}
+          break;
+        case 'b': case 'B':
+          if (focusedIdx >= 0 && visible[focusedIdx]) {{
+            visible[focusedIdx].querySelector('.save-btn')?.click();
+          }}
+          break;
+        case '1': setView('list'); break;
+        case '2': setView('grid'); break;
+        case '3': setView('compact'); break;
+      }}
+    }});
+
+    // ── Mobile bottom sheet ──
+    const mFab     = document.getElementById('mobile-fab');
+    const mSheet   = document.getElementById('mobile-sheet');
+    const mOverlay = document.getElementById('mobile-overlay');
+    const mClose   = document.getElementById('mobile-sheet-close');
+
+    function buildMobileFilters() {{
+      const catContainer = document.getElementById('mobile-cats');
+      const regContainer = document.getElementById('mobile-regions');
+      // Clone category buttons
+      filterBtns.forEach(btn => {{
+        const b = btn.cloneNode(true);
+        b.addEventListener('click', () => {{
+          activeFilter = b.dataset.filter; loadedCount = PAGE_SIZE;
+          filterBtns.forEach(x => x.classList.remove('active','all-active'));
+          document.querySelectorAll('#mobile-cats .filter-btn').forEach(x => x.classList.remove('active','all-active'));
+          const orig = document.querySelector(`[data-filter="${{b.dataset.filter}}"]`);
+          if (orig) orig.classList.add(activeFilter==='all'?'all-active':'active');
+          b.classList.add(activeFilter==='all'?'all-active':'active');
+          closeSheet(); update();
+        }});
+        catContainer.appendChild(b);
+      }});
+      // Clone region buttons
+      regionBtns.forEach(btn => {{
+        const b = btn.cloneNode(true);
+        b.className = 'filter-btn';
+        b.dataset.region = btn.dataset.region;
+        b.addEventListener('click', () => {{
+          activeRegion = b.dataset.region; loadedCount = PAGE_SIZE;
+          regionBtns.forEach(x => x.classList.remove('region-active'));
+          document.querySelectorAll('#mobile-regions .filter-btn').forEach(x => x.classList.remove('active','all-active'));
+          document.querySelector(`[data-region="${{b.dataset.region}}"]`)?.classList.add('region-active');
+          b.classList.add('active');
+          closeSheet(); update();
+        }});
+        regContainer.appendChild(b);
+      }});
+    }}
+
+    function openSheet() {{ mSheet.classList.add('open'); mOverlay.classList.add('open'); document.body.style.overflow='hidden'; }}
+    function closeSheet() {{ mSheet.classList.remove('open'); mOverlay.classList.remove('open'); document.body.style.overflow=''; }}
+
+    mFab.addEventListener('click', openSheet);
+    mClose.addEventListener('click', closeSheet);
+    mOverlay.addEventListener('click', closeSheet);
+
+    // ── Init ──
+    readURL();
+    buildMobileFilters();
     initBookmarks();
+    initReadTracking();
+    // Apply URL-restored filter state to UI
+    if (activeFilter !== 'all') {{
+      const btn = document.querySelector(`[data-filter="${{activeFilter}}"]`);
+      if (btn) {{ filterBtns.forEach(b=>b.classList.remove('active','all-active')); btn.classList.add('active'); }}
+    }}
+    if (activeRegion !== 'all') {{
+      const btn = document.querySelector(`[data-region="${{activeRegion}}"]`);
+      if (btn) {{ regionBtns.forEach(b=>b.classList.remove('region-active')); btn.classList.add('region-active'); }}
+    }}
+    if (showSavedOnly) btnSaved.classList.add('saved-active');
+    update();
   </script>
 </body>
 </html>"""

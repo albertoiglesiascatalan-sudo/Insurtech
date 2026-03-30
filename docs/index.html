@@ -220,6 +220,63 @@
     .deal-title   { font-size: .82rem; font-weight: 500; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .deal-meta    { font-size: .7rem; color: var(--muted); white-space: nowrap; }
 
+    /* Favicon */
+    .source-favicon { width: 14px; height: 14px; border-radius: 2px; vertical-align: middle; margin-right: .25rem; flex-shrink: 0; }
+
+    /* Read articles */
+    .card.read { opacity: .55; }
+    .card.read .card-title a { text-decoration: line-through; text-decoration-color: var(--muted); }
+    .card.read:hover { opacity: .8; }
+
+    /* Saved filter btn */
+    #btn-saved { transition: all .15s; }
+    #btn-saved.saved-active { background: #f59e0b; border-color: #f59e0b; color: white; }
+
+    /* Share filter btn */
+    .share-filter-btn { background: var(--surface); border: 1.5px solid var(--border); border-radius: 20px; padding: .3rem .85rem; font-size: .8rem; font-weight: 500; color: var(--muted); cursor: pointer; transition: all .15s; }
+    .share-filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .share-filter-btn.copied { background: #22c55e; border-color: #22c55e; color: white; }
+
+    /* Results counter */
+    #results-info { max-width: 900px; margin: .5rem auto 0; padding: 0 1.25rem; font-size: .78rem; color: var(--muted); min-height: 1.2rem; }
+
+    /* Time separators */
+    .time-sep { max-width: 900px; margin: 1.5rem auto 0; padding: 0 1rem; display: flex; align-items: center; gap: .75rem; grid-column: 1/-1; }
+    .time-sep span { font-size: .75rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .8px; white-space: nowrap; }
+    .time-sep::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    /* Keyboard focus highlight */
+    .card.kbd-focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    /* Empty state */
+    .no-results { text-align: center; color: var(--muted); padding: 3rem; display: none; grid-column: 1/-1; }
+    .no-results p { margin-bottom: 1rem; }
+    .no-results button { padding: .45rem 1.2rem; background: var(--accent); color: white; border: none; border-radius: 20px; font-size: .85rem; font-weight: 600; cursor: pointer; }
+
+    /* Back to top */
+    #back-to-top { position: fixed; bottom: 5rem; right: 1.25rem; width: 40px; height: 40px; background: var(--accent); color: white; border: none; border-radius: 50%; font-size: 1.1rem; font-weight: 700; cursor: pointer; display: none; box-shadow: 0 2px 12px rgba(0,0,0,.2); z-index: 200; transition: opacity .2s; }
+    #back-to-top:hover { opacity: .85; }
+
+    /* Keyboard hint */
+    .kbd-hint { margin-top: .6rem; font-size: .72rem; color: var(--border); }
+    kbd { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: .1rem .35rem; font-size: .7rem; font-family: monospace; color: var(--muted); }
+
+    /* Mobile FAB + sheet */
+    .mobile-fab { display: none; position: fixed; bottom: 1.25rem; right: 1.25rem; padding: .6rem 1.2rem; background: var(--accent); color: white; border: none; border-radius: 24px; font-size: .88rem; font-weight: 600; cursor: pointer; box-shadow: 0 2px 16px rgba(0,0,0,.25); z-index: 200; }
+    .mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 300; }
+    .mobile-sheet { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--surface); border-radius: 20px 20px 0 0; z-index: 400; padding: 0 0 2rem; max-height: 80vh; overflow-y: auto; box-shadow: 0 -4px 32px rgba(0,0,0,.2); }
+    .mobile-sheet.open, .mobile-overlay.open { display: block; }
+    .mobile-sheet-header { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem .75rem; border-bottom: 1px solid var(--border); font-weight: 700; font-size: .95rem; }
+    .mobile-sheet-close { background: none; border: none; font-size: 1.1rem; cursor: pointer; color: var(--muted); padding: .2rem; }
+    .mobile-sheet-body { padding: 1rem 1.25rem; }
+    .mobile-sheet-label { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin-bottom: .5rem; }
+    .mobile-filter-group { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1.25rem; }
+    @media (max-width: 640px) {
+      .toolbar .filters { display: none; }
+      .mobile-fab { display: flex; align-items: center; gap: .4rem; }
+      #back-to-top { bottom: 4.5rem; }
+    }
+
     footer { text-align: center; padding: 2rem; font-size: .8rem; color: var(--muted); border-top: 1px solid var(--border); }
     footer a { color: var(--accent); text-decoration: none; }
 
@@ -242,17 +299,17 @@
       <span class="stat"><strong>40</strong> fuentes monitorizadas</span>
       <span class="stat"><strong>3</strong> iberoamérica</span>
     </div>
-    <div class="updated">Actualizado el 30 Mar 2026 · 18:56 UTC</div>
+    <div class="updated">Actualizado el 30 Mar 2026 · 19:06 UTC</div>
     <div id="google_translate_element"></div>
   </header>
 
   <div class="toolbar">
     <div class="search-row">
-      <input id="search" type="search" placeholder="Buscar artículos..." autocomplete="off" />
+      <input id="search" type="search" placeholder="Buscar artículos... (o pulsa /)" autocomplete="off" />
       <div class="view-toggle">
-        <button class="view-btn active" id="btn-list" title="Vista lista">&#9776;</button>
-        <button class="view-btn" id="btn-grid" title="Vista grid">&#9638;</button>
-        <button class="view-btn" id="btn-compact" title="Vista compacta">&#9472;</button>
+        <button class="view-btn active" id="btn-list" title="Vista lista [1]">&#9776;</button>
+        <button class="view-btn" id="btn-grid" title="Vista grid [2]">&#9638;</button>
+        <button class="view-btn" id="btn-compact" title="Vista compacta [3]">&#9472;</button>
       </div>
     </div>
     <div class="filters">
@@ -265,14 +322,17 @@
       <button class="filter-btn" data-filter="Catástrofes">Catástrofes <span class="count">6</span></button>
       <button class="filter-btn" data-filter="Fraude">Fraude <span class="count">2</span></button>
       <button class="filter-btn" data-filter="General">General <span class="count">66</span></button>
+      <button class="filter-btn" id="btn-saved">🔖 Guardados</button>
     </div>
     <div class="filters region-filters">
       <button class="region-btn region-active" data-region="all">🌍 Todo el mundo</button>
       <button class="region-btn" data-region="ibero">🌎 Iberoamérica <span class="count">3</span></button>
       <button class="region-btn" data-region="global">🌐 Global <span class="count">118</span></button>
+      <button class="share-filter-btn" id="btn-share-filter" title="Copiar enlace con filtros activos">🔗 Compartir</button>
       <a href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" class="rss-link" target="_blank">&#x2609; RSS</a>
     </div>
   </div>
+  <div id="results-info"></div>
 
   
   
@@ -363,9 +423,9 @@
     <article class="card card-featured" data-category="General" data-region="global" data-search="u.s. treasury to consult with insurance regulators on private credit lenders treasury department is expected to convene in the coming weeks the first of a series of meetings with domestic and international insurance regulators about recent developments in jittery private credit markets, two sources familiar with the plans told reuters. during remarks to the economic club of dallas in february, bessent, a former hedge fund manager, said that when assets move from private credit lenders into regulated financial institutions, such as pension funds, banks, or captive insurance companies, “treasury gets involved.” “i am concerned with watching, how does this get to the regulated financial system,” bessent said. based on the results of that meeting, the participants will determine the direction of future engagements, aiming to improve regulators’ fact-based, transparent oversight of private credit lenders as their interactions with regulated financial institutions increase. carrier management" data-id="u-s-treasury-to-consult-with-insurance-regulators-on-private-credit-lenders" data-url="https://www.carriermanagement.com/news/2026/03/30/286216.htm">
       
       <div class="card-meta">
-        <span class="card-source">Carrier Management</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.carriermanagement.com&sz=16" alt="" loading="lazy"><span class="card-source">Carrier Management</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 2h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -385,13 +445,14 @@
         </div>
       </div>
     </article>
-    
+    <div class="time-sep" data-group="Hoy"><span>Hoy</span></div>
+
     <article class="card" data-category="General" data-region="global" data-search="jio financial services targets 2026 entry into life, general insurance to view the full article and get unlimited access to insuranceasia news's exclusive insight across 5,000+ articles insurance asia news" data-id="jio-financial-services-targets-2026-entry-into-life-general-insurance" data-url="https://insuranceasianews.com/jio-financial-services-targets-2026-entry-into-life-general-insurance/">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Asia News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=insuranceasianews.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Asia News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 2h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -415,9 +476,9 @@
     <article class="card" data-category="General" data-region="global" data-search="shojin financial services limited enters administration shojin financial services limited (shojin) is a crowdfunding platform authorised and regulated by the fca. on 23 march 2026, shojin went into administration. if you are affected by shojin entering administration, the joint administrators will get in touch with you directly. fca news" data-id="shojin-financial-services-limited-enters-administration" data-url="https://www.fca.org.uk/news/news-stories/shojin-financial-services-limited-enters-administration">
       
       <div class="card-meta">
-        <span class="card-source">FCA News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.fca.org.uk&sz=16" alt="" loading="lazy"><span class="card-source">FCA News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 2h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -441,9 +502,9 @@
     <article class="card" data-category="General" data-region="global" data-search="fca confirms motor finance redress scheme we are going ahead with a scheme to compensate motor finance customers who were treated unfairly. we want to provide certainty for consumers and finality for firms and investors, supporting the ongoing availability of competitively priced motor finance. an industry-wide scheme is the quickest and most cost effective way to deliver fair compensation. fca news" data-id="fca-confirms-motor-finance-redress-scheme" data-url="https://www.fca.org.uk/news/statements/fca-confirms-motor-finance-redress-scheme">
       
       <div class="card-meta">
-        <span class="card-source">FCA News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.fca.org.uk&sz=16" alt="" loading="lazy"><span class="card-source">FCA News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 2h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -467,9 +528,9 @@
     <article class="card" data-category="General" data-region="global" data-search="millions of car finance customers to get payouts this year as fca goes ahead with compensation scheme millions of motor finance customers will receive compensation this year under an fca scheme for those treated unfairly by firms who broke the law by failing to disclose important information. delivering compensation promptly also gives lenders the chance to rebuild trust, and means we can draw a line under the past and support a healthy motor finance market for the future.' an industry-wide scheme is the most efficient way of compensating affected consumers while supporting the ongoing availability of competitively priced motor finance for millions who rely on it. 'now we need everyone to get behind it and ensure millions get their money this year. fca news" data-id="millions-of-car-finance-customers-to-get-payouts-this-year-as-fca-goes-ahead-wit" data-url="https://www.fca.org.uk/news/press-releases/millions-car-finance-customers-payouts-fca-goes-ahead-compensation-scheme">
       
       <div class="card-meta">
-        <span class="card-source">FCA News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.fca.org.uk&sz=16" alt="" loading="lazy"><span class="card-source">FCA News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 2h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -493,9 +554,9 @@
     <article class="card" data-category="General" data-region="global" data-search="zenkyoren targets mid-guidance pricing for $100m nakama re 2026-1 japan quake cat bond zenkyoren is now targeting mid-guidance pricing for the $100 million of multi-year collateralized japanese earthquake reinsurance protection it aims to secure from its new nakama re pte. this new nakama re 2026-1 issuance will mark the sixteenth catastrophe bond directly sponsored by zenkyoren that we have listed in our extensive deal directory . the nakama re series 2026-1 class 1 cat bond notes will also have an initial annualised attachment probability of 0.87%, an initial annualised expected loss of 0.82%, and were initially offered to cat bond investors with price guidance for a risk interest spread in a range from 1.9% to 2.4%. artemis" data-id="zenkyoren-targets-mid-guidance-pricing-for-100m-nakama-re-2026-1-japan-quake-cat" data-url="https://www.artemis.bm/news/zenkyoren-targets-mid-guidance-pricing-for-100m-nakama-re-2026-1-japan-quake-cat-bond/?utm_source=rss&utm_medium=rss&utm_campaign=zenkyoren-targets-mid-guidance-pricing-for-100m-nakama-re-2026-1-japan-quake-cat-bond">
       
       <div class="card-meta">
-        <span class="card-source">Artemis</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.artemis.bm&sz=16" alt="" loading="lazy"><span class="card-source">Artemis</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 2h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -519,9 +580,9 @@
     <article class="card" data-category="General" data-region="global" data-search="el niño to shape 2026 atlantic hurricane season. us landfall threat remains: accuweather the 2026 atlantic hurricane season will be shaped by shifting climate patterns in the pacific, as a developing el niño may influence and perhaps depress tropical storm formation, but a forecast from accuweather highlights the potential for rapid intensification and warns of three to five direct storm impacts on the united states. waters are already warm in the atlantic, caribbean and gulf in regions where early tropical storm formation has tended to occur, which leads accuweather to forecast a chance of an earlier start to the 2026 atlantic hurricane season. “when storms develop so close to land, it means there is less time for coastal residents to prepare for potential impacts.” but, el niño conditions are expected to be the main influence to the overall season in terms of hurricane and storm formation, meaning storm numbers may be around or even below historical averages, accuweather explains. artemis" data-id="el-nino-to-shape-2026-atlantic-hurricane-season-us-landfall-threat-remains-accuw" data-url="https://www.artemis.bm/news/el-nino-to-shape-2026-atlantic-hurricane-season-us-landfall-threat-remains-accuweather/?utm_source=rss&utm_medium=rss&utm_campaign=el-nino-to-shape-2026-atlantic-hurricane-season-us-landfall-threat-remains-accuweather">
       
       <div class="card-meta">
-        <span class="card-source">Artemis</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.artemis.bm&sz=16" alt="" loading="lazy"><span class="card-source">Artemis</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 2h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -545,9 +606,9 @@
     <article class="card" data-category="General" data-region="global" data-search="la wildfires a real-world stress test. investor confidence in wildfire cat bonds rose: swiss re the devastating palisades and eaton wildfires that struck the los angeles area in january 2025 served as a real-world stress test for outstanding wildfire catastrophe bond structures, while also increasing investor confidence in allocating to the wildfire peril, according to swiss re capital markets. investor appetite for wildfire risk appeared driven by a confluence of factors: improved wildfire modelling, refined contracts and structures.” swiss re capital markets outlined that both the palisades and eaton wildfires have not triggered outstanding u.s. “somewhat counterintuitively, both wildfire events significantly increased investor confidence into wildfire cat bonds. artemis" data-id="la-wildfires-a-real-world-stress-test-investor-confidence-in-wildfire-cat-bonds-" data-url="https://www.artemis.bm/news/la-wildfires-a-real-world-stress-test-investor-confidence-in-wildfire-cat-bonds-rose-swiss-re/?utm_source=rss&utm_medium=rss&utm_campaign=la-wildfires-a-real-world-stress-test-investor-confidence-in-wildfire-cat-bonds-rose-swiss-re">
       
       <div class="card-meta">
-        <span class="card-source">Artemis</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.artemis.bm&sz=16" alt="" loading="lazy"><span class="card-source">Artemis</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 2h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -571,9 +632,9 @@
     <article class="card" data-category="General" data-region="global" data-search="the hartford strengthens international business with leadership updates us-based insurer the hartford has made several leadership updates within its international business as it continues to strengthen capabilities for long-term, sustainable growth. samuel joined the hartford in january 2026 as international head of marine, energy & industrial risk. he has spent nearly seven years at the hartford, most recently serving as head of casualty, international. reinsurance news" data-id="the-hartford-strengthens-international-business-with-leadership-updates" data-url="https://www.reinsurancene.ws/the-hartford-strengthens-international-business-with-leadership-updates/">
       
       <div class="card-meta">
-        <span class="card-source">Reinsurance News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 2h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -597,9 +658,9 @@
     <article class="card" data-category="General" data-region="global" data-search="howden re boosts latin america and caribbean offering with senior hires howden re, the global reinsurance, capital markets and strategic advisory arm of howden group, has appointed carlos garcia as managing director and karina lopez as director, further strengthening its latin america and caribbean offering. april mclaughlin, head of howden miami, commented, “latin america and the caribbean is a key growth region for howden re, presenting a compelling opportunity: a large, complex and underserved market where clients are increasingly looking for brokers with genuine local expertise and access to global capacity. carlos and karina’s depth of experience across the region’s most exposed markets, combined with their technical rigour and strong client relationships, further strengthens the proposition we are building for clients across latin america and the caribbean.” mario baotic, head of international growth markets, international treaty, howden re, added, “this is a region with significant catastrophe exposure, a rapidly maturing insurance market and real appetite for specialist reinsurance solutions. reinsurance news" data-id="howden-re-boosts-latin-america-and-caribbean-offering-with-senior-hires" data-url="https://www.reinsurancene.ws/howden-re-boosts-latin-america-and-caribbean-offering-with-senior-hires/">
       
       <div class="card-meta">
-        <span class="card-source">Reinsurance News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 2h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -623,9 +684,9 @@
     <article class="card" data-category="General" data-region="global" data-search="commodity prices rise due to middle east conflict: coface the conflict in the middle east is causing commodity prices to soar, driven by disruptions to the supply of raw materials via the strait of hormuz. “the current escalation in the middle east is hitting commodity markets hard. according to a recent flash news report by coface, the conflict has triggered a “deadlock” scenario that is significantly impacting the oil & gas, fertilizers, petrochemical derivatives and aluminium markets. reinsurance news" data-id="commodity-prices-rise-due-to-middle-east-conflict-coface" data-url="https://www.reinsurancene.ws/commodity-prices-rise-due-to-middle-east-conflict-coface/">
       
       <div class="card-meta">
-        <span class="card-source">Reinsurance News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 2h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -649,9 +710,9 @@
     <article class="card" data-category="General" data-region="global" data-search="hawaii to take over aging dam after failure scare during floods a 120-year-old hawaii dam that reached worrisome levels during heavy rains and devastating flooding, prompting thousands of residents to evacuate for fear of life-threatening failure last week, will soon be taken over by the state. the state’s land board on friday voted to acquire certain irrigation lands from dole food co., clearing the way for the state to take over the aging dam and move forward on at least $20 million in repairs and an expansion of the spillway. related: the scope of damage from hawaii’s floods becomes clearer the earthen structure was built in 1906 to increase sugar production for the waialua agricultural co., which eventually became a subsidiary of dole food co. insurance journal" data-id="hawaii-to-take-over-aging-dam-after-failure-scare-during-floods" data-url="https://www.insurancejournal.com/news/west/2026/03/30/863893.htm">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 2h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -675,9 +736,9 @@
     <article class="card" data-category="General" data-region="global" data-search="sources: us treasury to consult with insurance regulators on private credit lenders treasury department is expected to convene in coming weeks the first of a series of meetings with domestic and international insurance regulators about recent developments in jittery private credit markets, two sources familiar with the plans told reuters. treasury officials are keen to hear regulators’ feedback on the rising use of fund-level leverage, the consistency of private credit ratings, the use of offshore reinsurance, and the liquidity of investments in private credit markets, the sources said, adding that any policy prescriptions would only come after a series of consultations. during remarks to the economic club of dallas in february, bessent, a former hedge fund manager, said that when assets move from private credit lenders into regulated financial institutions, such as pension funds, banks or captive insurance companies, “treasury gets involved.” “i am concerned with watching, how does this get to the regulated financial system,” bessent said. insurance journal" data-id="sources-us-treasury-to-consult-with-insurance-regulators-on-private-credit-lende" data-url="https://www.insurancejournal.com/news/national/2026/03/30/863908.htm">
       <a href="https://www.insurancejournal.com/news/national/2026/03/30/863908.htm" target="_blank" rel="noopener"><img class="card-image" src="https://www.insurancejournal.com/app/uploads/2012/09/treasury-building-2-580x386.jpg" alt="" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
       <div class="card-meta">
-        <span class="card-source">Insurance Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 2h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -701,9 +762,9 @@
     <article class="card" data-category="General" data-region="global" data-search="missing crew not found in iran-hit vessel, thai ship owner says a search for three crew members reported missing after a thai-flagged cargo vessel was attacked in the strait of hormuz earlier this month failed to locate them, according to ship’s owner. the ship ran aground on an iranian island last week, and a search team that boarded the vessel couldn’t find the missing crew, precious shipping managing director khalid m. of the 23 crew members on board, 20 were rescued by the omani navy after abandoning the vessel in a lifeboat. insurance journal" data-id="missing-crew-not-found-in-iran-hit-vessel-thai-ship-owner-says" data-url="https://www.insurancejournal.com/news/international/2026/03/30/863911.htm">
       <a href="https://www.insurancejournal.com/news/international/2026/03/30/863911.htm" target="_blank" rel="noopener"><img class="card-image" src="https://www.insurancejournal.com/app/uploads/2026/03/damaged-mayuree-naree-bulk-carrier-getty-580x387.jpg" alt="" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
       <div class="card-meta">
-        <span class="card-source">Insurance Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 2h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -727,9 +788,9 @@
     <article class="card" data-category="General" data-region="global" data-search="prudential financial appoints joseph barrowclough president of bermuda reinsurance to drive platform growth the post prudential financial appoints joseph barrowclough president of bermuda reinsurance to drive platform growth appeared first on insurtech insights . prudential financial has appointed joseph barrowclough as president of its bermuda reinsurance operations, reinforcing its leadership team as it continues to expand its global reinsurance capabilities. commenting on his new position, barrowclough highlighted the opportunity to further enhance prudential’s bermuda platforms and drive continued growth, supported by a strong team and a clear strategic vision. insurtech insights" data-id="prudential-financial-appoints-joseph-barrowclough-president-of-bermuda-reinsuran" data-url="https://www.insurtechinsights.com/prudential-financial-appoints-joseph-barrowclough-president-of-bermuda-reinsurance-to-drive-platform-growth/">
       
       <div class="card-meta">
-        <span class="card-source">InsurTech Insights</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurtechinsights.com&sz=16" alt="" loading="lazy"><span class="card-source">InsurTech Insights</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 2h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -753,9 +814,9 @@
     <article class="card" data-category="General" data-region="global" data-search="wtw strengthens emea structure with new leadership to accelerate growth and ai adoption the post wtw strengthens emea structure with new leadership to accelerate growth and ai adoption appeared first on insurtech insights . wtw has introduced a refreshed leadership structure across its emea insurance consulting and technology business, aimed at enhancing specialisation, accelerating innovation, and supporting growing client demand for technology-driven solutions. the changes position the business to further strengthen its role as a strategic partner to insurers across emea, particularly as the industry accelerates digital transformation and ai adoption. insurtech insights" data-id="wtw-strengthens-emea-structure-with-new-leadership-to-accelerate-growth-and-ai-a" data-url="https://www.insurtechinsights.com/wtw-strengthens-emea-structure-with-new-leadership-to-accelerate-growth-and-ai-adoption/">
       
       <div class="card-meta">
-        <span class="card-source">InsurTech Insights</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurtechinsights.com&sz=16" alt="" loading="lazy"><span class="card-source">InsurTech Insights</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 2h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -779,9 +840,9 @@
     <article class="card" data-category="General" data-region="global" data-search="odyssey group holdings unifies hudson and newline under single brand to strengthen global identity the post odyssey group holdings unifies hudson and newline under single brand to strengthen global identity appeared first on insurtech insights . odyssey group holdings has brought its subsidiaries hudson insurance and newline group under a unified brand identity, aligning all operations under the group’s long-standing wave symbol. by aligning hudson, newline, and&nbsp;odysseyre&nbsp;under one identity, the group aims to highlight its collective financial strength, underwriting expertise, and long-term stability. insurtech insights" data-id="odyssey-group-holdings-unifies-hudson-and-newline-under-single-brand-to-strength" data-url="https://www.insurtechinsights.com/odyssey-group-holdings-unifies-hudson-and-newline-under-single-brand-to-strengthen-global-identity/">
       
       <div class="card-meta">
-        <span class="card-source">InsurTech Insights</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurtechinsights.com&sz=16" alt="" loading="lazy"><span class="card-source">InsurTech Insights</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 2h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -805,9 +866,9 @@
     <article class="card" data-category="General" data-region="global" data-search="msig asia invests in ancileo msig asia announced a strategic equity investment and regional partnership with travel insurance technology provider ancileo to accelerate its travel insurance growth across asia. by combining with ancileo’s technology and distribution expertise, we will deliver faster, more relevant experiences for travellers and create long-term value for our partners and customers.” – clemens philippi, ceo of msig asia. “msig has been a valued partner of ancileo for years, and today&#8217;s announcement reflects what we believe a true long-term partnership can become. coverager" data-id="msig-asia-invests-in-ancileo" data-url="https://coverager.com/msig-asia-invests-in-ancileo/">
       
       <div class="card-meta">
-        <span class="card-source">Coverager</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=coverager.com&sz=16" alt="" loading="lazy"><span class="card-source">Coverager</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 2h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -831,9 +892,9 @@
     <article class="card" data-category="General" data-region="global" data-search="just selects sapiens platform for uk retirement modernization sapiens announced that just group has selected its insurance platform for life and pensions to support system modernization and growth in the uk retirement market. the platform will support just’s ability to scale operations and expand its product portfolio across retirement offerings. strategically, the move reflects just’s focus on building a more flexible and data-driven infrastructure to handle growing demand in the retirement segment. coverager" data-id="just-selects-sapiens-platform-for-uk-retirement-modernization" data-url="https://coverager.com/just-selects-sapiens-platform-for-uk-retirement-modernization/">
       
       <div class="card-meta">
-        <span class="card-source">Coverager</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=coverager.com&sz=16" alt="" loading="lazy"><span class="card-source">Coverager</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 2h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -857,9 +918,9 @@
     <article class="card" data-category="General" data-region="global" data-search="ia valuations announces strategic partnership with hawksoft this partnership will benefit agencies using hawksoft by giving them a trusted outlet for insurance agency valuations and agency business planning. &#8220;our partnership with ia valuations changes that by connecting hawksoft&#8217;s operational data with ia valuations&#8217; expertise. partnership connects performance analytics with hawksoft&#8217;s agency management system to deliver insights that help owners confidently plan for their future. coverager" data-id="ia-valuations-announces-strategic-partnership-with-hawksoft" data-url="https://coverager.com/ia-valuations-announces-strategic-partnership-with-hawksoft/">
       
       <div class="card-meta">
-        <span class="card-source">Coverager</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=coverager.com&sz=16" alt="" loading="lazy"><span class="card-source">Coverager</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 2h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -883,7 +944,7 @@
     <article class="card" data-category="General" data-region="ibero" data-search="el futuro del seguro se juega en la gestión del talento el sector asegurador afronta uno de los mayores desafíos de su historia en materia de gestión del talento, impulsado por la automatización, el riesgo climático y el cambio en las expectativas de la fuerza laboral. así lo señala un reciente informe de aon , que sitúa la construcción de una estrategia de talento preparada para el futuro como una prioridad crítica para las aseguradoras . el rol incluye la gestión de proveedores, supervisión de mantenimientos y apoyo logístico interno para garantizar un entorno de trabajo eficiente y seguro. inese" data-id="el-futuro-del-seguro-se-juega-en-la-gestion-del-talento" data-url="https://www.inese.es/el-futuro-del-seguro-se-juega-en-la-gestion-del-talento/">
       
       <div class="card-meta">
-        <span class="card-source">INESE</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.inese.es&sz=16" alt="" loading="lazy"><span class="card-source">INESE</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
         <span class="card-dot">·</span>
@@ -909,7 +970,7 @@
     <article class="card" data-category="General" data-region="ibero" data-search="del nuevo registro de vpl al deber de información: el sector asegurador se adapta a los cambios legales también destacó el nuevo registro de los vpl según el rd 52/2026. a continuación, josé luis quilis, responsable de suscripción y siniestros de cgpa , trajo a colación el deber de información de los mediadores de seguros subrayando los principios generales de honestidad, imparcialidad y equidad, dando publicidad precisa, clara y no engañosa y evitar conflicto te intereses a la hora de tomar decisiones vía remuneración, que se recogen en el real decreto-ley 3/2020 , que “ha supuesto un punto de inflexión en el deber de asesoramiento de los distribuidores de seguros”, concluyó quilis. roberto hernández, director de siniestros de zurich y francisco lisbona, director de zurich resilience solutions , expusieron los retos para el sector asegurador tras la dana . inese" data-id="del-nuevo-registro-de-vpl-al-deber-de-informacion-el-sector-asegurador-se-adapta" data-url="https://www.inese.es/del-nuevo-registro-de-vpl-al-deber-de-informacion-el-sector-asegurador-se-adapta-a-los-cambios-legales/">
       
       <div class="card-meta">
-        <span class="card-source">INESE</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.inese.es&sz=16" alt="" loading="lazy"><span class="card-source">INESE</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
         <span class="card-dot">·</span>
@@ -935,7 +996,7 @@
     <article class="card" data-category="General" data-region="ibero" data-search="siete aseguradoras se suman a ‘la hora del planeta’ el sector asegurador se ha unido un año más a ‘la hora del planeta’ , la iniciativa global impulsada por wwf que busca concienciar sobre el cambio climático y fomentar el ahorro y uso eficiente de energía. la iniciativa recuerda problemas ambientales como el calentamiento global y los fenómenos extremos que afectan cada vez con más intensidad a todo el planeta. la acción tuvo lugar el sábado, entre las 20.30 y las 21.30 horas, con el apagado simbólico de luces en oficinas y edificios emblemáticos. inese" data-id="siete-aseguradoras-se-suman-a-la-hora-del-planeta" data-url="https://www.inese.es/siete-aseguradoras-se-suman-a-la-hora-del-planeta/">
       
       <div class="card-meta">
-        <span class="card-source">INESE</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.inese.es&sz=16" alt="" loading="lazy"><span class="card-source">INESE</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
         <span class="card-dot">·</span>
@@ -961,7 +1022,7 @@
     <article class="card" data-category="General" data-region="global" data-search="lng supply cut further after cyclone hits australian plants three australian plants that provide about 8% of the world’s liquefied natural gas have had their output curbed by a cyclone, in a further blow to mainly asian buyers reeling from the halt of shipments from qatar. “temporary shut-ins at australian lng plants come at the worst time for lng buyers looking to replace supply from qatar,” said josh runciman, lead analyst for australian gas at the institute for energy economics and financial analysis. north west shelf’s offshore workforce was evacuated in line with woodside’s cyclone preparation arrangements and production is expected to recommence after they return, according to the company’s spokesperson. claims journal" data-id="lng-supply-cut-further-after-cyclone-hits-australian-plants" data-url="https://www.claimsjournal.com/news/national/2026/03/30/336570.htm">
       <a href="https://www.claimsjournal.com/news/national/2026/03/30/336570.htm" target="_blank" rel="noopener"><img class="card-image" src="https://www.claimsjournal.com/app/uploads/2026/03/Gorgon-LNG-facility_Bloomberg-580x387.jpg" alt="" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
       <div class="card-meta">
-        <span class="card-source">Claims Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.claimsjournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Claims Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
         <span class="card-dot">·</span>
@@ -987,7 +1048,7 @@
     <article class="card" data-category="General" data-region="global" data-search="hldi: safety benefits stack up from driver assistance features safety benefits from these driver assistance features also increase as systems get bundled and updated, according to a study from the highway loss data institute examining the impact of advanced driver assistance systems on mazda models from 2015 to 2023. the hldi evaluated several other features which include blind spot detection with rear cross traffic alert, curve-adaptive headlights, heads-up display and traffic sign recognition. smaller reductions in safety benefits were associated with curve-adaptive headlights and the heads-up display. claims journal" data-id="hldi-safety-benefits-stack-up-from-driver-assistance-features" data-url="https://www.claimsjournal.com/news/national/2026/03/30/336541.htm">
       
       <div class="card-meta">
-        <span class="card-source">Claims Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.claimsjournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Claims Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
         <span class="card-dot">·</span>
@@ -1013,7 +1074,7 @@
     <article class="card" data-category="General" data-region="global" data-search="delta insurance new zealand promotes dinesh murali to managing director to view the full article and get unlimited access to insuranceasia news's exclusive insight across 5,000+ articles insurance asia news" data-id="delta-insurance-new-zealand-promotes-dinesh-murali-to-managing-director" data-url="https://insuranceasianews.com/delta-insurance-new-zealand-promoted-dinesh-murali-to-managing-director/">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Asia News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=insuranceasianews.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Asia News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
         <span class="card-dot">·</span>
@@ -1039,7 +1100,7 @@
     <article class="card" data-category="General" data-region="global" data-search="lloyd’s seeks a quiet sunset, but storm clouds remain to view the full article and get unlimited access to insuranceasia news's exclusive insight across 5,000+ articles insurance asia news" data-id="lloyds-seeks-a-quiet-sunset-but-storm-clouds-remain" data-url="https://insuranceasianews.com/lloyds-seeks-a-quiet-sunset-but-storm-clouds-remain/">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Asia News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=insuranceasianews.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Asia News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
         <span class="card-dot">·</span>
@@ -1065,7 +1126,7 @@
     <article class="card" data-category="General" data-region="global" data-search="south korea non-life carriers’ insurance income plunges 32% despite premium growth to view the full article and get unlimited access to insuranceasia news's exclusive insight across 5,000+ articles insurance asia news" data-id="south-korea-non-life-carriers-insurance-income-plunges-32-despite-premium-growth" data-url="https://insuranceasianews.com/south-korea-non-life-carriers-insurance-income-plunges-32-despite-premium-growth/">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Asia News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=insuranceasianews.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Asia News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
         <span class="card-dot">·</span>
@@ -1091,7 +1152,7 @@
     <article class="card" data-category="General" data-region="global" data-search="am best upgrades ocean re’s credit ratings ocean international reinsurance company limited (ocean re) has had its financial strength rating upgraded to a (excellent) from a- (excellent) and its long-term issuer credit rating upgraded to “a” (excellent) from “a-” (excellent) by am best, with the outlook of these ratings revised to stable from positive. am best notes that the upgrade reflects ocean re’s “very strong” balance sheet strength and operating performance, neutral business profile, and appropriate enterprise risk management. ocean re’s business development strategy clearly identifies an increase in the proportion of traditional reinsurance in its portfolio, as compared with its captive portfolio, explained am best. reinsurance news" data-id="am-best-upgrades-ocean-res-credit-ratings" data-url="https://www.reinsurancene.ws/am-best-upgrades-ocean-res-credit-ratings/">
       
       <div class="card-meta">
-        <span class="card-source">Reinsurance News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
         <span class="card-dot">·</span>
@@ -1117,7 +1178,7 @@
     <article class="card" data-category="General" data-region="global" data-search="arch insurance uk regional division name tinworth senior p&c underwriter henry tinworth has joined arch insurance uk regional division as senior property & casualty underwriter, effective immediately, based in leeds. his wealth of trading and technical expertise, combined with his service-led approach, will be invaluable as we deepen our broker partnerships, deliver tailored solutions for complex client risks, and strengthen our presence across the region.” tinworth is joining arch from dual where he was most recently a senior underwriter. in his new role, tinworth will leverage his 10 years of uk insurance marketexperience to drive new business development across the property and casualty portfolio with a regional focus on the north. reinsurance news" data-id="arch-insurance-uk-regional-division-name-tinworth-senior-p-c-underwriter" data-url="https://www.reinsurancene.ws/arch-insurance-uk-regional-division-name-tinworth-senior-pc-underwriter/">
       
       <div class="card-meta">
-        <span class="card-source">Reinsurance News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
         <span class="card-dot">·</span>
@@ -1143,7 +1204,7 @@
     <article class="card" data-category="General" data-region="global" data-search="converge gets additional cyber insurance capacity from lloyd’s converge, a company specialising in cyber risk management and underwriting, has secured additional underwriting capacity from lloyd’s, the world’s oldest insurance and reinsurance marketplace, for companies with annual revenues up to $5 billion. the expanded capacity from both lloyd’s and obsidian reflects strong market confidence in converge’s strategy of combining rigorous underwriting discipline with advanced technology to achieve better risk selection and pricing precision. the expanded capacity will be available across converge’s full suite of products, allowing brokers to access comprehensive cyber solutions.” reinsurance news" data-id="converge-gets-additional-cyber-insurance-capacity-from-lloyds" data-url="https://www.reinsurancene.ws/converge-gets-additional-cyber-insurance-capacity-from-lloyds/">
       
       <div class="card-meta">
-        <span class="card-source">Reinsurance News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
         <span class="card-dot">·</span>
@@ -1169,7 +1230,7 @@
     <article class="card" data-category="General" data-region="global" data-search="lines persist at some airports after trump signs tsa pay memo several us airports advised travelers on saturday to arrive at least four hours before their flights because of long security lines even after president donald trump said transportation security administration workers would be paid by tapping funds from his 2025 tax and spending bill. trump signed a memo friday directing tsa personnel to be paid as he tried to alleviate disruptions at us airports, but it remains unclear how much it will do to improve wait times at security checkpoints, which have varied widely at different airports. trump’s memo directed dhs and the white house budget office to use funds that have a “reasonable and logical nexus” to agency operations to provide employees who have worked without pay “with the compensation and benefits that would have accrued to them if not for” the shutdown. insurance journal" data-id="lines-persist-at-some-airports-after-trump-signs-tsa-pay-memo" data-url="https://www.insurancejournal.com/news/national/2026/03/30/863833.htm">
       <a href="https://www.insurancejournal.com/news/national/2026/03/30/863833.htm" target="_blank" rel="noopener"><img class="card-image" src="https://www.insurancejournal.com/app/uploads/2026/03/airport-lines-TSA-airport-security-Bloomberg-580x387.jpg" alt="" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
       <div class="card-meta">
-        <span class="card-source">Insurance Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
         <span class="card-dot">·</span>
@@ -1195,7 +1256,7 @@
     <article class="card" data-category="General" data-region="global" data-search="bank of america agrees to pay $72.5m to settle epstein accusers’ lawsuit bank of america agreed to pay $72.5 million to settle a civil lawsuit brought by women who accused the bank of facilitating their sexual abuse by jeffrey epstein, court records showed on friday. bank of america has said doe alleged merely that it provided routine services to people who at the time had no known links to epstein, and that any suggestion that it was more deeply involved was “threadbare and meritless.” rakoff ruled in january that bank of america must face doe’s claims that it knowingly benefited from epstein’s sex trafficking and obstructed enforcement of the federal trafficking victims protection act. doe’s lawyers have also sued other alleged enablers of epstein’s sex trafficking, and in 2023 reached settlements of $290 million with jpmorgan chase and $75 million with deutsche bank on behalf of his accusers. insurance journal" data-id="bank-of-america-agrees-to-pay-72-5m-to-settle-epstein-accusers-lawsuit" data-url="https://www.insurancejournal.com/news/national/2026/03/30/863837.htm">
       <a href="https://www.insurancejournal.com/news/national/2026/03/30/863837.htm" target="_blank" rel="noopener"><img class="card-image" src="https://www.insurancejournal.com/app/uploads/2021/07/Bank-of-America-logo-logotype-580x435.png" alt="" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
       <div class="card-meta">
-        <span class="card-source">Insurance Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
         <span class="card-dot">·</span>
@@ -1221,7 +1282,7 @@
     <article class="card" data-category="General" data-region="global" data-search="trump unveils new loan guarantees for beleaguered farmers president donald trump announced new loan guarantees for farmers and food suppliers, a bid to bolster us agricultural communities squeezed by the impact of the iran war, tariffs and other challenges. trump said the loan guarantees would cover farmers and food suppliers, including vegetable, grain and seed farmers, cattle, pig and poultry producers, as well as grocery wholesalers and others. trump did not specify a dollar amount for the guarantees. insurance journal" data-id="trump-unveils-new-loan-guarantees-for-beleaguered-farmers" data-url="https://www.insurancejournal.com/news/national/2026/03/30/863841.htm">
       <a href="https://www.insurancejournal.com/news/national/2026/03/30/863841.htm" target="_blank" rel="noopener"><img class="card-image" src="https://www.insurancejournal.com/app/uploads/2026/03/farmers-chard-Maryland-Bloomberg-580x387.jpg" alt="" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
       <div class="card-meta">
-        <span class="card-source">Insurance Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
         <span class="card-dot">·</span>
@@ -1247,7 +1308,7 @@
     <article class="card" data-category="General" data-region="global" data-search="crawford contractor connection partners with helixco contractor connection, a crawford & company business that operates a managed repair network, partnered with helixco , a technology platform designed to capture and validate time and materials documentation in real time across complex commercial repair projects. contractor connection will leverage helixco’s platform to provide real-time visibility into labor, equipment and cost documentation throughout the life of a commercial claim. by integrating helixco’s platform into our commercial program, we are strengthening consistency, accountability and cost confidence at scale for our carrier partners while supporting efficient execution across our contractor network.&#8221; &#8211; lance malcolm, president, u.s. coverager" data-id="crawford-contractor-connection-partners-with-helixco" data-url="https://coverager.com/crawford-contractor-connection-partners-with-helixco/">
       
       <div class="card-meta">
-        <span class="card-source">Coverager</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=coverager.com&sz=16" alt="" loading="lazy"><span class="card-source">Coverager</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="29 Mar 2026 19:48">hace 23h</span>
         <span class="card-dot">·</span>
@@ -1269,11 +1330,12 @@
         </div>
       </div>
     </article>
+<div class="time-sep" data-group="Ayer"><span>Ayer</span></div>
 
     <article class="card" data-category="General" data-region="global" data-search="alacrity launches ai-driven claims platform alacrity solutions is an independent provider of insurance claims management services in north america. the post alacrity launches ai-driven claims platform appeared first on coverager - insurance news and insights . coverager" data-id="alacrity-launches-ai-driven-claims-platform" data-url="https://coverager.com/alacrity-launches-ai-driven-claims-platform/">
       
       <div class="card-meta">
-        <span class="card-source">Coverager</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=coverager.com&sz=16" alt="" loading="lazy"><span class="card-source">Coverager</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="29 Mar 2026 14:04">ayer</span>
         <span class="card-dot">·</span>
@@ -1299,7 +1361,7 @@
     <article class="card" data-category="Tecnología" data-region="global" data-search="axa italia returns to tv with savings and investment-focused campaign the storyline follows a child imagining future ambitions, reinforcing the message that building financial security starts with everyday decisions. the post axa italia returns to tv with savings and investment-focused campaign appeared first on coverager - insurance news and insights . coverager" data-id="axa-italia-returns-to-tv-with-savings-and-investment-focused-campaign" data-url="https://coverager.com/axa-italia-returns-to-tv-with-savings-and-investment-focused-campaign/">
       
       <div class="card-meta">
-        <span class="card-source">Coverager</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=coverager.com&sz=16" alt="" loading="lazy"><span class="card-source">Coverager</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="29 Mar 2026 05:53">ayer</span>
         <span class="card-dot">·</span>
@@ -1325,7 +1387,7 @@
     <article class="card" data-category="General" data-region="global" data-search="insurance apostles files trademark for agricultural insurance agency brand the positioning suggests a niche agency model targeting the agricultural segment. the post insurance apostles files trademark for agricultural insurance agency brand appeared first on coverager - insurance news and insights . coverager" data-id="insurance-apostles-files-trademark-for-agricultural-insurance-agency-brand" data-url="https://coverager.com/insurance-apostles-files-trademark-for-agricultural-insurance-agency-brand/">
       
       <div class="card-meta">
-        <span class="card-source">Coverager</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=coverager.com&sz=16" alt="" loading="lazy"><span class="card-source">Coverager</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="28 Mar 2026 19:27">ayer</span>
         <span class="card-dot">·</span>
@@ -1347,11 +1409,12 @@
         </div>
       </div>
     </article>
+<div class="time-sep" data-group="Esta semana"><span>Esta semana</span></div>
 
     <article class="card" data-category="Inversión" data-region="global" data-search="china life insurance posts strong profit growth driven by investment performance and product innovation china life insurance has reported a significant rise in profitability for 2025, supported by robust investment returns and continued progress in shifting toward higher-value insurance products. the post china life insurance posts strong profit growth driven by investment performance and product innovation appeared first on insurtech insights . insurtech insights" data-id="china-life-insurance-posts-strong-profit-growth-driven-by-investment-performance" data-url="https://www.insurtechinsights.com/china-life-insurance-posts-strong-profit-growth-driven-by-investment-performance-and-product-innovation/">
       
       <div class="card-meta">
-        <span class="card-source">InsurTech Insights</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurtechinsights.com&sz=16" alt="" loading="lazy"><span class="card-source">InsurTech Insights</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="28 Mar 2026 14:03">hace 2 días</span>
         <span class="card-dot">·</span>
@@ -1377,7 +1440,7 @@
     <article class="card" data-category="Tecnología" data-region="global" data-search="corebridge financial and equitable holdings agree $22bn merger to create $1.5tn platform corebridge financial and equitable holdings have announced a landmark $22 billion all-stock merger, forming one of the largest retirement, life insurance, and asset management platforms in the united states. the post corebridge financial and equitable holdings agree $22bn merger to create $1.5tn platform appeared first on insurtech insights . insurtech insights" data-id="corebridge-financial-and-equitable-holdings-agree-22bn-merger-to-create-1-5tn-pl" data-url="https://www.insurtechinsights.com/corebridge-financial-and-equitable-holdings-agree-22bn-merger-to-create-1-5tn-platform/">
       
       <div class="card-meta">
-        <span class="card-source">InsurTech Insights</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurtechinsights.com&sz=16" alt="" loading="lazy"><span class="card-source">InsurTech Insights</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="28 Mar 2026 14:03">hace 2 días</span>
         <span class="card-dot">·</span>
@@ -1403,7 +1466,7 @@
     <article class="card" data-category="Tecnología" data-region="global" data-search="crawford & company names w. bruce swain jr. president & ceo the company also announced that jesse crawford, sr. will transition to an honorary board role. the post crawford &#038; company names w. coverager" data-id="crawford-company-names-w-bruce-swain-jr-president-ceo" data-url="https://coverager.com/crawford-company-names-w-bruce-swain-jr-president-ceo/">
       
       <div class="card-meta">
-        <span class="card-source">Coverager</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=coverager.com&sz=16" alt="" loading="lazy"><span class="card-source">Coverager</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="28 Mar 2026 14:03">hace 2 días</span>
         <span class="card-dot">·</span>
@@ -1429,7 +1492,7 @@
     <article class="card" data-category="Vida y Salud" data-region="global" data-search="marsh mclennan agency launches healthcare pricing tool the tool uses data from transparency in coverage regulations to provide provider-level cost insights. the post marsh mclennan agency launches healthcare pricing tool appeared first on coverager - insurance news and insights . coverager" data-id="marsh-mclennan-agency-launches-healthcare-pricing-tool" data-url="https://coverager.com/marsh-mclennan-agency-launches-healthcare-pricing-tool/">
       
       <div class="card-meta">
-        <span class="card-source">Coverager</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=coverager.com&sz=16" alt="" loading="lazy"><span class="card-source">Coverager</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="28 Mar 2026 14:03">hace 2 días</span>
         <span class="card-dot">·</span>
@@ -1455,7 +1518,7 @@
     <article class="card" data-category="Automóvil" data-region="global" data-search="clearcover taps strada to automate customer operations clearcover plans to expand the partnership into claims-related workflows and additional servicing use cases in the coming months. the post clearcover taps strada to automate customer operations appeared first on coverager - insurance news and insights . coverager" data-id="clearcover-taps-strada-to-automate-customer-operations" data-url="https://coverager.com/clearcover-taps-strada-to-automate-customer-operations/">
       
       <div class="card-meta">
-        <span class="card-source">Coverager</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=coverager.com&sz=16" alt="" loading="lazy"><span class="card-source">Coverager</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="28 Mar 2026 14:03">hace 2 días</span>
         <span class="card-dot">·</span>
@@ -1481,7 +1544,7 @@
     <article class="card" data-category="Tecnología" data-region="global" data-search="berkshire bets the buffett way; mosaic’s exit casts a shadow this week's newsletter discusses an ian exclusive, peak re's leadership change,allianz and jio's jv, 1.4 renewals, berkshire hathaway's japan foray and mosaic's singapore exit. the post berkshire bets the buffett way; mosaic’s exit casts a shadow appeared first on insuranceasia news . insurance asia news" data-id="berkshire-bets-the-buffett-way-mosaics-exit-casts-a-shadow" data-url="https://insuranceasianews.com/berkshire-bets-the-buffett-way-mosaics-exit-casts-a-shadow/">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Asia News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=insuranceasianews.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Asia News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="28 Mar 2026 05:17">hace 2 días</span>
         <span class="card-dot">·</span>
@@ -1507,7 +1570,7 @@
     <article class="card" data-category="General" data-region="global" data-search="krishnamoorthy rao returns to generali to lead india p&c jv rao was formerly with generali in india and malaysia for over 16 years. the post krishnamoorthy rao returns to generali to lead india p&#038;c jv appeared first on insuranceasia news . insurance asia news" data-id="krishnamoorthy-rao-returns-to-generali-to-lead-india-p-c-jv" data-url="https://insuranceasianews.com/krishnamoorthy-rao-returns-to-generali-to-lead-india-pc-jv/">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Asia News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=insuranceasianews.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Asia News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="28 Mar 2026 05:17">hace 2 días</span>
         <span class="card-dot">·</span>
@@ -1533,7 +1596,7 @@
     <article class="card" data-category="Automóvil" data-region="global" data-search="hawksoft integrates revitpay for agency payment processing the agency management system now supports direct api payments to accelerate premium collection, automate reconciliation and improve cash flow visibility. insurance innovation reporter" data-id="hawksoft-integrates-revitpay-for-agency-payment-processing" data-url="https://iireporter.com/hawksoft-integrates-revitpay-for-agency-payment-processing/">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Innovation Reporter</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=iireporter.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Innovation Reporter</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 19:54">hace 2 días</span>
         <span class="card-dot">·</span>
@@ -1559,7 +1622,7 @@
     <article class="card" data-category="Tecnología" data-region="global" data-search="generali hong kong deploys covergo ai for claims processing the insurer has implemented an ai document processing agent to automate health claims, reduce manual work and improve accuracy. insurance innovation reporter" data-id="generali-hong-kong-deploys-covergo-ai-for-claims-processing" data-url="https://iireporter.com/generali-hong-kong-deploys-covergo-ai-for-claims-processing/">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Innovation Reporter</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=iireporter.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Innovation Reporter</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 19:54">hace 2 días</span>
         <span class="card-dot">·</span>
@@ -1585,7 +1648,7 @@
     <article class="card" data-category="General" data-region="global" data-search="crypto ‘insurance’ might not protect you from theft when matthew allan realized nearly $100,000 in bitcoin was missing from his coinbase account, he wasn&#8217;t too worried. he had signed up for coinbase one, a $29.99 monthly subscription that promised up to $1 million of account protection. claims journal" data-id="crypto-insurance-might-not-protect-you-from-theft" data-url="https://www.claimsjournal.com/news/national/2026/03/27/336555.htm">
       
       <div class="card-meta">
-        <span class="card-source">Claims Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.claimsjournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Claims Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 19:54">hace 2 días</span>
         <span class="card-dot">·</span>
@@ -1611,7 +1674,7 @@
     <article class="card" data-category="General" data-region="global" data-search="bessent says hormuz ships insurance program to start soon treasury secretary scott bessent said a u.s. insurance program meant to boost shipping through the strait of hormuz will begin soon, a move that may help revive flows of much of the world&#8217;s oil and gas supplies. bessent&#8217;s predictions, delivered &#8230; claims journal" data-id="bessent-says-hormuz-ships-insurance-program-to-start-soon" data-url="https://www.claimsjournal.com/news/national/2026/03/27/336560.htm">
       
       <div class="card-meta">
-        <span class="card-source">Claims Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.claimsjournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Claims Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 19:54">hace 2 días</span>
         <span class="card-dot">·</span>
@@ -1637,7 +1700,7 @@
     <article class="card" data-category="General" data-region="global" data-search="toyota’s china jvs recall 560,000 suvs over seat safety risk toyota motor corp.&#8217;s chinese joint ventures are recalling more than 560,000 sport utility vehicles to fix a defect in the second-row seats that could jeopardize passenger safety during a collision. from april 1, the japanese carmaker and its local partner &#8230; claims journal" data-id="toyotas-china-jvs-recall-560000-suvs-over-seat-safety-risk" data-url="https://www.claimsjournal.com/news/national/2026/03/27/336563.htm">
       
       <div class="card-meta">
-        <span class="card-source">Claims Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.claimsjournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Claims Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 19:54">hace 2 días</span>
         <span class="card-dot">·</span>
@@ -1663,7 +1726,7 @@
     <article class="card" data-category="Tecnología" data-region="global" data-search="demand, risks for global data center insurance growing: report fast growth in data center construction is pushing up insurance demand and risks for the sector, a report published by swiss on friday said. global insurance premiums linked to data centers are expected to rise to $24.2 billion by 2030 from an estimated $10.6 billion currently, the report said. noting that building costs for a &#8230; continued carrier management" data-id="demand-risks-for-global-data-center-insurance-growing-report" data-url="https://www.carriermanagement.com/news/2026/03/27/286165.htm">
       
       <div class="card-meta">
-        <span class="card-source">Carrier Management</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.carriermanagement.com&sz=16" alt="" loading="lazy"><span class="card-source">Carrier Management</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 19:54">hace 2 días</span>
         <span class="card-dot">·</span>
@@ -1689,7 +1752,7 @@
     <article class="card" data-category="Regulación" data-region="global" data-search="roadless rule recision on forest lands could increase wildfire risk: study department of agriculture (usda) announced that it was rescinding the 2001 roadless rule, but a study that followed indicated that by overturning the rule, wildfires were much more likely in areas near forest roads. the government agency said the rule was outdated and that rescinding it would remove prohibitions on road &#8230; continued carrier management" data-id="roadless-rule-recision-on-forest-lands-could-increase-wildfire-risk-study" data-url="https://www.carriermanagement.com/news/2026/03/27/286169.htm">
       
       <div class="card-meta">
-        <span class="card-source">Carrier Management</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.carriermanagement.com&sz=16" alt="" loading="lazy"><span class="card-source">Carrier Management</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 19:54">hace 2 días</span>
         <span class="card-dot">·</span>
@@ -1715,7 +1778,7 @@
     <article class="card" data-category="Inversión" data-region="global" data-search="investment trust votes, conflicts of interest, and our role on 3 march 2026, we said we’d bring forward our planned review of the uk listing rules for investment entities, including how they apply to board independence and related party provisions.since then, there has been substantial debate over our role in relation to investment trusts, including calls for us to ‘get to grips’ with voting rules ‘that allow a minority shareholder to repeatedly attack an investment trust’.much of this debate suggests there are misunderstandings about how investment trusts are governed and where responsibilities sit. we’re concerned this may confuse investors in these trusts. other calls to action have lacked clear proposals or been based on future hypothetical scenarios for which protections often exist. fca news" data-id="investment-trust-votes-conflicts-of-interest-and-our-role" data-url="https://www.fca.org.uk/news/blogs/investment-trust-votes-conflicts-interest-and-our-role">
       
       <div class="card-meta">
-        <span class="card-source">FCA News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.fca.org.uk&sz=16" alt="" loading="lazy"><span class="card-source">FCA News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 19:54">hace 2 días</span>
         <span class="card-dot">·</span>
@@ -1741,7 +1804,7 @@
     <article class="card" data-category="Tecnología" data-region="global" data-search="the week’s 10 biggest funding rounds: a varied week for big deals, led by ai and defense the pace of large-scale dealmaking picked up some this week, led by openai’s disclosure that it raised another $10 billion. other big financings went to startups and growth-stage companies in sectors including defense tech, enterprise ai, autonomy and even laundry. crunchbase news" data-id="the-weeks-10-biggest-funding-rounds-a-varied-week-for-big-deals-led-by-ai-and-de" data-url="https://news.crunchbase.com/venture/biggest-funding-rounds-ai-defense-openai-shield/">
       
       <div class="card-meta">
-        <span class="card-source">Crunchbase News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=news.crunchbase.com&sz=16" alt="" loading="lazy"><span class="card-source">Crunchbase News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 19:54">hace 2 días</span>
         <span class="card-dot">·</span>
@@ -1767,7 +1830,7 @@
     <article class="card" data-category="Automóvil" data-region="global" data-search="aon adds us scs to its automated event response service this content is copyright to www.artemis.bm and should not appear anywhere else, or an infringement has occurred. aon, the global insurance and reinsurance broking group, has expanded its automated event response (aer) service to include us severe convective storms (scs), further assisting carriers to manage losses from what aon describes as the costliest insured peril of the 21st century on a cumulative basis. in january, aon reported that global insured losses from [&#8230;] aon adds us scs to its automated event response service was published by: www.artemis.bm our catastrophe bond deal directory sign up for our free weekly email newsletter here . artemis" data-id="aon-adds-us-scs-to-its-automated-event-response-service" data-url="https://www.artemis.bm/news/aon-adds-us-scs-to-its-automated-event-response-service/?utm_source=rss&utm_medium=rss&utm_campaign=aon-adds-us-scs-to-its-automated-event-response-service">
       
       <div class="card-meta">
-        <span class="card-source">Artemis</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.artemis.bm&sz=16" alt="" loading="lazy"><span class="card-source">Artemis</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 19:53">hace 2 días</span>
         <span class="card-dot">·</span>
@@ -1793,7 +1856,7 @@
     <article class="card" data-category="Catástrofes" data-region="global" data-search="perils estimates €586m insured market loss from storm nils this content is copyright to www.artemis.bm and should not appear anywhere else, or an infringement has occurred. extratropical windstorm nils, also known as ulrike, battered the nouvelle-aquitaine and occitanie regions in southwest france in mid-february, causing insurance industry losses of €586 million, according to an initial estimate from catastrophe data aggregator, perils. between february 11th and 13th, windstorm nils brought damaging winds and intense rainfall, which impacted already saturated grounds after the [&#8230;] perils estimates €586m insured market loss from storm nils was published by: www.artemis.bm our catastrophe bond deal directory sign up for our free weekly email newsletter here . artemis" data-id="perils-estimates-eur586m-insured-market-loss-from-storm-nils" data-url="https://www.artemis.bm/news/perils-estimates-e586m-insured-market-loss-from-storm-nils/?utm_source=rss&utm_medium=rss&utm_campaign=perils-estimates-e586m-insured-market-loss-from-storm-nils">
       
       <div class="card-meta">
-        <span class="card-source">Artemis</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.artemis.bm&sz=16" alt="" loading="lazy"><span class="card-source">Artemis</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 19:53">hace 2 días</span>
         <span class="card-dot">·</span>
@@ -1819,7 +1882,7 @@
     <article class="card" data-category="Catástrofes" data-region="global" data-search="seadrif and aha centre sign agreement to advance disaster risk financing in southeast asia the southeast asia disaster risk insurance facility (seadrif) insurance company, a regional initiative supporting disaster risk financing solutions, and the asean coordinating centre for humanitarian assistance on disaster management (aha centre), the regional body for disaster response coordination, has recently entered into a memorandum of intent (moi) in bali, indonesia. the agreement establishes a framework [&#8230;] the post seadrif and aha centre sign agreement to advance disaster risk financing in southeast asia appeared first on reinsurancene.ws . reinsurance news" data-id="seadrif-and-aha-centre-sign-agreement-to-advance-disaster-risk-financing-in-sout" data-url="https://www.reinsurancene.ws/seadrif-and-aha-centre-sign-agreement-to-advance-disaster-risk-financing-in-southeast-asia/">
       
       <div class="card-meta">
-        <span class="card-source">Reinsurance News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 19:53">hace 2 días</span>
         <span class="card-dot">·</span>
@@ -1845,7 +1908,7 @@
     <article class="card" data-category="General" data-region="global" data-search="xs global appoints daniel abramson as head of construction underwriting, apac xs global, an independently owned managing general underwriting (mgu) platform, has announced the appointment of daniel abramson as head of construction underwriting for asia pacific, based in hong kong. abramson brings more than 25 years of insurance industry experience spanning construction and energy underwriting. before joining xs global, he was head of construction at aviva. reinsurance news" data-id="xs-global-appoints-daniel-abramson-as-head-of-construction-underwriting-apac" data-url="https://www.reinsurancene.ws/xs-global-appoints-daniel-abramson-as-head-of-construction-underwriting-apac/">
       
       <div class="card-meta">
-        <span class="card-source">Reinsurance News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 19:53">hace 2 días</span>
         <span class="card-dot">·</span>
@@ -1871,7 +1934,7 @@
     <article class="card" data-category="Tecnología" data-region="global" data-search="swiss re flags accumulation risk in data centres as key underwriting challenge the data centre industry is evolving into increasingly complex, high-energy-density facilities that concentrate risks within single sites, with underwriting success depending not only on capacity, but also on specialised technical assessment and disciplined accumulation management, according to a recent report by the swiss re institute. swiss re highlighted that data centres powering today&#8217;s ai infrastructure [&#8230;] the post swiss re flags accumulation risk in data centres as key underwriting challenge appeared first on reinsurancene.ws . reinsurance news" data-id="swiss-re-flags-accumulation-risk-in-data-centres-as-key-underwriting-challenge" data-url="https://www.reinsurancene.ws/swiss-re-flags-accumulation-risk-in-data-centres-as-key-underwriting-challenge/">
       
       <div class="card-meta">
-        <span class="card-source">Reinsurance News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 19:53">hace 2 días</span>
         <span class="card-dot">·</span>
@@ -1897,7 +1960,7 @@
     <article class="card" data-category="General" data-region="global" data-search="people moves: marsh risk names zafiriadis to lead new service delivery practice marsh names zafiriadis leader of new service delivery practice, us and canada, marsh risk marsh, headquartered in new york city, appointed katrina zafiriadis as leader of its newly established service delivery practice (sdp), u.s. insurance journal" data-id="people-moves-marsh-risk-names-zafiriadis-to-lead-new-service-delivery-practice" data-url="https://www.insurancejournal.com/news/national/2026/03/27/863631.htm">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 19:53">hace 2 días</span>
         <span class="card-dot">·</span>
@@ -1923,7 +1986,7 @@
     <article class="card" data-category="General" data-region="global" data-search="amid drought, corpus christi seeks water from privately owned plant six months after scrapping their own seawater desalination plant project, corpus christi city council voted tuesday to consider an agreement with a private company to purchase water from its desalination plant to help stave off an impending water emergency. insurance journal" data-id="amid-drought-corpus-christi-seeks-water-from-privately-owned-plant" data-url="https://www.insurancejournal.com/news/southcentral/2026/03/27/863792.htm">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 19:53">hace 2 días</span>
         <span class="card-dot">·</span>
@@ -1949,7 +2012,7 @@
     <article class="card" data-category="Fraude" data-region="global" data-search="ohio contractor sentenced to 17 years in prison on fraud charges a pole barn contractor who defrauded consumers of more than $400,000 has been sentenced to at least 17 years in prison after being convicted of 47 felony counts, ohio attorney general dave yost announced this week.. insurance journal" data-id="ohio-contractor-sentenced-to-17-years-in-prison-on-fraud-charges" data-url="https://www.insurancejournal.com/news/midwest/2026/03/27/863795.htm">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 19:53">hace 2 días</span>
         <span class="card-dot">·</span>
@@ -1975,7 +2038,7 @@
     <article class="card" data-category="Tecnología" data-region="global" data-search="infosys to acquire stratus to accelerate ai-led insurance transformation infosys has announced plans to acquire stratus, a specialist technology solutions firm serving the property and casualty (p&#038;c) insurance sector, in a move aimed at strengthening its capabilities in ai-driven digital transformation. the post infosys to acquire stratus to accelerate ai-led insurance transformation appeared first on insurtech insights . insurtech insights" data-id="infosys-to-acquire-stratus-to-accelerate-ai-led-insurance-transformation" data-url="https://www.insurtechinsights.com/infosys-to-acquire-stratus-to-accelerate-ai-led-insurance-transformation/">
       
       <div class="card-meta">
-        <span class="card-source">InsurTech Insights</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurtechinsights.com&sz=16" alt="" loading="lazy"><span class="card-source">InsurTech Insights</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 19:53">hace 2 días</span>
         <span class="card-dot">·</span>
@@ -2001,7 +2064,7 @@
     <article class="card" data-category="Tecnología" data-region="global" data-search="hawksoft and gaya announce partnership to automate data entry agencies can send customer and policy data from hawksoft to gaya to automate quoting workflows across carrier portals, raters, and insurance forms. hawksoft and gaya today announced a new integration... the post hawksoft and gaya announce partnership to automate data entry appeared first on coverager - insurance news and insights . coverager" data-id="hawksoft-and-gaya-announce-partnership-to-automate-data-entry" data-url="https://coverager.com/hawksoft-and-gaya-announce-partnership-to-automate-data-entry/">
       
       <div class="card-meta">
-        <span class="card-source">Coverager</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=coverager.com&sz=16" alt="" loading="lazy"><span class="card-source">Coverager</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 19:53">hace 2 días</span>
         <span class="card-dot">·</span>
@@ -2027,7 +2090,7 @@
     <article class="card" data-category="Tecnología" data-region="global" data-search="safety system failed to prevent deadly runway collision at laguardia airport the systems in place at new york&#8217;s laguardia airport to prevent ground collisions failed to keep an air canada jet from smashing into a fire truck that had just pulled out on the runway as the plane was landing. the national transportation safety board will determine what went wrong before sunday&#8217;s crash that killed both &#8230; continued carrier management" data-id="safety-system-failed-to-prevent-deadly-runway-collision-at-laguardia-airport" data-url="https://www.carriermanagement.com/news/2026/03/27/286161.htm">
       
       <div class="card-meta">
-        <span class="card-source">Carrier Management</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.carriermanagement.com&sz=16" alt="" loading="lazy"><span class="card-source">Carrier Management</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 14:45">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2053,7 +2116,7 @@
     <article class="card" data-category="General" data-region="global" data-search="peak re, suncorp, allianz jio re, aon, lockton: 15 apac insurance people moves of the week sompo, pacific insurance, berkley insurance asia, xs global, markel, marsh, willis, howden, ando, talbot, tower, niyam group and picc also made personnel changes over the last week. the post peak re, suncorp, allianz jio re, aon, lockton: 15 apac insurance people moves of the week appeared first on insuranceasia news . insurance asia news" data-id="peak-re-suncorp-allianz-jio-re-aon-lockton-15-apac-insurance-people-moves-of-the" data-url="https://insuranceasianews.com/peak-re-suncorp-allianz-jio-re-aon-lockton-15-apac-insurance-people-moves-of-the-week/">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Asia News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=insuranceasianews.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Asia News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 14:45">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2079,7 +2142,7 @@
     <article class="card" data-category="Regulación" data-region="global" data-search="my fca marks first year with a single, streamlined sign in for all firms as part of ongoing improvements to my fca, and following the successful removal of regdata sign in at the end of last year, we have now removed direct access to connect and the online invoicing system. all existing regdata, connect and online invoicing links and bookmarked pages will now automatically redirect to my fca, where you can access all systems from a single homepage without signing in again. this makes managing your regulatory tasks quicker and more efficient.one year of my fcaone year on from launch, my fca has proven to be a real success. fca news" data-id="my-fca-marks-first-year-with-a-single-streamlined-sign-in-for-all-firms" data-url="https://www.fca.org.uk/news/news-stories/my-fca-marks-first-year-single-streamlined-sign-all-firms">
       
       <div class="card-meta">
-        <span class="card-source">FCA News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.fca.org.uk&sz=16" alt="" loading="lazy"><span class="card-source">FCA News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 14:45">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2105,7 +2168,7 @@
     <article class="card" data-category="Tecnología" data-region="global" data-search="fca fines dinosaur merchant bank limited for market abuse surveillance failures the fca has fined dinosaur merchant bank limited (dmbl) £338,000 for failing to put in place effective systems and controls to detect and report suspicious trading in its contracts for difference (cfd) business. cfds are sophisticated financial products that are used to speculate on various assets going up or down in value. given their high-risk nature, firms must have strong and reliable surveillance arrangements to prevent insider dealing and market manipulation.in june 2024, dmbl introduced a new order system that led to a sharp increase in cfd trading by its clients. fca news" data-id="fca-fines-dinosaur-merchant-bank-limited-for-market-abuse-surveillance-failures" data-url="https://www.fca.org.uk/news/press-releases/fca-fines-dinosaur-merchant-bank-limited-market-abuse-surveillance-failures">
       
       <div class="card-meta">
-        <span class="card-source">FCA News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.fca.org.uk&sz=16" alt="" loading="lazy"><span class="card-source">FCA News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 14:45">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2131,7 +2194,7 @@
     <article class="card" data-category="Inversión" data-region="global" data-search="austin’s star is still shining bright: venture funding to city’s startups hits all-time high austin’s startup scene is stronger than ever. that’s the consensus among investors in the city, and it’s borne out by crunchbase data, which shows startups headquartered in the lone star state’s capital raised a record $7.19 billion in venture funding in 2025. crunchbase news" data-id="austins-star-is-still-shining-bright-venture-funding-to-citys-startups-hits-all-" data-url="https://news.crunchbase.com/venture/all-time-high-funding-to-austin-startups-2025-ai-robotics-manufacturing/">
       
       <div class="card-meta">
-        <span class="card-source">Crunchbase News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=news.crunchbase.com&sz=16" alt="" loading="lazy"><span class="card-source">Crunchbase News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 14:44">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2157,7 +2220,7 @@
     <article class="card" data-category="Inversión" data-region="global" data-search="gam: swiss re ils partnership enhanced liquidity, improved dealing terms. new products planned this content is copyright to www.artemis.bm and should not appear anywhere else, or an infringement has occurred. gam investments has said that its catastrophe bond and insurance-linked securities partnership with global reinsurance giant swiss re has introduced enhanced liquidity and improved dealing terms across strategies and assets managed, while also saying new ils product launches are planned for 2026. in 2025, the swiss re insurance-linked investment advisors corporation (sriliac) registered investment adviser [&#8230;] gam: swiss re ils partnership enhanced liquidity, improved dealing terms. artemis" data-id="gam-swiss-re-ils-partnership-enhanced-liquidity-improved-dealing-terms-new-produ" data-url="https://www.artemis.bm/news/gam-swiss-re-ils-partnership-enhanced-liquidity-improved-dealing-terms-new-products-planned/?utm_source=rss&utm_medium=rss&utm_campaign=gam-swiss-re-ils-partnership-enhanced-liquidity-improved-dealing-terms-new-products-planned">
       
       <div class="card-meta">
-        <span class="card-source">Artemis</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.artemis.bm&sz=16" alt="" loading="lazy"><span class="card-source">Artemis</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 14:44">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2183,7 +2246,7 @@
     <article class="card" data-category="Catástrofes" data-region="global" data-search="lagos state secures up to us$7.5m parametric flood insurance coverage this content is copyright to www.artemis.bm and should not appear anywhere else, or an infringement has occurred. the lagos state government has contracted a parametric flood-risk insurance policy in the nigerian insurance market, which is designed to protect up to 4 million vulnerable people, providing up to usd 7.5 million for flood response and recovery. the policy’s activation marks a major milestone for the tripartite agreement programme, which aims to build developing [&#8230;] lagos state secures up to us$7.5m parametric flood insurance coverage was published by: www.artemis.bm our catastrophe bond deal directory sign up for our free weekly email newsletter here . artemis" data-id="lagos-state-secures-up-to-us-7-5m-parametric-flood-insurance-coverage" data-url="https://www.artemis.bm/news/lagos-state-secures-up-to-us7-5m-parametric-flood-insurance-coverage/?utm_source=rss&utm_medium=rss&utm_campaign=lagos-state-secures-up-to-us7-5m-parametric-flood-insurance-coverage">
       
       <div class="card-meta">
-        <span class="card-source">Artemis</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.artemis.bm&sz=16" alt="" loading="lazy"><span class="card-source">Artemis</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 14:44">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2209,7 +2272,7 @@
     <article class="card" data-category="Tecnología" data-region="global" data-search="private equity and capital providers to expand reinsurance presence via ai-linked securities: ey this content is copyright to www.artemis.bm and should not appear anywhere else, or an infringement has occurred. as per a new report from ernst &#38; young ltd. (ey), the reinsurance sector is entering a era of &#8220;latent market demand&#8221; where private equity and alternative capital providers are set to expand their presence by exploring ai-linked securities, cyber catastrophe bonds, and other innovative investment vehicles. artemis" data-id="private-equity-and-capital-providers-to-expand-reinsurance-presence-via-ai-linke" data-url="https://www.artemis.bm/news/private-equity-and-capital-providers-to-expand-reinsurance-presence-via-ai-linked-securities-ey/?utm_source=rss&utm_medium=rss&utm_campaign=private-equity-and-capital-providers-to-expand-reinsurance-presence-via-ai-linked-securities-ey">
       
       <div class="card-meta">
-        <span class="card-source">Artemis</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.artemis.bm&sz=16" alt="" loading="lazy"><span class="card-source">Artemis</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 14:44">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2235,7 +2298,7 @@
     <article class="card" data-category="Tecnología" data-region="global" data-search="tmk adds francesca kevill as underwriter to its cyber & enterprise risk team specialist insurer, tokio marine kiln (tmk), has appointed francesca kevill as underwriter within its cyber &#38; enterprise risk team, effective immediately. in her new role, kevill will report to ellie webb, head of delegated cyber &#38; ip. her appointment builds on a period of significant investment in tmk&#8217;s cyber capabilities. reinsurance news" data-id="tmk-adds-francesca-kevill-as-underwriter-to-its-cyber-enterprise-risk-team" data-url="https://www.reinsurancene.ws/tmk-adds-francesca-kevill-as-underwriter-to-its-cyber-enterprise-risk-team/">
       
       <div class="card-meta">
-        <span class="card-source">Reinsurance News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 14:44">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2261,7 +2324,7 @@
     <article class="card" data-category="Inversión" data-region="global" data-search="am best affirms sompo’s ratings following aspen acquisition credit rating agency am best has removed the under review with positive implications status and affirmed the financial strength rating of a+ (superior) alongside the long-term issuer credit ratings of “aa-” (superior) for sompo japan insurance inc. the financial strength rating carries a stable outlook, while the long-term issuer credit ratings are [&#8230;] the post am best affirms sompo&#8217;s ratings following aspen acquisition appeared first on reinsurancene.ws . reinsurance news" data-id="am-best-affirms-sompos-ratings-following-aspen-acquisition" data-url="https://www.reinsurancene.ws/am-best-affirms-sompos-ratings-following-aspen-acquisition/">
       
       <div class="card-meta">
-        <span class="card-source">Reinsurance News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 14:44">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2287,7 +2350,7 @@
     <article class="card" data-category="Tecnología" data-region="global" data-search="infosys set to acquire insurance technology provider, stratus infosys, a provider of digital services, business consulting, and outsourcing services, is set to acquire stratus, a technology solutions provider for the property &#38; casualty (p&#38;c) insurance industry. this acquisition, which is expected to close in the first quarter of the financial year 2027, subject to closing conditions, aims to strengthen infosys&#8217; position in the [&#8230;] the post infosys set to acquire insurance technology provider, stratus appeared first on reinsurancene.ws . reinsurance news" data-id="infosys-set-to-acquire-insurance-technology-provider-stratus" data-url="https://www.reinsurancene.ws/infosys-set-to-acquire-insurance-technology-provider-stratus/">
       
       <div class="card-meta">
-        <span class="card-source">Reinsurance News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 14:44">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2313,7 +2376,7 @@
     <article class="card" data-category="Tecnología" data-region="global" data-search="the scope of damage from hawaii’s floods becomes clearer the worst flooding to hit hawaii in two decades has swept homes off their foundations, floated cars out of driveways and left floors, walls and counters covered in thick, reddish volcanic mud. authorities said hundreds of homes had been damaged, &#8230; insurance journal" data-id="the-scope-of-damage-from-hawaiis-floods-becomes-clearer" data-url="https://www.insurancejournal.com/news/west/2026/03/27/863758.htm">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 14:44">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2339,7 +2402,7 @@
     <article class="card" data-category="Inversión" data-region="global" data-search="georgia tax bill would take billions in breaks from companies some of the world&#8217;s biggest companies are standing in the way. a state senate bill that would all but exempt many lower- and middle-income earners from state income tax is stalling in the georgia &#8230; insurance journal" data-id="georgia-tax-bill-would-take-billions-in-breaks-from-companies" data-url="https://www.insurancejournal.com/news/southeast/2026/03/27/863761.htm">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 14:44">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2365,7 +2428,7 @@
     <article class="card" data-category="General" data-region="global" data-search="georgia employers fined for repeat silica exposure for workers the federal occupational safety and health administration has proposed fines for two georgia employers for failing to address safety violations that had exposed workers to noise and silica dust, which can cause severe respiratory illness. after a follow-up inspection, osha &#8230; insurance journal" data-id="georgia-employers-fined-for-repeat-silica-exposure-for-workers" data-url="https://www.insurancejournal.com/news/southeast/2026/03/27/863768.htm">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 14:44">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2391,7 +2454,7 @@
     <article class="card" data-category="General" data-region="global" data-search="swiss re appoints teodora aldenhoff as chief pricing actuary for l&h continental europe global reinsurer swiss re has appointed teodora aldenhoff as chief pricing actuary for life &#038; health (l&#038;h) continental europe, strengthening its leadership team across the region. the post swiss re appoints teodora aldenhoff as chief pricing actuary for l&amp;h continental europe appeared first on insurtech insights . insurtech insights" data-id="swiss-re-appoints-teodora-aldenhoff-as-chief-pricing-actuary-for-l-h-continental" data-url="https://www.insurtechinsights.com/swiss-re-appoints-teodora-aldenhoff-as-chief-pricing-actuary-for-lh-continental-europe/">
       
       <div class="card-meta">
-        <span class="card-source">InsurTech Insights</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurtechinsights.com&sz=16" alt="" loading="lazy"><span class="card-source">InsurTech Insights</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 14:44">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2417,7 +2480,7 @@
     <article class="card" data-category="Catástrofes" data-region="global" data-search="allianz jio reinsurance appoints sonia rawal as ceo as india operations begin allianz jio reinsurance has appointed sonia rawal as chief executive officer as the company officially launches operations in india following full regulatory approval from the insurance regulatory and development authority of india (irdai). the post allianz jio reinsurance appoints sonia rawal as ceo as india operations begin appeared first on insurtech insights . insurtech insights" data-id="allianz-jio-reinsurance-appoints-sonia-rawal-as-ceo-as-india-operations-begin" data-url="https://www.insurtechinsights.com/allianz-jio-reinsurance-appoints-sonia-rawal-as-ceo-as-india-operations-begin/">
       
       <div class="card-meta">
-        <span class="card-source">InsurTech Insights</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurtechinsights.com&sz=16" alt="" loading="lazy"><span class="card-source">InsurTech Insights</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 14:44">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2443,7 +2506,7 @@
     <article class="card" data-category="General" data-region="global" data-search="the forrester wave™: insurance agency management systems, q4 2025  insurance thought leadership" data-id="the-forrester-wavetm-insurance-agency-management-systems-q4-2025" data-url="https://www.insurancethoughtleadership.com/forrester-wavetm-insurance-agency-management-systems-q4-2025">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Thought Leadership</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancethoughtleadership.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Thought Leadership</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 14:44">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2469,7 +2532,7 @@
     <article class="card" data-category="General" data-region="global" data-search="atrium makes underwriting appointments in property business group the moves are part of atrium’s strategy to grow its core property lines and expand distribution partnerships. the post atrium makes underwriting appointments in property business group appeared first on coverager - insurance news and insights . coverager" data-id="atrium-makes-underwriting-appointments-in-property-business-group" data-url="https://coverager.com/atrium-makes-underwriting-appointments-in-property-business-group/">
       
       <div class="card-meta">
-        <span class="card-source">Coverager</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=coverager.com&sz=16" alt="" loading="lazy"><span class="card-source">Coverager</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 14:44">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2495,7 +2558,7 @@
     <article class="card" data-category="General" data-region="global" data-search="progressive prices $1.5b senior notes offering llc and td securities (usa) llc are acting as joint bookrunners. the post progressive prices $1.5b senior notes offering appeared first on coverager - insurance news and insights . coverager" data-id="progressive-prices-1-5b-senior-notes-offering" data-url="https://coverager.com/progressive-prices-1-5b-senior-notes-offering/">
       
       <div class="card-meta">
-        <span class="card-source">Coverager</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=coverager.com&sz=16" alt="" loading="lazy"><span class="card-source">Coverager</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 14:44">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2521,7 +2584,7 @@
     <article class="card" data-category="General" data-region="global" data-search="winning the insurance industry talent war: how to attract & keep top talent the insurance industry is facing a talent crisis that won&#8217;t resolve itself. recent bureau of labor statistics data shows that the u.s. insurance sector is contracting at an alarming rate, having lost 40,000 positions... coverager" data-id="winning-the-insurance-industry-talent-war-how-to-attract-keep-top-talent" data-url="https://coverager.com/winning-the-insurance-industry-talent-war-how-to-attract-keep-top-talent/">
       
       <div class="card-meta">
-        <span class="card-source">Coverager</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=coverager.com&sz=16" alt="" loading="lazy"><span class="card-source">Coverager</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 14:44">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2547,7 +2610,7 @@
     <article class="card" data-category="General" data-region="global" data-search="cpic’s p&c insurance division shows ‘marked improvement’ combined ratio fell by 1.1% to 97.5% in fy25, while the division’s primary premium income was almost flat at us$29.6bn. the post cpic&#8217;s p&#038;c insurance division shows &#8216;marked improvement&#8217; appeared first on insuranceasia news . insurance asia news" data-id="cpics-p-c-insurance-division-shows-marked-improvement" data-url="https://insuranceasianews.com/cpics-pc-insurance-division-shows-marked-improvement/">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Asia News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=insuranceasianews.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Asia News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 08:09">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2573,7 +2636,7 @@
     <article class="card" data-category="Catástrofes" data-region="global" data-search="lagos state government secures up to usd 7.5m parametric flood insurance  reinsurance news" data-id="lagos-state-government-secures-up-to-usd-7-5m-parametric-flood-insurance" data-url="https://www.reinsurancene.ws/lagos-state-government-secures-up-to-usd-7-5m-parametric-flood-insurance/">
       
       <div class="card-meta">
-        <span class="card-source">Reinsurance News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 08:09">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2599,7 +2662,7 @@
     <article class="card" data-category="General" data-region="global" data-search="gallagher re promotes nicolas rincé to president for frabelux region  reinsurance news" data-id="gallagher-re-promotes-nicolas-rince-to-president-for-frabelux-region" data-url="https://www.reinsurancene.ws/gallagher-re-promotes-nicolas-rince-to-president-for-frabelux-region/">
       
       <div class="card-meta">
-        <span class="card-source">Reinsurance News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 08:09">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2625,7 +2688,7 @@
     <article class="card" data-category="General" data-region="global" data-search="safe harbor marinas selects chubb as preferred insurance provider  reinsurance news" data-id="safe-harbor-marinas-selects-chubb-as-preferred-insurance-provider" data-url="https://www.reinsurancene.ws/safe-harbor-marinas-selects-chubb-as-preferred-insurance-provider/">
       
       <div class="card-meta">
-        <span class="card-source">Reinsurance News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 08:09">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2651,7 +2714,7 @@
     <article class="card" data-category="General" data-region="global" data-search="doj sues seaworld’s parent company for disability discrimination the justice department is suing united parks &#38; resorts inc., the parent company of sea world, for allegedly discriminating against people with disabilities at its theme parks with a policy banning wheeled walkers with seats. the government alleges the policy &#8230; claims journal" data-id="doj-sues-seaworlds-parent-company-for-disability-discrimination" data-url="https://www.claimsjournal.com/news/national/2026/03/27/336535.htm">
       
       <div class="card-meta">
-        <span class="card-source">Claims Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.claimsjournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Claims Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 05:52">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2677,7 +2740,7 @@
     <article class="card" data-category="Tecnología" data-region="global" data-search="car insurer first central is said to tap banks for london ipo vehicle and home insurer, has appointed investment banks as it prepares for a potential initial public offering in london, according to people familiar with the matter. the company has lined up deutsche bank ag &#8230; claims journal" data-id="car-insurer-first-central-is-said-to-tap-banks-for-london-ipo" data-url="https://www.claimsjournal.com/news/national/2026/03/27/336538.htm">
       
       <div class="card-meta">
-        <span class="card-source">Claims Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.claimsjournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Claims Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 05:52">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2703,7 +2766,7 @@
     <article class="card" data-category="General" data-region="global" data-search="efi global names mccomas senior vice president of sales efi global named jamie mccomas as senior vice president of sales. mccomas will lead efi global&#8217;s sales and growth strategy. prior to joining efi global, mccomas held leadership and she also led national business &#8230; claims journal" data-id="efi-global-names-mccomas-senior-vice-president-of-sales" data-url="https://www.claimsjournal.com/news/national/2026/03/27/336465.htm">
       
       <div class="card-meta">
-        <span class="card-source">Claims Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.claimsjournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Claims Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 05:52">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2729,7 +2792,7 @@
     <article class="card" data-category="Regulación" data-region="global" data-search="about to take off? legal fights emerge over toxic fumes on flights when passengers step onto an airplane, they&#8217;re accustomed to turbulence, seat kicking and lengthy tarmac delays. those are the predictable annoyances of air travel. but a far more serious risk to the safety of flyers has received heightened attention in recent months: toxic fume events. carrier management" data-id="about-to-take-off-legal-fights-emerge-over-toxic-fumes-on-flights" data-url="https://www.carriermanagement.com/news/2026/03/26/286144.htm">
       
       <div class="card-meta">
-        <span class="card-source">Carrier Management</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.carriermanagement.com&sz=16" alt="" loading="lazy"><span class="card-source">Carrier Management</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 05:52">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2755,7 +2818,7 @@
     <article class="card" data-category="General" data-region="global" data-search="philippine cedents ‘buying smartly’ as market softens, proportional capacity returns reinsurance brokers are witnessing up to 15-20% rate reduction on a risk-adjusted basis at 1.4 renewals, as nat cat losses were manageable and less severe than anticipated. the post philippine cedents ‘buying smartly’ as market softens, proportional capacity returns appeared first on insuranceasia news . insurance asia news" data-id="philippine-cedents-buying-smartly-as-market-softens-proportional-capacity-return" data-url="https://insuranceasianews.com/philippines-1-4-renewals-seeing-cedents-retain-more-as-pricing-slides-proportional-capacity-returns/">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Asia News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=insuranceasianews.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Asia News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 05:52">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2781,7 +2844,7 @@
     <article class="card" data-category="General" data-region="global" data-search="depreciation on acv is ok, court says in knocking down class action vs. cincinnati a property insurer is on solid ground in applying depreciation to actual cash value, as long as the policy makes that plan clear, a federal appeals court said in shooting down a proposed class-action lawsuit against cincinnati casualty co. insurance journal" data-id="depreciation-on-acv-is-ok-court-says-in-knocking-down-class-action-vs-cincinnati" data-url="https://www.insurancejournal.com/news/southeast/2026/03/27/863681.htm">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 05:51">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2807,7 +2870,7 @@
     <article class="card" data-category="General" data-region="global" data-search="odey allegedly told staffer he could ‘attack’ her after alcohol-fueled lunch ex-hedge fund boss crispin odey cornered a female receptionist after an alcohol-fueled lunch and told her &#8220;i could attack you now,&#8221; according to a diary entry by the staffer revealed at a london court on tuesday. insurance journal" data-id="odey-allegedly-told-staffer-he-could-attack-her-after-alcohol-fueled-lunch" data-url="https://www.insurancejournal.com/news/international/2026/03/27/863535.htm">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 05:51">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2833,7 +2896,7 @@
     <article class="card" data-category="General" data-region="global" data-search="energy fallout from iran war signals global wake-up call for renewable energy the war in iran is exposing the world&#8217;s reliance on fragile fossil fuel routes, lending urgency to calls for hastening the shift to renewable energy. fighting has all but halted oil exports through the strait of hormuz, the narrow waterway &#8230; insurance journal" data-id="energy-fallout-from-iran-war-signals-global-wake-up-call-for-renewable-energy" data-url="https://www.insurancejournal.com/news/international/2026/03/27/863556.htm">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="27 Mar 2026 05:51">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2859,7 +2922,7 @@
     <article class="card" data-category="Tecnología" data-region="global" data-search="ai’s biggest insurance opportunity is growth, not efficiency insurers focusing on ai-driven cost reduction may miss its greater potential to expand underwriting capacity and unlock new, previously uninsurable risks. insurance innovation reporter" data-id="ais-biggest-insurance-opportunity-is-growth-not-efficiency" data-url="https://iireporter.com/ais-biggest-insurance-opportunity-is-growth-not-efficiency/">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Innovation Reporter</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=iireporter.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Innovation Reporter</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2885,7 +2948,7 @@
     <article class="card" data-category="General" data-region="global" data-search="laguardia controllers often faced late sunday rush before crash the two air traffic controllers at laguardia airport were grappling with a higher-than-anticipated workload, complicated by foul weather, when an inbound air canada express jet plowed into a fire truck on sunday evening, killing both pilots. claims journal" data-id="laguardia-controllers-often-faced-late-sunday-rush-before-crash" data-url="https://www.claimsjournal.com/news/national/2026/03/26/336524.htm">
       
       <div class="card-meta">
-        <span class="card-source">Claims Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.claimsjournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Claims Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2911,7 +2974,7 @@
     <article class="card" data-category="Tecnología" data-region="global" data-search="jury verdicts against meta, google tee up fight over tech liability shield jurors in the first two trials in the u.s. from a growing wave of lawsuits targeting social media firms over harm to children have found meta and alphabet&#8217;s google liable, potentially teeing up an appeals fight that could reshape how &#8230; claims journal" data-id="jury-verdicts-against-meta-google-tee-up-fight-over-tech-liability-shield" data-url="https://www.claimsjournal.com/news/national/2026/03/26/336529.htm">
       
       <div class="card-meta">
-        <span class="card-source">Claims Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.claimsjournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Claims Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2937,7 +3000,7 @@
     <article class="card" data-category="Tecnología" data-region="global" data-search="musk rips twitter verdict, claims jury’s $4.20 ‘joke’ mocked him elon musk&#8217;s lawyer says the billionaire didn&#8217;t get a fair trial because a san francisco jury slipped a &#8220;bizarre and highly questionable&#8221; joke into a verdict form when it concluded he defrauded twitter inc. shareholders before acquiring the social media &#8230; claims journal" data-id="musk-rips-twitter-verdict-claims-jurys-4-20-joke-mocked-him" data-url="https://www.claimsjournal.com/news/national/2026/03/26/336533.htm">
       
       <div class="card-meta">
-        <span class="card-source">Claims Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.claimsjournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Claims Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2963,7 +3026,7 @@
     <article class="card" data-category="General" data-region="global" data-search="employee hiring referrals can trigger hidden biases employee referrals can aid hiring but carry hidden downsides. new research by rellie derfler-rozin at the university of maryland&#8217;s robert h. smith school of business and teodora tomova shakur of texas christian university finds that staff often see referred hires as less meritorious and offer less support, even when the referred employees demonstrate high performance. carrier management" data-id="employee-hiring-referrals-can-trigger-hidden-biases" data-url="https://www.carriermanagement.com/news/2026/03/26/286123.htm">
       
       <div class="card-meta">
-        <span class="card-source">Carrier Management</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.carriermanagement.com&sz=16" alt="" loading="lazy"><span class="card-source">Carrier Management</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -2989,7 +3052,7 @@
     <article class="card" data-category="Tecnología" data-region="global" data-search="commercial insurance platform shepherd announces $42m series b shepherd, an ai-native commercial insurance platform, announced a $42 million series b round led by intact private capital, with participation from spark capital, costanoa ventures and additional investors. the raise brings shepherd&#8217;s total funding to $67 million. shepherd insures the physical infrastructure for leading ai and technology companies building frontier data centers, semiconductor facilities, and &#8230; continued carrier management" data-id="commercial-insurance-platform-shepherd-announces-42m-series-b" data-url="https://www.carriermanagement.com/news/2026/03/26/286128.htm">
       
       <div class="card-meta">
-        <span class="card-source">Carrier Management</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.carriermanagement.com&sz=16" alt="" loading="lazy"><span class="card-source">Carrier Management</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -3015,7 +3078,7 @@
     <article class="card" data-category="Tecnología" data-region="global" data-search="ai platform notch announces $30m series a funding round notch, an ai platform for regulated industries, announced a $30 million series a funding round, bringing total funding raised to $45 million. the round was led by headline, with participation from lightspeed venture partners, jibe ventures, illuminate financial, and phoenix insurance. notch is building an ai operating system for regulated industries, initially focused on global &#8230; continued carrier management" data-id="ai-platform-notch-announces-30m-series-a-funding-round" data-url="https://www.carriermanagement.com/news/2026/03/26/286131.htm">
       
       <div class="card-meta">
-        <span class="card-source">Carrier Management</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.carriermanagement.com&sz=16" alt="" loading="lazy"><span class="card-source">Carrier Management</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -3041,7 +3104,7 @@
     <article class="card" data-category="Tecnología" data-region="global" data-search="partnerre cedes less risk to lorenz re cells, third-party reinsurance capital strategy adjusts this content is copyright to www.artemis.bm and should not appear anywhere else, or an infringement has occurred. partnerre, the bermuda headquartered reinsurance company, ceded far less in risk to its lorenz re ltd. special purpose insurer in 2025, with reductions in recent years signalling a change in strategy and shift to utilise other structures for its insurance-linked securities investor relationships. artemis" data-id="partnerre-cedes-less-risk-to-lorenz-re-cells-third-party-reinsurance-capital-str" data-url="https://www.artemis.bm/news/partnerre-cedes-less-risk-to-lorenz-re-cells-third-party-reinsurance-capital-strategy-adjusts/?utm_source=rss&utm_medium=rss&utm_campaign=partnerre-cedes-less-risk-to-lorenz-re-cells-third-party-reinsurance-capital-strategy-adjusts">
       
       <div class="card-meta">
-        <span class="card-source">Artemis</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.artemis.bm&sz=16" alt="" loading="lazy"><span class="card-source">Artemis</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -3067,7 +3130,7 @@
     <article class="card" data-category="Tecnología" data-region="global" data-search="hail shifts from secondary peril to major catastrophe loss driver: cotality this content is copyright to www.artemis.bm and should not appear anywhere else, or an infringement has occurred. a new report from cotality warns that hailstorms can now produce insured losses comparable to a category 4 hurricane, with the firm highlighting that hail is beginning to shift from a secondary peril to a major driver of catastrophe losses, with implications for homeowners, carriers and reinsurers across the property market. data from the report [&#8230;] hail shifts from secondary peril to major catastrophe loss driver: cotality was published by: www.artemis.bm our catastrophe bond deal directory sign up for our free weekly email newsletter here . artemis" data-id="hail-shifts-from-secondary-peril-to-major-catastrophe-loss-driver-cotality" data-url="https://www.artemis.bm/news/hail-shifts-from-secondary-peril-to-major-catastrophe-loss-driver-cotality/?utm_source=rss&utm_medium=rss&utm_campaign=hail-shifts-from-secondary-peril-to-major-catastrophe-loss-driver-cotality">
       
       <div class="card-meta">
-        <span class="card-source">Artemis</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.artemis.bm&sz=16" alt="" loading="lazy"><span class="card-source">Artemis</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -3093,7 +3156,7 @@
     <article class="card" data-category="Automóvil" data-region="global" data-search="casualty represents the next evolution of ils exposure, says cohen & company this content is copyright to www.artemis.bm and should not appear anywhere else, or an infringement has occurred. in its recently published whitepaper, cohen &#38; company asset management, the fixed income financial services investment specialist, explained that due to advances within structuring, analytics, and governance, combined with growing investor familiarity, the firm believes that casualty represents “the next evolution of ils exposure.” casualty ils remains a relatively new and developing part of the [&#8230;] casualty represents the next evolution of ils exposure, says cohen &#038; company was published by: www.artemis.bm our catastrophe bond deal directory sign up for our free weekly email newsletter here . artemis" data-id="casualty-represents-the-next-evolution-of-ils-exposure-says-cohen-company" data-url="https://www.artemis.bm/news/casualty-represents-the-next-evolution-of-ils-exposure-says-cohen-company/?utm_source=rss&utm_medium=rss&utm_campaign=casualty-represents-the-next-evolution-of-ils-exposure-says-cohen-company">
       
       <div class="card-meta">
-        <span class="card-source">Artemis</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.artemis.bm&sz=16" alt="" loading="lazy"><span class="card-source">Artemis</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -3119,7 +3182,7 @@
     <article class="card" data-category="Inversión" data-region="global" data-search="totalis program underwriters acquires specialist provider shoreone  reinsurance news" data-id="totalis-program-underwriters-acquires-specialist-provider-shoreone" data-url="https://www.reinsurancene.ws/totalis-program-underwriters-acquires-specialist-provider-shoreone/">
       
       <div class="card-meta">
-        <span class="card-source">Reinsurance News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -3145,7 +3208,7 @@
     <article class="card" data-category="General" data-region="global" data-search="matthew kirk takes over as axis chief financial officer  reinsurance news" data-id="matthew-kirk-takes-over-as-axis-chief-financial-officer" data-url="https://www.reinsurancene.ws/matthew-kirk-takes-over-as-axis-chief-financial-officer/">
       
       <div class="card-meta">
-        <span class="card-source">Reinsurance News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -3171,7 +3234,7 @@
     <article class="card" data-category="Tecnología" data-region="global" data-search="multi-source data key to parametric flood insurance success: swiss re  reinsurance news" data-id="multi-source-data-key-to-parametric-flood-insurance-success-swiss-re" data-url="https://www.reinsurancene.ws/multi-source-data-key-to-parametric-flood-insurance-success-swiss-re/">
       
       <div class="card-meta">
-        <span class="card-source">Reinsurance News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -3197,7 +3260,7 @@
     <article class="card" data-category="Inversión" data-region="global" data-search="texas man gets life after investigation finds arson used to cover murder a texas state fire marshal&#8217;s office (sfmo) investigation helped lead to a lifetime prison sentence for a panhandle man who set a house fire to cover up the murder of a 4-year-old girl. humberto martinez pleaded guilty to capital murder &#8230; insurance journal" data-id="texas-man-gets-life-after-investigation-finds-arson-used-to-cover-murder" data-url="https://www.insurancejournal.com/news/southcentral/2026/03/26/863605.htm">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -3223,7 +3286,7 @@
     <article class="card" data-category="General" data-region="global" data-search="michigan woman pleads guilty in beauty store theft ring a michigan woman pled guilty to organizing a high-volume theft ring targeting ulta beauty stores in wayne, oakland, and macomb counties, announced michigan attorney general dana nessel. cheaira broughton, 38, of detroit, was charged by the department of attorney general &#8230; insurance journal" data-id="michigan-woman-pleads-guilty-in-beauty-store-theft-ring" data-url="https://www.insurancejournal.com/news/midwest/2026/03/26/863608.htm">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -3249,7 +3312,7 @@
     <article class="card" data-category="Automóvil" data-region="global" data-search="people moves: everest appoints busti from axis as head of north america treaty re; axa xl taps lockton’s reynolds as head of marine, uk & lloyd’s, global cuo for hull this edition of international people moves details appointments at everest group and axa xl. a summary of these new hires follows here. everest appoints busti from axis as head of north america treaty reinsurance everest group ltd., the bermuda-based specialty &#8230; insurance journal" data-id="people-moves-everest-appoints-busti-from-axis-as-head-of-north-america-treaty-re" data-url="https://www.insurancejournal.com/news/international/2026/03/26/863602.htm">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -3275,7 +3338,7 @@
     <article class="card" data-category="General" data-region="global" data-search="pinion insurance strengthens leadership team with cfo appointment technology-enabled specialty insurer pinion insurance has appointed chris jones as group chief financial officer, reinforcing its executive team as the business scales operations across key markets. the post pinion insurance strengthens leadership team with cfo appointment appeared first on insurtech insights . insurtech insights" data-id="pinion-insurance-strengthens-leadership-team-with-cfo-appointment" data-url="https://www.insurtechinsights.com/pinion-insurance-strengthens-leadership-team-with-cfo-appointment/">
       
       <div class="card-meta">
-        <span class="card-source">InsurTech Insights</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurtechinsights.com&sz=16" alt="" loading="lazy"><span class="card-source">InsurTech Insights</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -3301,7 +3364,7 @@
     <article class="card" data-category="Tecnología" data-region="global" data-search="ais launches chatgpt-powered insurance shopping tool  coverager" data-id="ais-launches-chatgpt-powered-insurance-shopping-tool" data-url="https://coverager.com/ais-launches-chatgpt-powered-insurance-shopping-tool/">
       
       <div class="card-meta">
-        <span class="card-source">Coverager</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=coverager.com&sz=16" alt="" loading="lazy"><span class="card-source">Coverager</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="26 Mar 2026 19:59">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -3327,7 +3390,7 @@
     <article class="card" data-category="Vida y Salud" data-region="global" data-search="first state insurance agency selects applied epic to unify p&c and benefits operations in a single management system  coverager" data-id="first-state-insurance-agency-selects-applied-epic-to-unify-p-c-and-benefits-oper" data-url="https://coverager.com/first-state-insurance-agency-selects-applied-epic-to-unify-pc-and-benefits-operations-in-a-single-management-system/">
       
       <div class="card-meta">
-        <span class="card-source">Coverager</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=coverager.com&sz=16" alt="" loading="lazy"><span class="card-source">Coverager</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="26 Mar 2026 19:59">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -3353,7 +3416,7 @@
     <article class="card" data-category="Inversión" data-region="global" data-search="risk theory launches dealer transit to address vehicle theft  coverager" data-id="risk-theory-launches-dealer-transit-to-address-vehicle-theft" data-url="https://coverager.com/risk-theory-launches-dealer-transit-to-address-vehicle-theft/">
       
       <div class="card-meta">
-        <span class="card-source">Coverager</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=coverager.com&sz=16" alt="" loading="lazy"><span class="card-source">Coverager</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="26 Mar 2026 19:59">hace 3 días</span>
         <span class="card-dot">·</span>
@@ -3379,7 +3442,7 @@
     <article class="card" data-category="General" data-region="global" data-search="verisk, apcia see ‘reset’ rather than new normal in stellar ’25 results  carrier management" data-id="verisk-apcia-see-reset-rather-than-new-normal-in-stellar-25-results" data-url="https://www.carriermanagement.com/news/2026/03/26/286052.htm">
       
       <div class="card-meta">
-        <span class="card-source">Carrier Management</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.carriermanagement.com&sz=16" alt="" loading="lazy"><span class="card-source">Carrier Management</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="26 Mar 2026 13:01">hace 4 días</span>
         <span class="card-dot">·</span>
@@ -3405,7 +3468,7 @@
     <article class="card" data-category="Catástrofes" data-region="global" data-search="zurich to sponsor first catastrophe bond since 2012 with $125m turicum re ltd. this content is copyright to www.artemis.bm and should not appear anywhere else, or an infringement has occurred. zurich, the european headquartered global re/insurance company, has returned to the catastrophe bond market to sponsor its first deal since late 2012, seeking $125 million or more in us named storm and earthquake reinsurance protection with a turicum re ltd. (series 2026-1) issuance, artemis can report. artemis" data-id="zurich-to-sponsor-first-catastrophe-bond-since-2012-with-125m-turicum-re-ltd" data-url="https://www.artemis.bm/news/zurich-to-sponsor-first-catastrophe-bond-since-2012-with-125m-turicum-re-ltd/?utm_source=rss&utm_medium=rss&utm_campaign=zurich-to-sponsor-first-catastrophe-bond-since-2012-with-125m-turicum-re-ltd">
       
       <div class="card-meta">
-        <span class="card-source">Artemis</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.artemis.bm&sz=16" alt="" loading="lazy"><span class="card-source">Artemis</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="26 Mar 2026 13:01">hace 4 días</span>
         <span class="card-dot">·</span>
@@ -3431,7 +3494,7 @@
     <article class="card" data-category="Tecnología" data-region="global" data-search="agentic ai poised to shape both offensive and defensive cyber measures: munich re  reinsurance news" data-id="agentic-ai-poised-to-shape-both-offensive-and-defensive-cyber-measures-munich-re" data-url="https://www.reinsurancene.ws/agentic-ai-poised-to-shape-both-offensive-and-defensive-cyber-measures-munich-re/">
       
       <div class="card-meta">
-        <span class="card-source">Reinsurance News</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="26 Mar 2026 13:01">hace 4 días</span>
         <span class="card-dot">·</span>
@@ -3457,7 +3520,7 @@
     <article class="card" data-category="Regulación" data-region="global" data-search="fema to offer $1 billion for disaster resilience after lawsuit  insurance journal" data-id="fema-to-offer-1-billion-for-disaster-resilience-after-lawsuit" data-url="https://www.insurancejournal.com/news/national/2026/03/26/863567.htm">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="26 Mar 2026 13:01">hace 4 días</span>
         <span class="card-dot">·</span>
@@ -3483,7 +3546,7 @@
     <article class="card" data-category="Fraude" data-region="global" data-search="georgia could become first state with weapons detection in all public schools  insurance journal" data-id="georgia-could-become-first-state-with-weapons-detection-in-all-public-schools" data-url="https://www.insurancejournal.com/news/southeast/2026/03/26/863574.htm">
       
       <div class="card-meta">
-        <span class="card-source">Insurance Journal</span>
+        <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
         <span class="card-date" title="26 Mar 2026 13:01">hace 4 días</span>
         <span class="card-dot">·</span>
@@ -3505,15 +3568,38 @@
         </div>
       </div>
     </article>
-    <p class="no-results" id="no-results">No hay artículos que coincidan.</p>
+    <div class="no-results" id="no-results">
+      <p>No hay artículos que coincidan con los filtros actuales.</p>
+      <button id="btn-clear-filters">Quitar todos los filtros</button>
+    </div>
   </main>
   <div style="text-align:center;padding:1rem 1rem 2rem">
-    <button id="load-more" style="display:none;padding:.55rem 2rem;background:var(--accent);color:white;border:none;border-radius:20px;font-size:.88rem;font-weight:600;cursor:pointer;transition:opacity .15s" onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">Cargar más artículos</button>
+    <button id="load-more" style="display:none;padding:.55rem 2rem;background:var(--accent);color:white;border:none;border-radius:20px;font-size:.88rem;font-weight:600;cursor:pointer;transition:opacity .15s">Cargar más artículos</button>
   </div>
 
   <footer>
     InsurTech Intelligence · Impulsado por IA · <a href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml">RSS Feed</a>
+    <div class="kbd-hint">Atajos: <kbd>/</kbd> buscar · <kbd>J</kbd>/<kbd>K</kbd> navegar · <kbd>O</kbd> abrir · <kbd>B</kbd> guardar</div>
   </footer>
+
+  <!-- Back to top -->
+  <button id="back-to-top" title="Volver arriba">↑</button>
+
+  <!-- Mobile filter FAB -->
+  <button class="mobile-fab" id="mobile-fab">⚙ Filtros</button>
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+  <div class="mobile-sheet" id="mobile-sheet">
+    <div class="mobile-sheet-header">
+      <span>Filtros</span>
+      <button class="mobile-sheet-close" id="mobile-sheet-close">✕</button>
+    </div>
+    <div class="mobile-sheet-body">
+      <p class="mobile-sheet-label">Categoría</p>
+      <div class="mobile-filter-group" id="mobile-cats"></div>
+      <p class="mobile-sheet-label">Región</p>
+      <div class="mobile-filter-group" id="mobile-regions"></div>
+    </div>
+  </div>
 
   <script type="text/javascript">
     function googleTranslateElementInit() {
@@ -3528,27 +3614,57 @@
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
   <script>
-    // ── Filters + Search + Pagination ──
-    const cards       = Array.from(document.querySelectorAll('.card'));
-    const filterBtns  = Array.from(document.querySelectorAll('.filter-btn'));
-    const regionBtns  = Array.from(document.querySelectorAll('.region-btn'));
-    const search      = document.getElementById('search');
-    const noResults   = document.getElementById('no-results');
-    const mainEl      = document.getElementById('main');
-    const loadMoreBtn = document.getElementById('load-more');
-    let activeFilter  = 'all';
-    let activeRegion  = 'all';
-    let searchQuery   = '';
-    const PAGE_SIZE   = 20;
-    let loadedCount   = PAGE_SIZE;
+    // ── State ──
+    const cards      = Array.from(document.querySelectorAll('.card'));
+    const filterBtns = Array.from(document.querySelectorAll('.filter-btn:not(#btn-saved)'));
+    const regionBtns = Array.from(document.querySelectorAll('.region-btn'));
+    const search     = document.getElementById('search');
+    const mainEl     = document.getElementById('main');
+    const loadMoreBtn= document.getElementById('load-more');
+    const resultsInfo= document.getElementById('results-info');
+    const noResults  = document.getElementById('no-results');
+    const PAGE_SIZE  = 20;
+    let activeFilter = 'all';
+    let activeRegion = 'all';
+    let searchQuery  = '';
+    let showSavedOnly= false;
+    let loadedCount  = PAGE_SIZE;
+    let focusedIdx   = -1;
 
+    // ── localStorage helpers ──
+    const SAVED_KEY = 'insurtech_saved';
+    const READ_KEY  = 'insurtech_read';
+    const ls = k => { try { return JSON.parse(localStorage.getItem(k) || '[]'); } catch { return []; } };
+    const lsSet = (k,v) => localStorage.setItem(k, JSON.stringify(v));
+
+    // ── URL sync ──
+    function syncURL() {
+      const p = new URLSearchParams();
+      if (activeFilter !== 'all') p.set('cat', activeFilter);
+      if (activeRegion !== 'all') p.set('region', activeRegion);
+      if (showSavedOnly) p.set('saved', '1');
+      if (searchQuery) p.set('q', searchQuery);
+      history.replaceState(null, '', p.toString() ? '?' + p.toString() : location.pathname);
+    }
+
+    function readURL() {
+      const p = new URLSearchParams(location.search);
+      if (p.get('cat'))    activeFilter = p.get('cat');
+      if (p.get('region')) activeRegion = p.get('region');
+      if (p.get('saved'))  showSavedOnly = true;
+      if (p.get('q'))      { searchQuery = p.get('q'); search.value = searchQuery; }
+    }
+
+    // ── Main update ──
     function update() {
+      const saved = ls(SAVED_KEY);
       let visible = 0, filtered = 0;
       cards.forEach(card => {
         const matchFilter = activeFilter === 'all' || card.dataset.category === activeFilter;
         const matchRegion = activeRegion === 'all' || card.dataset.region === activeRegion;
         const matchSearch = !searchQuery || card.dataset.search.includes(searchQuery);
-        if (matchFilter && matchRegion && matchSearch) {
+        const matchSaved  = !showSavedOnly || saved.includes(card.dataset.id);
+        if (matchFilter && matchRegion && matchSearch && matchSaved) {
           filtered++;
           const show = filtered <= loadedCount;
           card.classList.toggle('hidden', !show);
@@ -3557,75 +3673,255 @@
           card.classList.add('hidden');
         }
       });
-      noResults.style.display = visible === 0 ? 'block' : 'none';
+
+      // Time separators: hide if no visible cards follow
+      document.querySelectorAll('.time-sep').forEach(sep => {
+        let el = sep.nextElementSibling, has = false;
+        while (el && !el.classList.contains('time-sep')) {
+          if (el.classList.contains('card') && !el.classList.contains('hidden')) { has = true; break; }
+          el = el.nextElementSibling;
+        }
+        sep.style.display = has ? '' : 'none';
+      });
+
+      noResults.style.display = visible === 0 ? 'flex' : 'none';
       loadMoreBtn.style.display = filtered > loadedCount ? 'block' : 'none';
+
+      // Results counter
+      const total = cards.length;
+      if (filtered === total && !searchQuery)
+        resultsInfo.textContent = '';
+      else
+        resultsInfo.textContent = `Mostrando ${Math.min(visible, filtered)} de ${filtered} artículos`;
+
+      syncURL();
     }
 
+    // ── Category filters ──
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         activeFilter = btn.dataset.filter;
-        loadedCount = PAGE_SIZE;
-        filterBtns.forEach(b => b.classList.remove('active', 'all-active'));
+        loadedCount = PAGE_SIZE; focusedIdx = -1;
+        filterBtns.forEach(b => b.classList.remove('active','all-active'));
         btn.classList.add(activeFilter === 'all' ? 'all-active' : 'active');
         update();
       });
     });
 
+    // ── Region filters ──
     regionBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         activeRegion = btn.dataset.region;
-        loadedCount = PAGE_SIZE;
+        loadedCount = PAGE_SIZE; focusedIdx = -1;
         regionBtns.forEach(b => b.classList.remove('region-active'));
         btn.classList.add('region-active');
+        // Mirror to mobile sheet
+        document.querySelectorAll('#mobile-regions .filter-btn').forEach(b => {
+          b.classList.toggle('active', b.dataset.region === activeRegion);
+        });
         update();
       });
     });
 
+    // ── Search ──
     search.addEventListener('input', () => {
       searchQuery = search.value.trim().toLowerCase();
-      loadedCount = PAGE_SIZE;
+      loadedCount = PAGE_SIZE; focusedIdx = -1;
       update();
     });
 
+    // ── Load more ──
     loadMoreBtn.addEventListener('click', () => {
       loadedCount += PAGE_SIZE;
       update();
-      loadMoreBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      loadMoreBtn.scrollIntoView({ behavior:'smooth', block:'center' });
     });
-
-    // initial pagination
-    update();
 
     // ── View toggle ──
     function setView(mode) {
       mainEl.className = mode + '-view';
-      ['list','grid','compact'].forEach(m => {
-        document.getElementById('btn-' + m).classList.toggle('active', m === mode);
-      });
+      ['list','grid','compact'].forEach(m =>
+        document.getElementById('btn-'+m).classList.toggle('active', m===mode));
     }
     document.getElementById('btn-list').addEventListener('click', () => setView('list'));
     document.getElementById('btn-grid').addEventListener('click', () => setView('grid'));
     document.getElementById('btn-compact').addEventListener('click', () => setView('compact'));
 
-    // ── Bookmarks (localStorage) ──
-    const SAVED_KEY = 'insurtech_saved';
-    function getSaved() { try { return JSON.parse(localStorage.getItem(SAVED_KEY) || '[]'); } catch { return []; } }
-    function setSaved(ids) { localStorage.setItem(SAVED_KEY, JSON.stringify(ids)); }
-
+    // ── Bookmarks ──
     function initBookmarks() {
-      const saved = getSaved();
+      const saved = ls(SAVED_KEY);
       document.querySelectorAll('.save-btn').forEach(btn => {
-        const id = btn.dataset.id;
-        if (saved.includes(id)) btn.classList.add('saved');
-        btn.addEventListener('click', () => {
-          let s = getSaved();
-          if (s.includes(id)) { s = s.filter(x => x !== id); btn.classList.remove('saved'); }
-          else { s.push(id); btn.classList.add('saved'); }
-          setSaved(s);
+        if (saved.includes(btn.dataset.id)) btn.classList.add('saved');
+        btn.addEventListener('click', e => {
+          e.stopPropagation();
+          let s = ls(SAVED_KEY);
+          if (s.includes(btn.dataset.id)) { s = s.filter(x => x !== btn.dataset.id); btn.classList.remove('saved'); }
+          else { s.push(btn.dataset.id); btn.classList.add('saved'); }
+          lsSet(SAVED_KEY, s);
+          if (showSavedOnly) update();
         });
       });
     }
+
+    // ── Read tracking ──
+    function initReadTracking() {
+      const read = ls(READ_KEY);
+      cards.forEach(card => {
+        if (read.includes(card.dataset.id)) card.classList.add('read');
+        card.querySelectorAll('a[href]').forEach(a => {
+          a.addEventListener('click', () => {
+            let r = ls(READ_KEY);
+            if (!r.includes(card.dataset.id)) { r.push(card.dataset.id); lsSet(READ_KEY, r); }
+            card.classList.add('read');
+          });
+        });
+      });
+    }
+
+    // ── Saved-only filter toggle ──
+    const btnSaved = document.getElementById('btn-saved');
+    btnSaved.addEventListener('click', () => {
+      showSavedOnly = !showSavedOnly;
+      btnSaved.classList.toggle('saved-active', showSavedOnly);
+      loadedCount = PAGE_SIZE; focusedIdx = -1;
+      update();
+    });
+
+    // ── Clear filters ──
+    document.getElementById('btn-clear-filters').addEventListener('click', () => {
+      activeFilter = 'all'; activeRegion = 'all'; showSavedOnly = false;
+      searchQuery = ''; search.value = ''; loadedCount = PAGE_SIZE; focusedIdx = -1;
+      filterBtns.forEach(b => b.classList.remove('active','all-active'));
+      document.querySelector('[data-filter="all"]').classList.add('all-active');
+      regionBtns.forEach(b => b.classList.remove('region-active'));
+      document.querySelector('[data-region="all"]').classList.add('region-active');
+      btnSaved.classList.remove('saved-active');
+      update();
+    });
+
+    // ── Share filter URL ──
+    document.getElementById('btn-share-filter').addEventListener('click', async () => {
+      const btn = document.getElementById('btn-share-filter');
+      try {
+        await navigator.clipboard.writeText(location.href);
+      } catch (e) {
+        const inp = document.createElement('input');
+        inp.value = location.href; document.body.appendChild(inp); inp.select();
+        document.execCommand('copy'); document.body.removeChild(inp);
+      }
+      btn.textContent = '✓ Copiado'; btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = '🔗 Compartir'; btn.classList.remove('copied'); }, 2000);
+    });
+
+    // ── Back to top ──
+    const btt = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      btt.style.display = window.scrollY > 400 ? 'block' : 'none';
+    }, { passive: true });
+    btt.addEventListener('click', () => window.scrollTo({ top:0, behavior:'smooth' }));
+
+    // ── Keyboard shortcuts ──
+    document.addEventListener('keydown', e => {
+      const tag = document.activeElement.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA') {
+        if (e.key === 'Escape') { search.blur(); search.value=''; searchQuery=''; loadedCount=PAGE_SIZE; update(); }
+        return;
+      }
+      const visible = cards.filter(c => !c.classList.contains('hidden'));
+      switch(e.key) {
+        case '/':
+          e.preventDefault(); search.focus(); break;
+        case 'j': case 'J':
+          e.preventDefault();
+          focusedIdx = Math.min(visible.length-1, focusedIdx+1);
+          cards.forEach(c => c.classList.remove('kbd-focus'));
+          if (visible[focusedIdx]) { visible[focusedIdx].classList.add('kbd-focus'); visible[focusedIdx].scrollIntoView({behavior:'smooth',block:'center'}); }
+          break;
+        case 'k': case 'K':
+          e.preventDefault();
+          focusedIdx = Math.max(0, focusedIdx-1);
+          cards.forEach(c => c.classList.remove('kbd-focus'));
+          if (visible[focusedIdx]) { visible[focusedIdx].classList.add('kbd-focus'); visible[focusedIdx].scrollIntoView({behavior:'smooth',block:'center'}); }
+          break;
+        case 'o': case 'O': case 'Enter':
+          if (focusedIdx >= 0 && visible[focusedIdx]) {
+            window.open(visible[focusedIdx].dataset.url, '_blank');
+          }
+          break;
+        case 'b': case 'B':
+          if (focusedIdx >= 0 && visible[focusedIdx]) {
+            visible[focusedIdx].querySelector('.save-btn')?.click();
+          }
+          break;
+        case '1': setView('list'); break;
+        case '2': setView('grid'); break;
+        case '3': setView('compact'); break;
+      }
+    });
+
+    // ── Mobile bottom sheet ──
+    const mFab     = document.getElementById('mobile-fab');
+    const mSheet   = document.getElementById('mobile-sheet');
+    const mOverlay = document.getElementById('mobile-overlay');
+    const mClose   = document.getElementById('mobile-sheet-close');
+
+    function buildMobileFilters() {
+      const catContainer = document.getElementById('mobile-cats');
+      const regContainer = document.getElementById('mobile-regions');
+      // Clone category buttons
+      filterBtns.forEach(btn => {
+        const b = btn.cloneNode(true);
+        b.addEventListener('click', () => {
+          activeFilter = b.dataset.filter; loadedCount = PAGE_SIZE;
+          filterBtns.forEach(x => x.classList.remove('active','all-active'));
+          document.querySelectorAll('#mobile-cats .filter-btn').forEach(x => x.classList.remove('active','all-active'));
+          const orig = document.querySelector(`[data-filter="${b.dataset.filter}"]`);
+          if (orig) orig.classList.add(activeFilter==='all'?'all-active':'active');
+          b.classList.add(activeFilter==='all'?'all-active':'active');
+          closeSheet(); update();
+        });
+        catContainer.appendChild(b);
+      });
+      // Clone region buttons
+      regionBtns.forEach(btn => {
+        const b = btn.cloneNode(true);
+        b.className = 'filter-btn';
+        b.dataset.region = btn.dataset.region;
+        b.addEventListener('click', () => {
+          activeRegion = b.dataset.region; loadedCount = PAGE_SIZE;
+          regionBtns.forEach(x => x.classList.remove('region-active'));
+          document.querySelectorAll('#mobile-regions .filter-btn').forEach(x => x.classList.remove('active','all-active'));
+          document.querySelector(`[data-region="${b.dataset.region}"]`)?.classList.add('region-active');
+          b.classList.add('active');
+          closeSheet(); update();
+        });
+        regContainer.appendChild(b);
+      });
+    }
+
+    function openSheet() { mSheet.classList.add('open'); mOverlay.classList.add('open'); document.body.style.overflow='hidden'; }
+    function closeSheet() { mSheet.classList.remove('open'); mOverlay.classList.remove('open'); document.body.style.overflow=''; }
+
+    mFab.addEventListener('click', openSheet);
+    mClose.addEventListener('click', closeSheet);
+    mOverlay.addEventListener('click', closeSheet);
+
+    // ── Init ──
+    readURL();
+    buildMobileFilters();
     initBookmarks();
+    initReadTracking();
+    // Apply URL-restored filter state to UI
+    if (activeFilter !== 'all') {
+      const btn = document.querySelector(`[data-filter="${activeFilter}"]`);
+      if (btn) { filterBtns.forEach(b=>b.classList.remove('active','all-active')); btn.classList.add('active'); }
+    }
+    if (activeRegion !== 'all') {
+      const btn = document.querySelector(`[data-region="${activeRegion}"]`);
+      if (btn) { regionBtns.forEach(b=>b.classList.remove('region-active')); btn.classList.add('region-active'); }
+    }
+    if (showSavedOnly) btnSaved.classList.add('saved-active');
+    update();
   </script>
 </body>
 </html>
