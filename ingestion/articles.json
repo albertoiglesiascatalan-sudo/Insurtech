@@ -1,5 +1,311 @@
 [
   {
+    "id": "instanda-launches-max-for-ai-driven-commercial-underwriting",
+    "title": "INSTANDA Launches MAX for AI-Driven Commercial Underwriting",
+    "title_original": "INSTANDA Launches MAX for AI-Driven Commercial Underwriting",
+    "url": "https://iireporter.com/instanda-launches-max-for-ai-driven-commercial-underwriting/",
+    "summary": "INSTANDA (London) has launched INSTANDA MAX , an underwriting capability designed to support large-scale commercial lines policies with item-level data and real-time processing.The solution enables insurers to underwrite thousands of assets within a single policy while applying granular risk assessment and pricing at the individual item level. “Commercial line insurers have traditionally been forced to underwrite large, complex asset classes using aggregated data and broad assumptions, because the operational burden of doing otherwise was simply too high,” says Tim Hardcastle, CEO, INSTANDA. For the first time, commercial line insurers can process bulk policies containing thousands of assets while still applying granular, measurable data to each individual item, supported by strong data governance, human oversight, ecosystem integration and frictionless operational AI.” The platform is designed to address limitations in traditional underwriting approaches, where aggregate-level analysis can lead to pricing inaccuracies and delayed adjustments.",
+    "category": "General",
+    "source": "Insurance Innovation Reporter",
+    "published_at": "2026-03-30T20:07:01.434735+00:00",
+    "image_url": "",
+    "signal_score": 18,
+    "signal_label": "Disrupción",
+    "signal_icon": "🚀",
+    "why_matters": "Introduce un modelo o tecnología que puede alterar la cadena de valor.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
+  },
+  {
+    "id": "willis-launches-facility-to-expand-u-s-umbrella-capacity",
+    "title": "Willis Launches Facility to Expand U.S. Umbrella Capacity",
+    "title_original": "Willis Launches Facility to Expand U.S. Umbrella Capacity",
+    "url": "https://iireporter.com/willis-launches-facility-to-expand-u-s-umbrella-capacity/",
+    "summary": "Willis (London) has launched the Willis Excess Liability Lineslip facility to address limited umbrella capacity in the U.S. “With the WELL facility, we are bringing together global capacity to provide organizations with access to higher limits, streamlined placement and tailored solutions—helping them protect against catastrophic exposures and confidently manage complex risks.” The solution offers up to $50 million in combined lead umbrella and first excess capacity, including up to $25 million in lead umbrella coverage and an additional $25 million in first excess. Developed by Willis’ North America Casualty team in London, the facility leverages the London market and a consortium of Lloyd’s syndicates to provide capacity through a single policy structure.",
+    "category": "General",
+    "source": "Insurance Innovation Reporter",
+    "published_at": "2026-03-30T20:07:01.022334+00:00",
+    "image_url": "",
+    "signal_score": 21,
+    "signal_label": "Inversión",
+    "signal_icon": "💰",
+    "why_matters": "Nueva financiación que puede acelerar la competencia en el sector.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
+  },
+  {
+    "id": "mcp-as-the-control-plane-for-ai-tooling-in-insurance",
+    "title": "MCP as the Control Plane for AI Tooling in Insurance",
+    "title_original": "MCP as the Control Plane for AI Tooling in Insurance",
+    "url": "https://iireporter.com/mcp-as-the-control-plane-for-ai-tooling-in-insurance/",
+    "summary": "Slipping through the cracks is not a desirable trait, and MCP gives teams a control plane for necessary transactions and interactions. Agentic AI does not become useful in an insurance organization when someone writes a clever prompt. Most teams still treat “tooling” for agentic AI as a string of one-off integrations held together by spit, sweat, and hope.",
+    "category": "General",
+    "source": "Insurance Innovation Reporter",
+    "published_at": "2026-03-30T20:07:00.653214+00:00",
+    "image_url": "",
+    "signal_score": 8,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
+  },
+  {
+    "id": "weeks-long-australian-lng-outage-will-further-tighten-supply",
+    "title": "Weeks-Long Australian LNG Outage Will Further Tighten Supply",
+    "title_original": "Weeks-Long Australian LNG Outage Will Further Tighten Supply",
+    "url": "https://www.claimsjournal.com/news/national/2026/03/30/336582.htm",
+    "summary": "A weeks-long outage at a major Australian liquefied natural gas export plant has dealt a further blow to a global market still reeling from the halt of operations in Qatar. Storm damage to Chevron Corp.’s Wheatstone gas plant is hampering efforts to restart operations and the facility won’t be back online fully for “a number of weeks,” the company said Sunday. said Sunday it’s working to resume normal operations at its North West Shelf facility, while Chevron said its Gorgon site was operating at “full rates” after an outage at one of its three production units.",
+    "category": "General",
+    "source": "Claims Journal",
+    "published_at": "2026-03-30T20:06:59.833625+00:00",
+    "image_url": "https://www.claimsjournal.com/app/uploads/2026/03/Gorgon-LNG-facility-in-Australia_Bloomberg-580x387.jpg",
+    "signal_score": 8,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
+  },
+  {
+    "id": "bofa-to-pay-72-5-million-to-settle-epstein-victim-lawsuit",
+    "title": "BofA to Pay $72.5 Million to Settle Epstein Victim Lawsuit",
+    "title_original": "BofA to Pay $72.5 Million to Settle Epstein Victim Lawsuit",
+    "url": "https://www.claimsjournal.com/news/national/2026/03/30/336586.htm",
+    "summary": "agreed to pay $72.5 million to settle a lawsuit on behalf of Jeffrey Epstein victims claiming the bank aided in the late financier’s sex-trafficking. Related: BofA Agrees to Settle Claims It Aided Epstein Sex Crimes “While we stand by our prior statements made in the filings in this case, including that Bank of America did not facilitate sex trafficking crimes, this resolution allows us to put this matter behind us and provides further closure for the plaintiffs,” bank spokesman Bill Halldin said in an emailed statement. co-founder Leon Black used Bank of America accounts to transfer $170 million to Epstein.",
+    "category": "General",
+    "source": "Claims Journal",
+    "published_at": "2026-03-30T20:06:59.634272+00:00",
+    "image_url": "https://www.claimsjournal.com/app/uploads/2026/03/Bank-of-America-branch-in-NY-Bloomberg-580x387.jpg",
+    "signal_score": 24,
+    "signal_label": "Regulación",
+    "signal_icon": "⚖️",
+    "why_matters": "Puede requerir adaptación regulatoria en los próximos meses.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
+  },
+  {
+    "id": "laguardia-crash-bolsters-case-for-using-ai-in-air-control-towers",
+    "title": "LaGuardia Crash Bolsters Case for Using AI in Air Control Towers",
+    "title_original": "LaGuardia Crash Bolsters Case for Using AI in Air Control Towers",
+    "url": "https://www.claimsjournal.com/news/national/2026/03/30/336590.htm",
+    "summary": "Inside a mock control tower next to Hong Kong International Airport, a virtual near-miss plays out on multi-panel screens. The simulation bears an uncanny and coincidental resemblance to a tragedy that unfolded at New York City’s LaGuardia Airport, where an Air Canada Express jet with 76 people on board smashed into a fire truck shortly after landing on March 22. The force of that crash obliterated the cockpit, killing the two pilots and demolishing the emergency services vehicle trying to cross the runway.",
+    "category": "General",
+    "source": "Claims Journal",
+    "published_at": "2026-03-30T20:06:59.273325+00:00",
+    "image_url": "https://www.claimsjournal.com/app/uploads/2026/03/Control-room-of-Integrated-Airport-Centre-at-Hong-Kong_Bloomberg-580x387.jpg",
+    "signal_score": 8,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
+  },
+  {
+    "id": "electric-bikes-pose-safety-injury-risks",
+    "title": "Electric Bikes Pose Safety, Injury Risks",
+    "title_original": "Electric Bikes Pose Safety, Injury Risks",
+    "url": "https://www.carriermanagement.com/news/2026/03/30/286210.htm",
+    "summary": "E-bikes offer a convenient, eco-friendly, and cost-effective alternative to cars, but their increasing use is drawing safety concerns. The 14-year-old was riding an electric bicycle at an estimated 25 mph when he slammed into Janet Stotko during her evening walk, leaving her unconscious and bleeding on a sidewalk in her Minnesota neighborhood. At a checkup, she said, her doctors told her, “Wow, we can’t believe you’re here.” Now, she’s pushing for stricter laws regulating e-bikes in hopes that others won’t be hurt.",
+    "category": "General",
+    "source": "Carrier Management",
+    "published_at": "2026-03-30T20:06:58.422893+00:00",
+    "image_url": "",
+    "signal_score": 12,
+    "signal_label": "Cambio de Liderazgo",
+    "signal_icon": "👔",
+    "why_matters": "Los cambios de liderazgo suelen anticipar cambios estratégicos.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
+  },
+  {
+    "id": "report-reveals-mixed-collision-trends-as-fleets-work-to-implement-safety-program",
+    "title": "Report Reveals Mixed Collision Trends as Fleets Work to Implement Safety Programs",
+    "title_original": "Report Reveals Mixed Collision Trends as Fleets Work to Implement Safety Programs",
+    "url": "https://www.carriermanagement.com/news/2026/03/30/286219.htm",
+    "summary": "A new report indicates that collision rates are beginning to level off, rising just 4% in 2025, according to analysis by fleet telematics provider Lytx. “The 2026 Road Safety Report spotlights not only the significant victories we’ve secured but also the formidable risks that persist,” said Chris Cabrera, Chief Executive Officer at Lytx. The collision rate in trucking rose just 2% in 2025, down from a 19% increase in 2024, as demand for freight transportation cooled.",
+    "category": "General",
+    "source": "Carrier Management",
+    "published_at": "2026-03-30T20:06:57.992806+00:00",
+    "image_url": "",
+    "signal_score": 26,
+    "signal_label": "Cambio de Liderazgo",
+    "signal_icon": "👔",
+    "why_matters": "Los cambios de liderazgo suelen anticipar cambios estratégicos.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
+  },
+  {
+    "id": "progressive-expands-aggregate-reinsurance-cover-renews-shared-hurricane-limit-fo",
+    "title": "Progressive expands aggregate reinsurance cover, renews shared hurricane limit for 2026",
+    "title_original": "Progressive expands aggregate reinsurance cover, renews shared hurricane limit for 2026",
+    "url": "https://www.artemis.bm/news/progressive-expands-aggregate-reinsurance-cover-renews-shared-hurricane-limit-for-2026/?utm_source=rss&utm_medium=rss&utm_campaign=progressive-expands-aggregate-reinsurance-cover-renews-shared-hurricane-limit-for-2026",
+    "summary": "US insurer Progressive expanded its aggregate excess-of-loss reinsurance protection at the start of 2026 and has also renewed a hurricane season focused shared reinsurance limit arrangement to cover losses from any storms this year. In addition, Progressive has already begun making reinsurance preparations for the 2026 hurricane season , having already renewed a shared limit arrangement. Progressive’s $300 million of aggregate reinsurance limit for 2026 has retention thresholds of $550 million and $750 million.",
+    "category": "General",
+    "source": "Artemis",
+    "published_at": "2026-03-30T20:06:02.533101+00:00",
+    "image_url": "",
+    "signal_score": 27,
+    "signal_label": "Inversión",
+    "signal_icon": "💰",
+    "why_matters": "Nueva financiación que puede acelerar la competencia en el sector.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
+  },
+  {
+    "id": "p-c-profitability-nears-peak-amid-rising-competition-and-strong-balance-sheets-s",
+    "title": "P&C profitability nears peak amid rising competition and strong balance sheets, says Moody’s",
+    "title_original": "P&C profitability nears peak amid rising competition and strong balance sheets, says Moody’s",
+    "url": "https://www.reinsurancene.ws/pc-profitability-nears-peak-amid-rising-competition-and-strong-balance-sheets-says-moodys/",
+    "summary": "This analysis from Moody’s underlines that while P&C profitability remains strong, competitive pressures and selective risk exposures may moderate growth, even as balance sheets are reinforced across the sector. According to Moody’s Ratings, a provider of credit ratings and risk analysis, profitability in the property and casualty (P&C) reinsurance sector appears to have reached its peak as competition intensifies across all lines of business. Moody’s emphasises that despite these strategic adjustments, solvency ratios remain robust, with the largest reinsurers continuing to strengthen their balance sheets through enhanced reserves.",
+    "category": "General",
+    "source": "Reinsurance News",
+    "published_at": "2026-03-30T20:06:02.325957+00:00",
+    "image_url": "",
+    "signal_score": 26,
+    "signal_label": "Regulación",
+    "signal_icon": "⚖️",
+    "why_matters": "Puede requerir adaptación regulatoria en los próximos meses.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
+  },
+  {
+    "id": "michigan-school-district-settles-suit-over-pledge-of-allegiance-dispute",
+    "title": "Michigan School District Settles Suit Over Pledge of Allegiance Dispute",
+    "title_original": "Michigan School District Settles Suit Over Pledge of Allegiance Dispute",
+    "url": "https://www.insurancejournal.com/news/midwest/2026/03/30/863942.htm",
+    "summary": "A suburban Detroit school district has agreed to give First Amendment training to staff to settle a lawsuit by a teenager who said a teacher humiliated her for refusing to stand for the Pledge of Allegiance in protest of U.S. Danielle, whose family is of Palestinian descent, declined to recite the pledge at her school over three days in January 2025. The school district will remove anything from Danielle’s file that suggests her actions violated school policy, according to the settlement.",
+    "category": "General",
+    "source": "Insurance Journal",
+    "published_at": "2026-03-30T20:06:01.823306+00:00",
+    "image_url": "",
+    "signal_score": 21,
+    "signal_label": "Regulación",
+    "signal_icon": "⚖️",
+    "why_matters": "Puede requerir adaptación regulatoria en los próximos meses.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
+  },
+  {
+    "id": "texas-pizza-hut-franchise-to-pay-35k-in-harassment-suit",
+    "title": "Texas Pizza Hut Franchise to Pay $35K in Harassment Suit",
+    "title_original": "Texas Pizza Hut Franchise to Pay $35K in Harassment Suit",
+    "url": "https://www.insurancejournal.com/news/southcentral/2026/03/30/863950.htm",
+    "summary": "Ayvaz Pizza, LLC, doing business as Pizza Hut, which operates more than 350 Pizza Hut restaurants around the country, including multiple locations in the Houston area, will pay $35,000 and furnish other relief to settle a sex harassment and retaliation lawsuit filed by the U.S. According to the EEOC’s lawsuit, a former female assistant manager of a Pizza Hut restaurant in Porter, Texas was subjected to a hostile work environment by her supervisor after she broke off their romantic relationship. In addition to providing $35,000 in damages to the aggrieved worker, the two-year consent decree signed March 19 requires Ayvaz Pizza to provide the worker a letter of reference; update and disseminate its anti-discrimination policies; provide comprehensive anti-discrimination training to its staff; and report sex-based discrimination and harassment complaints to the EEOC.",
+    "category": "General",
+    "source": "Insurance Journal",
+    "published_at": "2026-03-30T20:06:01.458167+00:00",
+    "image_url": "",
+    "signal_score": 12,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
+  },
+  {
+    "id": "taylor-swift-sued-for-trademark-infringement-over-life-of-a-showgirl",
+    "title": "Taylor Swift Sued for Trademark Infringement Over ‘Life of a Showgirl’",
+    "title_original": "Taylor Swift Sued for Trademark Infringement Over ‘Life of a Showgirl’",
+    "url": "https://www.insurancejournal.com/news/national/2026/03/30/863957.htm",
+    "summary": "Pop megastar Taylor Swift was sued by a Las Vegas performer on Monday who said Swift’s latest hit album “The Life of a Showgirl” violates her trademark rights. Wade said in the complaint that Swift’s continued use of the “Life of a Showgirl” name “drowns out” her trademark “until consumers begin to assume that the original is the imitation.” “What Plaintiff had built over twelve years, Defendants threatened to swallow in weeks,” Wade said. Wade’s attorney Jaymie Parkkinen said they “have great respect for Swift’s talent and success, but trademark law exists to ensure that creators at all levels can protect what they’ve built.” “The Life of a Showgirl,” Swift’s 12th album, was released in O c tober and shattered Spotify streaming records on its way to becoming the biggest-selling album of 2025.",
+    "category": "General",
+    "source": "Insurance Journal",
+    "published_at": "2026-03-30T20:06:01.166612+00:00",
+    "image_url": "https://www.insurancejournal.com/app/uploads/2024/08/taylor-swift-performs-in-milan-italy-AP-580x387.jpg",
+    "signal_score": 12,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
+  },
+  {
+    "id": "carriers-lose-millions-on-manual-claims",
+    "title": "Carriers Lose Millions on Manual Claims",
+    "title_original": "Carriers Lose Millions on Manual Claims",
+    "url": "https://www.insurancethoughtleadership.com/claims/carriers-lose-millions-manual-claims",
+    "summary": "Insurers hemorrhage millions on manual claims processing; targeted automation slashes costs by half within months. The reality is that most initiatives fail because firms try to \"boil the ocean.\" I've seen carriers sink $2 million and 18 months into building a \"total automation\" platform, only to find it handles 30% of their claim types while the rest still require a manual \"workaround.\" The project is branded a failure, and the organization develops an allergy to the word \"automation\" for the next three years. From what I've seen across the industry, carriers are burning between $7 and $15 just to manually process a single claim document.",
+    "category": "General",
+    "source": "Insurance Thought Leadership",
+    "published_at": "2026-03-30T20:05:58.085047+00:00",
+    "image_url": "",
+    "signal_score": 20,
+    "signal_label": "Inversión",
+    "signal_icon": "💰",
+    "why_matters": "Nueva financiación que puede acelerar la competencia en el sector.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
+  },
+  {
+    "id": "selectquote-receives-nyse-notice-over-stock-price",
+    "title": "SelectQuote receives NYSE notice over stock price",
+    "title_original": "SelectQuote receives NYSE notice over stock price",
+    "url": "https://coverager.com/selectquote-receives-nyse-notice-over-stock-price/",
+    "summary": "SelectQuote Insurance Services said it received a notice from the New York Stock Exchange after its shares traded below $1.00 on average over 30 consecutive trading days, putting it out of compliance with listing standards. The company has a six month cure period to regain compliance and said it plans to monitor its stock price and take necessary actions. Shares will continue trading on the NYSE during this period.",
+    "category": "General",
+    "source": "Coverager",
+    "published_at": "2026-03-30T20:05:57.761386+00:00",
+    "image_url": "",
+    "signal_score": 21,
+    "signal_label": "Regulación",
+    "signal_icon": "⚖️",
+    "why_matters": "Puede requerir adaptación regulatoria en los próximos meses.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
+  },
+  {
+    "id": "aon-backs-emed",
+    "title": "Aon backs eMed",
+    "title_original": "Aon backs eMed",
+    "url": "https://coverager.com/aon-backs-emed/",
+    "summary": "eMed has raised $200 million at a valuation exceeding $2 billion, positioning itself as a platform focused on employer-sponsored population health, particularly around GLP-1 and GIP therapies. eMed offers clinically supervised weight management programs centered on GLP-1 medications, targeting employers looking to offer these benefits at scale. The round was led by Aon Consulting , with participation from a mix of institutional and strategic investors, including Tom Brady , who also serves as founding chief wellness officer, alongside investors tied to healthcare, private equity, and technology.",
+    "category": "General",
+    "source": "Coverager",
+    "published_at": "2026-03-30T20:05:57.709214+00:00",
+    "image_url": "",
+    "signal_score": 26,
+    "signal_label": "Inversión",
+    "signal_icon": "💰",
+    "why_matters": "Nueva financiación que puede acelerar la competencia en el sector.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
+  },
+  {
+    "id": "sims-raises-equity-for-disability-income-product-targeting-youth-athletes",
+    "title": "SIMS raises equity for disability income product targeting youth athletes",
+    "title_original": "SIMS raises equity for disability income product targeting youth athletes",
+    "url": "https://coverager.com/sims-raises-equity-for-disability-income-product-targeting-youth-athletes/",
+    "summary": "Specialty Insurance Marketing Services is positioning its ScholarGuard product as a niche accident disability offering designed to protect future education costs for youth athletes. It is distributed through licensed life and health insurers, with SIMS acting as the marketing and product development entity. Separately, SIMS has raised capital through a private offering, targeting up to $3 million, with approximately $520,000 sold to date .",
+    "category": "General",
+    "source": "Coverager",
+    "published_at": "2026-03-30T20:05:57.652095+00:00",
+    "image_url": "",
+    "signal_score": 26,
+    "signal_label": "Inversión",
+    "signal_icon": "💰",
+    "why_matters": "Nueva financiación que puede acelerar la competencia en el sector.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
+  },
+  {
     "id": "u-s-treasury-to-consult-with-insurance-regulators-on-private-credit-lenders",
     "title": "U.S. Treasury to Consult With Insurance Regulators on Private Credit Lenders",
     "title_original": "U.S. Treasury to Consult With Insurance Regulators on Private Credit Lenders",
@@ -8,7 +314,14 @@
     "category": "General",
     "source": "Carrier Management",
     "published_at": "2026-03-30T15:57:42.085896+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 16,
+    "signal_label": "Regulación",
+    "signal_icon": "⚖️",
+    "why_matters": "Puede requerir adaptación regulatoria en los próximos meses.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "jio-financial-services-targets-2026-entry-into-life-general-insurance",
@@ -19,7 +332,14 @@
     "category": "General",
     "source": "Insurance Asia News",
     "published_at": "2026-03-30T15:57:39.724122+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 7,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "shojin-financial-services-limited-enters-administration",
@@ -30,7 +350,14 @@
     "category": "General",
     "source": "FCA News",
     "published_at": "2026-03-30T15:57:19.761825+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 31,
+    "signal_label": "Regulación",
+    "signal_icon": "⚖️",
+    "why_matters": "Puede requerir adaptación regulatoria en los próximos meses.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "fca-confirms-motor-finance-redress-scheme",
@@ -41,7 +368,14 @@
     "category": "General",
     "source": "FCA News",
     "published_at": "2026-03-30T15:57:19.640854+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 24,
+    "signal_label": "Regulación",
+    "signal_icon": "⚖️",
+    "why_matters": "Puede requerir adaptación regulatoria en los próximos meses.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "millions-of-car-finance-customers-to-get-payouts-this-year-as-fca-goes-ahead-wit",
@@ -52,7 +386,14 @@
     "category": "General",
     "source": "FCA News",
     "published_at": "2026-03-30T15:57:19.365713+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 31,
+    "signal_label": "Regulación",
+    "signal_icon": "⚖️",
+    "why_matters": "Puede requerir adaptación regulatoria en los próximos meses.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "zenkyoren-targets-mid-guidance-pricing-for-100m-nakama-re-2026-1-japan-quake-cat",
@@ -63,7 +404,14 @@
     "category": "General",
     "source": "Artemis",
     "published_at": "2026-03-30T15:57:17.600498+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 37,
+    "signal_label": "Clima & Catástrofes",
+    "signal_icon": "🌪️",
+    "why_matters": "Impacto directo en exposición, pricing y reservas del sector.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "el-nino-to-shape-2026-atlantic-hurricane-season-us-landfall-threat-remains-accuw",
@@ -74,7 +422,14 @@
     "category": "General",
     "source": "Artemis",
     "published_at": "2026-03-30T15:57:16.318097+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 33,
+    "signal_label": "Clima & Catástrofes",
+    "signal_icon": "🌪️",
+    "why_matters": "Impacto directo en exposición, pricing y reservas del sector.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "la-wildfires-a-real-world-stress-test-investor-confidence-in-wildfire-cat-bonds-",
@@ -85,7 +440,14 @@
     "category": "General",
     "source": "Artemis",
     "published_at": "2026-03-30T15:57:16.183873+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 30,
+    "signal_label": "Clima & Catástrofes",
+    "signal_icon": "🌪️",
+    "why_matters": "Impacto directo en exposición, pricing y reservas del sector.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "the-hartford-strengthens-international-business-with-leadership-updates",
@@ -96,7 +458,14 @@
     "category": "General",
     "source": "Reinsurance News",
     "published_at": "2026-03-30T15:57:15.932009+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 12,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "howden-re-boosts-latin-america-and-caribbean-offering-with-senior-hires",
@@ -107,7 +476,14 @@
     "category": "General",
     "source": "Reinsurance News",
     "published_at": "2026-03-30T15:57:15.738184+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 23,
+    "signal_label": "Clima & Catástrofes",
+    "signal_icon": "🌪️",
+    "why_matters": "Impacto directo en exposición, pricing y reservas del sector.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "commodity-prices-rise-due-to-middle-east-conflict-coface",
@@ -118,7 +494,14 @@
     "category": "General",
     "source": "Reinsurance News",
     "published_at": "2026-03-30T15:57:15.542828+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 12,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "hawaii-to-take-over-aging-dam-after-failure-scare-during-floods",
@@ -129,7 +512,14 @@
     "category": "General",
     "source": "Insurance Journal",
     "published_at": "2026-03-30T15:57:14.986172+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 33,
+    "signal_label": "M&A",
+    "signal_icon": "🤝",
+    "why_matters": "Consolida el mercado y puede redefinir la competencia en el sector.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "sources-us-treasury-to-consult-with-insurance-regulators-on-private-credit-lende",
@@ -140,7 +530,14 @@
     "category": "General",
     "source": "Insurance Journal",
     "published_at": "2026-03-30T15:57:14.744710+00:00",
-    "image_url": "https://www.insurancejournal.com/app/uploads/2012/09/treasury-building-2-580x386.jpg"
+    "image_url": "https://www.insurancejournal.com/app/uploads/2012/09/treasury-building-2-580x386.jpg",
+    "signal_score": 38,
+    "signal_label": "Regulación",
+    "signal_icon": "⚖️",
+    "why_matters": "Puede requerir adaptación regulatoria en los próximos meses.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "missing-crew-not-found-in-iran-hit-vessel-thai-ship-owner-says",
@@ -151,7 +548,14 @@
     "category": "General",
     "source": "Insurance Journal",
     "published_at": "2026-03-30T15:57:14.424585+00:00",
-    "image_url": "https://www.insurancejournal.com/app/uploads/2026/03/damaged-mayuree-naree-bulk-carrier-getty-580x387.jpg"
+    "image_url": "https://www.insurancejournal.com/app/uploads/2026/03/damaged-mayuree-naree-bulk-carrier-getty-580x387.jpg",
+    "signal_score": 24,
+    "signal_label": "Regulación",
+    "signal_icon": "⚖️",
+    "why_matters": "Puede requerir adaptación regulatoria en los próximos meses.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "prudential-financial-appoints-joseph-barrowclough-president-of-bermuda-reinsuran",
@@ -162,7 +566,14 @@
     "category": "General",
     "source": "InsurTech Insights",
     "published_at": "2026-03-30T15:57:13.858022+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 11,
+    "signal_label": "Cambio de Liderazgo",
+    "signal_icon": "👔",
+    "why_matters": "Los cambios de liderazgo suelen anticipar cambios estratégicos.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "wtw-strengthens-emea-structure-with-new-leadership-to-accelerate-growth-and-ai-a",
@@ -173,7 +584,14 @@
     "category": "General",
     "source": "InsurTech Insights",
     "published_at": "2026-03-30T15:57:12.074137+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 12,
+    "signal_label": "IA & Tecnología",
+    "signal_icon": "🤖",
+    "why_matters": "Tecnología con potencial de transformar operaciones o experiencia de cliente.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "odyssey-group-holdings-unifies-hudson-and-newline-under-single-brand-to-strength",
@@ -184,7 +602,14 @@
     "category": "General",
     "source": "InsurTech Insights",
     "published_at": "2026-03-30T15:57:10.460461+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 7,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "msig-asia-invests-in-ancileo",
@@ -195,7 +620,14 @@
     "category": "General",
     "source": "Coverager",
     "published_at": "2026-03-30T15:57:06.637400+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 15,
+    "signal_label": "Cambio de Liderazgo",
+    "signal_icon": "👔",
+    "why_matters": "Los cambios de liderazgo suelen anticipar cambios estratégicos.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "just-selects-sapiens-platform-for-uk-retirement-modernization",
@@ -206,7 +638,14 @@
     "category": "General",
     "source": "Coverager",
     "published_at": "2026-03-30T15:57:06.579981+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 11,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "ia-valuations-announces-strategic-partnership-with-hawksoft",
@@ -217,7 +656,14 @@
     "category": "General",
     "source": "Coverager",
     "published_at": "2026-03-30T15:57:06.507740+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 19,
+    "signal_label": "M&A",
+    "signal_icon": "🤝",
+    "why_matters": "Consolida el mercado y puede redefinir la competencia en el sector.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "el-futuro-del-seguro-se-juega-en-la-gestion-del-talento",
@@ -228,7 +674,14 @@
     "category": "General",
     "source": "INESE",
     "published_at": "2026-03-30T06:18:22.685737+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 28,
+    "signal_label": "Regulación",
+    "signal_icon": "⚖️",
+    "why_matters": "Puede requerir adaptación regulatoria en los próximos meses.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "del-nuevo-registro-de-vpl-al-deber-de-informacion-el-sector-asegurador-se-adapta",
@@ -239,7 +692,14 @@
     "category": "General",
     "source": "INESE",
     "published_at": "2026-03-30T06:18:21.946447+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 14,
+    "signal_label": "Cambio de Liderazgo",
+    "signal_icon": "👔",
+    "why_matters": "Los cambios de liderazgo suelen anticipar cambios estratégicos.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "siete-aseguradoras-se-suman-a-la-hora-del-planeta",
@@ -250,7 +710,14 @@
     "category": "General",
     "source": "INESE",
     "published_at": "2026-03-30T06:18:21.260971+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 14,
+    "signal_label": "Cambio de Liderazgo",
+    "signal_icon": "👔",
+    "why_matters": "Los cambios de liderazgo suelen anticipar cambios estratégicos.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "lng-supply-cut-further-after-cyclone-hits-australian-plants",
@@ -261,7 +728,14 @@
     "category": "General",
     "source": "Claims Journal",
     "published_at": "2026-03-30T06:18:18.555978+00:00",
-    "image_url": "https://www.claimsjournal.com/app/uploads/2026/03/Gorgon-LNG-facility_Bloomberg-580x387.jpg"
+    "image_url": "https://www.claimsjournal.com/app/uploads/2026/03/Gorgon-LNG-facility_Bloomberg-580x387.jpg",
+    "signal_score": 5,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "hldi-safety-benefits-stack-up-from-driver-assistance-features",
@@ -272,7 +746,14 @@
     "category": "General",
     "source": "Claims Journal",
     "published_at": "2026-03-30T06:18:18.350970+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 5,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "delta-insurance-new-zealand-promotes-dinesh-murali-to-managing-director",
@@ -283,7 +764,14 @@
     "category": "General",
     "source": "Insurance Asia News",
     "published_at": "2026-03-30T06:18:15.954318+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 9,
+    "signal_label": "Cambio de Liderazgo",
+    "signal_icon": "👔",
+    "why_matters": "Los cambios de liderazgo suelen anticipar cambios estratégicos.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "lloyds-seeks-a-quiet-sunset-but-storm-clouds-remain",
@@ -294,7 +782,14 @@
     "category": "General",
     "source": "Insurance Asia News",
     "published_at": "2026-03-30T06:18:15.104318+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 5,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "south-korea-non-life-carriers-insurance-income-plunges-32-despite-premium-growth",
@@ -305,7 +800,14 @@
     "category": "General",
     "source": "Insurance Asia News",
     "published_at": "2026-03-30T06:18:14.210679+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 5,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "am-best-upgrades-ocean-res-credit-ratings",
@@ -316,7 +818,14 @@
     "category": "General",
     "source": "Reinsurance News",
     "published_at": "2026-03-30T06:18:07.528486+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 10,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "arch-insurance-uk-regional-division-name-tinworth-senior-p-c-underwriter",
@@ -327,7 +836,14 @@
     "category": "General",
     "source": "Reinsurance News",
     "published_at": "2026-03-30T06:18:07.317031+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 10,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "converge-gets-additional-cyber-insurance-capacity-from-lloyds",
@@ -338,7 +854,14 @@
     "category": "General",
     "source": "Reinsurance News",
     "published_at": "2026-03-30T06:18:07.121482+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 17,
+    "signal_label": "Inversión",
+    "signal_icon": "💰",
+    "why_matters": "Nueva financiación que puede acelerar la competencia en el sector.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "lines-persist-at-some-airports-after-trump-signs-tsa-pay-memo",
@@ -349,7 +872,14 @@
     "category": "General",
     "source": "Insurance Journal",
     "published_at": "2026-03-30T06:18:06.652943+00:00",
-    "image_url": "https://www.insurancejournal.com/app/uploads/2026/03/airport-lines-TSA-airport-security-Bloomberg-580x387.jpg"
+    "image_url": "https://www.insurancejournal.com/app/uploads/2026/03/airport-lines-TSA-airport-security-Bloomberg-580x387.jpg",
+    "signal_score": 9,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "bank-of-america-agrees-to-pay-72-5m-to-settle-epstein-accusers-lawsuit",
@@ -360,7 +890,14 @@
     "category": "General",
     "source": "Insurance Journal",
     "published_at": "2026-03-30T06:18:06.198849+00:00",
-    "image_url": "https://www.insurancejournal.com/app/uploads/2021/07/Bank-of-America-logo-logotype-580x435.png"
+    "image_url": "https://www.insurancejournal.com/app/uploads/2021/07/Bank-of-America-logo-logotype-580x435.png",
+    "signal_score": 25,
+    "signal_label": "Regulación",
+    "signal_icon": "⚖️",
+    "why_matters": "Puede requerir adaptación regulatoria en los próximos meses.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "trump-unveils-new-loan-guarantees-for-beleaguered-farmers",
@@ -371,7 +908,14 @@
     "category": "General",
     "source": "Insurance Journal",
     "published_at": "2026-03-30T06:18:05.936381+00:00",
-    "image_url": "https://www.insurancejournal.com/app/uploads/2026/03/farmers-chard-Maryland-Bloomberg-580x387.jpg"
+    "image_url": "https://www.insurancejournal.com/app/uploads/2026/03/farmers-chard-Maryland-Bloomberg-580x387.jpg",
+    "signal_score": 9,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "crawford-contractor-connection-partners-with-helixco",
@@ -382,7 +926,14 @@
     "category": "General",
     "source": "Coverager",
     "published_at": "2026-03-29T19:48:18.534976+00:00",
-    "image_url": ""
+    "image_url": "",
+    "signal_score": 10,
+    "signal_label": "Cambio de Liderazgo",
+    "signal_icon": "👔",
+    "why_matters": "Los cambios de liderazgo suelen anticipar cambios estratégicos.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "alacrity-launches-ai-driven-claims-platform",
@@ -392,7 +943,14 @@
     "summary": "Alacrity Solutions is an independent provider of insurance claims management services in North America. The post Alacrity launches AI-driven claims platform appeared first on Coverager - Insurance news and insights .",
     "category": "General",
     "source": "Coverager",
-    "published_at": "2026-03-29T14:04:24.984725+00:00"
+    "published_at": "2026-03-29T14:04:24.984725+00:00",
+    "signal_score": 12,
+    "signal_label": "Disrupción",
+    "signal_icon": "🚀",
+    "why_matters": "Introduce un modelo o tecnología que puede alterar la cadena de valor.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "axa-italia-returns-to-tv-with-savings-and-investment-focused-campaign",
@@ -402,7 +960,14 @@
     "summary": "The storyline follows a child imagining future ambitions, reinforcing the message that building financial security starts with everyday decisions. The post AXA Italia returns to TV with savings and investment-focused campaign appeared first on Coverager - Insurance news and insights .",
     "source": "Coverager",
     "published_at": "2026-03-29T05:53:51.874836+00:00",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "signal_score": 6,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "insurance-apostles-files-trademark-for-agricultural-insurance-agency-brand",
@@ -412,7 +977,14 @@
     "summary": "The positioning suggests a niche agency model targeting the agricultural segment. The post Insurance Apostles files trademark for agricultural insurance agency brand appeared first on Coverager - Insurance news and insights .",
     "source": "Coverager",
     "published_at": "2026-03-28T19:27:02.242436+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 6,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "china-life-insurance-posts-strong-profit-growth-driven-by-investment-performance",
@@ -422,7 +994,14 @@
     "summary": "China Life Insurance has reported a significant rise in profitability for 2025, supported by robust investment returns and continued progress in shifting toward higher-value insurance products. The post China Life Insurance posts strong profit growth driven by investment performance and product innovation appeared first on Insurtech Insights .",
     "source": "InsurTech Insights",
     "published_at": "2026-03-28T14:03:30.104033+00:00",
-    "category": "Inversión"
+    "category": "Inversión",
+    "signal_score": 2,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "corebridge-financial-and-equitable-holdings-agree-22bn-merger-to-create-1-5tn-pl",
@@ -432,7 +1011,14 @@
     "summary": "Corebridge Financial and Equitable Holdings have announced a landmark $22 billion all-stock merger, forming one of the largest retirement, life insurance, and asset management platforms in the United States. The post Corebridge Financial and Equitable Holdings agree $22bn merger to create $1.5tn platform appeared first on Insurtech Insights .",
     "source": "InsurTech Insights",
     "published_at": "2026-03-28T14:03:28.773285+00:00",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "signal_score": 17,
+    "signal_label": "M&A",
+    "signal_icon": "🤝",
+    "why_matters": "Consolida el mercado y puede redefinir la competencia en el sector.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "crawford-company-names-w-bruce-swain-jr-president-ceo",
@@ -442,7 +1028,14 @@
     "summary": "The company also announced that Jesse Crawford, Sr. will transition to an honorary board role. The post Crawford &#038; Company names W.",
     "source": "Coverager",
     "published_at": "2026-03-28T14:03:24.140998+00:00",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "signal_score": 10,
+    "signal_label": "Cambio de Liderazgo",
+    "signal_icon": "👔",
+    "why_matters": "Los cambios de liderazgo suelen anticipar cambios estratégicos.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "marsh-mclennan-agency-launches-healthcare-pricing-tool",
@@ -452,7 +1045,14 @@
     "summary": "The tool uses data from Transparency in Coverage regulations to provide provider-level cost insights. The post Marsh McLennan Agency launches healthcare pricing tool appeared first on Coverager - Insurance news and insights .",
     "source": "Coverager",
     "published_at": "2026-03-28T14:03:22.834687+00:00",
-    "category": "Vida y Salud"
+    "category": "Vida y Salud",
+    "signal_score": 21,
+    "signal_label": "Regulación",
+    "signal_icon": "⚖️",
+    "why_matters": "Puede requerir adaptación regulatoria en los próximos meses.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "clearcover-taps-strada-to-automate-customer-operations",
@@ -462,7 +1062,14 @@
     "summary": "Clearcover plans to expand the partnership into claims-related workflows and additional servicing use cases in the coming months. The post Clearcover taps Strada to automate customer operations appeared first on Coverager - Insurance news and insights .",
     "source": "Coverager",
     "published_at": "2026-03-28T14:03:21.622506+00:00",
-    "category": "Automóvil"
+    "category": "Automóvil",
+    "signal_score": 6,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "berkshire-bets-the-buffett-way-mosaics-exit-casts-a-shadow",
@@ -472,7 +1079,14 @@
     "summary": "This week's newsletter discusses an IAN exclusive, Peak Re's leadership change,Allianz and Jio's JV, 1.4 renewals, Berkshire Hathaway's Japan foray and Mosaic's Singapore exit. The post Berkshire bets the Buffett way; Mosaic’s exit casts a shadow appeared first on InsuranceAsia News .",
     "source": "Insurance Asia News",
     "published_at": "2026-03-28T05:17:31.857092+00:00",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "signal_score": 2,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "krishnamoorthy-rao-returns-to-generali-to-lead-india-p-c-jv",
@@ -482,7 +1096,14 @@
     "summary": "Rao was formerly with Generali in India and Malaysia for over 16 years. The post Krishnamoorthy Rao returns to Generali to lead India P&#038;C JV appeared first on InsuranceAsia News .",
     "source": "Insurance Asia News",
     "published_at": "2026-03-28T05:17:30.358734+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 2,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "hawksoft-integrates-revitpay-for-agency-payment-processing",
@@ -492,7 +1113,14 @@
     "summary": "The agency management system now supports direct API payments to accelerate premium collection, automate reconciliation and improve cash flow visibility.",
     "source": "Insurance Innovation Reporter",
     "published_at": "2026-03-27T19:54:22.464654+00:00",
-    "category": "Automóvil"
+    "category": "Automóvil",
+    "signal_score": 2,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "generali-hong-kong-deploys-covergo-ai-for-claims-processing",
@@ -502,7 +1130,14 @@
     "summary": "The insurer has implemented an AI document processing agent to automate health claims, reduce manual work and improve accuracy.",
     "source": "Insurance Innovation Reporter",
     "published_at": "2026-03-27T19:54:21.047306+00:00",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "signal_score": 2,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "crypto-insurance-might-not-protect-you-from-theft",
@@ -512,7 +1147,14 @@
     "summary": "When Matthew Allan realized nearly $100,000 in Bitcoin was missing from his Coinbase account, he wasn&#8217;t too worried. He had signed up for Coinbase One, a $29.99 monthly subscription that promised up to $1 million of account protection.",
     "source": "Claims Journal",
     "published_at": "2026-03-27T19:54:19.182572+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 9,
+    "signal_label": "Inversión",
+    "signal_icon": "💰",
+    "why_matters": "Nueva financiación que puede acelerar la competencia en el sector.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "bessent-says-hormuz-ships-insurance-program-to-start-soon",
@@ -522,7 +1164,14 @@
     "summary": "Treasury Secretary Scott Bessent said a U.S. insurance program meant to boost shipping through the Strait of Hormuz will begin soon, a move that may help revive flows of much of the world&#8217;s oil and gas supplies. Bessent&#8217;s predictions, delivered &#8230;",
     "source": "Claims Journal",
     "published_at": "2026-03-27T19:54:17.866182+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 2,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "toyotas-china-jvs-recall-560000-suvs-over-seat-safety-risk",
@@ -532,7 +1181,14 @@
     "summary": "Toyota Motor Corp.&#8217;s Chinese joint ventures are recalling more than 560,000 sport utility vehicles to fix a defect in the second-row seats that could jeopardize passenger safety during a collision. From April 1, the Japanese carmaker and its local partner &#8230;",
     "source": "Claims Journal",
     "published_at": "2026-03-27T19:54:16.626525+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 17,
+    "signal_label": "M&A",
+    "signal_icon": "🤝",
+    "why_matters": "Consolida el mercado y puede redefinir la competencia en el sector.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "demand-risks-for-global-data-center-insurance-growing-report",
@@ -542,7 +1198,14 @@
     "summary": "Fast growth in data center construction is pushing up insurance demand and risks for the sector, a report published by Swiss on Friday said. Global insurance premiums linked to data centers are expected to rise to $24.2 billion by 2030 from an estimated $10.6 billion currently, the report said. Noting that building costs for a &#8230; Continued",
     "source": "Carrier Management",
     "published_at": "2026-03-27T19:54:14.742056+00:00",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "signal_score": 13,
+    "signal_label": "Inversión",
+    "signal_icon": "💰",
+    "why_matters": "Nueva financiación que puede acelerar la competencia en el sector.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "roadless-rule-recision-on-forest-lands-could-increase-wildfire-risk-study",
@@ -552,7 +1215,14 @@
     "summary": "Department of Agriculture (USDA) announced that it was rescinding the 2001 Roadless Rule, but a study that followed indicated that by overturning the rule, wildfires were much more likely in areas near forest roads. The government agency said the rule was outdated and that rescinding it would remove prohibitions on road &#8230; Continued",
     "source": "Carrier Management",
     "published_at": "2026-03-27T19:54:13.319583+00:00",
-    "category": "Regulación"
+    "category": "Regulación",
+    "signal_score": 9,
+    "signal_label": "Clima & Catástrofes",
+    "signal_icon": "🌪️",
+    "why_matters": "Impacto directo en exposición, pricing y reservas del sector.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "investment-trust-votes-conflicts-of-interest-and-our-role",
@@ -562,7 +1232,14 @@
     "summary": "On 3 March 2026, we said we’d bring forward our planned review of the UK Listing Rules for Investment entities, including how they apply to board independence and related party provisions.Since then, there has been substantial debate over our role in relation to investment trusts, including calls for us to ‘get to grips’ with voting rules ‘that allow a minority shareholder to repeatedly attack an investment trust’.Much of this debate suggests there are misunderstandings about how investment trusts are governed and where responsibilities sit. We’re concerned this may confuse investors in these trusts. Other calls to action have lacked clear proposals or been based on future hypothetical scenarios for which protections often exist.",
     "source": "FCA News",
     "published_at": "2026-03-27T19:54:05.219939+00:00",
-    "category": "Inversión"
+    "category": "Inversión",
+    "signal_score": 10,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "the-weeks-10-biggest-funding-rounds-a-varied-week-for-big-deals-led-by-ai-and-de",
@@ -572,7 +1249,14 @@
     "summary": "The pace of large-scale dealmaking picked up some this week, led by OpenAI’s disclosure that it raised another $10 billion. Other big financings went to startups and growth-stage companies in sectors including defense tech, enterprise AI, autonomy and even laundry.",
     "source": "Crunchbase News",
     "published_at": "2026-03-27T19:54:01.614339+00:00",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "signal_score": 20,
+    "signal_label": "Inversión",
+    "signal_icon": "💰",
+    "why_matters": "Nueva financiación que puede acelerar la competencia en el sector.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "aon-adds-us-scs-to-its-automated-event-response-service",
@@ -582,7 +1266,14 @@
     "summary": "This content is copyright to www.artemis.bm and should not appear anywhere else, or an infringement has occurred. Aon, the global insurance and reinsurance broking group, has expanded its Automated Event Response (AER) service to include US severe convective storms (SCS), further assisting carriers to manage losses from what Aon describes as the costliest insured peril of the 21st century on a cumulative basis. In January, Aon reported that global insured losses from [&#8230;] Aon adds US SCS to its Automated Event Response service was published by: www.Artemis.bm Our catastrophe bond deal directory Sign up for our free weekly email newsletter here .",
     "source": "Artemis",
     "published_at": "2026-03-27T19:53:58.983872+00:00",
-    "category": "Automóvil"
+    "category": "Automóvil",
+    "signal_score": 25,
+    "signal_label": "Clima & Catástrofes",
+    "signal_icon": "🌪️",
+    "why_matters": "Impacto directo en exposición, pricing y reservas del sector.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "perils-estimates-eur586m-insured-market-loss-from-storm-nils",
@@ -592,7 +1283,14 @@
     "summary": "This content is copyright to www.artemis.bm and should not appear anywhere else, or an infringement has occurred. Extratropical windstorm Nils, also known as Ulrike, battered the Nouvelle-Aquitaine and Occitanie regions in southwest France in mid-February, causing insurance industry losses of €586 million, according to an initial estimate from catastrophe data aggregator, PERILS. Between February 11th and 13th, windstorm Nils brought damaging winds and intense rainfall, which impacted already saturated grounds after the [&#8230;] PERILS estimates €586m insured market loss from storm Nils was published by: www.Artemis.bm Our catastrophe bond deal directory Sign up for our free weekly email newsletter here .",
     "source": "Artemis",
     "published_at": "2026-03-27T19:53:57.628605+00:00",
-    "category": "Catástrofes"
+    "category": "Catástrofes",
+    "signal_score": 25,
+    "signal_label": "Inversión",
+    "signal_icon": "💰",
+    "why_matters": "Nueva financiación que puede acelerar la competencia en el sector.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "seadrif-and-aha-centre-sign-agreement-to-advance-disaster-risk-financing-in-sout",
@@ -602,7 +1300,14 @@
     "summary": "The Southeast Asia Disaster Risk Insurance Facility (SEADRIF) Insurance Company, a regional initiative supporting disaster risk financing solutions, and the ASEAN Coordinating Centre for Humanitarian Assistance on disaster management (AHA Centre), the regional body for disaster response coordination, has recently entered into a Memorandum of Intent (MoI) in Bali, Indonesia. The agreement establishes a framework [&#8230;] The post SEADRIF and AHA Centre sign agreement to advance disaster risk financing in Southeast Asia appeared first on ReinsuranceNe.ws .",
     "source": "Reinsurance News",
     "published_at": "2026-03-27T19:53:56.036050+00:00",
-    "category": "Catástrofes"
+    "category": "Catástrofes",
+    "signal_score": 20,
+    "signal_label": "Regulación",
+    "signal_icon": "⚖️",
+    "why_matters": "Puede requerir adaptación regulatoria en los próximos meses.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "xs-global-appoints-daniel-abramson-as-head-of-construction-underwriting-apac",
@@ -612,7 +1317,14 @@
     "summary": "XS Global, an independently owned managing general underwriting (MGU) platform, has announced the appointment of Daniel Abramson as Head of Construction Underwriting for Asia Pacific, based in Hong Kong. Abramson brings more than 25 years of insurance industry experience spanning construction and energy underwriting. Before joining XS Global, he was Head of Construction at Aviva.",
     "source": "Reinsurance News",
     "published_at": "2026-03-27T19:53:54.765648+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 11,
+    "signal_label": "Cambio de Liderazgo",
+    "signal_icon": "👔",
+    "why_matters": "Los cambios de liderazgo suelen anticipar cambios estratégicos.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "swiss-re-flags-accumulation-risk-in-data-centres-as-key-underwriting-challenge",
@@ -622,7 +1334,14 @@
     "summary": "The data centre industry is evolving into increasingly complex, high-energy-density facilities that concentrate risks within single sites, with underwriting success depending not only on capacity, but also on specialised technical assessment and disciplined accumulation management, according to a recent report by the Swiss Re Institute. Swiss Re highlighted that data centres powering today&#8217;s AI infrastructure [&#8230;] The post Swiss Re flags accumulation risk in data centres as key underwriting challenge appeared first on ReinsuranceNe.ws .",
     "source": "Reinsurance News",
     "published_at": "2026-03-27T19:53:53.390655+00:00",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "signal_score": 7,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "people-moves-marsh-risk-names-zafiriadis-to-lead-new-service-delivery-practice",
@@ -632,7 +1351,14 @@
     "summary": "Marsh names Zafiriadis Leader of new Service Delivery Practice, US and Canada, Marsh Risk Marsh, headquartered in New York City, appointed Katrina Zafiriadis as leader of its newly established service delivery practice (SDP), U.S.",
     "source": "Insurance Journal",
     "published_at": "2026-03-27T19:53:51.627870+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 6,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "amid-drought-corpus-christi-seeks-water-from-privately-owned-plant",
@@ -642,7 +1368,14 @@
     "summary": "Six months after scrapping their own seawater desalination plant project, Corpus Christi City Council voted Tuesday to consider an agreement with a private company to purchase water from its desalination plant to help stave off an impending water emergency.",
     "source": "Insurance Journal",
     "published_at": "2026-03-27T19:53:50.441732+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 6,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "ohio-contractor-sentenced-to-17-years-in-prison-on-fraud-charges",
@@ -652,7 +1385,14 @@
     "summary": "A pole barn contractor who defrauded consumers of more than $400,000 has been sentenced to at least 17 years in prison after being convicted of 47 felony counts, Ohio Attorney General Dave Yost announced this week..",
     "source": "Insurance Journal",
     "published_at": "2026-03-27T19:53:49.155646+00:00",
-    "category": "Fraude"
+    "category": "Fraude",
+    "signal_score": 10,
+    "signal_label": "Cambio de Liderazgo",
+    "signal_icon": "👔",
+    "why_matters": "Los cambios de liderazgo suelen anticipar cambios estratégicos.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "infosys-to-acquire-stratus-to-accelerate-ai-led-insurance-transformation",
@@ -662,7 +1402,14 @@
     "summary": "Infosys has announced plans to acquire Stratus, a specialist technology solutions firm serving the property and casualty (P&#038;C) insurance sector, in a move aimed at strengthening its capabilities in AI-driven digital transformation. The post Infosys to acquire Stratus to accelerate AI-led insurance transformation appeared first on Insurtech Insights .",
     "source": "InsurTech Insights",
     "published_at": "2026-03-27T19:53:46.753626+00:00",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "signal_score": 19,
+    "signal_label": "M&A",
+    "signal_icon": "🤝",
+    "why_matters": "Consolida el mercado y puede redefinir la competencia en el sector.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "hawksoft-and-gaya-announce-partnership-to-automate-data-entry",
@@ -672,7 +1419,14 @@
     "summary": "Agencies can send customer and policy data from HawkSoft to Gaya to automate quoting workflows across carrier portals, raters, and insurance forms. HawkSoft and Gaya today announced a new integration... The post HawkSoft and Gaya Announce Partnership to Automate Data Entry appeared first on Coverager - Insurance news and insights .",
     "source": "Coverager",
     "published_at": "2026-03-27T19:53:42.455248+00:00",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "signal_score": 6,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "safety-system-failed-to-prevent-deadly-runway-collision-at-laguardia-airport",
@@ -682,7 +1436,14 @@
     "summary": "The systems in place at New York&#8217;s LaGuardia Airport to prevent ground collisions failed to keep an Air Canada jet from smashing into a fire truck that had just pulled out on the runway as the plane was landing. The National Transportation Safety Board will determine what went wrong before Sunday&#8217;s crash that killed both &#8230; Continued",
     "source": "Carrier Management",
     "published_at": "2026-03-27T14:45:15.582588+00:00",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "signal_score": 2,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "peak-re-suncorp-allianz-jio-re-aon-lockton-15-apac-insurance-people-moves-of-the",
@@ -692,7 +1453,14 @@
     "summary": "Sompo, Pacific Insurance, Berkley Insurance Asia, XS Global, Markel, Marsh, Willis, Howden, Ando, Talbot, Tower, Niyam Group and PICC also made personnel changes over the last week. The post Peak Re, Suncorp, Allianz Jio Re, Aon, Lockton: 15 APAC insurance people moves of the week appeared first on InsuranceAsia News .",
     "source": "Insurance Asia News",
     "published_at": "2026-03-27T14:45:12.015134+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 2,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "my-fca-marks-first-year-with-a-single-streamlined-sign-in-for-all-firms",
@@ -702,7 +1470,14 @@
     "summary": "As part of ongoing improvements to My FCA, and following the successful removal of RegData sign in at the end of last year, we have now removed direct access to Connect and the Online Invoicing System. All existing RegData, Connect and Online Invoicing links and bookmarked pages will now automatically redirect to My FCA, where you can access all systems from a single homepage without signing in again. This makes managing your regulatory tasks quicker and more efficient.One year of My FCAOne year on from launch, My FCA has proven to be a real success.",
     "source": "FCA News",
     "published_at": "2026-03-27T14:45:05.381712+00:00",
-    "category": "Regulación"
+    "category": "Regulación",
+    "signal_score": 19,
+    "signal_label": "Regulación",
+    "signal_icon": "⚖️",
+    "why_matters": "Puede requerir adaptación regulatoria en los próximos meses.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "fca-fines-dinosaur-merchant-bank-limited-for-market-abuse-surveillance-failures",
@@ -712,7 +1487,14 @@
     "summary": "The FCA has fined Dinosaur Merchant Bank Limited (DMBL) £338,000 for failing to put in place effective systems and controls to detect and report suspicious trading in its contracts for difference (CFD) business. CFDs are sophisticated financial products that are used to speculate on various assets going up or down in value. Given their high-risk nature, firms must have strong and reliable surveillance arrangements to prevent insider dealing and market manipulation.In June 2024, DMBL introduced a new order system that led to a sharp increase in CFD trading by its clients.",
     "source": "FCA News",
     "published_at": "2026-03-27T14:45:04.084095+00:00",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "signal_score": 28,
+    "signal_label": "Regulación",
+    "signal_icon": "⚖️",
+    "why_matters": "Puede requerir adaptación regulatoria en los próximos meses.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "austins-star-is-still-shining-bright-venture-funding-to-citys-startups-hits-all-",
@@ -722,7 +1504,14 @@
     "summary": "Austin’s startup scene is stronger than ever. That’s the consensus among investors in the city, and it’s borne out by Crunchbase data, which shows startups headquartered in the Lone Star State’s capital raised a record $7.19 billion in venture funding in 2025.",
     "source": "Crunchbase News",
     "published_at": "2026-03-27T14:44:55.943746+00:00",
-    "category": "Inversión"
+    "category": "Inversión",
+    "signal_score": 23,
+    "signal_label": "Inversión",
+    "signal_icon": "💰",
+    "why_matters": "Nueva financiación que puede acelerar la competencia en el sector.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "gam-swiss-re-ils-partnership-enhanced-liquidity-improved-dealing-terms-new-produ",
@@ -732,7 +1521,14 @@
     "summary": "This content is copyright to www.artemis.bm and should not appear anywhere else, or an infringement has occurred. GAM Investments has said that its catastrophe bond and insurance-linked securities partnership with global reinsurance giant Swiss Re has introduced enhanced liquidity and improved dealing terms across strategies and assets managed, while also saying new ILS product launches are planned for 2026. In 2025, the Swiss Re Insurance-Linked Investment Advisors Corporation (SRILIAC) registered investment adviser [&#8230;] GAM: Swiss Re ILS partnership enhanced liquidity, improved dealing terms.",
     "source": "Artemis",
     "published_at": "2026-03-27T14:44:53.336511+00:00",
-    "category": "Inversión"
+    "category": "Inversión",
+    "signal_score": 26,
+    "signal_label": "Disrupción",
+    "signal_icon": "🚀",
+    "why_matters": "Introduce un modelo o tecnología que puede alterar la cadena de valor.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "lagos-state-secures-up-to-us-7-5m-parametric-flood-insurance-coverage",
@@ -742,7 +1538,14 @@
     "summary": "This content is copyright to www.artemis.bm and should not appear anywhere else, or an infringement has occurred. The Lagos State government has contracted a parametric flood-risk insurance policy in the Nigerian insurance market, which is designed to protect up to 4 million vulnerable people, providing up to USD 7.5 million for flood response and recovery. The policy’s activation marks a major milestone for the Tripartite Agreement Programme, which aims to build developing [&#8230;] Lagos State secures up to US$7.5m parametric flood insurance coverage was published by: www.Artemis.bm Our catastrophe bond deal directory Sign up for our free weekly email newsletter here .",
     "source": "Artemis",
     "published_at": "2026-03-27T14:44:52.035195+00:00",
-    "category": "Catástrofes"
+    "category": "Catástrofes",
+    "signal_score": 38,
+    "signal_label": "Clima & Catástrofes",
+    "signal_icon": "🌪️",
+    "why_matters": "Impacto directo en exposición, pricing y reservas del sector.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "private-equity-and-capital-providers-to-expand-reinsurance-presence-via-ai-linke",
@@ -752,7 +1555,14 @@
     "summary": "This content is copyright to www.artemis.bm and should not appear anywhere else, or an infringement has occurred. As per a new report from Ernst &#38; Young Ltd. (EY), the reinsurance sector is entering a era of &#8220;latent market demand&#8221; where private equity and alternative capital providers are set to expand their presence by exploring AI-linked securities, cyber catastrophe bonds, and other innovative investment vehicles.",
     "source": "Artemis",
     "published_at": "2026-03-27T14:44:50.580520+00:00",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "signal_score": 18,
+    "signal_label": "Clima & Catástrofes",
+    "signal_icon": "🌪️",
+    "why_matters": "Impacto directo en exposición, pricing y reservas del sector.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "tmk-adds-francesca-kevill-as-underwriter-to-its-cyber-enterprise-risk-team",
@@ -762,7 +1572,14 @@
     "summary": "Specialist insurer, Tokio Marine Kiln (TMK), has appointed Francesca Kevill as Underwriter within its Cyber &#38; Enterprise Risk team, effective immediately. In her new role, Kevill will report to Ellie Webb, Head of Delegated Cyber &#38; IP. Her appointment builds on a period of significant investment in TMK&#8217;s cyber capabilities.",
     "source": "Reinsurance News",
     "published_at": "2026-03-27T14:44:48.805751+00:00",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "signal_score": 7,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "am-best-affirms-sompos-ratings-following-aspen-acquisition",
@@ -772,7 +1589,14 @@
     "summary": "Credit rating agency AM Best has removed the under review with positive implications status and affirmed the Financial Strength Rating of A+ (Superior) alongside the Long-Term Issuer Credit Ratings of “aa-” (Superior) for Sompo Japan Insurance Inc. The Financial Strength Rating carries a stable outlook, while the Long-Term Issuer Credit Ratings are [&#8230;] The post AM Best affirms Sompo&#8217;s ratings following Aspen acquisition appeared first on ReinsuranceNe.ws .",
     "source": "Reinsurance News",
     "published_at": "2026-03-27T14:44:47.364338+00:00",
-    "category": "Inversión"
+    "category": "Inversión",
+    "signal_score": 23,
+    "signal_label": "M&A",
+    "signal_icon": "🤝",
+    "why_matters": "Consolida el mercado y puede redefinir la competencia en el sector.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "infosys-set-to-acquire-insurance-technology-provider-stratus",
@@ -782,7 +1606,14 @@
     "summary": "Infosys, a provider of digital services, business consulting, and outsourcing services, is set to acquire Stratus, a technology solutions provider for the property &#38; casualty (P&#38;C) insurance industry. This acquisition, which is expected to close in the first quarter of the financial year 2027, subject to closing conditions, aims to strengthen Infosys&#8217; position in the [&#8230;] The post Infosys set to acquire insurance technology provider, Stratus appeared first on ReinsuranceNe.ws .",
     "source": "Reinsurance News",
     "published_at": "2026-03-27T14:44:46.026956+00:00",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "signal_score": 23,
+    "signal_label": "M&A",
+    "signal_icon": "🤝",
+    "why_matters": "Consolida el mercado y puede redefinir la competencia en el sector.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "the-scope-of-damage-from-hawaiis-floods-becomes-clearer",
@@ -792,7 +1623,14 @@
     "summary": "The worst flooding to hit Hawaii in two decades has swept homes off their foundations, floated cars out of driveways and left floors, walls and counters covered in thick, reddish volcanic mud. Authorities said hundreds of homes had been damaged, &#8230;",
     "source": "Insurance Journal",
     "published_at": "2026-03-27T14:44:44.363769+00:00",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "signal_score": 13,
+    "signal_label": "Clima & Catástrofes",
+    "signal_icon": "🌪️",
+    "why_matters": "Impacto directo en exposición, pricing y reservas del sector.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "georgia-tax-bill-would-take-billions-in-breaks-from-companies",
@@ -802,7 +1640,14 @@
     "summary": "Some of the world&#8217;s biggest companies are standing in the way. A state Senate bill that would all but exempt many lower- and middle-income earners from state income tax is stalling in the Georgia &#8230;",
     "source": "Insurance Journal",
     "published_at": "2026-03-27T14:44:42.852395+00:00",
-    "category": "Inversión"
+    "category": "Inversión",
+    "signal_score": 13,
+    "signal_label": "Inversión",
+    "signal_icon": "💰",
+    "why_matters": "Nueva financiación que puede acelerar la competencia en el sector.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "georgia-employers-fined-for-repeat-silica-exposure-for-workers",
@@ -812,7 +1657,14 @@
     "summary": "The federal Occupational Safety and Health Administration has proposed fines for two Georgia employers for failing to address safety violations that had exposed workers to noise and silica dust, which can cause severe respiratory illness. After a follow-up inspection, OSHA &#8230;",
     "source": "Insurance Journal",
     "published_at": "2026-03-27T14:44:41.608624+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 6,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "swiss-re-appoints-teodora-aldenhoff-as-chief-pricing-actuary-for-l-h-continental",
@@ -822,7 +1674,14 @@
     "summary": "Global reinsurer Swiss Re has appointed Teodora Aldenhoff as Chief Pricing Actuary for Life &#038; Health (L&#038;H) Continental Europe, strengthening its leadership team across the region. The post Swiss Re appoints Teodora Aldenhoff as Chief Pricing Actuary for L&amp;H Continental Europe appeared first on Insurtech Insights .",
     "source": "InsurTech Insights",
     "published_at": "2026-03-27T14:44:39.669334+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 6,
+    "signal_label": "Cambio de Liderazgo",
+    "signal_icon": "👔",
+    "why_matters": "Los cambios de liderazgo suelen anticipar cambios estratégicos.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "allianz-jio-reinsurance-appoints-sonia-rawal-as-ceo-as-india-operations-begin",
@@ -832,7 +1691,14 @@
     "summary": "Allianz Jio Reinsurance has appointed Sonia Rawal as Chief Executive Officer as the company officially launches operations in India following full regulatory approval from the Insurance Regulatory and Development Authority of India (IRDAI). The post Allianz Jio Reinsurance Appoints Sonia Rawal as CEO as India Operations Begin appeared first on Insurtech Insights .",
     "source": "InsurTech Insights",
     "published_at": "2026-03-27T14:44:38.328298+00:00",
-    "category": "Catástrofes"
+    "category": "Catástrofes",
+    "signal_score": 20,
+    "signal_label": "Cambio de Liderazgo",
+    "signal_icon": "👔",
+    "why_matters": "Los cambios de liderazgo suelen anticipar cambios estratégicos.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "the-forrester-wavetm-insurance-agency-management-systems-q4-2025",
@@ -842,7 +1708,14 @@
     "summary": "",
     "source": "Insurance Thought Leadership",
     "published_at": "2026-03-27T14:44:33.725760+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 2,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "atrium-makes-underwriting-appointments-in-property-business-group",
@@ -852,7 +1725,14 @@
     "summary": "The moves are part of Atrium’s strategy to grow its core property lines and expand distribution partnerships. The post Atrium makes underwriting appointments in property business group appeared first on Coverager - Insurance news and insights .",
     "source": "Coverager",
     "published_at": "2026-03-27T14:44:31.928918+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 6,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "progressive-prices-1-5b-senior-notes-offering",
@@ -862,7 +1742,14 @@
     "summary": "LLC and TD Securities (USA) LLC are acting as joint bookrunners. The post Progressive prices $1.5B senior notes offering appeared first on Coverager - Insurance news and insights .",
     "source": "Coverager",
     "published_at": "2026-03-27T14:44:30.557525+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 6,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "winning-the-insurance-industry-talent-war-how-to-attract-keep-top-talent",
@@ -872,7 +1759,14 @@
     "summary": "The insurance industry is facing a talent crisis that won&#8217;t resolve itself. Recent Bureau of Labor Statistics data shows that the U.S. insurance sector is contracting at an alarming rate, having lost 40,000 positions...",
     "source": "Coverager",
     "published_at": "2026-03-27T14:44:29.212210+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 10,
+    "signal_label": "Cambio de Liderazgo",
+    "signal_icon": "👔",
+    "why_matters": "Los cambios de liderazgo suelen anticipar cambios estratégicos.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "cpics-p-c-insurance-division-shows-marked-improvement",
@@ -882,7 +1776,14 @@
     "summary": "Combined ratio fell by 1.1% to 97.5% in FY25, while the division’s primary premium income was almost flat at US$29.6bn. The post CPIC&#8217;s P&#038;C insurance division shows &#8216;marked improvement&#8217; appeared first on InsuranceAsia News .",
     "source": "Insurance Asia News",
     "published_at": "2026-03-27T08:09:37.435399+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 2,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "lagos-state-government-secures-up-to-usd-7-5m-parametric-flood-insurance",
@@ -892,7 +1793,14 @@
     "summary": "",
     "source": "Reinsurance News",
     "published_at": "2026-03-27T08:09:27.726922+00:00",
-    "category": "Catástrofes"
+    "category": "Catástrofes",
+    "signal_score": 20,
+    "signal_label": "Clima & Catástrofes",
+    "signal_icon": "🌪️",
+    "why_matters": "Impacto directo en exposición, pricing y reservas del sector.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "gallagher-re-promotes-nicolas-rince-to-president-for-frabelux-region",
@@ -902,7 +1810,14 @@
     "summary": "",
     "source": "Reinsurance News",
     "published_at": "2026-03-27T08:09:26.440780+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 7,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "safe-harbor-marinas-selects-chubb-as-preferred-insurance-provider",
@@ -912,7 +1827,14 @@
     "summary": "",
     "source": "Reinsurance News",
     "published_at": "2026-03-27T08:09:25.187025+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 7,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "doj-sues-seaworlds-parent-company-for-disability-discrimination",
@@ -922,7 +1844,14 @@
     "summary": "The Justice Department is suing United Parks &#38; Resorts Inc., the parent company of Sea World, for allegedly discriminating against people with disabilities at its theme parks with a policy banning wheeled walkers with seats. The government alleges the policy &#8230;",
     "source": "Claims Journal",
     "published_at": "2026-03-27T05:52:08.566077+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 11,
+    "signal_label": "Regulación",
+    "signal_icon": "⚖️",
+    "why_matters": "Puede requerir adaptación regulatoria en los próximos meses.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "car-insurer-first-central-is-said-to-tap-banks-for-london-ipo",
@@ -932,7 +1861,14 @@
     "summary": "vehicle and home insurer, has appointed investment banks as it prepares for a potential initial public offering in London, according to people familiar with the matter. The company has lined up Deutsche Bank AG &#8230;",
     "source": "Claims Journal",
     "published_at": "2026-03-27T05:52:07.117742+00:00",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "signal_score": 11,
+    "signal_label": "Regulación",
+    "signal_icon": "⚖️",
+    "why_matters": "Puede requerir adaptación regulatoria en los próximos meses.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "efi-global-names-mccomas-senior-vice-president-of-sales",
@@ -942,7 +1878,14 @@
     "summary": "EFI Global named Jamie McComas as senior vice president of sales. McComas will lead EFI Global&#8217;s sales and growth strategy. Prior to joining EFI Global, McComas held leadership and she also led national business &#8230;",
     "source": "Claims Journal",
     "published_at": "2026-03-27T05:52:05.722638+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 2,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "about-to-take-off-legal-fights-emerge-over-toxic-fumes-on-flights",
@@ -952,7 +1895,14 @@
     "summary": "When passengers step onto an airplane, they&#8217;re accustomed to turbulence, seat kicking and lengthy tarmac delays. Those are the predictable annoyances of air travel. But a far more serious risk to the safety of flyers has received heightened attention in recent months: toxic fume events.",
     "source": "Carrier Management",
     "published_at": "2026-03-27T05:52:04.020673+00:00",
-    "category": "Regulación"
+    "category": "Regulación",
+    "signal_score": 2,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "philippine-cedents-buying-smartly-as-market-softens-proportional-capacity-return",
@@ -962,7 +1912,14 @@
     "summary": "Reinsurance brokers are witnessing up to 15-20% rate reduction on a risk-adjusted basis at 1.4 renewals, as nat cat losses were manageable and less severe than anticipated. The post Philippine cedents ‘buying smartly’ as market softens, proportional capacity returns appeared first on InsuranceAsia News .",
     "source": "Insurance Asia News",
     "published_at": "2026-03-27T05:52:00.090262+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 9,
+    "signal_label": "Clima & Catástrofes",
+    "signal_icon": "🌪️",
+    "why_matters": "Impacto directo en exposición, pricing y reservas del sector.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "depreciation-on-acv-is-ok-court-says-in-knocking-down-class-action-vs-cincinnati",
@@ -972,7 +1929,14 @@
     "summary": "A property insurer is on solid ground in applying depreciation to actual cash value, as long as the policy makes that plan clear, a federal appeals court said in shooting down a proposed class-action lawsuit against Cincinnati Casualty Co.",
     "source": "Insurance Journal",
     "published_at": "2026-03-27T05:51:50.963362+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 6,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "odey-allegedly-told-staffer-he-could-attack-her-after-alcohol-fueled-lunch",
@@ -982,7 +1946,14 @@
     "summary": "Ex-hedge fund boss Crispin Odey cornered a female receptionist after an alcohol-fueled lunch and told her &#8220;I could attack you now,&#8221; according to a diary entry by the staffer revealed at a London court on Tuesday.",
     "source": "Insurance Journal",
     "published_at": "2026-03-27T05:51:49.694584+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 6,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "energy-fallout-from-iran-war-signals-global-wake-up-call-for-renewable-energy",
@@ -992,7 +1963,14 @@
     "summary": "The war in Iran is exposing the world&#8217;s reliance on fragile fossil fuel routes, lending urgency to calls for hastening the shift to renewable energy. Fighting has all but halted oil exports through the Strait of Hormuz, the narrow waterway &#8230;",
     "source": "Insurance Journal",
     "published_at": "2026-03-27T05:51:48.280747+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 6,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "ais-biggest-insurance-opportunity-is-growth-not-efficiency",
@@ -1002,7 +1980,14 @@
     "summary": "Insurers focusing on AI-driven cost reduction may miss its greater potential to expand underwriting capacity and unlock new, previously uninsurable risks.",
     "source": "Insurance Innovation Reporter",
     "published_at": "2026-03-26T20:00:43.107455+00:00",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "signal_score": 2,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "laguardia-controllers-often-faced-late-sunday-rush-before-crash",
@@ -1012,7 +1997,14 @@
     "summary": "The two air traffic controllers at LaGuardia Airport were grappling with a higher-than-anticipated workload, complicated by foul weather, when an inbound Air Canada Express jet plowed into a fire truck on Sunday evening, killing both pilots.",
     "source": "Claims Journal",
     "published_at": "2026-03-26T20:00:41.398885+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 2,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "jury-verdicts-against-meta-google-tee-up-fight-over-tech-liability-shield",
@@ -1022,7 +2014,14 @@
     "summary": "Jurors in the first two trials in the U.S. from a growing wave of lawsuits targeting social media firms over harm to children have found Meta and Alphabet&#8217;s Google liable, potentially teeing up an appeals fight that could reshape how &#8230;",
     "source": "Claims Journal",
     "published_at": "2026-03-26T20:00:40.102950+00:00",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "signal_score": 2,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "musk-rips-twitter-verdict-claims-jurys-4-20-joke-mocked-him",
@@ -1032,7 +2031,14 @@
     "summary": "Elon Musk&#8217;s lawyer says the billionaire didn&#8217;t get a fair trial because a San Francisco jury slipped a &#8220;bizarre and highly questionable&#8221; joke into a verdict form when it concluded he defrauded Twitter Inc. shareholders before acquiring the social media &#8230;",
     "source": "Claims Journal",
     "published_at": "2026-03-26T20:00:38.780967+00:00",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "signal_score": 17,
+    "signal_label": "M&A",
+    "signal_icon": "🤝",
+    "why_matters": "Consolida el mercado y puede redefinir la competencia en el sector.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "employee-hiring-referrals-can-trigger-hidden-biases",
@@ -1042,7 +2048,14 @@
     "summary": "Employee referrals can aid hiring but carry hidden downsides. New research by Rellie Derfler-Rozin at the University of Maryland&#8217;s Robert H. Smith School of Business and Teodora Tomova Shakur of Texas Christian University finds that staff often see referred hires as less meritorious and offer less support, even when the referred employees demonstrate high performance.",
     "source": "Carrier Management",
     "published_at": "2026-03-26T20:00:36.933524+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 2,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "commercial-insurance-platform-shepherd-announces-42m-series-b",
@@ -1052,7 +2065,18 @@
     "summary": "Shepherd, an AI-native commercial insurance platform, announced a $42 million Series B round led by Intact Private Capital, with participation from Spark Capital, Costanoa Ventures and additional investors. The raise brings Shepherd&#8217;s total funding to $67 million. Shepherd insures the physical infrastructure for leading AI and technology companies building frontier data centers, semiconductor facilities, and &#8230; Continued",
     "source": "Carrier Management",
     "published_at": "2026-03-26T20:00:35.586061+00:00",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "signal_score": 27,
+    "signal_label": "Inversión",
+    "signal_icon": "💰",
+    "why_matters": "Nueva financiación que puede acelerar la competencia en el sector.",
+    "is_signal": true,
+    "deal": {
+      "amount_m": 0,
+      "amount_str": "—",
+      "round": "Series B"
+    },
+    "amplified": false
   },
   {
     "id": "ai-platform-notch-announces-30m-series-a-funding-round",
@@ -1062,7 +2086,18 @@
     "summary": "Notch, an AI platform for regulated industries, announced a $30 million Series A funding round, bringing total funding raised to $45 million. The round was led by Headline, with participation from Lightspeed Venture Partners, Jibe Ventures, Illuminate Financial, and Phoenix Insurance. Notch is building an AI operating system for regulated industries, initially focused on global &#8230; Continued",
     "source": "Carrier Management",
     "published_at": "2026-03-26T20:00:34.323972+00:00",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "signal_score": 23,
+    "signal_label": "Inversión",
+    "signal_icon": "💰",
+    "why_matters": "Nueva financiación que puede acelerar la competencia en el sector.",
+    "is_signal": true,
+    "deal": {
+      "amount_m": 0,
+      "amount_str": "—",
+      "round": "Series A"
+    },
+    "amplified": false
   },
   {
     "id": "partnerre-cedes-less-risk-to-lorenz-re-cells-third-party-reinsurance-capital-str",
@@ -1072,7 +2107,14 @@
     "summary": "This content is copyright to www.artemis.bm and should not appear anywhere else, or an infringement has occurred. PartnerRe, the Bermuda headquartered reinsurance company, ceded far less in risk to its Lorenz Re Ltd. special purpose insurer in 2025, with reductions in recent years signalling a change in strategy and shift to utilise other structures for its insurance-linked securities investor relationships.",
     "source": "Artemis",
     "published_at": "2026-03-26T20:00:20.058164+00:00",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "signal_score": 7,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "hail-shifts-from-secondary-peril-to-major-catastrophe-loss-driver-cotality",
@@ -1082,7 +2124,14 @@
     "summary": "This content is copyright to www.artemis.bm and should not appear anywhere else, or an infringement has occurred. A new report from Cotality warns that hailstorms can now produce insured losses comparable to a category 4 hurricane, with the firm highlighting that hail is beginning to shift from a secondary peril to a major driver of catastrophe losses, with implications for homeowners, carriers and reinsurers across the property market. Data from the report [&#8230;] Hail shifts from secondary peril to major catastrophe loss driver: Cotality was published by: www.Artemis.bm Our catastrophe bond deal directory Sign up for our free weekly email newsletter here .",
     "source": "Artemis",
     "published_at": "2026-03-26T20:00:18.752970+00:00",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "signal_score": 32,
+    "signal_label": "Clima & Catástrofes",
+    "signal_icon": "🌪️",
+    "why_matters": "Impacto directo en exposición, pricing y reservas del sector.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "casualty-represents-the-next-evolution-of-ils-exposure-says-cohen-company",
@@ -1092,7 +2141,14 @@
     "summary": "This content is copyright to www.artemis.bm and should not appear anywhere else, or an infringement has occurred. In its recently published whitepaper, Cohen &#38; Company Asset Management, the fixed income financial services investment specialist, explained that due to advances within structuring, analytics, and governance, combined with growing investor familiarity, the firm believes that casualty represents “the next evolution of ILS exposure.” Casualty ILS remains a relatively new and developing part of the [&#8230;] Casualty represents the next evolution of ILS exposure, says Cohen &#038; Company was published by: www.Artemis.bm Our catastrophe bond deal directory Sign up for our free weekly email newsletter here .",
     "source": "Artemis",
     "published_at": "2026-03-26T20:00:17.250857+00:00",
-    "category": "Automóvil"
+    "category": "Automóvil",
+    "signal_score": 18,
+    "signal_label": "Clima & Catástrofes",
+    "signal_icon": "🌪️",
+    "why_matters": "Impacto directo en exposición, pricing y reservas del sector.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "totalis-program-underwriters-acquires-specialist-provider-shoreone",
@@ -1102,7 +2158,14 @@
     "summary": "",
     "source": "Reinsurance News",
     "published_at": "2026-03-26T20:00:15.689816+00:00",
-    "category": "Inversión"
+    "category": "Inversión",
+    "signal_score": 23,
+    "signal_label": "M&A",
+    "signal_icon": "🤝",
+    "why_matters": "Consolida el mercado y puede redefinir la competencia en el sector.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "matthew-kirk-takes-over-as-axis-chief-financial-officer",
@@ -1112,7 +2175,14 @@
     "summary": "",
     "source": "Reinsurance News",
     "published_at": "2026-03-26T20:00:14.236074+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 7,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "multi-source-data-key-to-parametric-flood-insurance-success-swiss-re",
@@ -1122,7 +2192,14 @@
     "summary": "",
     "source": "Reinsurance News",
     "published_at": "2026-03-26T20:00:12.946895+00:00",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "signal_score": 20,
+    "signal_label": "Clima & Catástrofes",
+    "signal_icon": "🌪️",
+    "why_matters": "Impacto directo en exposición, pricing y reservas del sector.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "texas-man-gets-life-after-investigation-finds-arson-used-to-cover-murder",
@@ -1132,7 +2209,14 @@
     "summary": "A Texas State Fire Marshal&#8217;s Office (SFMO) investigation helped lead to a lifetime prison sentence for a Panhandle man who set a house fire to cover up the murder of a 4-year-old girl. Humberto Martinez pleaded guilty to capital murder &#8230;",
     "source": "Insurance Journal",
     "published_at": "2026-03-26T20:00:10.697491+00:00",
-    "category": "Inversión"
+    "category": "Inversión",
+    "signal_score": 6,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "michigan-woman-pleads-guilty-in-beauty-store-theft-ring",
@@ -1142,7 +2226,14 @@
     "summary": "A Michigan woman pled guilty to organizing a high-volume theft ring targeting Ulta Beauty stores in Wayne, Oakland, and Macomb counties, announced Michigan Attorney General Dana Nessel. Cheaira Broughton, 38, of Detroit, was charged by the Department of Attorney General &#8230;",
     "source": "Insurance Journal",
     "published_at": "2026-03-26T20:00:09.312489+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 6,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "people-moves-everest-appoints-busti-from-axis-as-head-of-north-america-treaty-re",
@@ -1152,7 +2243,14 @@
     "summary": "This edition of International People Moves details appointments at Everest Group and AXA XL. A summary of these new hires follows here. Everest Appoints Busti From AXIS as Head of North America Treaty Reinsurance Everest Group Ltd., the Bermuda-based specialty &#8230;",
     "source": "Insurance Journal",
     "published_at": "2026-03-26T20:00:07.793218+00:00",
-    "category": "Automóvil"
+    "category": "Automóvil",
+    "signal_score": 10,
+    "signal_label": "Cambio de Liderazgo",
+    "signal_icon": "👔",
+    "why_matters": "Los cambios de liderazgo suelen anticipar cambios estratégicos.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "pinion-insurance-strengthens-leadership-team-with-cfo-appointment",
@@ -1162,7 +2260,14 @@
     "summary": "Technology-enabled specialty insurer Pinion Insurance has appointed Chris Jones as Group Chief Financial Officer, reinforcing its executive team as the business scales operations across key markets. The post Pinion Insurance strengthens leadership team with CFO appointment appeared first on Insurtech Insights .",
     "source": "InsurTech Insights",
     "published_at": "2026-03-26T20:00:05.618109+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 6,
+    "signal_label": "Cambio de Liderazgo",
+    "signal_icon": "👔",
+    "why_matters": "Los cambios de liderazgo suelen anticipar cambios estratégicos.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "ais-launches-chatgpt-powered-insurance-shopping-tool",
@@ -1172,7 +2277,14 @@
     "summary": "",
     "source": "Coverager",
     "published_at": "2026-03-26T19:59:59.659526+00:00",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "signal_score": 12,
+    "signal_label": "Disrupción",
+    "signal_icon": "🚀",
+    "why_matters": "Introduce un modelo o tecnología que puede alterar la cadena de valor.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "first-state-insurance-agency-selects-applied-epic-to-unify-p-c-and-benefits-oper",
@@ -1182,7 +2294,14 @@
     "summary": "",
     "source": "Coverager",
     "published_at": "2026-03-26T19:59:58.209595+00:00",
-    "category": "Vida y Salud"
+    "category": "Vida y Salud",
+    "signal_score": 6,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "risk-theory-launches-dealer-transit-to-address-vehicle-theft",
@@ -1192,7 +2311,14 @@
     "summary": "",
     "source": "Coverager",
     "published_at": "2026-03-26T19:59:56.968110+00:00",
-    "category": "Inversión"
+    "category": "Inversión",
+    "signal_score": 12,
+    "signal_label": "Disrupción",
+    "signal_icon": "🚀",
+    "why_matters": "Introduce un modelo o tecnología que puede alterar la cadena de valor.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "verisk-apcia-see-reset-rather-than-new-normal-in-stellar-25-results",
@@ -1202,7 +2328,14 @@
     "summary": "",
     "source": "Carrier Management",
     "published_at": "2026-03-26T13:01:25.568316+00:00",
-    "category": "General"
+    "category": "General",
+    "signal_score": 2,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "zurich-to-sponsor-first-catastrophe-bond-since-2012-with-125m-turicum-re-ltd",
@@ -1212,7 +2345,14 @@
     "summary": "This content is copyright to www.artemis.bm and should not appear anywhere else, or an infringement has occurred. Zurich, the European headquartered global re/insurance company, has returned to the catastrophe bond market to sponsor its first deal since late 2012, seeking $125 million or more in US named storm and earthquake reinsurance protection with a Turicum Re Ltd. (Series 2026-1) issuance, Artemis can report.",
     "source": "Artemis",
     "published_at": "2026-03-26T13:01:15.197911+00:00",
-    "category": "Catástrofes"
+    "category": "Catástrofes",
+    "signal_score": 28,
+    "signal_label": "Clima & Catástrofes",
+    "signal_icon": "🌪️",
+    "why_matters": "Impacto directo en exposición, pricing y reservas del sector.",
+    "is_signal": true,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "agentic-ai-poised-to-shape-both-offensive-and-defensive-cyber-measures-munich-re",
@@ -1222,7 +2362,14 @@
     "summary": "",
     "source": "Reinsurance News",
     "published_at": "2026-03-26T13:01:13.447143+00:00",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "signal_score": 7,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   },
   {
     "id": "fema-to-offer-1-billion-for-disaster-resilience-after-lawsuit",
@@ -1232,7 +2379,18 @@
     "summary": "",
     "source": "Insurance Journal",
     "published_at": "2026-03-26T13:01:11.601788+00:00",
-    "category": "Regulación"
+    "category": "Regulación",
+    "signal_score": 13,
+    "signal_label": "Inversión",
+    "signal_icon": "💰",
+    "why_matters": "Nueva financiación que puede acelerar la competencia en el sector.",
+    "is_signal": false,
+    "deal": {
+      "amount_m": 1000.0,
+      "amount_str": "$1000M",
+      "round": "—"
+    },
+    "amplified": false
   },
   {
     "id": "georgia-could-become-first-state-with-weapons-detection-in-all-public-schools",
@@ -1242,6 +2400,13 @@
     "summary": "",
     "source": "Insurance Journal",
     "published_at": "2026-03-26T13:01:10.272135+00:00",
-    "category": "Fraude"
+    "category": "Fraude",
+    "signal_score": 6,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
   }
 ]
