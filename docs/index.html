@@ -281,10 +281,26 @@
     footer a { color: var(--accent); text-decoration: none; }
 
     @media (max-width: 600px) {
-      header h1 { font-size: 1.5rem; }
-      .card { padding: 1rem; }
+      /* Compact header — only title + updated */
+      header { padding: .75rem 1rem; }
+      header h1 { font-size: 1.25rem; }
+      .header-sub, .header-stats, #google_translate_element { display: none; }
+      .updated { margin-top: .2rem; font-size: .7rem; }
+      /* Toolbar: just the search bar, no padding waste */
+      .toolbar { margin-top: 0; padding: .5rem .75rem; gap: .4rem; top: 0; }
+      .search-row { gap: .4rem; }
+      #search { font-size: .85rem; padding: .4rem .85rem; }
+      /* Cards */
+      .card { padding: .9rem; }
+      .card-image { height: 140px; }
       main.grid-view { grid-template-columns: 1fr; }
-      .rss-link { display: none; }
+      .rss-link, .share-filter-btn, .kbd-hint { display: none; }
+      /* Radar rows compact */
+      .radar-row { padding: .65rem .9rem; }
+      .deal-row { grid-template-columns: 60px auto 1fr; }
+      .deal-meta { display: none; }
+      /* Subscribe form compact */
+      .subscribe-form { flex-direction: column; align-items: stretch; }
     }
   </style>
 </head>
@@ -299,7 +315,7 @@
       <span class="stat"><strong>40</strong> fuentes monitorizadas</span>
       <span class="stat"><strong>3</strong> iberoamérica</span>
     </div>
-    <div class="updated">Actualizado el 30 Mar 2026 · 19:06 UTC</div>
+    <div class="updated">Actualizado el 30 Mar 2026 · 19:36 UTC</div>
     <div id="google_translate_element"></div>
   </header>
 
@@ -946,7 +962,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.inese.es&sz=16" alt="" loading="lazy"><span class="card-source">INESE</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
+        <span class="card-date" title="30 Mar 2026 06:18">hace 13h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -972,7 +988,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.inese.es&sz=16" alt="" loading="lazy"><span class="card-source">INESE</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
+        <span class="card-date" title="30 Mar 2026 06:18">hace 13h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -998,7 +1014,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.inese.es&sz=16" alt="" loading="lazy"><span class="card-source">INESE</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
+        <span class="card-date" title="30 Mar 2026 06:18">hace 13h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -1024,7 +1040,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.claimsjournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Claims Journal</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
+        <span class="card-date" title="30 Mar 2026 06:18">hace 13h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -1050,7 +1066,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.claimsjournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Claims Journal</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
+        <span class="card-date" title="30 Mar 2026 06:18">hace 13h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -1076,7 +1092,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=insuranceasianews.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Asia News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
+        <span class="card-date" title="30 Mar 2026 06:18">hace 13h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -1102,7 +1118,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=insuranceasianews.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Asia News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
+        <span class="card-date" title="30 Mar 2026 06:18">hace 13h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -1128,7 +1144,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=insuranceasianews.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Asia News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
+        <span class="card-date" title="30 Mar 2026 06:18">hace 13h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -1154,7 +1170,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
+        <span class="card-date" title="30 Mar 2026 06:18">hace 13h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -1180,7 +1196,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
+        <span class="card-date" title="30 Mar 2026 06:18">hace 13h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -1206,7 +1222,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
+        <span class="card-date" title="30 Mar 2026 06:18">hace 13h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -1232,7 +1248,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
+        <span class="card-date" title="30 Mar 2026 06:18">hace 13h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -1258,7 +1274,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
+        <span class="card-date" title="30 Mar 2026 06:18">hace 13h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -1284,7 +1300,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 06:18">hace 12h</span>
+        <span class="card-date" title="30 Mar 2026 06:18">hace 13h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -1383,13 +1399,14 @@
         </div>
       </div>
     </article>
+<div class="time-sep" data-group="Esta semana"><span>Esta semana</span></div>
 
     <article class="card" data-category="General" data-region="global" data-search="insurance apostles files trademark for agricultural insurance agency brand the positioning suggests a niche agency model targeting the agricultural segment. the post insurance apostles files trademark for agricultural insurance agency brand appeared first on coverager - insurance news and insights . coverager" data-id="insurance-apostles-files-trademark-for-agricultural-insurance-agency-brand" data-url="https://coverager.com/insurance-apostles-files-trademark-for-agricultural-insurance-agency-brand/">
       
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=coverager.com&sz=16" alt="" loading="lazy"><span class="card-source">Coverager</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="28 Mar 2026 19:27">ayer</span>
+        <span class="card-date" title="28 Mar 2026 19:27">hace 2 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -1409,7 +1426,6 @@
         </div>
       </div>
     </article>
-<div class="time-sep" data-group="Esta semana"><span>Esta semana</span></div>
 
     <article class="card" data-category="Inversión" data-region="global" data-search="china life insurance posts strong profit growth driven by investment performance and product innovation china life insurance has reported a significant rise in profitability for 2025, supported by robust investment returns and continued progress in shifting toward higher-value insurance products. the post china life insurance posts strong profit growth driven by investment performance and product innovation appeared first on insurtech insights . insurtech insights" data-id="china-life-insurance-posts-strong-profit-growth-driven-by-investment-performance" data-url="https://www.insurtechinsights.com/china-life-insurance-posts-strong-profit-growth-driven-by-investment-performance-and-product-innovation/">
       
@@ -3813,10 +3829,24 @@
       setTimeout(() => { btn.textContent = '🔗 Compartir'; btn.classList.remove('copied'); }, 2000);
     });
 
-    // ── Back to top ──
-    const btt = document.getElementById('back-to-top');
+    // ── Back to top + auto-hide header on mobile ──
+    const btt    = document.getElementById('back-to-top');
+    const header = document.querySelector('header');
+    const toolbar= document.querySelector('.toolbar');
+    let lastY = 0;
     window.addEventListener('scroll', () => {
-      btt.style.display = window.scrollY > 400 ? 'block' : 'none';
+      const y = window.scrollY;
+      btt.style.display = y > 400 ? 'block' : 'none';
+      // Auto-hide header when scrolling down on mobile
+      if (window.innerWidth <= 600) {
+        if (y > lastY && y > 80) {
+          header.style.transform = 'translateY(-100%)';
+          header.style.transition = 'transform .25s';
+        } else {
+          header.style.transform = '';
+        }
+      }
+      lastY = y;
     }, { passive: true });
     btt.addEventListener('click', () => window.scrollTo({ top:0, behavior:'smooth' }));
 

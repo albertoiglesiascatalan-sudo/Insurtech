@@ -755,10 +755,26 @@ def generate_site(articles: list):
     footer a {{ color: var(--accent); text-decoration: none; }}
 
     @media (max-width: 600px) {{
-      header h1 {{ font-size: 1.5rem; }}
-      .card {{ padding: 1rem; }}
+      /* Compact header — only title + updated */
+      header {{ padding: .75rem 1rem; }}
+      header h1 {{ font-size: 1.25rem; }}
+      .header-sub, .header-stats, #google_translate_element {{ display: none; }}
+      .updated {{ margin-top: .2rem; font-size: .7rem; }}
+      /* Toolbar: just the search bar, no padding waste */
+      .toolbar {{ margin-top: 0; padding: .5rem .75rem; gap: .4rem; top: 0; }}
+      .search-row {{ gap: .4rem; }}
+      #search {{ font-size: .85rem; padding: .4rem .85rem; }}
+      /* Cards */
+      .card {{ padding: .9rem; }}
+      .card-image {{ height: 140px; }}
       main.grid-view {{ grid-template-columns: 1fr; }}
-      .rss-link {{ display: none; }}
+      .rss-link, .share-filter-btn, .kbd-hint {{ display: none; }}
+      /* Radar rows compact */
+      .radar-row {{ padding: .65rem .9rem; }}
+      .deal-row {{ grid-template-columns: 60px auto 1fr; }}
+      .deal-meta {{ display: none; }}
+      /* Subscribe form compact */
+      .subscribe-form {{ flex-direction: column; align-items: stretch; }}
     }}
   </style>
 </head>
@@ -1063,10 +1079,24 @@ def generate_site(articles: list):
       setTimeout(() => {{ btn.textContent = '🔗 Compartir'; btn.classList.remove('copied'); }}, 2000);
     }});
 
-    // ── Back to top ──
-    const btt = document.getElementById('back-to-top');
+    // ── Back to top + auto-hide header on mobile ──
+    const btt    = document.getElementById('back-to-top');
+    const header = document.querySelector('header');
+    const toolbar= document.querySelector('.toolbar');
+    let lastY = 0;
     window.addEventListener('scroll', () => {{
-      btt.style.display = window.scrollY > 400 ? 'block' : 'none';
+      const y = window.scrollY;
+      btt.style.display = y > 400 ? 'block' : 'none';
+      // Auto-hide header when scrolling down on mobile
+      if (window.innerWidth <= 600) {{
+        if (y > lastY && y > 80) {{
+          header.style.transform = 'translateY(-100%)';
+          header.style.transition = 'transform .25s';
+        }} else {{
+          header.style.transform = '';
+        }}
+      }}
+      lastY = y;
     }}, {{ passive: true }});
     btt.addEventListener('click', () => window.scrollTo({{ top:0, behavior:'smooth' }}));
 
