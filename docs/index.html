@@ -277,6 +277,29 @@
       #back-to-top { bottom: 4.5rem; }
     }
 
+    /* Daily Briefing */
+    .brief-section { max-width: 900px; margin: 1rem auto 0; padding: 0 1rem; }
+    .brief-section > * { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .brief-section > .brief-header,
+    .brief-section > .brief-body,
+    .brief-section > .brief-stats { background: none; border: none; border-radius: 0; }
+    .brief-section { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .brief-header { border-bottom: 1px solid var(--border); padding: .85rem 1.2rem .7rem; }
+    .brief-title-row { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
+    .brief-badge { font-size: .78rem; font-weight: 800; color: #fff; background: #1a1a2e; border-radius: 6px; padding: .2rem .6rem; letter-spacing: .3px; flex-shrink: 0; }
+    @media (prefers-color-scheme: dark) { .brief-badge { background: var(--accent); } }
+    .brief-date  { font-size: .82rem; font-weight: 600; color: var(--text); text-transform: capitalize; }
+    .brief-refresh { margin-left: auto; font-size: .72rem; color: var(--muted); }
+    .brief-body  { padding: .6rem 1.2rem .5rem; display: flex; flex-direction: column; gap: .45rem; }
+    .brief-line  { display: flex; align-items: baseline; gap: .55rem; min-width: 0; }
+    .brief-icon  { font-size: .95rem; flex-shrink: 0; width: 1.4rem; text-align: center; }
+    .brief-label { font-size: .78rem; font-weight: 700; color: var(--text); white-space: nowrap; flex-shrink: 0; display: flex; align-items: center; gap: .3rem; min-width: 110px; }
+    .brief-count { font-size: .65rem; font-weight: 700; background: var(--accent); color: white; border-radius: 8px; padding: .05rem .38rem; }
+    .brief-titles { font-size: .82rem; color: var(--muted); line-height: 1.45; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    @media (max-width: 600px) { .brief-titles { white-space: normal; } }
+    .brief-stats { padding: .65rem 1.2rem .85rem; font-size: .75rem; color: var(--muted); border-top: 1px solid var(--border); line-height: 1.6; }
+    .brief-stats strong { color: var(--text); }
+
     /* Regulatory Alert */
     .reg-alert { max-width: 900px; margin: .75rem auto 0; padding: 0 1rem; }
     .reg-alert-inner { background: linear-gradient(90deg, #fef3c7 0%, #fffbeb 100%); border: 1.5px solid #fbbf24; border-radius: 12px; padding: 1rem 1.2rem; display: flex; align-items: flex-start; gap: .9rem; }
@@ -355,7 +378,7 @@
       <span class="stat"><strong>40</strong> fuentes monitorizadas</span>
       <span class="stat"><strong>3</strong> iberoamérica</span>
     </div>
-    <div class="updated">Actualizado el 30 Mar 2026 · 19:52 UTC</div>
+    <div class="updated">Actualizado el 30 Mar 2026 · 19:57 UTC</div>
     <div id="google_translate_element"></div>
   </header>
 
@@ -391,6 +414,39 @@
   </div>
   <div id="results-info"></div>
 
+  
+  <section class="brief-section">
+    <div class="brief-header">
+      <div class="brief-title-row">
+        <span class="brief-badge">📋 BRIEFING</span>
+        <span class="brief-date">lunes 30 mar 2026</span>
+        <span class="brief-refresh" title="Próxima actualización automática">↻ en 4h 03min</span>
+      </div>
+    </div>
+    <div class="brief-body">
+        <div class="brief-line">
+          <span class="brief-icon">📰</span>
+          <span class="brief-label">Carrier Management</span>
+          <span class="brief-titles">U.S. Treasury to Consult With Insurance Regulators on Private Cre…</span>
+        </div>
+        <div class="brief-line">
+          <span class="brief-icon">📰</span>
+          <span class="brief-label">Insurance Asia News</span>
+          <span class="brief-titles">Jio Financial Services targets 2026 entry into life, general insu…</span>
+        </div>
+        <div class="brief-line">
+          <span class="brief-icon">📰</span>
+          <span class="brief-label">FCA News</span>
+          <span class="brief-titles">Shojin Financial Services Limited enters administration</span>
+        </div>
+        <div class="brief-line">
+          <span class="brief-icon">📰</span>
+          <span class="brief-label">FCA News</span>
+          <span class="brief-titles">FCA confirms motor finance redress scheme</span>
+        </div>
+    </div>
+    <div class="brief-stats">📊 <strong>34</strong> artículos analizados · <strong>3</strong> fuentes regulatorias</div>
+  </section>
   
   
   
@@ -913,7 +969,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurtechinsights.com&sz=16" alt="" loading="lazy"><span class="card-source">InsurTech Insights</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 4h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -939,7 +995,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurtechinsights.com&sz=16" alt="" loading="lazy"><span class="card-source">InsurTech Insights</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 4h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -965,7 +1021,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=coverager.com&sz=16" alt="" loading="lazy"><span class="card-source">Coverager</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 4h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -991,7 +1047,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=coverager.com&sz=16" alt="" loading="lazy"><span class="card-source">Coverager</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 4h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -1017,7 +1073,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=coverager.com&sz=16" alt="" loading="lazy"><span class="card-source">Coverager</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 4h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -1695,7 +1751,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=iireporter.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Innovation Reporter</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="27 Mar 2026 19:54">hace 2 días</span>
+        <span class="card-date" title="27 Mar 2026 19:54">hace 3 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -1721,7 +1777,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=iireporter.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Innovation Reporter</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="27 Mar 2026 19:54">hace 2 días</span>
+        <span class="card-date" title="27 Mar 2026 19:54">hace 3 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -1747,7 +1803,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.claimsjournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Claims Journal</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="27 Mar 2026 19:54">hace 2 días</span>
+        <span class="card-date" title="27 Mar 2026 19:54">hace 3 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -1773,7 +1829,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.claimsjournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Claims Journal</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="27 Mar 2026 19:54">hace 2 días</span>
+        <span class="card-date" title="27 Mar 2026 19:54">hace 3 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -1799,7 +1855,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.claimsjournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Claims Journal</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="27 Mar 2026 19:54">hace 2 días</span>
+        <span class="card-date" title="27 Mar 2026 19:54">hace 3 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -1825,7 +1881,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.carriermanagement.com&sz=16" alt="" loading="lazy"><span class="card-source">Carrier Management</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="27 Mar 2026 19:54">hace 2 días</span>
+        <span class="card-date" title="27 Mar 2026 19:54">hace 3 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -1851,7 +1907,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.carriermanagement.com&sz=16" alt="" loading="lazy"><span class="card-source">Carrier Management</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="27 Mar 2026 19:54">hace 2 días</span>
+        <span class="card-date" title="27 Mar 2026 19:54">hace 3 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -1877,7 +1933,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.fca.org.uk&sz=16" alt="" loading="lazy"><span class="card-source">FCA News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="27 Mar 2026 19:54">hace 2 días</span>
+        <span class="card-date" title="27 Mar 2026 19:54">hace 3 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -1903,7 +1959,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=news.crunchbase.com&sz=16" alt="" loading="lazy"><span class="card-source">Crunchbase News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="27 Mar 2026 19:54">hace 2 días</span>
+        <span class="card-date" title="27 Mar 2026 19:54">hace 3 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -1929,7 +1985,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.artemis.bm&sz=16" alt="" loading="lazy"><span class="card-source">Artemis</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="27 Mar 2026 19:53">hace 2 días</span>
+        <span class="card-date" title="27 Mar 2026 19:53">hace 3 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -1955,7 +2011,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.artemis.bm&sz=16" alt="" loading="lazy"><span class="card-source">Artemis</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="27 Mar 2026 19:53">hace 2 días</span>
+        <span class="card-date" title="27 Mar 2026 19:53">hace 3 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -1981,7 +2037,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="27 Mar 2026 19:53">hace 2 días</span>
+        <span class="card-date" title="27 Mar 2026 19:53">hace 3 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -2007,7 +2063,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="27 Mar 2026 19:53">hace 2 días</span>
+        <span class="card-date" title="27 Mar 2026 19:53">hace 3 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -2033,7 +2089,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="27 Mar 2026 19:53">hace 2 días</span>
+        <span class="card-date" title="27 Mar 2026 19:53">hace 3 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -2059,7 +2115,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="27 Mar 2026 19:53">hace 2 días</span>
+        <span class="card-date" title="27 Mar 2026 19:53">hace 3 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -2085,7 +2141,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="27 Mar 2026 19:53">hace 2 días</span>
+        <span class="card-date" title="27 Mar 2026 19:53">hace 3 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -2111,7 +2167,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="27 Mar 2026 19:53">hace 2 días</span>
+        <span class="card-date" title="27 Mar 2026 19:53">hace 3 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -2137,7 +2193,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurtechinsights.com&sz=16" alt="" loading="lazy"><span class="card-source">InsurTech Insights</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="27 Mar 2026 19:53">hace 2 días</span>
+        <span class="card-date" title="27 Mar 2026 19:53">hace 3 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -2163,7 +2219,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=coverager.com&sz=16" alt="" loading="lazy"><span class="card-source">Coverager</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="27 Mar 2026 19:53">hace 2 días</span>
+        <span class="card-date" title="27 Mar 2026 19:53">hace 3 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         

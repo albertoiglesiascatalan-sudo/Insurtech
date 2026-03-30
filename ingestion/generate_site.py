@@ -238,6 +238,116 @@ def generate_sitemap(articles: list):
     print(f"Sitemap generated: {sitemap_path}")
 
 
+def _daily_briefing(articles: list) -> str:
+    """Executive daily briefing: groups today's signals by type, one line each."""
+    from collections import defaultdict, Counter as _Counter
+
+    now = datetime.now(timezone.utc)
+    cutoff_24h = now - timedelta(hours=24)
+
+    today_all = []
+    for a in articles:
+        try:
+            pub = datetime.fromisoformat(a.get("published_at", ""))
+            if pub.tzinfo is None:
+                pub = pub.replace(tzinfo=timezone.utc)
+            if pub >= cutoff_24h:
+                today_all.append(a)
+        except Exception:
+            pass
+
+    if not today_all:
+        return ""
+
+    # Group signals by label, sorted by score within group
+    groups: dict = defaultdict(list)
+    for a in today_all:
+        if a.get("signal_label"):
+            groups[a["signal_label"]].append(a)
+
+    # Sort each group by score descending
+    for label in groups:
+        groups[label].sort(key=lambda x: x.get("signal_score", 0), reverse=True)
+
+    # Order groups by max score of their top article
+    ordered = sorted(groups.items(), key=lambda kv: kv[1][0].get("signal_score", 0), reverse=True)
+
+    # Stats
+    total_today   = len(today_all)
+    signals_today = sum(1 for a in today_all if a.get("is_signal"))
+    reg_sources   = sum(1 for a in today_all if a.get("source", "") in ("EIOPA", "FCA News", "FSB"))
+    deals_today   = sum(1 for a in today_all if a.get("deal") and a["deal"].get("amount_str"))
+
+    # Build lines
+    lines_html = ""
+    for label, arts in ordered[:6]:
+        icon = arts[0].get("signal_icon", "⚡")
+        # Take titles of top 2 articles, shortened to ~55 chars
+        titles = []
+        for a in arts[:2]:
+            t = a.get("title", "")
+            titles.append((t[:55] + "…") if len(t) > 55 else t)
+        titles_str = " · ".join(titles)
+        count_badge = f'<span class="brief-count">{len(arts)}</span>' if len(arts) > 1 else ''
+        lines_html += f"""
+        <div class="brief-line">
+          <span class="brief-icon">{icon}</span>
+          <span class="brief-label">{label}{count_badge}</span>
+          <span class="brief-titles">{titles_str}</span>
+        </div>"""
+
+    if not lines_html:
+        # No signals yet today — show top articles by score
+        top = sorted(today_all, key=lambda x: x.get("signal_score", 0), reverse=True)[:4]
+        for a in top:
+            t = a.get("title", "")
+            t_short = (t[:65] + "…") if len(t) > 65 else t
+            lines_html += f"""
+        <div class="brief-line">
+          <span class="brief-icon">📰</span>
+          <span class="brief-label">{a.get("source","")}</span>
+          <span class="brief-titles">{t_short}</span>
+        </div>"""
+
+    # Stats footer
+    stat_parts = [f"<strong>{total_today}</strong> artículos analizados"]
+    if signals_today:
+        stat_parts.append(f"<strong>{signals_today}</strong> señales detectadas")
+    if reg_sources:
+        stat_parts.append(f"<strong>{reg_sources}</strong> fuentes regulatorias")
+    if deals_today:
+        stat_parts.append(f"<strong>{deals_today}</strong> rondas/deals")
+    stats_str = " · ".join(stat_parts)
+
+    # Day label
+    day_names = ["lunes","martes","miércoles","jueves","viernes","sábado","domingo"]
+    day_label = day_names[now.weekday()]
+    date_str  = now.strftime(f"{day_label} %-d %b %Y").lower()
+
+    # Next refresh countdown (runs every 6h from midnight UTC)
+    next_refresh_h = 6 - (now.hour % 6)
+    next_refresh_m = 60 - now.minute if now.minute > 0 else 0
+    if next_refresh_m == 60:
+        next_refresh_m = 0
+    else:
+        next_refresh_h -= 1
+    refresh_str = f"{next_refresh_h}h {next_refresh_m:02d}min" if next_refresh_h > 0 else f"{next_refresh_m}min"
+
+    return f"""
+  <section class="brief-section">
+    <div class="brief-header">
+      <div class="brief-title-row">
+        <span class="brief-badge">📋 BRIEFING</span>
+        <span class="brief-date">{date_str}</span>
+        <span class="brief-refresh" title="Próxima actualización automática">↻ en {refresh_str}</span>
+      </div>
+    </div>
+    <div class="brief-body">{lines_html}
+    </div>
+    <div class="brief-stats">📊 {stats_str}</div>
+  </section>"""
+
+
 def _radar_section(articles: list) -> str:
     """Top signals of the week — highest scored articles."""
     cutoff = datetime.now(timezone.utc) - timedelta(days=7)
@@ -618,6 +728,7 @@ def generate_site(articles: list):
     deals_html        = _deal_tracker(articles)
     reg_alert_html    = _regulatory_alert(articles)
     incumbent_html    = _incumbent_tracker(articles)
+    briefing_html     = _daily_briefing(articles)
     ibero_count      = sum(1 for a in articles if a.get("source", "") in IBERO_SOURCES)
     signal_count     = sum(1 for a in articles if a.get("is_signal") and _is_new(a.get("published_at",""), 168))
 
@@ -913,6 +1024,29 @@ def generate_site(articles: list):
       #back-to-top {{ bottom: 4.5rem; }}
     }}
 
+    /* Daily Briefing */
+    .brief-section {{ max-width: 900px; margin: 1rem auto 0; padding: 0 1rem; }}
+    .brief-section > * {{ background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }}
+    .brief-section > .brief-header,
+    .brief-section > .brief-body,
+    .brief-section > .brief-stats {{ background: none; border: none; border-radius: 0; }}
+    .brief-section {{ background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }}
+    .brief-header {{ border-bottom: 1px solid var(--border); padding: .85rem 1.2rem .7rem; }}
+    .brief-title-row {{ display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }}
+    .brief-badge {{ font-size: .78rem; font-weight: 800; color: #fff; background: #1a1a2e; border-radius: 6px; padding: .2rem .6rem; letter-spacing: .3px; flex-shrink: 0; }}
+    @media (prefers-color-scheme: dark) {{ .brief-badge {{ background: var(--accent); }} }}
+    .brief-date  {{ font-size: .82rem; font-weight: 600; color: var(--text); text-transform: capitalize; }}
+    .brief-refresh {{ margin-left: auto; font-size: .72rem; color: var(--muted); }}
+    .brief-body  {{ padding: .6rem 1.2rem .5rem; display: flex; flex-direction: column; gap: .45rem; }}
+    .brief-line  {{ display: flex; align-items: baseline; gap: .55rem; min-width: 0; }}
+    .brief-icon  {{ font-size: .95rem; flex-shrink: 0; width: 1.4rem; text-align: center; }}
+    .brief-label {{ font-size: .78rem; font-weight: 700; color: var(--text); white-space: nowrap; flex-shrink: 0; display: flex; align-items: center; gap: .3rem; min-width: 110px; }}
+    .brief-count {{ font-size: .65rem; font-weight: 700; background: var(--accent); color: white; border-radius: 8px; padding: .05rem .38rem; }}
+    .brief-titles {{ font-size: .82rem; color: var(--muted); line-height: 1.45; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }}
+    @media (max-width: 600px) {{ .brief-titles {{ white-space: normal; }} }}
+    .brief-stats {{ padding: .65rem 1.2rem .85rem; font-size: .75rem; color: var(--muted); border-top: 1px solid var(--border); line-height: 1.6; }}
+    .brief-stats strong {{ color: var(--text); }}
+
     /* Regulatory Alert */
     .reg-alert {{ max-width: 900px; margin: .75rem auto 0; padding: 0 1rem; }}
     .reg-alert-inner {{ background: linear-gradient(90deg, #fef3c7 0%, #fffbeb 100%); border: 1.5px solid #fbbf24; border-radius: 12px; padding: 1rem 1.2rem; display: flex; align-items: flex-start; gap: .9rem; }}
@@ -1020,6 +1154,7 @@ def generate_site(articles: list):
   </div>
   <div id="results-info"></div>
 
+  {briefing_html}
   {reg_alert_html}
   {radar_html}
   {trends_html}
