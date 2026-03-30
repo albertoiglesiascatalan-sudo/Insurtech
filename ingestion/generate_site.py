@@ -309,14 +309,26 @@ def _daily_briefing(articles: list) -> str:
           <span class="brief-titles">{t_short}</span>
         </div>"""
 
-    # Stats footer
-    stat_parts = [f"<strong>{total_today}</strong> artículos analizados"]
+    # Stats footer — absorbs thermometer + incumbent data
+    week_cutoff = now - timedelta(days=7)
+    week_all = [a for a in articles if _is_new(a.get("published_at", ""), 168)]
+    week_inv = sum(1 for a in week_all if a.get("category") == "Inversión")
+    week_reg = sum(1 for a in week_all if a.get("category") == "Regulación")
+
+    inc_data = detect_incumbents(articles, window_days=7)
+    inc_top2 = [f"{x['name']} ×{x['count']}" for x in inc_data[:2]]
+
+    stat_parts = [f"<strong>{total_today}</strong> hoy"]
     if signals_today:
-        stat_parts.append(f"<strong>{signals_today}</strong> señales detectadas")
-    if reg_sources:
-        stat_parts.append(f"<strong>{reg_sources}</strong> fuentes regulatorias")
+        stat_parts.append(f"<strong>{signals_today}</strong> señales")
     if deals_today:
-        stat_parts.append(f"<strong>{deals_today}</strong> rondas/deals")
+        stat_parts.append(f"<strong>{deals_today}</strong> deals")
+    if week_inv:
+        stat_parts.append(f"<strong>{week_inv}</strong> inversiones esta semana")
+    if week_reg:
+        stat_parts.append(f"<strong>{week_reg}</strong> regulación esta semana")
+    if inc_top2:
+        stat_parts.append("más mencionados: " + " · ".join(inc_top2))
     stats_str = " · ".join(stat_parts)
 
     # Day label
@@ -390,22 +402,78 @@ def _radar_section(articles: list) -> str:
         <span class="radar-score" title="Puntuación de señal">{score}</span>
       </a>"""
 
+    # Build deal column (reuse deal logic inline)
+    deal_cutoff = datetime.now(timezone.utc) - timedelta(days=30)
+    deals = []
+    for a in articles:
+        if not a.get("deal"):
+            continue
+        d = a["deal"]
+        if not d.get("amount_str") and not d.get("round"):
+            continue
+        try:
+            pub = datetime.fromisoformat(a.get("published_at", ""))
+            if pub.tzinfo is None:
+                pub = pub.replace(tzinfo=timezone.utc)
+            if pub >= deal_cutoff:
+                deals.append(a)
+        except Exception:
+            pass
+    deals.sort(key=lambda x: x["deal"].get("amount_m", 0), reverse=True)
+    deals = deals[:6]
+
+    deal_col = ""
+    if deals:
+        deal_rows = ""
+        for a in deals:
+            d = a["deal"]
+            rel, _ = _rel_date(a.get("published_at", ""))
+            rnd = f'<span class="deal-round">{d["round"]}</span>' if d.get("round") and d["round"] != "—" else ""
+            t = a.get("title", "")
+            t_short = (t[:52] + "…") if len(t) > 52 else t
+            deal_rows += f"""
+        <a href="{a['url']}" target="_blank" rel="noopener" class="deal-row2">
+          <span class="deal-amount">{d['amount_str']}</span>{rnd}
+          <span class="deal-title2">{t_short}</span>
+        </a>"""
+        deal_col = f"""
+    <div class="intel-col">
+      <div class="intel-col-header">
+        <span class="intel-col-title">💰 Deals · 30 días</span>
+      </div>
+      <div class="intel-col-body">{deal_rows}
+      </div>
+    </div>"""
+
+    # Layout: 2 cols if deals exist, else 1 col full-width
+    grid_class = "intel-grid-2" if deal_col else "intel-grid-1"
+
     return f"""
-  <section class="radar-section">
-    <div class="radar-header">
-      <span class="radar-title-main">⚡ Radar de Señales</span>
-      <span class="radar-sub">Artículos de mayor impacto esta semana · ordenados por relevancia</span>
-    </div>
-    <div class="radar-body">{rows}
+  <section class="intel-section">
+    <div class="{grid_class}">
+      <div class="intel-col">
+        <div class="intel-col-header">
+          <span class="intel-col-title">⚡ Señales · 7 días</span>
+          <span class="intel-col-sub">por relevancia</span>
+        </div>
+        <div class="intel-col-body">{rows}
+        </div>
+      </div>{deal_col}
     </div>
   </section>"""
 
 
 def _trends_section(articles: list) -> str:
-    """Trending topics this week vs last 4 weeks."""
+    """Trending topics this week vs last 4 weeks.
+    Hidden if all results are 'Nuevo' — no real baseline to compare against."""
     trends = detect_trends(articles)
     if not trends:
         return ""
+
+    # Need at least one real % change (not just "Nuevo") to be meaningful
+    real_changes = [t for t in trends if t["change_pct"] != 999]
+    if not real_changes:
+        return ""  # Not enough historical data yet
 
     pills = ""
     for t in trends:
@@ -428,108 +496,11 @@ def _trends_section(articles: list) -> str:
 
 
 def _deal_tracker(articles: list) -> str:
-    """Auto-extracted deal flow from articles."""
-    cutoff = datetime.now(timezone.utc) - timedelta(days=30)
-    deals = []
-    for a in articles:
-        if not a.get("deal"):
-            continue
-        d = a["deal"]
-        if not d.get("amount_str") and not d.get("round"):
-            continue
-        try:
-            pub = datetime.fromisoformat(a.get("published_at", ""))
-            if pub.tzinfo is None:
-                pub = pub.replace(tzinfo=timezone.utc)
-            if pub < cutoff:
-                continue
-        except Exception:
-            pass
-        deals.append(a)
-
-    deals.sort(key=lambda x: x["deal"].get("amount_m", 0), reverse=True)
-    deals = deals[:8]
-    if not deals:
-        return ""
-
-    rows = ""
-    for a in deals:
-        d = a["deal"]
-        rel, _ = _rel_date(a.get("published_at", ""))
-        round_badge = f'<span class="deal-round">{d["round"]}</span>' if d.get("round") and d["round"] != "—" else ""
-        rows += f"""
-      <a href="{a['url']}" target="_blank" rel="noopener" class="deal-row">
-        <span class="deal-amount">{d['amount_str']}</span>
-        {round_badge}
-        <span class="deal-title">{a['title']}</span>
-        <span class="deal-meta">{a['source']} · {rel}</span>
-      </a>"""
-
-    return f"""
-  <section class="deal-section">
-    <div class="deal-header">
-      <span class="deal-title-main">💰 Deal Flow</span>
-      <span class="deal-sub">Rondas e inversiones detectadas · últimos 30 días</span>
-    </div>
-    <div class="deal-body">{rows}
-    </div>
-  </section>"""
+    return ""  # Deals now shown inside _radar_section 2-col layout
 
 
 def _thermometer(articles: list) -> str:
-    """Weekly pulse widget — counts by category over last 7 days."""
-    cutoff = datetime.now(timezone.utc) - timedelta(days=7)
-    week = []
-    for a in articles:
-        try:
-            pub = datetime.fromisoformat(a.get("published_at", ""))
-            if pub.tzinfo is None:
-                pub = pub.replace(tzinfo=timezone.utc)
-            if pub >= cutoff:
-                week.append(a)
-        except Exception:
-            pass
-
-    if not week:
-        return ""
-
-    counts = Counter(a.get("category", "General") for a in week)
-    ibero  = sum(1 for a in week if a.get("source", "") in IBERO_SOURCES)
-    total  = len(week)
-
-    metrics = [
-        ("💰", "Inversión",   counts.get("Inversión", 0),   "Rondas y M&A"),
-        ("⚖️",  "Regulación", counts.get("Regulación", 0),  "Noticias regulatorias"),
-        ("🚀", "Tecnología",  counts.get("Tecnología", 0),  "Lanzamientos tech"),
-        ("🌎", "Iberoamérica",ibero,                         "Noticias España/Latam"),
-    ]
-
-    bars = ""
-    for icon, label, n, desc in metrics:
-        pct = min(100, int(n / max(total, 1) * 100 * 4))  # scale to make it visible
-        pct = max(4, pct)
-        bars += f"""
-      <div class="therm-row">
-        <span class="therm-icon">{icon}</span>
-        <div class="therm-info">
-          <span class="therm-label">{label}</span>
-          <span class="therm-desc">{desc}</span>
-        </div>
-        <div class="therm-bar-wrap">
-          <div class="therm-bar" style="width:{pct}%"></div>
-        </div>
-        <span class="therm-n">{n}</span>
-      </div>"""
-
-    return f"""
-  <section class="thermometer">
-    <div class="therm-header">
-      <span class="therm-title">🌡️ Termómetro Insurtech</span>
-      <span class="therm-sub">Últimos 7 días · {total} artículos analizados</span>
-    </div>
-    <div class="therm-body">{bars}
-    </div>
-  </section>"""
+    return ""  # Stats absorbed into _daily_briefing footer
 
 
 def _regulatory_alert(articles: list) -> str:
@@ -572,57 +543,11 @@ def _regulatory_alert(articles: list) -> str:
 
 
 def _incumbent_tracker(articles: list) -> str:
-    """Bar chart of incumbent mentions in the last 7 days."""
-    incumbents = detect_incumbents(articles, window_days=7)
-    if not incumbents:
-        return ""
-    top = incumbents[:8]
-    max_count = max(x["count"] for x in top) or 1
-    rows = ""
-    for item in top:
-        pct = max(4, int(item["count"] / max_count * 100))
-        # Use most recent article URL for linking
-        link_url = item["articles"][0]["url"] if item["articles"] else "#"
-        rows += f"""
-      <div class="inc-row">
-        <a href="{link_url}" target="_blank" rel="noopener" class="inc-name" title="Ver artículo">{item['name']}</a>
-        <div class="inc-bar-wrap"><div class="inc-bar" style="width:{pct}%"></div></div>
-        <span class="inc-n">{item['count']}</span>
-      </div>"""
-    return f"""
-  <section class="inc-section">
-    <div class="inc-header">
-      <span class="inc-title-main">🏢 Radar de Incumbentes</span>
-      <span class="inc-sub">Menciones en medios · últimos 7 días</span>
-    </div>
-    <div class="inc-body">{rows}
-    </div>
-  </section>"""
+    return ""  # Incumbent data absorbed into _daily_briefing footer stats
 
 
 def _startup_card(articles: list) -> str:
-    """Pick the most recent Inversión article as Startup de la semana."""
-    candidates = [a for a in articles if a.get("category") == "Inversión"]
-    if not candidates:
-        return ""
-    a = candidates[0]
-    summary = a.get("summary", "")
-    twitter_url, linkedin_url = _share_urls(a["title"], a["url"])
-    return f"""
-  <section class="startup-card">
-    <div class="startup-label">🚀 Startup / Deal de la semana</div>
-    <h3 class="startup-title">
-      <a href="{a['url']}" target="_blank" rel="noopener">{a['title']}</a>
-    </h3>
-    {"<p class='startup-summary'>" + summary + "</p>" if summary else ""}
-    <div class="startup-footer">
-      <span class="startup-source">{a['source']} · {_date(a['published_at'])}</span>
-      <div class="card-share">
-        <a href="{twitter_url}" target="_blank" rel="noopener" class="share-btn share-x" title="Compartir en X">𝕏</a>
-        <a href="{linkedin_url}" target="_blank" rel="noopener" class="share-btn share-li" title="Compartir en LinkedIn">in</a>
-      </div>
-    </div>
-  </section>"""
+    return ""  # Removed: selection criterion was unreliable
 
 
 def generate_digest(articles: list):
@@ -875,46 +800,6 @@ def generate_site(articles: list):
     .save-btn.saved {{ background: var(--accent); border-color: var(--accent); color: white; }}
     .no-results {{ text-align: center; color: var(--muted); padding: 3rem; display: none; grid-column: 1/-1; }}
 
-    /* Thermometer */
-    .thermometer {{
-      max-width: 900px; margin: 1.25rem auto 0; padding: 0 1rem;
-    }}
-    .thermometer > div {{
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 12px; padding: 1.1rem 1.4rem;
-    }}
-    .therm-header {{ display: flex; align-items: baseline; justify-content: space-between; margin-bottom: .9rem; flex-wrap: wrap; gap: .3rem; }}
-    .therm-title {{ font-size: .95rem; font-weight: 700; color: var(--text); }}
-    .therm-sub   {{ font-size: .75rem; color: var(--muted); }}
-    .therm-row   {{ display: flex; align-items: center; gap: .7rem; margin-bottom: .55rem; }}
-    .therm-icon  {{ font-size: 1rem; width: 1.4rem; text-align: center; flex-shrink: 0; }}
-    .therm-info  {{ display: flex; flex-direction: column; width: 110px; flex-shrink: 0; }}
-    .therm-label {{ font-size: .78rem; font-weight: 600; color: var(--text); line-height: 1.2; }}
-    .therm-desc  {{ font-size: .68rem; color: var(--muted); line-height: 1.2; }}
-    .therm-bar-wrap {{ flex: 1; background: var(--border); border-radius: 4px; height: 7px; overflow: hidden; }}
-    .therm-bar  {{ height: 100%; background: var(--accent); border-radius: 4px; transition: width .4s; }}
-    .therm-n    {{ font-size: .82rem; font-weight: 700; color: var(--accent); width: 1.8rem; text-align: right; flex-shrink: 0; }}
-
-    /* Startup de la semana */
-    .startup-card {{
-      max-width: 900px; margin: 1rem auto 0; padding: 0 1rem;
-    }}
-    .startup-card > section, .startup-card {{
-      background: linear-gradient(135deg, #1a1a2e 0%, #2d3561 100%);
-      border-radius: 12px; padding: 1.4rem; color: white;
-    }}
-    @media (prefers-color-scheme: dark) {{
-      .startup-card {{ background: linear-gradient(135deg, #0d0f18 0%, #1e2340 100%); }}
-    }}
-    .startup-label {{ font-size: .75rem; font-weight: 700; color: #a0aec0; text-transform: uppercase; letter-spacing: .5px; margin-bottom: .5rem; }}
-    .startup-title {{ font-size: 1.1rem; font-weight: 700; line-height: 1.4; margin-bottom: .6rem; }}
-    .startup-title a {{ color: white; text-decoration: none; }}
-    .startup-title a:hover {{ text-decoration: underline; }}
-    .startup-summary {{ font-size: .88rem; color: #a0aec0; margin-bottom: .9rem; line-height: 1.5; }}
-    .startup-footer {{ display: flex; align-items: center; justify-content: space-between; }}
-    .startup-source {{ font-size: .75rem; color: #718096; }}
-    .startup-card .share-btn {{ border-color: rgba(255,255,255,.2); color: #a0aec0; background: transparent; }}
-    .startup-card .share-btn:hover {{ border-color: white; color: white; }}
 
     /* Signal & amplification badges */
     .badge-signal {{ font-size: .65rem; font-weight: 700; background: #f59e0b22; color: #d97706; border: 1px solid #f59e0b44; border-radius: 8px; padding: .1rem .45rem; }}
@@ -924,24 +809,35 @@ def generate_site(articles: list):
     .card-why     {{ font-size: .8rem; color: #d97706; margin: .4rem 0 .7rem; display: flex; align-items: flex-start; gap: .35rem; line-height: 1.4; }}
     .why-icon     {{ flex-shrink: 0; }}
 
-    /* Radar de Señales */
-    .radar-section {{ max-width: 900px; margin: 1.25rem auto 0; padding: 0 1rem; }}
-    .radar-section > * {{ background: var(--surface); border: 1.5px solid #f59e0b55; border-radius: 12px; overflow: hidden; }}
-    .radar-header {{ display: flex; align-items: baseline; justify-content: space-between; padding: 1rem 1.2rem .7rem; flex-wrap: wrap; gap: .3rem; border-bottom: 1px solid var(--border); }}
-    .radar-title-main {{ font-size: .95rem; font-weight: 700; color: var(--text); }}
-    .radar-sub    {{ font-size: .72rem; color: var(--muted); }}
-    .radar-body   {{ display: flex; flex-direction: column; }}
-    .radar-row    {{ display: flex; align-items: flex-start; gap: .9rem; padding: .85rem 1.2rem; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; transition: background .15s; }}
+    /* Intel 2-col section (Señales + Deals) */
+    .intel-section  {{ max-width: 900px; margin: 1rem auto 0; padding: 0 1rem; }}
+    .intel-grid-2   {{ display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }}
+    .intel-grid-1   {{ display: grid; grid-template-columns: 1fr; gap: 1rem; }}
+    @media (max-width: 640px) {{ .intel-grid-2 {{ grid-template-columns: 1fr; }} }}
+    .intel-col      {{ background: var(--surface); border: 1.5px solid #f59e0b44; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }}
+    .intel-col-header {{ display: flex; align-items: baseline; justify-content: space-between; padding: .75rem 1rem .6rem; border-bottom: 1px solid var(--border); }}
+    .intel-col-title  {{ font-size: .88rem; font-weight: 700; color: var(--text); }}
+    .intel-col-sub    {{ font-size: .68rem; color: var(--muted); }}
+    .intel-col-body   {{ display: flex; flex-direction: column; flex: 1; }}
+    /* Radar rows */
+    .radar-row    {{ display: flex; align-items: flex-start; gap: .75rem; padding: .75rem 1rem; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; transition: background .15s; }}
     .radar-row:last-child {{ border-bottom: none; }}
     .radar-row:hover {{ background: var(--bg); }}
-    .radar-icon   {{ font-size: 1.2rem; flex-shrink: 0; padding-top: .1rem; }}
+    .radar-icon   {{ font-size: 1.1rem; flex-shrink: 0; padding-top: .1rem; }}
     .radar-content {{ flex: 1; min-width: 0; }}
-    .radar-title  {{ display: block; font-size: .9rem; font-weight: 600; color: var(--text); line-height: 1.4; margin-bottom: .2rem; }}
-    .radar-meta   {{ font-size: .72rem; color: var(--muted); }}
-    .radar-why    {{ display: block; font-size: .75rem; color: #d97706; margin-top: .25rem; }}
-    .radar-score  {{ font-size: .75rem; font-weight: 700; color: #f59e0b; background: #f59e0b18; border-radius: 6px; padding: .2rem .5rem; flex-shrink: 0; align-self: center; }}
-    .radar-amp    {{ font-size: .7rem; }}
-    .radar-deal   {{ font-size: .7rem; color: #16a34a; }}
+    .radar-title  {{ display: block; font-size: .84rem; font-weight: 600; color: var(--text); line-height: 1.4; margin-bottom: .15rem; }}
+    .radar-meta   {{ font-size: .7rem; color: var(--muted); }}
+    .radar-why    {{ display: block; font-size: .72rem; color: #d97706; margin-top: .2rem; }}
+    .radar-score  {{ font-size: .72rem; font-weight: 700; color: #f59e0b; background: #f59e0b18; border-radius: 6px; padding: .15rem .45rem; flex-shrink: 0; align-self: center; }}
+    .radar-amp    {{ font-size: .68rem; }}
+    .radar-deal   {{ font-size: .68rem; color: #16a34a; }}
+    /* Deal rows (compact, inside intel col) */
+    .deal-row2    {{ display: flex; align-items: center; gap: .5rem; padding: .65rem 1rem; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; transition: background .15s; min-width: 0; }}
+    .deal-row2:last-child {{ border-bottom: none; }}
+    .deal-row2:hover {{ background: var(--bg); }}
+    .deal-amount  {{ font-size: .88rem; font-weight: 700; color: #16a34a; white-space: nowrap; flex-shrink: 0; }}
+    .deal-round   {{ font-size: .65rem; font-weight: 700; background: #22c55e22; color: #16a34a; border-radius: 6px; padding: .08rem .38rem; white-space: nowrap; flex-shrink: 0; }}
+    .deal-title2  {{ font-size: .78rem; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; min-width: 0; }}
 
     /* Trends */
     .trends-section {{ max-width: 900px; margin: .75rem auto 0; padding: 0 1rem; display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }}
@@ -951,21 +847,6 @@ def generate_site(articles: list):
     .trend-badge  {{ font-size: .65rem; font-weight: 700; border-radius: 6px; padding: .05rem .35rem; }}
     .trend-badge.up  {{ background: #22c55e22; color: #16a34a; }}
     .trend-badge.new {{ background: #6366f122; color: #6366f1; }}
-
-    /* Deal Flow */
-    .deal-section {{ max-width: 900px; margin: .75rem auto 0; padding: 0 1rem; }}
-    .deal-section > * {{ background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }}
-    .deal-header  {{ display: flex; align-items: baseline; justify-content: space-between; padding: .9rem 1.2rem .65rem; border-bottom: 1px solid var(--border); flex-wrap: wrap; gap: .3rem; }}
-    .deal-title-main {{ font-size: .95rem; font-weight: 700; color: var(--text); }}
-    .deal-sub     {{ font-size: .72rem; color: var(--muted); }}
-    .deal-body    {{ display: flex; flex-direction: column; }}
-    .deal-row     {{ display: grid; grid-template-columns: 70px auto 1fr auto; align-items: center; gap: .7rem; padding: .65rem 1.2rem; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; transition: background .15s; }}
-    .deal-row:last-child {{ border-bottom: none; }}
-    .deal-row:hover {{ background: var(--bg); }}
-    .deal-amount  {{ font-size: .9rem; font-weight: 700; color: #16a34a; white-space: nowrap; }}
-    .deal-round   {{ font-size: .68rem; font-weight: 700; background: #22c55e22; color: #16a34a; border-radius: 6px; padding: .1rem .4rem; white-space: nowrap; }}
-    .deal-title   {{ font-size: .82rem; font-weight: 500; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }}
-    .deal-meta    {{ font-size: .7rem; color: var(--muted); white-space: nowrap; }}
 
     /* Favicon */
     .source-favicon {{ width: 14px; height: 14px; border-radius: 2px; vertical-align: middle; margin-right: .25rem; flex-shrink: 0; }}
@@ -1064,19 +945,6 @@ def generate_site(articles: list):
     @media (prefers-color-scheme: dark) {{ .reg-alert-why {{ color: #fbbf24; }} }}
     .reg-alert-meta {{ font-size: .72rem; color: #b45309; white-space: nowrap; flex-shrink: 0; padding-top: .15rem; }}
 
-    /* Incumbent Tracker */
-    .inc-section {{ max-width: 900px; margin: .75rem auto 0; padding: 0 1rem; }}
-    .inc-section > * {{ background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }}
-    .inc-header {{ display: flex; align-items: baseline; justify-content: space-between; padding: .9rem 1.2rem .65rem; border-bottom: 1px solid var(--border); flex-wrap: wrap; gap: .3rem; }}
-    .inc-title-main {{ font-size: .95rem; font-weight: 700; color: var(--text); }}
-    .inc-sub  {{ font-size: .72rem; color: var(--muted); }}
-    .inc-body {{ display: flex; flex-direction: column; padding: .5rem 1.2rem .75rem; gap: .5rem; }}
-    .inc-row  {{ display: flex; align-items: center; gap: .7rem; }}
-    .inc-name {{ font-size: .8rem; font-weight: 600; color: var(--text); text-decoration: none; width: 110px; flex-shrink: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
-    .inc-name:hover {{ color: var(--accent); }}
-    .inc-bar-wrap {{ flex: 1; background: var(--border); border-radius: 4px; height: 7px; overflow: hidden; }}
-    .inc-bar  {{ height: 100%; background: var(--accent); border-radius: 4px; transition: width .4s; }}
-    .inc-n    {{ font-size: .8rem; font-weight: 700; color: var(--accent); width: 1.6rem; text-align: right; flex-shrink: 0; }}
 
     /* Briefing view */
     main.briefing-view .card {{ display: none; }}

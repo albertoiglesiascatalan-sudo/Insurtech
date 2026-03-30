@@ -128,46 +128,6 @@
     .save-btn.saved { background: var(--accent); border-color: var(--accent); color: white; }
     .no-results { text-align: center; color: var(--muted); padding: 3rem; display: none; grid-column: 1/-1; }
 
-    /* Thermometer */
-    .thermometer {
-      max-width: 900px; margin: 1.25rem auto 0; padding: 0 1rem;
-    }
-    .thermometer > div {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 12px; padding: 1.1rem 1.4rem;
-    }
-    .therm-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: .9rem; flex-wrap: wrap; gap: .3rem; }
-    .therm-title { font-size: .95rem; font-weight: 700; color: var(--text); }
-    .therm-sub   { font-size: .75rem; color: var(--muted); }
-    .therm-row   { display: flex; align-items: center; gap: .7rem; margin-bottom: .55rem; }
-    .therm-icon  { font-size: 1rem; width: 1.4rem; text-align: center; flex-shrink: 0; }
-    .therm-info  { display: flex; flex-direction: column; width: 110px; flex-shrink: 0; }
-    .therm-label { font-size: .78rem; font-weight: 600; color: var(--text); line-height: 1.2; }
-    .therm-desc  { font-size: .68rem; color: var(--muted); line-height: 1.2; }
-    .therm-bar-wrap { flex: 1; background: var(--border); border-radius: 4px; height: 7px; overflow: hidden; }
-    .therm-bar  { height: 100%; background: var(--accent); border-radius: 4px; transition: width .4s; }
-    .therm-n    { font-size: .82rem; font-weight: 700; color: var(--accent); width: 1.8rem; text-align: right; flex-shrink: 0; }
-
-    /* Startup de la semana */
-    .startup-card {
-      max-width: 900px; margin: 1rem auto 0; padding: 0 1rem;
-    }
-    .startup-card > section, .startup-card {
-      background: linear-gradient(135deg, #1a1a2e 0%, #2d3561 100%);
-      border-radius: 12px; padding: 1.4rem; color: white;
-    }
-    @media (prefers-color-scheme: dark) {
-      .startup-card { background: linear-gradient(135deg, #0d0f18 0%, #1e2340 100%); }
-    }
-    .startup-label { font-size: .75rem; font-weight: 700; color: #a0aec0; text-transform: uppercase; letter-spacing: .5px; margin-bottom: .5rem; }
-    .startup-title { font-size: 1.1rem; font-weight: 700; line-height: 1.4; margin-bottom: .6rem; }
-    .startup-title a { color: white; text-decoration: none; }
-    .startup-title a:hover { text-decoration: underline; }
-    .startup-summary { font-size: .88rem; color: #a0aec0; margin-bottom: .9rem; line-height: 1.5; }
-    .startup-footer { display: flex; align-items: center; justify-content: space-between; }
-    .startup-source { font-size: .75rem; color: #718096; }
-    .startup-card .share-btn { border-color: rgba(255,255,255,.2); color: #a0aec0; background: transparent; }
-    .startup-card .share-btn:hover { border-color: white; color: white; }
 
     /* Signal & amplification badges */
     .badge-signal { font-size: .65rem; font-weight: 700; background: #f59e0b22; color: #d97706; border: 1px solid #f59e0b44; border-radius: 8px; padding: .1rem .45rem; }
@@ -177,24 +137,35 @@
     .card-why     { font-size: .8rem; color: #d97706; margin: .4rem 0 .7rem; display: flex; align-items: flex-start; gap: .35rem; line-height: 1.4; }
     .why-icon     { flex-shrink: 0; }
 
-    /* Radar de Señales */
-    .radar-section { max-width: 900px; margin: 1.25rem auto 0; padding: 0 1rem; }
-    .radar-section > * { background: var(--surface); border: 1.5px solid #f59e0b55; border-radius: 12px; overflow: hidden; }
-    .radar-header { display: flex; align-items: baseline; justify-content: space-between; padding: 1rem 1.2rem .7rem; flex-wrap: wrap; gap: .3rem; border-bottom: 1px solid var(--border); }
-    .radar-title-main { font-size: .95rem; font-weight: 700; color: var(--text); }
-    .radar-sub    { font-size: .72rem; color: var(--muted); }
-    .radar-body   { display: flex; flex-direction: column; }
-    .radar-row    { display: flex; align-items: flex-start; gap: .9rem; padding: .85rem 1.2rem; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; transition: background .15s; }
+    /* Intel 2-col section (Señales + Deals) */
+    .intel-section  { max-width: 900px; margin: 1rem auto 0; padding: 0 1rem; }
+    .intel-grid-2   { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .intel-grid-1   { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    @media (max-width: 640px) { .intel-grid-2 { grid-template-columns: 1fr; } }
+    .intel-col      { background: var(--surface); border: 1.5px solid #f59e0b44; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+    .intel-col-header { display: flex; align-items: baseline; justify-content: space-between; padding: .75rem 1rem .6rem; border-bottom: 1px solid var(--border); }
+    .intel-col-title  { font-size: .88rem; font-weight: 700; color: var(--text); }
+    .intel-col-sub    { font-size: .68rem; color: var(--muted); }
+    .intel-col-body   { display: flex; flex-direction: column; flex: 1; }
+    /* Radar rows */
+    .radar-row    { display: flex; align-items: flex-start; gap: .75rem; padding: .75rem 1rem; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; transition: background .15s; }
     .radar-row:last-child { border-bottom: none; }
     .radar-row:hover { background: var(--bg); }
-    .radar-icon   { font-size: 1.2rem; flex-shrink: 0; padding-top: .1rem; }
+    .radar-icon   { font-size: 1.1rem; flex-shrink: 0; padding-top: .1rem; }
     .radar-content { flex: 1; min-width: 0; }
-    .radar-title  { display: block; font-size: .9rem; font-weight: 600; color: var(--text); line-height: 1.4; margin-bottom: .2rem; }
-    .radar-meta   { font-size: .72rem; color: var(--muted); }
-    .radar-why    { display: block; font-size: .75rem; color: #d97706; margin-top: .25rem; }
-    .radar-score  { font-size: .75rem; font-weight: 700; color: #f59e0b; background: #f59e0b18; border-radius: 6px; padding: .2rem .5rem; flex-shrink: 0; align-self: center; }
-    .radar-amp    { font-size: .7rem; }
-    .radar-deal   { font-size: .7rem; color: #16a34a; }
+    .radar-title  { display: block; font-size: .84rem; font-weight: 600; color: var(--text); line-height: 1.4; margin-bottom: .15rem; }
+    .radar-meta   { font-size: .7rem; color: var(--muted); }
+    .radar-why    { display: block; font-size: .72rem; color: #d97706; margin-top: .2rem; }
+    .radar-score  { font-size: .72rem; font-weight: 700; color: #f59e0b; background: #f59e0b18; border-radius: 6px; padding: .15rem .45rem; flex-shrink: 0; align-self: center; }
+    .radar-amp    { font-size: .68rem; }
+    .radar-deal   { font-size: .68rem; color: #16a34a; }
+    /* Deal rows (compact, inside intel col) */
+    .deal-row2    { display: flex; align-items: center; gap: .5rem; padding: .65rem 1rem; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; transition: background .15s; min-width: 0; }
+    .deal-row2:last-child { border-bottom: none; }
+    .deal-row2:hover { background: var(--bg); }
+    .deal-amount  { font-size: .88rem; font-weight: 700; color: #16a34a; white-space: nowrap; flex-shrink: 0; }
+    .deal-round   { font-size: .65rem; font-weight: 700; background: #22c55e22; color: #16a34a; border-radius: 6px; padding: .08rem .38rem; white-space: nowrap; flex-shrink: 0; }
+    .deal-title2  { font-size: .78rem; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; min-width: 0; }
 
     /* Trends */
     .trends-section { max-width: 900px; margin: .75rem auto 0; padding: 0 1rem; display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
@@ -204,21 +175,6 @@
     .trend-badge  { font-size: .65rem; font-weight: 700; border-radius: 6px; padding: .05rem .35rem; }
     .trend-badge.up  { background: #22c55e22; color: #16a34a; }
     .trend-badge.new { background: #6366f122; color: #6366f1; }
-
-    /* Deal Flow */
-    .deal-section { max-width: 900px; margin: .75rem auto 0; padding: 0 1rem; }
-    .deal-section > * { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
-    .deal-header  { display: flex; align-items: baseline; justify-content: space-between; padding: .9rem 1.2rem .65rem; border-bottom: 1px solid var(--border); flex-wrap: wrap; gap: .3rem; }
-    .deal-title-main { font-size: .95rem; font-weight: 700; color: var(--text); }
-    .deal-sub     { font-size: .72rem; color: var(--muted); }
-    .deal-body    { display: flex; flex-direction: column; }
-    .deal-row     { display: grid; grid-template-columns: 70px auto 1fr auto; align-items: center; gap: .7rem; padding: .65rem 1.2rem; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; transition: background .15s; }
-    .deal-row:last-child { border-bottom: none; }
-    .deal-row:hover { background: var(--bg); }
-    .deal-amount  { font-size: .9rem; font-weight: 700; color: #16a34a; white-space: nowrap; }
-    .deal-round   { font-size: .68rem; font-weight: 700; background: #22c55e22; color: #16a34a; border-radius: 6px; padding: .1rem .4rem; white-space: nowrap; }
-    .deal-title   { font-size: .82rem; font-weight: 500; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .deal-meta    { font-size: .7rem; color: var(--muted); white-space: nowrap; }
 
     /* Favicon */
     .source-favicon { width: 14px; height: 14px; border-radius: 2px; vertical-align: middle; margin-right: .25rem; flex-shrink: 0; }
@@ -317,19 +273,6 @@
     @media (prefers-color-scheme: dark) { .reg-alert-why { color: #fbbf24; } }
     .reg-alert-meta { font-size: .72rem; color: #b45309; white-space: nowrap; flex-shrink: 0; padding-top: .15rem; }
 
-    /* Incumbent Tracker */
-    .inc-section { max-width: 900px; margin: .75rem auto 0; padding: 0 1rem; }
-    .inc-section > * { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
-    .inc-header { display: flex; align-items: baseline; justify-content: space-between; padding: .9rem 1.2rem .65rem; border-bottom: 1px solid var(--border); flex-wrap: wrap; gap: .3rem; }
-    .inc-title-main { font-size: .95rem; font-weight: 700; color: var(--text); }
-    .inc-sub  { font-size: .72rem; color: var(--muted); }
-    .inc-body { display: flex; flex-direction: column; padding: .5rem 1.2rem .75rem; gap: .5rem; }
-    .inc-row  { display: flex; align-items: center; gap: .7rem; }
-    .inc-name { font-size: .8rem; font-weight: 600; color: var(--text); text-decoration: none; width: 110px; flex-shrink: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .inc-name:hover { color: var(--accent); }
-    .inc-bar-wrap { flex: 1; background: var(--border); border-radius: 4px; height: 7px; overflow: hidden; }
-    .inc-bar  { height: 100%; background: var(--accent); border-radius: 4px; transition: width .4s; }
-    .inc-n    { font-size: .8rem; font-weight: 700; color: var(--accent); width: 1.6rem; text-align: right; flex-shrink: 0; }
 
     /* Briefing view */
     main.briefing-view .card { display: none; }
@@ -378,7 +321,7 @@
       <span class="stat"><strong>40</strong> fuentes monitorizadas</span>
       <span class="stat"><strong>3</strong> iberoamérica</span>
     </div>
-    <div class="updated">Actualizado el 30 Mar 2026 · 19:57 UTC</div>
+    <div class="updated">Actualizado el 30 Mar 2026 · 20:03 UTC</div>
     <div id="google_translate_element"></div>
   </header>
 
@@ -420,7 +363,7 @@
       <div class="brief-title-row">
         <span class="brief-badge">📋 BRIEFING</span>
         <span class="brief-date">lunes 30 mar 2026</span>
-        <span class="brief-refresh" title="Próxima actualización automática">↻ en 4h 03min</span>
+        <span class="brief-refresh" title="Próxima actualización automática">↻ en 3h 57min</span>
       </div>
     </div>
     <div class="brief-body">
@@ -445,123 +388,15 @@
           <span class="brief-titles">FCA confirms motor finance redress scheme</span>
         </div>
     </div>
-    <div class="brief-stats">📊 <strong>34</strong> artículos analizados · <strong>3</strong> fuentes regulatorias</div>
+    <div class="brief-stats">📊 <strong>34</strong> hoy · <strong>9</strong> inversiones esta semana · <strong>4</strong> regulación esta semana · más mencionados: Swiss Re ×5 · Allianz ×3</div>
   </section>
   
   
   
-  <section class="trends-section">
-    <span class="trends-label">📈 Esta semana se habla más de:</span>
-    <div class="trends-pills"><span class="trend-pill">parametric <span class="trend-badge new">Nuevo</span> <small>3 art.</small></span><span class="trend-pill">Clima <span class="trend-badge new">Nuevo</span> <small>18 art.</small></span><span class="trend-pill">Fraude <span class="trend-badge new">Nuevo</span> <small>4 art.</small></span><span class="trend-pill">Ciberseguro <span class="trend-badge new">Nuevo</span> <small>1 art.</small></span></div>
-  </section>
   
   
-  <section class="thermometer">
-    <div class="therm-header">
-      <span class="therm-title">🌡️ Termómetro Insurtech</span>
-      <span class="therm-sub">Últimos 7 días · 121 artículos analizados</span>
-    </div>
-    <div class="therm-body">
-      <div class="therm-row">
-        <span class="therm-icon">💰</span>
-        <div class="therm-info">
-          <span class="therm-label">Inversión</span>
-          <span class="therm-desc">Rondas y M&A</span>
-        </div>
-        <div class="therm-bar-wrap">
-          <div class="therm-bar" style="width:29%"></div>
-        </div>
-        <span class="therm-n">9</span>
-      </div>
-      <div class="therm-row">
-        <span class="therm-icon">⚖️</span>
-        <div class="therm-info">
-          <span class="therm-label">Regulación</span>
-          <span class="therm-desc">Noticias regulatorias</span>
-        </div>
-        <div class="therm-bar-wrap">
-          <div class="therm-bar" style="width:13%"></div>
-        </div>
-        <span class="therm-n">4</span>
-      </div>
-      <div class="therm-row">
-        <span class="therm-icon">🚀</span>
-        <div class="therm-info">
-          <span class="therm-label">Tecnología</span>
-          <span class="therm-desc">Lanzamientos tech</span>
-        </div>
-        <div class="therm-bar-wrap">
-          <div class="therm-bar" style="width:89%"></div>
-        </div>
-        <span class="therm-n">27</span>
-      </div>
-      <div class="therm-row">
-        <span class="therm-icon">🌎</span>
-        <div class="therm-info">
-          <span class="therm-label">Iberoamérica</span>
-          <span class="therm-desc">Noticias España/Latam</span>
-        </div>
-        <div class="therm-bar-wrap">
-          <div class="therm-bar" style="width:9%"></div>
-        </div>
-        <span class="therm-n">3</span>
-      </div>
-    </div>
-  </section>
   
-  <section class="inc-section">
-    <div class="inc-header">
-      <span class="inc-title-main">🏢 Radar de Incumbentes</span>
-      <span class="inc-sub">Menciones en medios · últimos 7 días</span>
-    </div>
-    <div class="inc-body">
-      <div class="inc-row">
-        <a href="https://www.artemis.bm/news/la-wildfires-a-real-world-stress-test-investor-confidence-in-wildfire-cat-bonds-rose-swiss-re/?utm_source=rss&utm_medium=rss&utm_campaign=la-wildfires-a-real-world-stress-test-investor-confidence-in-wildfire-cat-bonds-rose-swiss-re" target="_blank" rel="noopener" class="inc-name" title="Ver artículo">Swiss Re</a>
-        <div class="inc-bar-wrap"><div class="inc-bar" style="width:100%"></div></div>
-        <span class="inc-n">5</span>
-      </div>
-      <div class="inc-row">
-        <a href="https://insuranceasianews.com/berkshire-bets-the-buffett-way-mosaics-exit-casts-a-shadow/" target="_blank" rel="noopener" class="inc-name" title="Ver artículo">Allianz</a>
-        <div class="inc-bar-wrap"><div class="inc-bar" style="width:60%"></div></div>
-        <span class="inc-n">3</span>
-      </div>
-      <div class="inc-row">
-        <a href="https://coverager.com/axa-italia-returns-to-tv-with-savings-and-investment-focused-campaign/" target="_blank" rel="noopener" class="inc-name" title="Ver artículo">AXA</a>
-        <div class="inc-bar-wrap"><div class="inc-bar" style="width:40%"></div></div>
-        <span class="inc-n">2</span>
-      </div>
-      <div class="inc-row">
-        <a href="https://www.inese.es/del-nuevo-registro-de-vpl-al-deber-de-informacion-el-sector-asegurador-se-adapta-a-los-cambios-legales/" target="_blank" rel="noopener" class="inc-name" title="Ver artículo">Zurich</a>
-        <div class="inc-bar-wrap"><div class="inc-bar" style="width:40%"></div></div>
-        <span class="inc-n">2</span>
-      </div>
-      <div class="inc-row">
-        <a href="https://insuranceasianews.com/krishnamoorthy-rao-returns-to-generali-to-lead-india-pc-jv/" target="_blank" rel="noopener" class="inc-name" title="Ver artículo">Generali</a>
-        <div class="inc-bar-wrap"><div class="inc-bar" style="width:40%"></div></div>
-        <span class="inc-n">2</span>
-      </div>
-      <div class="inc-row">
-        <a href="https://www.reinsurancene.ws/agentic-ai-poised-to-shape-both-offensive-and-defensive-cyber-measures-munich-re/" target="_blank" rel="noopener" class="inc-name" title="Ver artículo">Munich Re</a>
-        <div class="inc-bar-wrap"><div class="inc-bar" style="width:20%"></div></div>
-        <span class="inc-n">1</span>
-      </div>
-    </div>
-  </section>
   
-  <section class="startup-card">
-    <div class="startup-label">🚀 Startup / Deal de la semana</div>
-    <h3 class="startup-title">
-      <a href="https://www.insurtechinsights.com/china-life-insurance-posts-strong-profit-growth-driven-by-investment-performance-and-product-innovation/" target="_blank" rel="noopener">China Life Insurance posts strong profit growth driven by investment performance and product innovation</a>
-    </h3>
-    <p class='startup-summary'>China Life Insurance has reported a significant rise in profitability for 2025, supported by robust investment returns and continued progress in shifting toward higher-value insurance products. The post China Life Insurance posts strong profit growth driven by investment performance and product innovation appeared first on Insurtech Insights .</p>
-    <div class="startup-footer">
-      <span class="startup-source">InsurTech Insights · 28 Mar 2026</span>
-      <div class="card-share">
-        <a href="https://twitter.com/intent/tweet?text=China+Life+Insurance+posts+strong+profit+growth+driven+by+investment+performance+and+product+innovat&url=https%3A%2F%2Fwww.insurtechinsights.com%2Fchina-life-insurance-posts-strong-profit-growth-driven-by-investment-performance-and-product-innovation%2F" target="_blank" rel="noopener" class="share-btn share-x" title="Compartir en X">𝕏</a>
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.insurtechinsights.com%2Fchina-life-insurance-posts-strong-profit-growth-driven-by-investment-performance-and-product-innovation%2F" target="_blank" rel="noopener" class="share-btn share-li" title="Compartir en LinkedIn">in</a>
-      </div>
-    </div>
-  </section>
 
   <div class="subscribe-bar">
     <form class="subscribe-form" action="https://buttondown.email/api/emails/embed-subscribe/insurtechintelligence" method="post" target="_blank">
@@ -578,7 +413,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.carriermanagement.com&sz=16" alt="" loading="lazy"><span class="card-source">Carrier Management</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 4h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -605,7 +440,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=insuranceasianews.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Asia News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 4h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -631,7 +466,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.fca.org.uk&sz=16" alt="" loading="lazy"><span class="card-source">FCA News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 4h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -657,7 +492,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.fca.org.uk&sz=16" alt="" loading="lazy"><span class="card-source">FCA News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 4h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -683,7 +518,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.fca.org.uk&sz=16" alt="" loading="lazy"><span class="card-source">FCA News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 4h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -709,7 +544,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.artemis.bm&sz=16" alt="" loading="lazy"><span class="card-source">Artemis</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 4h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -735,7 +570,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.artemis.bm&sz=16" alt="" loading="lazy"><span class="card-source">Artemis</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 4h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -761,7 +596,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.artemis.bm&sz=16" alt="" loading="lazy"><span class="card-source">Artemis</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 4h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -787,7 +622,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 4h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -813,7 +648,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 4h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -839,7 +674,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 4h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -865,7 +700,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 4h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -891,7 +726,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 4h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -917,7 +752,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 4h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -943,7 +778,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurtechinsights.com&sz=16" alt="" loading="lazy"><span class="card-source">InsurTech Insights</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="30 Mar 2026 15:57">hace 3h</span>
+        <span class="card-date" title="30 Mar 2026 15:57">hace 4h</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         <span class="badge-new">Nuevo</span>
@@ -3077,7 +2912,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=iireporter.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Innovation Reporter</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
+        <span class="card-date" title="26 Mar 2026 20:00">hace 4 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -3103,7 +2938,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.claimsjournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Claims Journal</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
+        <span class="card-date" title="26 Mar 2026 20:00">hace 4 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -3129,7 +2964,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.claimsjournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Claims Journal</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
+        <span class="card-date" title="26 Mar 2026 20:00">hace 4 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -3155,7 +2990,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.claimsjournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Claims Journal</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
+        <span class="card-date" title="26 Mar 2026 20:00">hace 4 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -3181,7 +3016,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.carriermanagement.com&sz=16" alt="" loading="lazy"><span class="card-source">Carrier Management</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
+        <span class="card-date" title="26 Mar 2026 20:00">hace 4 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -3207,7 +3042,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.carriermanagement.com&sz=16" alt="" loading="lazy"><span class="card-source">Carrier Management</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
+        <span class="card-date" title="26 Mar 2026 20:00">hace 4 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -3233,7 +3068,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.carriermanagement.com&sz=16" alt="" loading="lazy"><span class="card-source">Carrier Management</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
+        <span class="card-date" title="26 Mar 2026 20:00">hace 4 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -3259,7 +3094,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.artemis.bm&sz=16" alt="" loading="lazy"><span class="card-source">Artemis</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
+        <span class="card-date" title="26 Mar 2026 20:00">hace 4 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -3285,7 +3120,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.artemis.bm&sz=16" alt="" loading="lazy"><span class="card-source">Artemis</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
+        <span class="card-date" title="26 Mar 2026 20:00">hace 4 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -3311,7 +3146,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.artemis.bm&sz=16" alt="" loading="lazy"><span class="card-source">Artemis</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
+        <span class="card-date" title="26 Mar 2026 20:00">hace 4 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -3337,7 +3172,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
+        <span class="card-date" title="26 Mar 2026 20:00">hace 4 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -3363,7 +3198,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
+        <span class="card-date" title="26 Mar 2026 20:00">hace 4 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -3389,7 +3224,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.reinsurancene.ws&sz=16" alt="" loading="lazy"><span class="card-source">Reinsurance News</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
+        <span class="card-date" title="26 Mar 2026 20:00">hace 4 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -3415,7 +3250,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
+        <span class="card-date" title="26 Mar 2026 20:00">hace 4 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -3441,7 +3276,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
+        <span class="card-date" title="26 Mar 2026 20:00">hace 4 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -3467,7 +3302,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurancejournal.com&sz=16" alt="" loading="lazy"><span class="card-source">Insurance Journal</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
+        <span class="card-date" title="26 Mar 2026 20:00">hace 4 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -3493,7 +3328,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=www.insurtechinsights.com&sz=16" alt="" loading="lazy"><span class="card-source">InsurTech Insights</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="26 Mar 2026 20:00">hace 3 días</span>
+        <span class="card-date" title="26 Mar 2026 20:00">hace 4 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -3519,7 +3354,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=coverager.com&sz=16" alt="" loading="lazy"><span class="card-source">Coverager</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="26 Mar 2026 19:59">hace 3 días</span>
+        <span class="card-date" title="26 Mar 2026 19:59">hace 4 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -3545,7 +3380,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=coverager.com&sz=16" alt="" loading="lazy"><span class="card-source">Coverager</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="26 Mar 2026 19:59">hace 3 días</span>
+        <span class="card-date" title="26 Mar 2026 19:59">hace 4 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
@@ -3571,7 +3406,7 @@
       <div class="card-meta">
         <img class="source-favicon" src="https://www.google.com/s2/favicons?domain=coverager.com&sz=16" alt="" loading="lazy"><span class="card-source">Coverager</span>
         <span class="card-dot">·</span>
-        <span class="card-date" title="26 Mar 2026 19:59">hace 3 días</span>
+        <span class="card-date" title="26 Mar 2026 19:59">hace 4 días</span>
         <span class="card-dot">·</span>
         <span class="card-read">1 min</span>
         
