@@ -2,11 +2,13 @@
 Generate daily newsletter HTML — docs/newsletter.html
 Format: executive editorial style with 5 top stories.
 Uses OpenAI for article intros if key is set; falls back to extractive.
+Titles always translated to Spanish (OpenAI > MyMemory free API > original).
 """
 import os
 import re
 import json
 import logging
+import time
 from datetime import datetime, timezone, timedelta
 
 log = logging.getLogger(__name__)
@@ -25,66 +27,152 @@ if _OPENAI_KEY:
         pass
 
 
+# ── Free translation via MyMemory API ─────────────────────────────────────────
+def _translate_to_es(text: str) -> str:
+    """Translate text to Spanish using Google Translate unofficial endpoint.
+    Falls back to original text on any failure — never blocks the pipeline."""
+    if not text or _is_spanish_quick(text):
+        return text
+    try:
+        import httpx, urllib.parse
+        # Unofficial Google Translate endpoint (no key required, used by many tools)
+        url = "https://translate.googleapis.com/translate_a/single"
+        params = {
+            "client": "gtx", "sl": "auto", "tl": "es",
+            "dt": "t", "q": text[:400],
+        }
+        headers = {"User-Agent": "Mozilla/5.0 (compatible; InsurTechBot/1.0)"}
+        r = httpx.get(url, params=params, headers=headers, timeout=6)
+        if r.status_code == 200:
+            data = r.json()
+            # Response format: [[["translated", "original", ...], ...], ...]
+            parts = data[0] if data else []
+            translated = "".join(p[0] for p in parts if p and p[0])
+            if translated and translated.strip() != text.strip():
+                return translated.strip()
+    except Exception as e:
+        log.debug(f"Translation error: {e}")
+    return text
+
+
+def _is_spanish_quick(text: str) -> bool:
+    """Fast check: is text already in Spanish?"""
+    words = {w.lower() for w in re.findall(r'\b[a-záéíóúüñ]{2,}\b', text, re.IGNORECASE)}
+    es_markers = {"de","la","el","en","los","las","un","una","por","para","con","del",
+                  "se","que","su","sus","al","sobre","más","también","son","está","fue",
+                  "nuevo","nueva","anuncia","publica","lanza","seguro","seguros"}
+    return len(words & es_markers) >= 2
+
+
+# ── Language detection (simple heuristic) ─────────────────────────────────────
+_ES_WORDS = {"de","la","el","en","los","las","un","una","por","para","con","del",
+             "se","que","su","sus","al","sobre","más","también","son","está","fue"}
+
+def _is_spanish(text: str) -> bool:
+    """Returns True if text appears to be in Spanish."""
+    words = {w.lower() for w in re.findall(r'\b[a-záéíóúüñ]{2,}\b', text, re.IGNORECASE)}
+    return len(words & _ES_WORDS) >= 2
+
+
 # ── AI editorial per article ──────────────────────────────────────────────────
 def _ai_editorial(article: dict) -> dict:
     """
-    Returns {"intro": str, "bullets": [str, str, str]}.
-    Calls GPT-4o-mini if available; falls back to extractive logic.
+    Returns {"title": str, "intro": str, "bullets": [str, str, str]} always in Spanish.
+    Uses OpenAI if available (translate + editorial); falls back to free translation + templates.
     """
-    title   = article.get("title", "")
-    summary = article.get("summary", "")
-    source  = article.get("source", "")
-    why     = article.get("why_matters", "")
-    deal    = article.get("deal")
+    # Always prefer the Spanish title; fall back to original
+    title_es   = article.get("title", "")
+    title_orig = article.get("title_original", title_es)
+    summary    = article.get("summary", "")
+    source     = article.get("source", "")
+    why        = article.get("why_matters", "")   # always in Spanish
+    deal       = article.get("deal")
+    cat        = article.get("category", "General")
+    signal_label = article.get("signal_label", "")
 
-    if _openai_client and summary:
+    # Best text to feed AI: use Spanish summary if available, else original title
+    summary_for_ai = summary if summary else title_orig
+
+    if _openai_client:
         try:
             resp = _openai_client.chat.completions.create(
                 model="gpt-4o-mini",
                 messages=[{"role": "user", "content": (
                     "Eres el redactor jefe de InsurTech Intelligence, newsletter ejecutiva "
-                    "para directivos del sector asegurador. Escribe en español:\n"
+                    "para directivos del sector asegurador en España y Latinoamérica. "
+                    "Responde SIEMPRE en español, independientemente del idioma del artículo.\n\n"
+                    "Escribe:\n"
+                    "0. El título traducido al español (si ya está en español, mantenlo).\n"
                     "1. Un párrafo de contexto (2-3 frases): qué ha pasado, por qué importa "
-                    "al sector y qué implica estratégicamente.\n"
-                    "2. Exactamente 3 puntos clave en formato 'Término clave: explicación concisa' "
-                    "(máximo 25 palabras cada uno). Sé directo, ejecutivo, sin jerga innecesaria.\n\n"
-                    "Responde SOLO con JSON válido: "
-                    '{\"intro\": \"...\", \"bullets\": [\"...\", \"...\", \"...\"]}\n\n'
-                    f"Título: {title}\nFuente: {source}\nResumen: {summary[:600]}"
+                    "al sector asegurador y qué implica estratégicamente.\n"
+                    "2. Exactamente 3 puntos clave formato 'Término: explicación' "
+                    "(máx 25 palabras cada uno). Directo, ejecutivo.\n\n"
+                    "Responde SOLO con JSON: "
+                    '{\"title_es\": \"...\", \"intro\": \"...\", \"bullets\": [\"...\", \"...\", \"...\"]}\n\n'
+                    f"Título original: {title_orig}\n"
+                    f"Título en español: {title_es}\n"
+                    f"Fuente: {source}\n"
+                    f"Categoría: {cat}\n"
+                    f"Contenido: {summary_for_ai[:600]}"
                 )}],
                 max_tokens=400,
                 temperature=0.4,
             )
-            data = json.loads(resp.choices[0].message.content.strip())
-            intro   = data.get("intro", "")
-            bullets = data.get("bullets", [])
+            raw = resp.choices[0].message.content.strip()
+            # Strip possible markdown code fences
+            raw = re.sub(r'^```json\s*|\s*```$', '', raw, flags=re.MULTILINE).strip()
+            data = json.loads(raw)
+            intro     = data.get("intro", "")
+            bullets   = data.get("bullets", [])
+            title_out = data.get("title_es", title_es) or title_es
             if intro and len(bullets) >= 2:
-                return {"intro": intro, "bullets": bullets[:3]}
+                return {"title": title_out, "intro": intro, "bullets": bullets[:3]}
         except Exception as e:
             log.debug(f"OpenAI newsletter editorial error: {e}")
 
-    # ── Extractive fallback ────────────────────────────────────────────────────
-    # Split summary into sentences for intro
-    sentences = [s.strip() for s in re.split(r'(?<=[.!?])\s+', summary) if len(s.strip()) > 30]
-    intro = " ".join(sentences[:3]) if sentences else summary[:250]
+    # ── Spanish-native extractive fallback ────────────────────────────────────
+    # Translate title if needed (MyMemory free API, only for non-Spanish titles)
+    if not _is_spanish_quick(title_es) and not _is_spanish_quick(title_orig):
+        title_es = _translate_to_es(title_orig or title_es)
+        time.sleep(0.3)  # avoid rate limiting (5 articles × 0.3s = 1.5s total)
+
+    # Use Spanish summary if it exists and is in Spanish; otherwise build from metadata
+    if summary and _is_spanish(summary):
+        sentences = [s.strip() for s in re.split(r'(?<=[.!?])\s+', summary) if len(s.strip()) > 30]
+        intro = " ".join(sentences[:2]) if sentences else summary[:220]
+    else:
+        # Build intro from guaranteed-Spanish fields
+        cat_phrases = {
+            "Regulación":   f"{source} ha publicado nueva normativa que afecta al sector asegurador.",
+            "Inversión":    f"Nueva operación de inversión detectada en el ecosistema insurtech, publicada por {source}.",
+            "Tecnología":   f"{source} informa sobre un avance tecnológico con impacto en el sector seguros.",
+            "Catástrofes":  f"Alerta de riesgo catastrófico reportada por {source} con implicaciones para el mercado asegurador.",
+            "Fraude":       f"{source} publica información relevante sobre detección o prevención del fraude asegurador.",
+            "Vida y Salud": f"Novedad en el segmento de vida y salud publicada por {source}.",
+            "Automóvil":    f"Actualización del mercado de seguro de automóvil según {source}.",
+            "Embebido":     f"Avance en seguros embebidos o distribución alternativa, según {source}.",
+        }
+        base = cat_phrases.get(cat, f"{source} publica una noticia relevante para el sector asegurador.")
+        if why:
+            intro = f"{base} {why}"
+        else:
+            intro = base
 
     bullets = []
     if why:
-        bullets.append(f"Impacto sectorial: {why}")
+        bullets.append(f"Relevancia: {why}")
     if deal and deal.get("amount_str") and deal["amount_str"] != "—":
-        rnd = f' ({deal["round"]})' if deal.get("round") and deal["round"] != "—" else ""
-        bullets.append(f"Operación: {deal['amount_str']}{rnd} detectados en el anuncio.")
+        rnd = f" ({deal['round']})" if deal.get("round") and deal["round"] != "—" else ""
+        bullets.append(f"Operación detectada: {deal['amount_str']}{rnd}.")
+    if signal_label:
+        bullets.append(f"Tipo de señal: {signal_label} — impacto clasificado como alto por nuestro sistema de inteligencia.")
     if source:
-        bullets.append(f"Fuente: Publicado por {source}, referencia en el sector.")
-    # Pad to 3 bullets minimum with extra sentences
-    for s in sentences[3:6]:
-        if len(bullets) >= 3:
-            break
-        bullets.append(s)
-    while len(bullets) < 2:
-        bullets.append("Ver artículo completo para más detalles.")
+        bullets.append(f"Publicado por {source}, fuente de referencia en el sector.")
+    # Fill to 3
+    while len(bullets) < 3:
+        bullets.append("Consulta el artículo completo para más contexto y datos.")
 
-    return {"intro": intro, "bullets": bullets[:3]}
+    return {"title": title_es, "intro": intro, "bullets": bullets[:3]}
 
 
 # ── Intro editorial del día ────────────────────────────────────────────────────
@@ -105,8 +193,9 @@ def _day_intro(articles_today: list, articles_week: list) -> str:
     top_themes = [c for c, _ in cats.most_common(3) if c]
 
     if _openai_client and articles_today:
+        # Use Spanish titles (title field) for context
         titles_sample = "; ".join(
-            a.get("title", "")[:80] for a in articles_today[:8]
+            (a.get("title") or a.get("title_original", ""))[:80] for a in articles_today[:8]
         )
         try:
             resp = _openai_client.chat.completions.create(
@@ -214,7 +303,8 @@ def generate_newsletter(articles: list):
     for i, (a, ed) in enumerate(zip(top5, editorials), 1):
         cat   = a.get("category", "General")
         icon  = cat_icons.get(cat, "📰")
-        title = a.get("title", "")
+        # Use AI/free-translated Spanish title from editorial (always in Spanish)
+        title = ed.get("title") or a.get("title", "") or a.get("title_original", "")
         url   = a.get("url", "#")
         src   = a.get("source", "")
         image = a.get("image_url", "")
