@@ -326,6 +326,54 @@ def detect_amplified(articles: list, window_days: int = 3, threshold: int = 3) -
     return amplified_ids
 
 
+# ── Incumbent tracker ────────────────────────────────────────────────────────
+INCUMBENTS = {
+    "Mapfre":           ["mapfre"],
+    "Allianz":          ["allianz"],
+    "AXA":              ["axa"],
+    "Zurich":           ["zurich"],
+    "Generali":         ["generali"],
+    "Mutua Madrileña":  ["mutua madrileña", "mutua madrilena", "mutua madrile"],
+    "Sanitas":          ["sanitas"],
+    "Munich Re":        ["munich re", "munichre"],
+    "Swiss Re":         ["swiss re", "swissre"],
+    "Lloyd's":          ["lloyd's", "lloyds"],
+    "Lemonade":         ["lemonade"],
+    "Root":             ["root insurance"],
+    "Hippo":            ["hippo insurance", "hippo home"],
+}
+
+
+def detect_incumbents(articles: list, window_days: int = 7) -> list[dict]:
+    """Count incumbent mentions in the last N days. Returns sorted list."""
+    cutoff = datetime.now(timezone.utc) - timedelta(days=window_days)
+    counts: dict[str, int] = {k: 0 for k in INCUMBENTS}
+    articles_by_incumbent: dict[str, list] = {k: [] for k in INCUMBENTS}
+
+    for a in articles:
+        try:
+            pub = datetime.fromisoformat(a.get("published_at", ""))
+            if pub.tzinfo is None:
+                pub = pub.replace(tzinfo=timezone.utc)
+            if pub < cutoff:
+                continue
+        except Exception:
+            continue
+        text = (a.get("title", "") + " " + a.get("summary", "")).lower()
+        for name, keywords in INCUMBENTS.items():
+            if any(kw in text for kw in keywords):
+                counts[name] += 1
+                if len(articles_by_incumbent[name]) < 3:
+                    articles_by_incumbent[name].append(a)
+
+    result = [
+        {"name": name, "count": counts[name], "articles": articles_by_incumbent[name]}
+        for name in INCUMBENTS if counts[name] > 0
+    ]
+    result.sort(key=lambda x: x["count"], reverse=True)
+    return result
+
+
 # ── Enrich all articles ───────────────────────────────────────────────────────
 def enrich_articles(articles: list) -> list:
     """Run all enrichment in one pass. Call after loading articles."""

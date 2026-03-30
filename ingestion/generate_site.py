@@ -5,7 +5,7 @@ from datetime import datetime, timezone, timedelta
 from collections import Counter
 
 from xml.sax.saxutils import escape as xml_escape
-from signal_engine import detect_trends
+from signal_engine import detect_trends, detect_incumbents
 
 DOCS_DIR = os.path.join(os.path.dirname(__file__), "..", "docs")
 SITE_URL = "https://albertoiglesiascatalan-sudo.github.io/Insurtech"
@@ -147,8 +147,9 @@ def _card(a: dict, featured: bool = False) -> str:
     except Exception:
         favicon_html = ""
 
+    signal_flag = "1" if a.get("is_signal") else "0"
     return f"""
-    <article class="card{extra_class}" data-category="{category}" data-region="{region}" data-search="{searchable}" data-id="{article_id}" data-url="{a['url']}">
+    <article class="card{extra_class}" data-category="{category}" data-region="{region}" data-search="{searchable}" data-id="{article_id}" data-url="{a['url']}" data-signal="{signal_flag}">
       {img_html}
       <div class="card-meta">
         {favicon_html}<span class="card-source">{a['source']}</span>
@@ -421,6 +422,74 @@ def _thermometer(articles: list) -> str:
   </section>"""
 
 
+def _regulatory_alert(articles: list) -> str:
+    """Prominent banner if EIOPA/FCA/FSB published a high-impact article this week."""
+    cutoff = datetime.now(timezone.utc) - timedelta(days=7)
+    top = None
+    for a in articles:
+        if a.get("source", "") not in ("EIOPA", "FCA News", "FSB"):
+            continue
+        if a.get("signal_score", 0) < 20:
+            continue
+        try:
+            pub = datetime.fromisoformat(a.get("published_at", ""))
+            if pub.tzinfo is None:
+                pub = pub.replace(tzinfo=timezone.utc)
+            if pub >= cutoff:
+                if top is None or a.get("signal_score", 0) > top.get("signal_score", 0):
+                    top = a
+        except Exception:
+            pass
+    if not top:
+        return ""
+    rel, _ = _rel_date(top.get("published_at", ""))
+    src = top.get("source", "")
+    src_icons = {"EIOPA": "🇪🇺", "FCA News": "🇬🇧", "FSB": "🌐"}
+    icon = src_icons.get(src, "⚖️")
+    why = top.get("why_matters", "")
+    return f"""
+  <div class="reg-alert">
+    <div class="reg-alert-inner">
+      <span class="reg-alert-icon">{icon}</span>
+      <div class="reg-alert-body">
+        <span class="reg-alert-label">⚖️ Alerta Regulatoria · {src}</span>
+        <a href="{top['url']}" target="_blank" rel="noopener" class="reg-alert-title">{top['title']}</a>
+        {f'<span class="reg-alert-why">{why}</span>' if why else ''}
+      </div>
+      <span class="reg-alert-meta">{rel}</span>
+    </div>
+  </div>"""
+
+
+def _incumbent_tracker(articles: list) -> str:
+    """Bar chart of incumbent mentions in the last 7 days."""
+    incumbents = detect_incumbents(articles, window_days=7)
+    if not incumbents:
+        return ""
+    top = incumbents[:8]
+    max_count = max(x["count"] for x in top) or 1
+    rows = ""
+    for item in top:
+        pct = max(4, int(item["count"] / max_count * 100))
+        # Use most recent article URL for linking
+        link_url = item["articles"][0]["url"] if item["articles"] else "#"
+        rows += f"""
+      <div class="inc-row">
+        <a href="{link_url}" target="_blank" rel="noopener" class="inc-name" title="Ver artículo">{item['name']}</a>
+        <div class="inc-bar-wrap"><div class="inc-bar" style="width:{pct}%"></div></div>
+        <span class="inc-n">{item['count']}</span>
+      </div>"""
+    return f"""
+  <section class="inc-section">
+    <div class="inc-header">
+      <span class="inc-title-main">🏢 Radar de Incumbentes</span>
+      <span class="inc-sub">Menciones en medios · últimos 7 días</span>
+    </div>
+    <div class="inc-body">{rows}
+    </div>
+  </section>"""
+
+
 def _startup_card(articles: list) -> str:
     """Pick the most recent Inversión article as Startup de la semana."""
     candidates = [a for a in articles if a.get("category") == "Inversión"]
@@ -446,16 +515,109 @@ def _startup_card(articles: list) -> str:
   </section>"""
 
 
+def generate_digest(articles: list):
+    """Generate a weekly HTML digest (docs/digest.html) ready for Buttondown or email."""
+    cutoff = datetime.now(timezone.utc) - timedelta(days=7)
+    signals = [
+        a for a in articles
+        if a.get("is_signal") and _is_new(a.get("published_at", ""), 168)
+    ]
+    signals.sort(key=lambda x: x.get("signal_score", 0), reverse=True)
+    top5 = signals[:5]
+
+    items_html = ""
+    for i, a in enumerate(top5, 1):
+        icon  = a.get("signal_icon", "⚡")
+        label = a.get("signal_label", "Señal")
+        summary = a.get("summary", "")
+        why     = a.get("why_matters", "")
+        deal    = a.get("deal")
+        deal_str = f'<span style="color:#16a34a;font-weight:700">{deal["amount_str"]}</span>' if deal and deal.get("amount_str") else ""
+        items_html += f"""
+    <tr><td style="padding:20px 0;border-bottom:1px solid #e2e8f0;">
+      <p style="margin:0 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:#64748b;font-weight:700">{i}. {icon} {label} {deal_str}</p>
+      <p style="margin:0 0 6px;font-size:16px;font-weight:700;line-height:1.4">
+        <a href="{a['url']}" style="color:#1a1a2e;text-decoration:none">{a['title']}</a>
+      </p>
+      {f'<p style="margin:0 0 6px;font-size:13px;color:#4a5568;line-height:1.5">{summary}</p>' if summary else ''}
+      {f'<p style="margin:0;font-size:12px;color:#d97706">💡 {why}</p>' if why else ''}
+      <p style="margin:6px 0 0;font-size:11px;color:#94a3b8">{a.get("source","")} · {_date(a.get("published_at",""))}</p>
+    </td></tr>"""
+
+    if not top5:
+        items_html = '<tr><td style="padding:20px 0;color:#64748b">Sin señales relevantes esta semana.</td></tr>'
+
+    week_date = datetime.now(timezone.utc).strftime("%d %b %Y")
+    digest_html = f"""<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>InsurTech Intelligence · Digest Semanal {week_date}</title>
+</head>
+<body style="margin:0;padding:0;background:#f4f6f9;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f4f6f9;padding:32px 16px">
+    <tr><td>
+      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:600px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e2e8f0">
+
+        <!-- Header -->
+        <tr><td style="background:#1a1a2e;padding:28px 32px;text-align:center">
+          <p style="margin:0;font-size:22px;font-weight:700;color:#fff">InsurTech Intelligence</p>
+          <p style="margin:6px 0 0;font-size:13px;color:#a0aec0">Digest Semanal · {week_date}</p>
+        </td></tr>
+
+        <!-- Intro -->
+        <tr><td style="padding:24px 32px 8px">
+          <p style="margin:0;font-size:14px;color:#4a5568;line-height:1.6">
+            Esta semana hemos detectado <strong>{len(signals)} señales</strong> de alta relevancia en el sector insurtech.
+            Aquí están las <strong>5 más importantes</strong>:
+          </p>
+        </td></tr>
+
+        <!-- Signal items -->
+        <tr><td style="padding:0 32px">
+          <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+            {items_html}
+          </table>
+        </td></tr>
+
+        <!-- CTA -->
+        <tr><td style="padding:24px 32px;text-align:center">
+          <a href="{SITE_URL}" style="display:inline-block;padding:12px 28px;background:#4a6fa5;color:#fff;border-radius:24px;text-decoration:none;font-size:14px;font-weight:600">
+            Ver todas las noticias →
+          </a>
+        </td></tr>
+
+        <!-- Footer -->
+        <tr><td style="padding:16px 32px 24px;border-top:1px solid #e2e8f0;text-align:center">
+          <p style="margin:0;font-size:11px;color:#94a3b8">
+            InsurTech Intelligence · Actualizado cada 6 horas ·
+            <a href="{SITE_URL}/feed.xml" style="color:#4a6fa5">RSS</a>
+          </p>
+        </td></tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>"""
+    digest_path = os.path.join(DOCS_DIR, "digest.html")
+    with open(digest_path, "w", encoding="utf-8") as f:
+        f.write(digest_html)
+    print(f"Digest generated: {digest_path} ({len(top5)} signals)")
+
+
 def generate_site(articles: list):
     os.makedirs(DOCS_DIR, exist_ok=True)
     updated = datetime.utcnow().strftime("%d %b %Y · %H:%M UTC")
     new_count = sum(1 for a in articles if _is_new(a.get("published_at", "")))
 
-    thermometer_html = _thermometer(articles)
-    startup_html     = _startup_card(articles)
-    radar_html       = _radar_section(articles)
-    trends_html      = _trends_section(articles)
-    deals_html       = _deal_tracker(articles)
+    thermometer_html  = _thermometer(articles)
+    startup_html      = _startup_card(articles)
+    radar_html        = _radar_section(articles)
+    trends_html       = _trends_section(articles)
+    deals_html        = _deal_tracker(articles)
+    reg_alert_html    = _regulatory_alert(articles)
+    incumbent_html    = _incumbent_tracker(articles)
     ibero_count      = sum(1 for a in articles if a.get("source", "") in IBERO_SOURCES)
     signal_count     = sum(1 for a in articles if a.get("is_signal") and _is_new(a.get("published_at",""), 168))
 
@@ -751,6 +913,46 @@ def generate_site(articles: list):
       #back-to-top {{ bottom: 4.5rem; }}
     }}
 
+    /* Regulatory Alert */
+    .reg-alert {{ max-width: 900px; margin: .75rem auto 0; padding: 0 1rem; }}
+    .reg-alert-inner {{ background: linear-gradient(90deg, #fef3c7 0%, #fffbeb 100%); border: 1.5px solid #fbbf24; border-radius: 12px; padding: 1rem 1.2rem; display: flex; align-items: flex-start; gap: .9rem; }}
+    @media (prefers-color-scheme: dark) {{
+      .reg-alert-inner {{ background: linear-gradient(90deg, #292010 0%, #1f1a09 100%); border-color: #b45309; }}
+    }}
+    .reg-alert-icon {{ font-size: 1.4rem; flex-shrink: 0; }}
+    .reg-alert-body {{ flex: 1; min-width: 0; }}
+    .reg-alert-label {{ display: block; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: #92400e; margin-bottom: .3rem; }}
+    @media (prefers-color-scheme: dark) {{ .reg-alert-label {{ color: #fbbf24; }} }}
+    .reg-alert-title {{ display: block; font-size: .92rem; font-weight: 700; color: #78350f; text-decoration: none; line-height: 1.4; margin-bottom: .25rem; }}
+    .reg-alert-title:hover {{ text-decoration: underline; }}
+    @media (prefers-color-scheme: dark) {{ .reg-alert-title {{ color: #fde68a; }} }}
+    .reg-alert-why {{ font-size: .78rem; color: #92400e; }}
+    @media (prefers-color-scheme: dark) {{ .reg-alert-why {{ color: #fbbf24; }} }}
+    .reg-alert-meta {{ font-size: .72rem; color: #b45309; white-space: nowrap; flex-shrink: 0; padding-top: .15rem; }}
+
+    /* Incumbent Tracker */
+    .inc-section {{ max-width: 900px; margin: .75rem auto 0; padding: 0 1rem; }}
+    .inc-section > * {{ background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }}
+    .inc-header {{ display: flex; align-items: baseline; justify-content: space-between; padding: .9rem 1.2rem .65rem; border-bottom: 1px solid var(--border); flex-wrap: wrap; gap: .3rem; }}
+    .inc-title-main {{ font-size: .95rem; font-weight: 700; color: var(--text); }}
+    .inc-sub  {{ font-size: .72rem; color: var(--muted); }}
+    .inc-body {{ display: flex; flex-direction: column; padding: .5rem 1.2rem .75rem; gap: .5rem; }}
+    .inc-row  {{ display: flex; align-items: center; gap: .7rem; }}
+    .inc-name {{ font-size: .8rem; font-weight: 600; color: var(--text); text-decoration: none; width: 110px; flex-shrink: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
+    .inc-name:hover {{ color: var(--accent); }}
+    .inc-bar-wrap {{ flex: 1; background: var(--border); border-radius: 4px; height: 7px; overflow: hidden; }}
+    .inc-bar  {{ height: 100%; background: var(--accent); border-radius: 4px; transition: width .4s; }}
+    .inc-n    {{ font-size: .8rem; font-weight: 700; color: var(--accent); width: 1.6rem; text-align: right; flex-shrink: 0; }}
+
+    /* Briefing view */
+    main.briefing-view .card {{ display: none; }}
+    main.briefing-view .card[data-signal="1"] {{ display: flex; flex-direction: row; align-items: flex-start; gap: .75rem; padding: .75rem 1rem; border-radius: 8px; }}
+    main.briefing-view .card[data-signal="1"] .card-image, main.briefing-view .card[data-signal="1"] .card-summary, main.briefing-view .card[data-signal="1"] .card-actions, main.briefing-view .card[data-signal="1"] .card-why {{ display: none; }}
+    main.briefing-view .card[data-signal="1"] .card-title {{ font-size: .9rem; margin-bottom: 0; }}
+    main.briefing-view .card[data-signal="1"] .card-meta {{ margin-bottom: 0; }}
+    main.briefing-view {{ gap: .3rem; }}
+    main.briefing-view .time-sep {{ margin-top: .75rem; }}
+
     footer {{ text-align: center; padding: 2rem; font-size: .8rem; color: var(--muted); border-top: 1px solid var(--border); }}
     footer a {{ color: var(--accent); text-decoration: none; }}
 
@@ -800,6 +1002,7 @@ def generate_site(articles: list):
         <button class="view-btn active" id="btn-list" title="Vista lista [1]">&#9776;</button>
         <button class="view-btn" id="btn-grid" title="Vista grid [2]">&#9638;</button>
         <button class="view-btn" id="btn-compact" title="Vista compacta [3]">&#9472;</button>
+        <button class="view-btn" id="btn-briefing" title="Modo Briefing — solo señales [4]">📋</button>
       </div>
     </div>
     <div class="filters">
@@ -817,10 +1020,12 @@ def generate_site(articles: list):
   </div>
   <div id="results-info"></div>
 
+  {reg_alert_html}
   {radar_html}
   {trends_html}
   {deals_html}
   {thermometer_html}
+  {incumbent_html}
   {startup_html}
 
   <div class="subscribe-bar">
@@ -844,8 +1049,8 @@ def generate_site(articles: list):
   </div>
 
   <footer>
-    InsurTech Intelligence · Impulsado por IA · <a href="{SITE_URL}/feed.xml">RSS Feed</a>
-    <div class="kbd-hint">Atajos: <kbd>/</kbd> buscar · <kbd>J</kbd>/<kbd>K</kbd> navegar · <kbd>O</kbd> abrir · <kbd>B</kbd> guardar</div>
+    InsurTech Intelligence · Impulsado por IA · <a href="{SITE_URL}/feed.xml">RSS Feed</a> · <a href="{SITE_URL}/digest.html">Digest Semanal</a>
+    <div class="kbd-hint">Atajos: <kbd>/</kbd> buscar · <kbd>J</kbd>/<kbd>K</kbd> navegar · <kbd>O</kbd> abrir · <kbd>B</kbd> guardar · <kbd>4</kbd> briefing</div>
   </footer>
 
   <!-- Back to top -->
@@ -1006,12 +1211,18 @@ def generate_site(articles: list):
     // ── View toggle ──
     function setView(mode) {{
       mainEl.className = mode + '-view';
-      ['list','grid','compact'].forEach(m =>
+      ['list','grid','compact','briefing'].forEach(m =>
         document.getElementById('btn-'+m).classList.toggle('active', m===mode));
+      // In briefing mode update results info to only count signal articles
+      if (mode === 'briefing') {{
+        const sigCount = cards.filter(c => c.dataset.signal === '1').length;
+        resultsInfo.textContent = `Modo Briefing: ${{sigCount}} señales de alta relevancia`;
+      }}
     }}
     document.getElementById('btn-list').addEventListener('click', () => setView('list'));
     document.getElementById('btn-grid').addEventListener('click', () => setView('grid'));
     document.getElementById('btn-compact').addEventListener('click', () => setView('compact'));
+    document.getElementById('btn-briefing').addEventListener('click', () => setView('briefing'));
 
     // ── Bookmarks ──
     function initBookmarks() {{
@@ -1136,6 +1347,7 @@ def generate_site(articles: list):
         case '1': setView('list'); break;
         case '2': setView('grid'); break;
         case '3': setView('compact'); break;
+        case '4': setView('briefing'); break;
       }}
     }});
 
@@ -1213,6 +1425,7 @@ def generate_site(articles: list):
 
     generate_feed(articles)
     generate_sitemap(articles)
+    generate_digest(articles)
 
 
 if __name__ == "__main__":
