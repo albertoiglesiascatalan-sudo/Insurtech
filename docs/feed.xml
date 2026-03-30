@@ -5,148 +5,8 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Mon, 30 Mar 2026 20:07:05 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 30 Mar 2026 20:09:51 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
-  <item>
-    <title>INSTANDA Launches MAX for AI-Driven Commercial Underwriting</title>
-    <link>https://iireporter.com/instanda-launches-max-for-ai-driven-commercial-underwriting/</link>
-    <description>INSTANDA (London) has launched INSTANDA MAX , an underwriting capability designed to support large-scale commercial lines policies with item-level data and real-time processing.The solution enables insurers to underwrite thousands of assets within a single policy while applying granular risk assessment and pricing at the individual item level. “Commercial line insurers have traditionally been forced to underwrite large, complex asset classes using aggregated data and broad assumptions, because the operational burden of doing otherwise was simply too high,” says Tim Hardcastle, CEO, INSTANDA. For the first time, commercial line insurers can process bulk policies containing thousands of assets while still applying granular, measurable data to each individual item, supported by strong data governance, human oversight, ecosystem integration and frictionless operational AI.” The platform is designed to address limitations in traditional underwriting approaches, where aggregate-level analysis can lead to pricing inaccuracies and delayed adjustments.</description>
-    <pubDate>Mon, 30 Mar 2026 20:07:01 +0000</pubDate>
-    <guid>https://iireporter.com/instanda-launches-max-for-ai-driven-commercial-underwriting/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Willis Launches Facility to Expand U.S. Umbrella Capacity</title>
-    <link>https://iireporter.com/willis-launches-facility-to-expand-u-s-umbrella-capacity/</link>
-    <description>Willis (London) has launched the Willis Excess Liability Lineslip facility to address limited umbrella capacity in the U.S. “With the WELL facility, we are bringing together global capacity to provide organizations with access to higher limits, streamlined placement and tailored solutions—helping them protect against catastrophic exposures and confidently manage complex risks.” The solution offers up to $50 million in combined lead umbrella and first excess capacity, including up to $25 million in lead umbrella coverage and an additional $25 million in first excess. Developed by Willis’ North America Casualty team in London, the facility leverages the London market and a consortium of Lloyd’s syndicates to provide capacity through a single policy structure.</description>
-    <pubDate>Mon, 30 Mar 2026 20:07:01 +0000</pubDate>
-    <guid>https://iireporter.com/willis-launches-facility-to-expand-u-s-umbrella-capacity/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>MCP as the Control Plane for AI Tooling in Insurance</title>
-    <link>https://iireporter.com/mcp-as-the-control-plane-for-ai-tooling-in-insurance/</link>
-    <description>Slipping through the cracks is not a desirable trait, and MCP gives teams a control plane for necessary transactions and interactions. Agentic AI does not become useful in an insurance organization when someone writes a clever prompt. Most teams still treat “tooling” for agentic AI as a string of one-off integrations held together by spit, sweat, and hope.</description>
-    <pubDate>Mon, 30 Mar 2026 20:07:00 +0000</pubDate>
-    <guid>https://iireporter.com/mcp-as-the-control-plane-for-ai-tooling-in-insurance/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Weeks-Long Australian LNG Outage Will Further Tighten Supply</title>
-    <link>https://www.claimsjournal.com/news/national/2026/03/30/336582.htm</link>
-    <description>A weeks-long outage at a major Australian liquefied natural gas export plant has dealt a further blow to a global market still reeling from the halt of operations in Qatar. Storm damage to Chevron Corp.’s Wheatstone gas plant is hampering efforts to restart operations and the facility won’t be back online fully for “a number of weeks,” the company said Sunday. said Sunday it’s working to resume normal operations at its North West Shelf facility, while Chevron said its Gorgon site was operating at “full rates” after an outage at one of its three production units.</description>
-    <pubDate>Mon, 30 Mar 2026 20:06:59 +0000</pubDate>
-    <guid>https://www.claimsjournal.com/news/national/2026/03/30/336582.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.claimsjournal.com/app/uploads/2026/03/Gorgon-LNG-facility-in-Australia_Bloomberg-580x387.jpg" type="image/jpeg" length="0"/>
-  </item>
-  <item>
-    <title>BofA to Pay $72.5 Million to Settle Epstein Victim Lawsuit</title>
-    <link>https://www.claimsjournal.com/news/national/2026/03/30/336586.htm</link>
-    <description>agreed to pay $72.5 million to settle a lawsuit on behalf of Jeffrey Epstein victims claiming the bank aided in the late financier’s sex-trafficking. Related: BofA Agrees to Settle Claims It Aided Epstein Sex Crimes “While we stand by our prior statements made in the filings in this case, including that Bank of America did not facilitate sex trafficking crimes, this resolution allows us to put this matter behind us and provides further closure for the plaintiffs,” bank spokesman Bill Halldin said in an emailed statement. co-founder Leon Black used Bank of America accounts to transfer $170 million to Epstein.</description>
-    <pubDate>Mon, 30 Mar 2026 20:06:59 +0000</pubDate>
-    <guid>https://www.claimsjournal.com/news/national/2026/03/30/336586.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.claimsjournal.com/app/uploads/2026/03/Bank-of-America-branch-in-NY-Bloomberg-580x387.jpg" type="image/jpeg" length="0"/>
-  </item>
-  <item>
-    <title>LaGuardia Crash Bolsters Case for Using AI in Air Control Towers</title>
-    <link>https://www.claimsjournal.com/news/national/2026/03/30/336590.htm</link>
-    <description>Inside a mock control tower next to Hong Kong International Airport, a virtual near-miss plays out on multi-panel screens. The simulation bears an uncanny and coincidental resemblance to a tragedy that unfolded at New York City’s LaGuardia Airport, where an Air Canada Express jet with 76 people on board smashed into a fire truck shortly after landing on March 22. The force of that crash obliterated the cockpit, killing the two pilots and demolishing the emergency services vehicle trying to cross the runway.</description>
-    <pubDate>Mon, 30 Mar 2026 20:06:59 +0000</pubDate>
-    <guid>https://www.claimsjournal.com/news/national/2026/03/30/336590.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.claimsjournal.com/app/uploads/2026/03/Control-room-of-Integrated-Airport-Centre-at-Hong-Kong_Bloomberg-580x387.jpg" type="image/jpeg" length="0"/>
-  </item>
-  <item>
-    <title>Electric Bikes Pose Safety, Injury Risks</title>
-    <link>https://www.carriermanagement.com/news/2026/03/30/286210.htm</link>
-    <description>E-bikes offer a convenient, eco-friendly, and cost-effective alternative to cars, but their increasing use is drawing safety concerns. The 14-year-old was riding an electric bicycle at an estimated 25 mph when he slammed into Janet Stotko during her evening walk, leaving her unconscious and bleeding on a sidewalk in her Minnesota neighborhood. At a checkup, she said, her doctors told her, “Wow, we can’t believe you’re here.” Now, she’s pushing for stricter laws regulating e-bikes in hopes that others won’t be hurt.</description>
-    <pubDate>Mon, 30 Mar 2026 20:06:58 +0000</pubDate>
-    <guid>https://www.carriermanagement.com/news/2026/03/30/286210.htm</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Report Reveals Mixed Collision Trends as Fleets Work to Implement Safety Programs</title>
-    <link>https://www.carriermanagement.com/news/2026/03/30/286219.htm</link>
-    <description>A new report indicates that collision rates are beginning to level off, rising just 4% in 2025, according to analysis by fleet telematics provider Lytx. “The 2026 Road Safety Report spotlights not only the significant victories we’ve secured but also the formidable risks that persist,” said Chris Cabrera, Chief Executive Officer at Lytx. The collision rate in trucking rose just 2% in 2025, down from a 19% increase in 2024, as demand for freight transportation cooled.</description>
-    <pubDate>Mon, 30 Mar 2026 20:06:57 +0000</pubDate>
-    <guid>https://www.carriermanagement.com/news/2026/03/30/286219.htm</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Progressive expands aggregate reinsurance cover, renews shared hurricane limit for 2026</title>
-    <link>https://www.artemis.bm/news/progressive-expands-aggregate-reinsurance-cover-renews-shared-hurricane-limit-for-2026/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=progressive-expands-aggregate-reinsurance-cover-renews-shared-hurricane-limit-for-2026</link>
-    <description>US insurer Progressive expanded its aggregate excess-of-loss reinsurance protection at the start of 2026 and has also renewed a hurricane season focused shared reinsurance limit arrangement to cover losses from any storms this year. In addition, Progressive has already begun making reinsurance preparations for the 2026 hurricane season , having already renewed a shared limit arrangement. Progressive’s $300 million of aggregate reinsurance limit for 2026 has retention thresholds of $550 million and $750 million.</description>
-    <pubDate>Mon, 30 Mar 2026 20:06:02 +0000</pubDate>
-    <guid>https://www.artemis.bm/news/progressive-expands-aggregate-reinsurance-cover-renews-shared-hurricane-limit-for-2026/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=progressive-expands-aggregate-reinsurance-cover-renews-shared-hurricane-limit-for-2026</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>P&amp;C profitability nears peak amid rising competition and strong balance sheets, says Moody’s</title>
-    <link>https://www.reinsurancene.ws/pc-profitability-nears-peak-amid-rising-competition-and-strong-balance-sheets-says-moodys/</link>
-    <description>This analysis from Moody’s underlines that while P&amp;C profitability remains strong, competitive pressures and selective risk exposures may moderate growth, even as balance sheets are reinforced across the sector. According to Moody’s Ratings, a provider of credit ratings and risk analysis, profitability in the property and casualty (P&amp;C) reinsurance sector appears to have reached its peak as competition intensifies across all lines of business. Moody’s emphasises that despite these strategic adjustments, solvency ratios remain robust, with the largest reinsurers continuing to strengthen their balance sheets through enhanced reserves.</description>
-    <pubDate>Mon, 30 Mar 2026 20:06:02 +0000</pubDate>
-    <guid>https://www.reinsurancene.ws/pc-profitability-nears-peak-amid-rising-competition-and-strong-balance-sheets-says-moodys/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Michigan School District Settles Suit Over Pledge of Allegiance Dispute</title>
-    <link>https://www.insurancejournal.com/news/midwest/2026/03/30/863942.htm</link>
-    <description>A suburban Detroit school district has agreed to give First Amendment training to staff to settle a lawsuit by a teenager who said a teacher humiliated her for refusing to stand for the Pledge of Allegiance in protest of U.S. Danielle, whose family is of Palestinian descent, declined to recite the pledge at her school over three days in January 2025. The school district will remove anything from Danielle’s file that suggests her actions violated school policy, according to the settlement.</description>
-    <pubDate>Mon, 30 Mar 2026 20:06:01 +0000</pubDate>
-    <guid>https://www.insurancejournal.com/news/midwest/2026/03/30/863942.htm</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Texas Pizza Hut Franchise to Pay $35K in Harassment Suit</title>
-    <link>https://www.insurancejournal.com/news/southcentral/2026/03/30/863950.htm</link>
-    <description>Ayvaz Pizza, LLC, doing business as Pizza Hut, which operates more than 350 Pizza Hut restaurants around the country, including multiple locations in the Houston area, will pay $35,000 and furnish other relief to settle a sex harassment and retaliation lawsuit filed by the U.S. According to the EEOC’s lawsuit, a former female assistant manager of a Pizza Hut restaurant in Porter, Texas was subjected to a hostile work environment by her supervisor after she broke off their romantic relationship. In addition to providing $35,000 in damages to the aggrieved worker, the two-year consent decree signed March 19 requires Ayvaz Pizza to provide the worker a letter of reference; update and disseminate its anti-discrimination policies; provide comprehensive anti-discrimination training to its staff; and report sex-based discrimination and harassment complaints to the EEOC.</description>
-    <pubDate>Mon, 30 Mar 2026 20:06:01 +0000</pubDate>
-    <guid>https://www.insurancejournal.com/news/southcentral/2026/03/30/863950.htm</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Taylor Swift Sued for Trademark Infringement Over ‘Life of a Showgirl’</title>
-    <link>https://www.insurancejournal.com/news/national/2026/03/30/863957.htm</link>
-    <description>Pop megastar Taylor Swift was sued by a Las Vegas performer on Monday who said Swift’s latest hit album “The Life of a Showgirl” violates her trademark rights. Wade said in the complaint that Swift’s continued use of the “Life of a Showgirl” name “drowns out” her trademark “until consumers begin to assume that the original is the imitation.” “What Plaintiff had built over twelve years, Defendants threatened to swallow in weeks,” Wade said. Wade’s attorney Jaymie Parkkinen said they “have great respect for Swift’s talent and success, but trademark law exists to ensure that creators at all levels can protect what they’ve built.” “The Life of a Showgirl,” Swift’s 12th album, was released in O c tober and shattered Spotify streaming records on its way to becoming the biggest-selling album of 2025.</description>
-    <pubDate>Mon, 30 Mar 2026 20:06:01 +0000</pubDate>
-    <guid>https://www.insurancejournal.com/news/national/2026/03/30/863957.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.insurancejournal.com/app/uploads/2024/08/taylor-swift-performs-in-milan-italy-AP-580x387.jpg" type="image/jpeg" length="0"/>
-  </item>
-  <item>
-    <title>Carriers Lose Millions on Manual Claims</title>
-    <link>https://www.insurancethoughtleadership.com/claims/carriers-lose-millions-manual-claims</link>
-    <description>Insurers hemorrhage millions on manual claims processing; targeted automation slashes costs by half within months. The reality is that most initiatives fail because firms try to "boil the ocean." I've seen carriers sink $2 million and 18 months into building a "total automation" platform, only to find it handles 30% of their claim types while the rest still require a manual "workaround." The project is branded a failure, and the organization develops an allergy to the word "automation" for the next three years. From what I've seen across the industry, carriers are burning between $7 and $15 just to manually process a single claim document.</description>
-    <pubDate>Mon, 30 Mar 2026 20:05:58 +0000</pubDate>
-    <guid>https://www.insurancethoughtleadership.com/claims/carriers-lose-millions-manual-claims</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>SelectQuote receives NYSE notice over stock price</title>
-    <link>https://coverager.com/selectquote-receives-nyse-notice-over-stock-price/</link>
-    <description>SelectQuote Insurance Services said it received a notice from the New York Stock Exchange after its shares traded below $1.00 on average over 30 consecutive trading days, putting it out of compliance with listing standards. The company has a six month cure period to regain compliance and said it plans to monitor its stock price and take necessary actions. Shares will continue trading on the NYSE during this period.</description>
-    <pubDate>Mon, 30 Mar 2026 20:05:57 +0000</pubDate>
-    <guid>https://coverager.com/selectquote-receives-nyse-notice-over-stock-price/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Aon backs eMed</title>
-    <link>https://coverager.com/aon-backs-emed/</link>
-    <description>eMed has raised $200 million at a valuation exceeding $2 billion, positioning itself as a platform focused on employer-sponsored population health, particularly around GLP-1 and GIP therapies. eMed offers clinically supervised weight management programs centered on GLP-1 medications, targeting employers looking to offer these benefits at scale. The round was led by Aon Consulting , with participation from a mix of institutional and strategic investors, including Tom Brady , who also serves as founding chief wellness officer, alongside investors tied to healthcare, private equity, and technology.</description>
-    <pubDate>Mon, 30 Mar 2026 20:05:57 +0000</pubDate>
-    <guid>https://coverager.com/aon-backs-emed/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>SIMS raises equity for disability income product targeting youth athletes</title>
-    <link>https://coverager.com/sims-raises-equity-for-disability-income-product-targeting-youth-athletes/</link>
-    <description>Specialty Insurance Marketing Services is positioning its ScholarGuard product as a niche accident disability offering designed to protect future education costs for youth athletes. It is distributed through licensed life and health insurers, with SIMS acting as the marketing and product development entity. Separately, SIMS has raised capital through a private offering, targeting up to $3 million, with approximately $520,000 sold to date .</description>
-    <pubDate>Mon, 30 Mar 2026 20:05:57 +0000</pubDate>
-    <guid>https://coverager.com/sims-raises-equity-for-disability-income-product-targeting-youth-athletes/</guid>
-    <category>General</category>
-  </item>
   <item>
     <title>U.S. Treasury to Consult With Insurance Regulators on Private Credit Lenders</title>
     <link>https://www.carriermanagement.com/news/2026/03/30/286216.htm</link>
@@ -415,6 +275,143 @@
     <guid>https://www.insurancejournal.com/news/national/2026/03/30/863837.htm</guid>
     <category>General</category>
     <enclosure url="https://www.insurancejournal.com/app/uploads/2021/07/Bank-of-America-logo-logotype-580x435.png" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>Trump Unveils New Loan Guarantees for Beleaguered Farmers</title>
+    <link>https://www.insurancejournal.com/news/national/2026/03/30/863841.htm</link>
+    <description>President Donald Trump announced new loan guarantees for farmers and food suppliers, a bid to bolster US agricultural communities squeezed by the impact of the Iran war, tariffs and other challenges. Trump said the loan guarantees would cover farmers and food suppliers, including vegetable, grain and seed farmers, cattle, pig and poultry producers, as well as grocery wholesalers and others. Trump did not specify a dollar amount for the guarantees.</description>
+    <pubDate>Mon, 30 Mar 2026 06:18:05 +0000</pubDate>
+    <guid>https://www.insurancejournal.com/news/national/2026/03/30/863841.htm</guid>
+    <category>General</category>
+    <enclosure url="https://www.insurancejournal.com/app/uploads/2026/03/farmers-chard-Maryland-Bloomberg-580x387.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>Crawford Contractor Connection partners with Helixco</title>
+    <link>https://coverager.com/crawford-contractor-connection-partners-with-helixco/</link>
+    <description>Contractor Connection, a Crawford &amp; Company business that operates a managed repair network, partnered with Helixco , a technology platform designed to capture and validate time and materials documentation in real time across complex commercial repair projects. Contractor Connection will leverage Helixco’s platform to provide real-time visibility into labor, equipment and cost documentation throughout the life of a commercial claim. By integrating Helixco’s platform into our commercial program, we are strengthening consistency, accountability and cost confidence at scale for our carrier partners while supporting efficient execution across our contractor network.&amp;#8221; &amp;#8211; Lance Malcolm, president, U.S.</description>
+    <pubDate>Sun, 29 Mar 2026 19:48:18 +0000</pubDate>
+    <guid>https://coverager.com/crawford-contractor-connection-partners-with-helixco/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>Alacrity launches AI-driven claims platform</title>
+    <link>https://coverager.com/alacrity-launches-ai-driven-claims-platform/</link>
+    <description>Alacrity Solutions is an independent provider of insurance claims management services in North America. The post Alacrity launches AI-driven claims platform appeared first on Coverager - Insurance news and insights .</description>
+    <pubDate>Sun, 29 Mar 2026 14:04:24 +0000</pubDate>
+    <guid>https://coverager.com/alacrity-launches-ai-driven-claims-platform/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>AXA Italia returns to TV with savings and investment-focused campaign</title>
+    <link>https://coverager.com/axa-italia-returns-to-tv-with-savings-and-investment-focused-campaign/</link>
+    <description>The storyline follows a child imagining future ambitions, reinforcing the message that building financial security starts with everyday decisions. The post AXA Italia returns to TV with savings and investment-focused campaign appeared first on Coverager - Insurance news and insights .</description>
+    <pubDate>Sun, 29 Mar 2026 05:53:51 +0000</pubDate>
+    <guid>https://coverager.com/axa-italia-returns-to-tv-with-savings-and-investment-focused-campaign/</guid>
+    <category>Tecnología</category>
+  </item>
+  <item>
+    <title>Insurance Apostles files trademark for agricultural insurance agency brand</title>
+    <link>https://coverager.com/insurance-apostles-files-trademark-for-agricultural-insurance-agency-brand/</link>
+    <description>The positioning suggests a niche agency model targeting the agricultural segment. The post Insurance Apostles files trademark for agricultural insurance agency brand appeared first on Coverager - Insurance news and insights .</description>
+    <pubDate>Sat, 28 Mar 2026 19:27:02 +0000</pubDate>
+    <guid>https://coverager.com/insurance-apostles-files-trademark-for-agricultural-insurance-agency-brand/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>China Life Insurance posts strong profit growth driven by investment performance and product innovation</title>
+    <link>https://www.insurtechinsights.com/china-life-insurance-posts-strong-profit-growth-driven-by-investment-performance-and-product-innovation/</link>
+    <description>China Life Insurance has reported a significant rise in profitability for 2025, supported by robust investment returns and continued progress in shifting toward higher-value insurance products. The post China Life Insurance posts strong profit growth driven by investment performance and product innovation appeared first on Insurtech Insights .</description>
+    <pubDate>Sat, 28 Mar 2026 14:03:30 +0000</pubDate>
+    <guid>https://www.insurtechinsights.com/china-life-insurance-posts-strong-profit-growth-driven-by-investment-performance-and-product-innovation/</guid>
+    <category>Inversión</category>
+  </item>
+  <item>
+    <title>Corebridge Financial and Equitable Holdings agree $22bn merger to create $1.5tn platform</title>
+    <link>https://www.insurtechinsights.com/corebridge-financial-and-equitable-holdings-agree-22bn-merger-to-create-1-5tn-platform/</link>
+    <description>Corebridge Financial and Equitable Holdings have announced a landmark $22 billion all-stock merger, forming one of the largest retirement, life insurance, and asset management platforms in the United States. The post Corebridge Financial and Equitable Holdings agree $22bn merger to create $1.5tn platform appeared first on Insurtech Insights .</description>
+    <pubDate>Sat, 28 Mar 2026 14:03:28 +0000</pubDate>
+    <guid>https://www.insurtechinsights.com/corebridge-financial-and-equitable-holdings-agree-22bn-merger-to-create-1-5tn-platform/</guid>
+    <category>Tecnología</category>
+  </item>
+  <item>
+    <title>Crawford &amp; Company names W. Bruce Swain Jr. President &amp; CEO</title>
+    <link>https://coverager.com/crawford-company-names-w-bruce-swain-jr-president-ceo/</link>
+    <description>The company also announced that Jesse Crawford, Sr. will transition to an honorary board role. The post Crawford &amp;#038; Company names W.</description>
+    <pubDate>Sat, 28 Mar 2026 14:03:24 +0000</pubDate>
+    <guid>https://coverager.com/crawford-company-names-w-bruce-swain-jr-president-ceo/</guid>
+    <category>Tecnología</category>
+  </item>
+  <item>
+    <title>Marsh McLennan Agency launches healthcare pricing tool</title>
+    <link>https://coverager.com/marsh-mclennan-agency-launches-healthcare-pricing-tool/</link>
+    <description>The tool uses data from Transparency in Coverage regulations to provide provider-level cost insights. The post Marsh McLennan Agency launches healthcare pricing tool appeared first on Coverager - Insurance news and insights .</description>
+    <pubDate>Sat, 28 Mar 2026 14:03:22 +0000</pubDate>
+    <guid>https://coverager.com/marsh-mclennan-agency-launches-healthcare-pricing-tool/</guid>
+    <category>Vida y Salud</category>
+  </item>
+  <item>
+    <title>Clearcover taps Strada to automate customer operations</title>
+    <link>https://coverager.com/clearcover-taps-strada-to-automate-customer-operations/</link>
+    <description>Clearcover plans to expand the partnership into claims-related workflows and additional servicing use cases in the coming months. The post Clearcover taps Strada to automate customer operations appeared first on Coverager - Insurance news and insights .</description>
+    <pubDate>Sat, 28 Mar 2026 14:03:21 +0000</pubDate>
+    <guid>https://coverager.com/clearcover-taps-strada-to-automate-customer-operations/</guid>
+    <category>Automóvil</category>
+  </item>
+  <item>
+    <title>Berkshire bets the Buffett way; Mosaic’s exit casts a shadow</title>
+    <link>https://insuranceasianews.com/berkshire-bets-the-buffett-way-mosaics-exit-casts-a-shadow/</link>
+    <description>This week's newsletter discusses an IAN exclusive, Peak Re's leadership change,Allianz and Jio's JV, 1.4 renewals, Berkshire Hathaway's Japan foray and Mosaic's Singapore exit. The post Berkshire bets the Buffett way; Mosaic’s exit casts a shadow appeared first on InsuranceAsia News .</description>
+    <pubDate>Sat, 28 Mar 2026 05:17:31 +0000</pubDate>
+    <guid>https://insuranceasianews.com/berkshire-bets-the-buffett-way-mosaics-exit-casts-a-shadow/</guid>
+    <category>Tecnología</category>
+  </item>
+  <item>
+    <title>Krishnamoorthy Rao returns to Generali to lead India P&amp;C JV</title>
+    <link>https://insuranceasianews.com/krishnamoorthy-rao-returns-to-generali-to-lead-india-pc-jv/</link>
+    <description>Rao was formerly with Generali in India and Malaysia for over 16 years. The post Krishnamoorthy Rao returns to Generali to lead India P&amp;#038;C JV appeared first on InsuranceAsia News .</description>
+    <pubDate>Sat, 28 Mar 2026 05:17:30 +0000</pubDate>
+    <guid>https://insuranceasianews.com/krishnamoorthy-rao-returns-to-generali-to-lead-india-pc-jv/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>HawkSoft Integrates RevitPay for Agency Payment Processing</title>
+    <link>https://iireporter.com/hawksoft-integrates-revitpay-for-agency-payment-processing/</link>
+    <description>The agency management system now supports direct API payments to accelerate premium collection, automate reconciliation and improve cash flow visibility.</description>
+    <pubDate>Fri, 27 Mar 2026 19:54:22 +0000</pubDate>
+    <guid>https://iireporter.com/hawksoft-integrates-revitpay-for-agency-payment-processing/</guid>
+    <category>Automóvil</category>
+  </item>
+  <item>
+    <title>Generali Hong Kong Deploys CoverGo AI for Claims Processing</title>
+    <link>https://iireporter.com/generali-hong-kong-deploys-covergo-ai-for-claims-processing/</link>
+    <description>The insurer has implemented an AI document processing agent to automate health claims, reduce manual work and improve accuracy.</description>
+    <pubDate>Fri, 27 Mar 2026 19:54:21 +0000</pubDate>
+    <guid>https://iireporter.com/generali-hong-kong-deploys-covergo-ai-for-claims-processing/</guid>
+    <category>Tecnología</category>
+  </item>
+  <item>
+    <title>Crypto ‘Insurance’ Might Not Protect You From Theft</title>
+    <link>https://www.claimsjournal.com/news/national/2026/03/27/336555.htm</link>
+    <description>When Matthew Allan realized nearly $100,000 in Bitcoin was missing from his Coinbase account, he wasn&amp;#8217;t too worried. He had signed up for Coinbase One, a $29.99 monthly subscription that promised up to $1 million of account protection.</description>
+    <pubDate>Fri, 27 Mar 2026 19:54:19 +0000</pubDate>
+    <guid>https://www.claimsjournal.com/news/national/2026/03/27/336555.htm</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>Bessent Says Hormuz Ships Insurance Program to Start Soon</title>
+    <link>https://www.claimsjournal.com/news/national/2026/03/27/336560.htm</link>
+    <description>Treasury Secretary Scott Bessent said a U.S. insurance program meant to boost shipping through the Strait of Hormuz will begin soon, a move that may help revive flows of much of the world&amp;#8217;s oil and gas supplies. Bessent&amp;#8217;s predictions, delivered &amp;#8230;</description>
+    <pubDate>Fri, 27 Mar 2026 19:54:17 +0000</pubDate>
+    <guid>https://www.claimsjournal.com/news/national/2026/03/27/336560.htm</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>Toyota’s China JVs Recall 560,000 SUVs Over Seat Safety Risk</title>
+    <link>https://www.claimsjournal.com/news/national/2026/03/27/336563.htm</link>
+    <description>Toyota Motor Corp.&amp;#8217;s Chinese joint ventures are recalling more than 560,000 sport utility vehicles to fix a defect in the second-row seats that could jeopardize passenger safety during a collision. From April 1, the Japanese carmaker and its local partner &amp;#8230;</description>
+    <pubDate>Fri, 27 Mar 2026 19:54:16 +0000</pubDate>
+    <guid>https://www.claimsjournal.com/news/national/2026/03/27/336563.htm</guid>
+    <category>General</category>
   </item>
 </channel>
 </rss>

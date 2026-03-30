@@ -1033,9 +1033,10 @@ def generate_site(articles: list):
 
   <div class="subscribe-bar">
     <form class="subscribe-form" action="https://buttondown.email/api/emails/embed-subscribe/insurtechintelligence" method="post" target="_blank">
-      <span>📬 Recibe las noticias en tu email:</span>
+      <span>📬 Recibe el briefing diario en tu email:</span>
       <input type="email" name="email" placeholder="tu@email.com" required />
       <button type="submit">Suscribirse gratis</button>
+      <a href="{SITE_URL}/newsletter.html" target="_blank" style="font-size:.8rem;color:var(--muted);text-decoration:none;white-space:nowrap">Ver ejemplo →</a>
     </form>
   </div>
 
@@ -1052,7 +1053,7 @@ def generate_site(articles: list):
   </div>
 
   <footer>
-    InsurTech Intelligence · Impulsado por IA · <a href="{SITE_URL}/feed.xml">RSS Feed</a> · <a href="{SITE_URL}/digest.html">Digest Semanal</a>
+    InsurTech Intelligence · <a href="{SITE_URL}/newsletter.html">📬 Newsletter del día</a> · <a href="{SITE_URL}/feed.xml">RSS</a> · <a href="{SITE_URL}/digest.html">Digest Semanal</a>
     <div class="kbd-hint">Atajos: <kbd>/</kbd> buscar · <kbd>J</kbd>/<kbd>K</kbd> navegar · <kbd>O</kbd> abrir · <kbd>B</kbd> guardar · <kbd>4</kbd> briefing</div>
   </footer>
 
@@ -1429,6 +1430,8 @@ def generate_site(articles: list):
     generate_feed(articles)
     generate_sitemap(articles)
     generate_digest(articles)
+    from generate_newsletter import generate_newsletter
+    generate_newsletter(articles)
 
 
 if __name__ == "__main__":
