@@ -280,11 +280,13 @@ def _ai_editorial(article: dict) -> dict:
 
 
 # ── Intro editorial del día ────────────────────────────────────────────────────
-def _day_intro(articles_today: list, articles_week: list) -> str:
+def _day_intro(articles_today: list, articles_week: list, selected: list = None) -> str:
     """
     Generates the opening editorial paragraph.
+    articles_today = full pool (for stats); selected = deduplicated top5 (for story references).
     Uses OpenAI if available; otherwise builds it from stats.
     """
+    featured = selected or articles_today   # use top5 for entity extraction
     n_today   = len(articles_today)
     n_signals = sum(1 for a in articles_today if a.get("is_signal"))
     n_inv     = sum(1 for a in articles_week  if a.get("category") == "Inversión")
@@ -305,18 +307,20 @@ def _day_intro(articles_today: list, articles_week: list) -> str:
             resp = _openai_client.chat.completions.create(
                 model="gpt-4o-mini",
                 messages=[{"role": "user", "content": (
-                    "Eres periodista especializado en seguros para InsurTech Intelligence. "
-                    "Escribe en español el párrafo de apertura de la newsletter de hoy. "
-                    "Estilo: directo, periodístico, sin saludos. Esta newsletter se lee en unos minutos "
-                    "y va dirigida a directivos del sector asegurador.\n"
-                    "El párrafo debe: (1) arrancar con el hecho más relevante del día, "
-                    "(2) dar contexto de por qué hoy importa para el sector seguros, "
-                    "(3) invitar a leer con un gancho. Entre 3 y 5 frases. "
-                    "Puedes mencionar el número de artículos analizados de forma natural.\n\n"
-                    f"Artículos analizados: {n_today} de más de 40 fuentes globales.\n"
-                    f"Señales detectadas: {n_signals}\n"
-                    f"Temas del día: {', '.join(top_themes) if top_themes else 'mercado general'}\n"
-                    f"Titulares: {titles_sample}"
+                    "Eres el redactor jefe de InsurTech Intelligence, newsletter de referencia para "
+                    "directivos del sector asegurador en España y Latinoamérica. Escribe el párrafo "
+                    "editorial de apertura de hoy. REGLAS: (1) Empieza directamente con la noticia más "
+                    "importante — nunca con 'Hoy', 'Buenos días' ni frases de bienvenida. (2) Nombra "
+                    "compañías o cifras concretas del día — nada genérico. (3) Conecta 2-3 noticias del "
+                    "día con una lectura periodística: ¿qué patrón o tensión revelan juntas? (4) Cierra "
+                    "invitando a seguir leyendo de forma natural, sin ser comercial. (5) Entre 4 y 6 "
+                    "frases. (6) Tono: analítico, humano, con criterio — como el editorial de un "
+                    "suplemento financiero de calidad, no como un boletín automático.\n\n"
+                    f"Artículos monitorizados hoy: {n_today} de más de 40 fuentes globales.\n"
+                    f"Señales de alto impacto detectadas: {n_signals}\n"
+                    f"Operaciones de inversión esta semana: {n_inv}\n"
+                    f"Temas dominantes: {', '.join(top_themes) if top_themes else 'mercado general'}\n"
+                    f"Titulares de hoy: {titles_sample}"
                 )}],
                 max_tokens=220,
                 temperature=0.6,
@@ -327,17 +331,72 @@ def _day_intro(articles_today: list, articles_week: list) -> str:
         except Exception as e:
             log.debug(f"OpenAI day intro error: {e}")
 
-    # Extractive fallback
-    themes_str = " · ".join(top_themes) if top_themes else "mercado asegurador"
-    parts = [f"Hoy hemos analizado <strong>{n_today} artículos</strong> de más de 40 fuentes globales."]
-    if n_signals:
-        parts.append(f"Detectamos <strong>{n_signals} señales</strong> de alta relevancia.")
-    if n_inv:
-        parts.append(f"Esta semana se han registrado <strong>{n_inv} operaciones de inversión</strong>.")
-    if n_reg:
-        parts.append(f"<strong>{n_reg} noticias regulatorias</strong> merecen atención inmediata.")
-    parts.append(f"Las cinco historias que no puedes perderte hoy, ordenadas por impacto: {themes_str}.")
-    return " ".join(parts)
+    # ── Extractive fallback — journalistic, not a dashboard ────────────────────
+    # Build narrative using real article data: lead story, dominant themes, context
+    lead = featured[0] if featured else None
+    lead_title = (lead.get("title_original") or lead.get("title", "")) if lead else ""
+    lead_src   = lead.get("source", "") if lead else ""
+    lead_label = lead.get("signal_label", "") if lead else ""
+
+    # Extract the dominant company or entity from the lead title
+    entity_match = re.search(r'\b([A-Z][a-z]{2,}(?:\s+[A-Z][a-z]{2,})*)\b', lead_title)
+    lead_entity = entity_match.group(1) if entity_match else lead_src
+
+    # Pick second theme for narrative contrast
+    second_label = top_themes[1] if len(top_themes) > 1 else top_themes[0] if top_themes else ""
+    third_label  = top_themes[2] if len(top_themes) > 2 else ""
+
+    # Build investment/regulatory narrative beats
+    inv_sentence = ""
+    reg_sentence = ""
+    if n_inv >= 2:
+        inv_sentence = f" Esta semana el dinero no ha parado: <strong>{n_inv} operaciones de inversión</strong> detectadas en los últimos siete días dibujan un sector que sigue captando capital a buen ritmo."
+    elif n_inv == 1:
+        inv_sentence = " Se ha cerrado al menos una operación de inversión relevante en los últimos siete días."
+    if n_reg >= 2:
+        reg_sentence = f" En el frente regulatorio, <strong>{n_reg} noticias</strong> de hoy exigen atención de los equipos de cumplimiento."
+    elif n_reg == 1:
+        reg_sentence = " Hay además un movimiento regulatorio que conviene seguir de cerca."
+
+    # Signals context
+    signal_sentence = ""
+    if n_signals >= 10:
+        signal_sentence = f" De los {n_today} artículos rastreados hoy, <strong>{n_signals}</strong> han activado nuestras alertas de señal — una densidad de noticias relevante que no veíamos en días."
+    elif n_signals >= 3:
+        signal_sentence = f" Entre los {n_today} artículos analizados, hemos identificado <strong>{n_signals} señales</strong> que merecen seguimiento inmediato."
+
+    # Second story entity for narrative contrast
+    second = featured[1] if len(featured) > 1 else None
+    second_title = (second.get("title_original") or second.get("title", "")) if second else ""
+    second_match = re.search(r'\b([A-Z][a-z]{2,}(?:\s+[A-Z][a-z]{2,})*)\b', second_title)
+    second_entity = second_match.group(1) if second_match else ""
+    second_label_a = second.get("signal_label", "") if second else ""
+
+    # Connective between lead and second story (only if second entity adds something)
+    second_beat = ""
+    if second_entity and second_entity != lead_entity:
+        if second_label_a == lead_label:
+            second_beat = f" No es la única señal del día: {second_entity} también mueve ficha en la misma dirección."
+        else:
+            second_beat = f" La jornada se completa con {second_entity}, que pone el foco en otro frente del mercado: el de {second_label_a.lower() if second_label_a else 'las operaciones corporativas'}."
+
+    # Compose the opening — start with the lead story entity, not stats
+    label_verbs = {
+        "Inversión":           f"{lead_entity} protagoniza la apertura con un movimiento de capital que confirma el apetito inversor por la transformación del seguro",
+        "M&A":                 f"{lead_entity} encabeza la jornada con una operación corporativa que redefine el mapa competitivo del sector",
+        "Regulación":          f"Los supervisores marcan la agenda hoy: {lead_entity} centra el debate regulatorio con implicaciones para todo el mercado asegurador",
+        "Clima & Catástrofes": f"{lead_entity} abre la jornada recordando que el riesgo catastrófico sigue siendo el gran acelerador del cambio en el sector reasegurador",
+        "Tecnología":          f"{lead_entity} marca el paso tecnológico de la jornada con un avance que presiona a los incumbentes a repensar sus operaciones",
+        "Fraude":              f"El fraude vuelve al primer plano: {lead_entity} activa las alertas del sector con un movimiento que los equipos de siniestros no pueden ignorar",
+        "Liderazgo":           f"Los movimientos directivos centran la atención hoy: {lead_entity} anticipa un giro estratégico con implicaciones para el mercado",
+    }
+    opening = label_verbs.get(lead_label,
+        f"{lead_entity} encabeza la jornada de hoy con una noticia de primer orden para el sector asegurador")
+
+    close = (f" A continuación, las cinco historias que hemos seleccionado entre {n_today} artículos"
+             f" de más de 40 fuentes, ordenadas por impacto real sobre el negocio asegurador.")
+
+    return f"{opening}.{second_beat}{inv_sentence}{reg_sentence}{signal_sentence}{close}"
 
 
 # ── Word count for reading time ────────────────────────────────────────────────
@@ -369,23 +428,51 @@ def generate_newsletter(articles: list):
 
     pool.sort(key=lambda x: x.get("signal_score", 0), reverse=True)
 
-    # Enforce source diversity: max 2 articles from the same source
-    top5 = []
+    def _title_fingerprint(title: str) -> frozenset:
+        """Significant words from title for cross-source story dedup."""
+        stopwords = {"the","a","an","in","on","to","for","of","is","are","was","as","with",
+                     "from","its","it","that","this","at","by","and","or","but","raises","launches",
+                     "million","billion","m","bn","new","says","said","report","reports","how","why"}
+        # Normalize numbers: $12m → 12, $12 million → 12
+        normalized = re.sub(r'[\$£€]', '', title.lower())
+        normalized = re.sub(r'(\d+)\s*(?:m|mn|million)\b', r'\1', normalized)
+        normalized = re.sub(r'(\d+)\s*(?:bn|billion)\b', r'\1000', normalized)
+        words = re.findall(r'[a-z0-9]{2,}', normalized)
+        return frozenset(w for w in words if w not in stopwords)
+
+    def _is_story_dup(fp: frozenset, seen: frozenset) -> bool:
+        """True when two titles describe the same story (containment ≥ 70%)."""
+        if not fp or not seen:
+            return False
+        overlap = len(fp & seen)
+        shorter = min(len(fp), len(seen))
+        if shorter < 2:
+            return False
+        return overlap / shorter >= 0.7
+
+    # Enforce source diversity AND title-level story dedup
+    top5: list = []
     source_count: dict = {}
+    seen_fingerprints: list = []
     for a in pool:
         src = a.get("source", "")
         if source_count.get(src, 0) >= 2:
             continue
+        fp = _title_fingerprint(a.get("title_original", a.get("title", "")))
+        if any(_is_story_dup(fp, seen) for seen in seen_fingerprints):
+            log.debug(f"Newsletter: dedup story '{a.get('title','')[:50]}'")
+            continue
         top5.append(a)
         source_count[src] = source_count.get(src, 0) + 1
+        seen_fingerprints.append(fp)
         if len(top5) == 5:
             break
 
     # Week articles for stats
     week = [a for a in articles if _try_after(a.get("published_at",""), cutoff7)]
 
-    # Build day intro
-    day_intro_text = _day_intro(pool, week)
+    # Build day intro — use pool for aggregate stats, top5 for story references
+    day_intro_text = _day_intro(pool, week, top5)
 
     # Build editorial per article
     editorials = [_ai_editorial(a) for a in top5]
