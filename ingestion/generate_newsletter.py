@@ -77,20 +77,19 @@ def _is_spanish(text: str) -> bool:
 # ── AI editorial per article ──────────────────────────────────────────────────
 def _ai_editorial(article: dict) -> dict:
     """
-    Returns {"title": str, "intro": str, "bullets": [str, str, str]} always in Spanish.
-    Uses OpenAI if available (translate + editorial); falls back to free translation + templates.
+    Returns {"title": str, "intro": str, "bullets": [{"q": str, "a": str}, ...]}.
+    Bullets are {"q": bold lead-in, "a": explanation} — rendered as bold question + prose.
+    Always in Spanish. Uses OpenAI if available; falls back to free translation + templates.
     """
-    # Always prefer the Spanish title; fall back to original
     title_es   = article.get("title", "")
     title_orig = article.get("title_original", title_es)
     summary    = article.get("summary", "")
     source     = article.get("source", "")
-    why        = article.get("why_matters", "")   # always in Spanish
+    why        = article.get("why_matters", "")
     deal       = article.get("deal")
     cat        = article.get("category", "General")
     signal_label = article.get("signal_label", "")
 
-    # Best text to feed AI: use Spanish summary if available, else original title
     summary_for_ai = summary if summary else title_orig
 
     if _openai_client:
@@ -98,79 +97,80 @@ def _ai_editorial(article: dict) -> dict:
             resp = _openai_client.chat.completions.create(
                 model="gpt-4o-mini",
                 messages=[{"role": "user", "content": (
-                    "Eres el redactor jefe de InsurTech Intelligence, newsletter ejecutiva "
-                    "para directivos del sector asegurador en España y Latinoamérica. "
-                    "Responde SIEMPRE en español, independientemente del idioma del artículo.\n\n"
-                    "Escribe:\n"
-                    "0. El título traducido al español (si ya está en español, mantenlo).\n"
-                    "1. Un párrafo de contexto (2-3 frases): qué ha pasado, por qué importa "
-                    "al sector asegurador y qué implica estratégicamente.\n"
-                    "2. Exactamente 3 puntos clave formato 'Término: explicación' "
-                    "(máx 25 palabras cada uno). Directo, ejecutivo.\n\n"
-                    "Responde SOLO con JSON: "
-                    '{\"title_es\": \"...\", \"intro\": \"...\", \"bullets\": [\"...\", \"...\", \"...\"]}\n\n'
-                    f"Título original: {title_orig}\n"
-                    f"Título en español: {title_es}\n"
+                    "Eres periodista especializado en seguros y fintech para InsurTech Intelligence, "
+                    "newsletter de referencia para directivos aseguradores en España y Latinoamérica. "
+                    "Escribe SIEMPRE en español, con tono analítico, directo y sin jerga innecesaria.\n\n"
+                    "Para este artículo escribe:\n"
+                    "1. title_es: el título traducido y adaptado al español (máx 15 palabras).\n"
+                    "2. intro: un párrafo periodístico de 3-4 frases que explique QUÉ ha pasado, "
+                    "POR QUÉ importa al mercado asegurador y QUÉ implica estratégicamente. "
+                    "Empieza directamente con el hecho, sin introducción. Usa datos concretos si los hay.\n"
+                    "3. bullets: exactamente 3 objetos con 'q' (pregunta o frase en negrita, máx 6 palabras) "
+                    "y 'a' (respuesta analítica, 20-35 palabras). Ejemplos de 'q': "
+                    "'¿Qué cambia para las aseguradoras?', 'El dato clave:', '¿Qué vigilar?', "
+                    "'Lo que no dice el comunicado:', 'Impacto en pricing:'.\n\n"
+                    "JSON: {\"title_es\":\"...\",\"intro\":\"...\","
+                    "\"bullets\":[{\"q\":\"...\",\"a\":\"...\"},{\"q\":\"...\",\"a\":\"...\"},"
+                    "{\"q\":\"...\",\"a\":\"...\"}]}\n\n"
+                    f"Título: {title_orig}\n"
                     f"Fuente: {source}\n"
                     f"Categoría: {cat}\n"
-                    f"Contenido: {summary_for_ai[:600]}"
+                    f"Contenido: {summary_for_ai[:700]}"
                 )}],
-                max_tokens=400,
-                temperature=0.4,
+                max_tokens=500,
+                temperature=0.5,
             )
             raw = resp.choices[0].message.content.strip()
-            # Strip possible markdown code fences
             raw = re.sub(r'^```json\s*|\s*```$', '', raw, flags=re.MULTILINE).strip()
-            data = json.loads(raw)
-            intro     = data.get("intro", "")
-            bullets   = data.get("bullets", [])
+            data    = json.loads(raw)
+            intro   = data.get("intro", "")
+            bullets = data.get("bullets", [])
             title_out = data.get("title_es", title_es) or title_es
-            if intro and len(bullets) >= 2:
-                return {"title": title_out, "intro": intro, "bullets": bullets[:3]}
+            # Normalise bullets — accept both {q,a} dicts and plain strings
+            norm = []
+            for b in bullets[:3]:
+                if isinstance(b, dict):
+                    norm.append({"q": b.get("q",""), "a": b.get("a","")})
+                else:
+                    parts = str(b).split(":", 1)
+                    norm.append({"q": parts[0].strip(), "a": parts[1].strip() if len(parts)>1 else str(b)})
+            if intro and len(norm) >= 2:
+                return {"title": title_out, "intro": intro, "bullets": norm}
         except Exception as e:
             log.debug(f"OpenAI newsletter editorial error: {e}")
 
-    # ── Spanish-native extractive fallback ────────────────────────────────────
-    # Translate title if needed (MyMemory free API, only for non-Spanish titles)
+    # ── Extractive fallback ────────────────────────────────────────────────────
     if not _is_spanish_quick(title_es) and not _is_spanish_quick(title_orig):
         title_es = _translate_to_es(title_orig or title_es)
-        time.sleep(0.3)  # avoid rate limiting (5 articles × 0.3s = 1.5s total)
+        time.sleep(0.3)
 
-    # Use Spanish summary if it exists and is in Spanish; otherwise build from metadata
     if summary and _is_spanish(summary):
         sentences = [s.strip() for s in re.split(r'(?<=[.!?])\s+', summary) if len(s.strip()) > 30]
-        intro = " ".join(sentences[:2]) if sentences else summary[:220]
+        intro = " ".join(sentences[:3]) if sentences else summary[:280]
     else:
-        # Build intro from guaranteed-Spanish fields
         cat_phrases = {
-            "Regulación":   f"{source} ha publicado nueva normativa que afecta al sector asegurador.",
-            "Inversión":    f"Nueva operación de inversión detectada en el ecosistema insurtech, publicada por {source}.",
-            "Tecnología":   f"{source} informa sobre un avance tecnológico con impacto en el sector seguros.",
-            "Catástrofes":  f"Alerta de riesgo catastrófico reportada por {source} con implicaciones para el mercado asegurador.",
-            "Fraude":       f"{source} publica información relevante sobre detección o prevención del fraude asegurador.",
-            "Vida y Salud": f"Novedad en el segmento de vida y salud publicada por {source}.",
-            "Automóvil":    f"Actualización del mercado de seguro de automóvil según {source}.",
-            "Embebido":     f"Avance en seguros embebidos o distribución alternativa, según {source}.",
+            "Regulación":   f"{source} publica nueva normativa con impacto directo en el sector asegurador. Los supervisores refuerzan su posición en un contexto de cambio regulatorio acelerado.",
+            "Inversión":    f"Nueva operación de inversión en el ecosistema insurtech según {source}. El movimiento refleja el apetito inversor por soluciones digitales en seguros.",
+            "Tecnología":   f"{source} informa sobre un avance tecnológico que redefine procesos clave del sector asegurador. La adopción de estas soluciones marca la diferencia competitiva.",
+            "Catástrofes":  f"Nuevo evento con implicaciones para el mercado asegurador global, según {source}. El impacto en reservas y pricing será significativo.",
+            "Fraude":       f"{source} alerta sobre nuevas dinámicas de fraude que presionan los márgenes técnicos de las aseguradoras.",
+            "Vida y Salud": f"Novedad relevante en el segmento de vida y salud según {source}, con implicaciones para la distribución y el pricing.",
+            "Automóvil":    f"Actualización del mercado de seguro de automóvil con potencial impacto en frecuencia y severidad, según {source}.",
+            "Embebido":     f"Avance en el modelo de distribución embedded insurance que presiona a los canales tradicionales, según {source}.",
         }
-        base = cat_phrases.get(cat, f"{source} publica una noticia relevante para el sector asegurador.")
-        if why:
-            intro = f"{base} {why}"
-        else:
-            intro = base
+        intro = cat_phrases.get(cat, f"{source} publica información relevante para el sector asegurador con implicaciones estratégicas a corto plazo.")
 
     bullets = []
     if why:
-        bullets.append(f"Relevancia: {why}")
+        bullets.append({"q": "¿Por qué importa?", "a": why})
     if deal and deal.get("amount_str") and deal["amount_str"] != "—":
         rnd = f" ({deal['round']})" if deal.get("round") and deal["round"] != "—" else ""
-        bullets.append(f"Operación detectada: {deal['amount_str']}{rnd}.")
+        bullets.append({"q": "La operación:", "a": f"{deal['amount_str']}{rnd} — una de las mayores detectadas en el sector en las últimas semanas."})
     if signal_label:
-        bullets.append(f"Tipo de señal: {signal_label} — impacto clasificado como alto por nuestro sistema de inteligencia.")
-    if source:
-        bullets.append(f"Publicado por {source}, fuente de referencia en el sector.")
-    # Fill to 3
+        bullets.append({"q": "Tipo de señal:", "a": f"{signal_label}. Nuestro sistema lo clasifica como evento de alto impacto para el mercado asegurador."})
+    bullets.append({"q": "Fuente:", "a": f"{source}, publicación de referencia en el sector."})
     while len(bullets) < 3:
-        bullets.append("Consulta el artículo completo para más contexto y datos.")
+        bullets.append({"q": "Para saber más:", "a": "Consulta el artículo completo con todos los datos y contexto."})
 
     return {"title": title_es, "intro": intro, "bullets": bullets[:3]}
 
@@ -201,18 +201,21 @@ def _day_intro(articles_today: list, articles_week: list) -> str:
             resp = _openai_client.chat.completions.create(
                 model="gpt-4o-mini",
                 messages=[{"role": "user", "content": (
-                    "Eres el redactor jefe de InsurTech Intelligence. Escribe en español "
-                    "el párrafo de apertura de la newsletter de hoy (3-4 frases). "
-                    "Estilo: directo, ejecutivo, periodístico. Menciona los temas principales "
-                    "del día y el número de artículos analizados. "
-                    "NO uses 'Estimados lectores' ni saludos formales — empieza con el fondo.\n\n"
-                    f"Artículos analizados hoy: {n_today}\n"
+                    "Eres periodista especializado en seguros para InsurTech Intelligence. "
+                    "Escribe en español el párrafo de apertura de la newsletter de hoy. "
+                    "Estilo: directo, periodístico, sin saludos. Esta newsletter se lee en unos minutos "
+                    "y va dirigida a directivos del sector asegurador.\n"
+                    "El párrafo debe: (1) arrancar con el hecho más relevante del día, "
+                    "(2) dar contexto de por qué hoy importa para el sector seguros, "
+                    "(3) invitar a leer con un gancho. Entre 3 y 5 frases. "
+                    "Puedes mencionar el número de artículos analizados de forma natural.\n\n"
+                    f"Artículos analizados: {n_today} de más de 40 fuentes globales.\n"
                     f"Señales detectadas: {n_signals}\n"
-                    f"Temas principales: {', '.join(top_themes) if top_themes else 'General'}\n"
-                    f"Titulares de hoy: {titles_sample}"
+                    f"Temas del día: {', '.join(top_themes) if top_themes else 'mercado general'}\n"
+                    f"Titulares: {titles_sample}"
                 )}],
-                max_tokens=200,
-                temperature=0.5,
+                max_tokens=220,
+                temperature=0.6,
             )
             intro = resp.choices[0].message.content.strip()
             if intro:
@@ -273,8 +276,17 @@ def generate_newsletter(articles: list):
     editorials = [_ai_editorial(a) for a in top5]
 
     # Compute reading time
+    def _bullets_text(bullets):
+        parts = []
+        for b in bullets:
+            if isinstance(b, dict):
+                parts.append(b.get("q","") + " " + b.get("a",""))
+            else:
+                parts.append(str(b))
+        return " ".join(parts)
+
     all_words = [day_intro_text] + [
-        e["intro"] + " ".join(e["bullets"]) for e in editorials
+        e["intro"] + " " + _bullets_text(e["bullets"]) for e in editorials
     ]
     words = _word_count(all_words)
     read_min = max(3, round(words / 200))
@@ -318,40 +330,49 @@ def generate_newsletter(articles: list):
           <img src="{image}" alt="" width="100%" style="display:block;border-radius:8px;max-height:280px;object-fit:cover" />
         </td></tr>"""
 
-        bullets_html = "".join(
-            f'<li style="margin-bottom:10px;line-height:1.55;color:#c8bfaf">{b}</li>'
-            for b in ed["bullets"]
-        )
+        bullets_html = ""
+        for b in ed["bullets"]:
+            if isinstance(b, dict):
+                q, a_text = b.get("q",""), b.get("a","")
+            else:
+                parts = str(b).split(":", 1)
+                q, a_text = parts[0].strip(), (parts[1].strip() if len(parts) > 1 else str(b))
+            bullets_html += (
+                f'<li style="margin-bottom:14px;line-height:1.6;color:#c8bfaf;font-size:14px">'
+                f'<strong style="color:#f0e6d3">{q}</strong> {a_text}'
+                f'</li>'
+            )
 
         signal_badge = ""
         if signal_label and score >= 18:
             sig_icon = a.get("signal_icon", "⚡")
             signal_badge = (
-                f'<span style="display:inline-block;font-size:10px;font-weight:700;'
-                f'color:#f59e0b;background:#f59e0b22;border:1px solid #f59e0b44;'
-                f'border-radius:4px;padding:1px 7px;margin-left:8px;vertical-align:middle">'
-                f'{sig_icon} {signal_label}</span>'
+                f' <span style="font-size:10px;font-weight:700;color:#f59e0b;'
+                f'background:#f59e0b22;border:1px solid #f59e0b44;border-radius:4px;'
+                f'padding:1px 7px">{sig_icon} {signal_label}</span>'
             )
 
         articles_html += f"""
         <!-- Article {i} -->
         <tr><td style="padding:28px 0 0;border-top:1px solid #3a2e1e">
-          <p style="margin:0 0 6px;font-size:11px;font-weight:800;color:#c0392b;
+          <p style="margin:0 0 8px;font-size:11px;font-weight:800;color:#c0392b;
                     text-transform:uppercase;letter-spacing:1px">
             {i}. {icon} {cat}{signal_badge}
           </p>
-          <h2 style="margin:0 0 14px;font-size:22px;font-weight:800;line-height:1.3;color:#f5f0e8">
-            <a href="{url}" style="color:#f5f0e8;text-decoration:none">{title}</a>
+          <h2 style="margin:0 0 14px;font-size:21px;font-weight:800;line-height:1.3;color:#f5f0e8">
+            {title}
           </h2>
           {img_html}
-          <p style="margin:0 0 16px;font-size:15px;line-height:1.65;color:#c8bfaf">
+          <p style="margin:0 0 18px;font-size:15px;line-height:1.7;color:#c8bfaf">
             {ed['intro']}
           </p>
-          <ol style="margin:0 0 16px;padding-left:20px;font-size:14px">
+          <ol style="margin:0 0 18px;padding-left:20px">
             {bullets_html}
           </ol>
-          <p style="margin:0;font-size:12px;color:#6b5e4a">
-            Fuente: <a href="{url}" style="color:#d4a857;text-decoration:none">{src}</a>
+          <p style="margin:0">
+            <a href="{url}" style="font-size:13px;color:#d4a857;font-weight:600;text-decoration:none">
+              Leer en {src} →
+            </a>
           </p>
         </td></tr>"""
 
