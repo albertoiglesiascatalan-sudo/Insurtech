@@ -356,7 +356,19 @@ def generate_newsletter(articles: list):
         </td></tr>"""
 
     # ── Full HTML ────────────────────────────────────────────────────────────────
-    html = f"""<!DOCTYPE html>
+    html = _build_html(date_long, words, read_min, day_intro_text, articles_html)
+
+    path = os.path.join(DOCS_DIR, "newsletter.html")
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(html)
+    ai_note = "con IA" if _openai_client else "extractivo"
+    log.info(f"Newsletter generated ({ai_note}): {path} — {len(top5)} stories, {words} words")
+    print(f"Newsletter generated: {path} ({len(top5)} stories · {read_min} min · {ai_note})")
+    return date_long, read_min, words, articles_html, day_intro_text
+
+
+def _build_html(date_long, words, read_min, day_intro_text, articles_html):
+    return f"""<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8"/>
@@ -376,6 +388,14 @@ def generate_newsletter(articles: list):
   </style>
 </head>
 <body style="background:#0e0a04">
+{_newsletter_body(date_long, words, read_min, day_intro_text, articles_html)}
+</body>
+</html>"""
+
+
+def _newsletter_body(date_long, words, read_min, day_intro_text, articles_html):
+    """Returns just the table body — reused both in newsletter.html and embedded in index.html."""
+    return f"""
 <table role="presentation" width="100%" cellspacing="0" cellpadding="0"
        style="background:#0e0a04;padding:32px 16px" class="wrapper">
 <tr><td>
@@ -418,16 +438,17 @@ def generate_newsletter(articles: list):
 
 </table>
 </td></tr>
-</table>
-</body>
-</html>"""
+</table>"""
 
-    path = os.path.join(DOCS_DIR, "newsletter.html")
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(html)
-    ai_note = "con IA" if _openai_client else "extractivo"
-    log.info(f"Newsletter generated ({ai_note}): {path} — {len(top5)} stories, {words} words")
-    print(f"Newsletter generated: {path} ({len(top5)} stories · {read_min} min · {ai_note})")
+
+def build_inline_newsletter(articles: list) -> str:
+    """Returns the newsletter body HTML for embedding directly in index.html.
+    Returns empty string if no articles available."""
+    result = generate_newsletter(articles)
+    if result is None:
+        return ""
+    date_long, read_min, words, articles_html, day_intro_text = result
+    return _newsletter_body(date_long, words, read_min, day_intro_text, articles_html)
 
 
 def _try_after(iso: str, cutoff) -> bool:

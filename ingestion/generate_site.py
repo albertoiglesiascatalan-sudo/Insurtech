@@ -646,16 +646,9 @@ def generate_site(articles: list):
     updated = datetime.utcnow().strftime("%d %b %Y · %H:%M UTC")
     new_count = sum(1 for a in articles if _is_new(a.get("published_at", "")))
 
-    thermometer_html  = _thermometer(articles)
-    startup_html      = _startup_card(articles)
-    radar_html        = _radar_section(articles)
-    trends_html       = _trends_section(articles)
-    deals_html        = _deal_tracker(articles)
-    reg_alert_html    = _regulatory_alert(articles)
-    incumbent_html    = _incumbent_tracker(articles)
-    briefing_html     = _daily_briefing(articles)
-    ibero_count      = sum(1 for a in articles if a.get("source", "") in IBERO_SOURCES)
-    signal_count     = sum(1 for a in articles if a.get("is_signal") and _is_new(a.get("published_at",""), 168))
+    from generate_newsletter import build_inline_newsletter
+    newsletter_html = build_inline_newsletter(articles)
+    ibero_count     = sum(1 for a in articles if a.get("source", "") in IBERO_SOURCES)
 
     featured = articles[0] if articles else None
     rest     = articles[1:] if articles else []
@@ -908,47 +901,6 @@ def generate_site(articles: list):
       #back-to-top {{ bottom: 4.5rem; }}
     }}
 
-    /* Daily Briefing */
-    .brief-section {{ max-width: 900px; margin: 1rem auto 0; padding: 0 1rem; }}
-    .brief-section > * {{ background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }}
-    .brief-section > .brief-header,
-    .brief-section > .brief-body,
-    .brief-section > .brief-stats {{ background: none; border: none; border-radius: 0; }}
-    .brief-section {{ background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }}
-    .brief-header {{ border-bottom: 1px solid var(--border); padding: .85rem 1.2rem .7rem; }}
-    .brief-title-row {{ display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }}
-    .brief-badge {{ font-size: .78rem; font-weight: 800; color: #fff; background: #1a1a2e; border-radius: 6px; padding: .2rem .6rem; letter-spacing: .3px; flex-shrink: 0; }}
-    @media (prefers-color-scheme: dark) {{ .brief-badge {{ background: var(--accent); }} }}
-    .brief-date  {{ font-size: .82rem; font-weight: 600; color: var(--text); text-transform: capitalize; }}
-    .brief-refresh {{ margin-left: auto; font-size: .72rem; color: var(--muted); }}
-    .brief-body  {{ padding: .6rem 1.2rem .5rem; display: flex; flex-direction: column; gap: .45rem; }}
-    .brief-line  {{ display: flex; align-items: baseline; gap: .55rem; min-width: 0; }}
-    .brief-icon  {{ font-size: .95rem; flex-shrink: 0; width: 1.4rem; text-align: center; }}
-    .brief-label {{ font-size: .78rem; font-weight: 700; color: var(--text); white-space: nowrap; flex-shrink: 0; display: flex; align-items: center; gap: .3rem; min-width: 110px; }}
-    .brief-count {{ font-size: .65rem; font-weight: 700; background: var(--accent); color: white; border-radius: 8px; padding: .05rem .38rem; }}
-    .brief-titles {{ font-size: .82rem; color: var(--muted); line-height: 1.45; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }}
-    @media (max-width: 600px) {{ .brief-titles {{ white-space: normal; }} }}
-    .brief-stats {{ padding: .65rem 1.2rem .85rem; font-size: .75rem; color: var(--muted); border-top: 1px solid var(--border); line-height: 1.6; }}
-    .brief-stats strong {{ color: var(--text); }}
-
-    /* Regulatory Alert */
-    .reg-alert {{ max-width: 900px; margin: .75rem auto 0; padding: 0 1rem; }}
-    .reg-alert-inner {{ background: linear-gradient(90deg, #fef3c7 0%, #fffbeb 100%); border: 1.5px solid #fbbf24; border-radius: 12px; padding: 1rem 1.2rem; display: flex; align-items: flex-start; gap: .9rem; }}
-    @media (prefers-color-scheme: dark) {{
-      .reg-alert-inner {{ background: linear-gradient(90deg, #292010 0%, #1f1a09 100%); border-color: #b45309; }}
-    }}
-    .reg-alert-icon {{ font-size: 1.4rem; flex-shrink: 0; }}
-    .reg-alert-body {{ flex: 1; min-width: 0; }}
-    .reg-alert-label {{ display: block; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: #92400e; margin-bottom: .3rem; }}
-    @media (prefers-color-scheme: dark) {{ .reg-alert-label {{ color: #fbbf24; }} }}
-    .reg-alert-title {{ display: block; font-size: .92rem; font-weight: 700; color: #78350f; text-decoration: none; line-height: 1.4; margin-bottom: .25rem; }}
-    .reg-alert-title:hover {{ text-decoration: underline; }}
-    @media (prefers-color-scheme: dark) {{ .reg-alert-title {{ color: #fde68a; }} }}
-    .reg-alert-why {{ font-size: .78rem; color: #92400e; }}
-    @media (prefers-color-scheme: dark) {{ .reg-alert-why {{ color: #fbbf24; }} }}
-    .reg-alert-meta {{ font-size: .72rem; color: #b45309; white-space: nowrap; flex-shrink: 0; padding-top: .15rem; }}
-
-
     /* Briefing view */
     main.briefing-view .card {{ display: none; }}
     main.briefing-view .card[data-signal="1"] {{ display: flex; flex-direction: row; align-items: flex-start; gap: .75rem; padding: .75rem 1rem; border-radius: 8px; }}
@@ -957,6 +909,11 @@ def generate_site(articles: list):
     main.briefing-view .card[data-signal="1"] .card-meta {{ margin-bottom: 0; }}
     main.briefing-view {{ gap: .3rem; }}
     main.briefing-view .time-sep {{ margin-top: .75rem; }}
+
+    /* Feed divider */
+    .feed-divider {{ max-width: 900px; margin: 2rem auto .5rem; padding: 0 1rem; display: flex; align-items: center; gap: .75rem; }}
+    .feed-divider span {{ font-size: .8rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .8px; white-space: nowrap; }}
+    .feed-divider::after {{ content: ''; flex: 1; height: 1px; background: var(--border); }}
 
     footer {{ text-align: center; padding: 2rem; font-size: .8rem; color: var(--muted); border-top: 1px solid var(--border); }}
     footer a {{ color: var(--accent); text-decoration: none; }}
@@ -976,11 +933,6 @@ def generate_site(articles: list):
       .card-image {{ height: 140px; }}
       main.grid-view {{ grid-template-columns: 1fr; }}
       .rss-link, .share-filter-btn, .kbd-hint {{ display: none; }}
-      /* Radar rows compact */
-      .radar-row {{ padding: .65rem .9rem; }}
-      .deal-row {{ grid-template-columns: 60px auto 1fr; }}
-      .deal-meta {{ display: none; }}
-      /* Subscribe form compact */
       .subscribe-form {{ flex-direction: column; align-items: stretch; }}
     }}
   </style>
@@ -988,18 +940,7 @@ def generate_site(articles: list):
 <body>
   <header>
     <h1>InsurTech Intelligence</h1>
-    <p class="header-sub">Noticias globales de insurtech, actualizadas cada 6 horas</p>
-    <div class="header-stats">
-      <span class="stat"><strong>{len(articles)}</strong> artículos</span>
-      <span class="stat"><strong>{new_count}</strong> nuevos hoy</span>
-      <span class="stat"><strong>{signal_count}</strong> señales esta semana</span>
-      <span class="stat"><strong>40</strong> fuentes monitorizadas</span>
-      <span class="stat"><strong>{ibero_count}</strong> iberoamérica</span>
-    </div>
-    <div class="updated">Actualizado el {updated}</div>
-    <div class="header-cta">
-      <a href="{SITE_URL}/newsletter.html" class="newsletter-btn" target="_blank">📬 Ver newsletter del día</a>
-    </div>
+    <p class="header-sub">Actualizado el {updated} · <strong>{new_count}</strong> nuevos hoy · <strong>40</strong> fuentes</p>
     <div id="google_translate_element"></div>
   </header>
 
@@ -1028,22 +969,18 @@ def generate_site(articles: list):
   </div>
   <div id="results-info"></div>
 
-  {briefing_html}
-  {reg_alert_html}
-  {radar_html}
-  {trends_html}
-  {deals_html}
-  {thermometer_html}
-  {incumbent_html}
-  {startup_html}
+  {newsletter_html}
 
   <div class="subscribe-bar">
     <form class="subscribe-form" action="https://buttondown.email/api/emails/embed-subscribe/insurtechintelligence" method="post" target="_blank">
       <span>📬 Recibe el briefing diario en tu email:</span>
       <input type="email" name="email" placeholder="tu@email.com" required />
       <button type="submit">Suscribirse gratis</button>
-      <a href="{SITE_URL}/newsletter.html" target="_blank" style="font-size:.8rem;color:var(--muted);text-decoration:none;white-space:nowrap">Ver ejemplo →</a>
     </form>
+  </div>
+
+  <div class="feed-divider">
+    <span>📰 Todos los artículos</span>
   </div>
 
   <main class="list-view" id="main">
@@ -1436,8 +1373,6 @@ def generate_site(articles: list):
     generate_feed(articles)
     generate_sitemap(articles)
     generate_digest(articles)
-    from generate_newsletter import generate_newsletter
-    generate_newsletter(articles)
 
 
 if __name__ == "__main__":
