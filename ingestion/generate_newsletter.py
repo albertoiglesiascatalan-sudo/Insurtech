@@ -74,6 +74,61 @@ def _is_spanish(text: str) -> bool:
     return len(words & _ES_WORDS) >= 2
 
 
+# ── Key fact extractor ────────────────────────────────────────────────────────
+def _extract_key_fact(title: str, summary: str) -> str:
+    """
+    Extracts the most concrete, specific sentence from title + summary.
+    Always uses sentence boundaries — never cuts mid-word.
+    Returns in Spanish if translation works, otherwise in original language.
+    """
+    # Clean summary: strip bullet characters, strip mid-sentence fragments
+    clean_summary = re.sub(r'(?m)^[\s•·\-–—]+', '', summary or "").strip()
+    full = f"{title}. {clean_summary}" if clean_summary else title
+    # Only keep sentences that start with a capital letter (avoid mid-sentence fragments)
+    sentences = [s.strip() for s in re.split(r'(?<=[.!?])\s+', full)
+                 if len(s.strip()) > 25 and re.match(r'^[A-ZÁÉÍÓÚ"\d]', s.strip())]
+
+    def _try_translate(s: str) -> str:
+        translated = _translate_to_es(s[:200])
+        time.sleep(0.15)
+        if translated and translated.strip() != s[:200].strip():
+            return translated.strip()
+        return s.strip()
+
+    money_re = re.compile(
+        r'[\$£€]\s*\d[\d,.]*\s*(?:million|billion|bn|m|mn|MM|B)\b'
+        r'|USD\s*\d[\d,.]*\s*(?:million|billion|bn|m)?'
+        r'|\d[\d,.]*\s*(?:million|billion)\s+(?:dollar|pound|euro)',
+        re.IGNORECASE
+    )
+
+    # 1. Sentence with a monetary amount (most specific)
+    for sent in sentences:
+        if money_re.search(sent):
+            return _try_translate(sent).rstrip(".") + "."
+
+    # 2. Sentence with a percentage
+    for sent in sentences:
+        if re.search(r'\d+[\.,]?\d*\s*(?:percent|%|per cent)\b', sent, re.IGNORECASE):
+            return _try_translate(sent).rstrip(".") + "."
+
+    # 3. Direct executive quote
+    for sent in sentences:
+        m = re.search(r'"([^"]{20,120})"', sent)
+        if m:
+            return f'"{_try_translate(m.group(1)).strip()}"'
+
+    # 4. Most fact-dense sentence (digits + capitalized entities)
+    def fact_density(s):
+        return len(re.findall(r'\d', s)) * 2 + len(re.findall(r'\b[A-Z][a-z]{2,}', s))
+
+    ranked = sorted(sentences, key=fact_density, reverse=True)
+    if ranked and fact_density(ranked[0]) >= 4:
+        return _try_translate(ranked[0][:200]).rstrip(".") + "."
+
+    return ""
+
+
 # ── AI editorial per article ──────────────────────────────────────────────────
 def _ai_editorial(article: dict) -> dict:
     """
@@ -140,39 +195,88 @@ def _ai_editorial(article: dict) -> dict:
             log.debug(f"OpenAI newsletter editorial error: {e}")
 
     # ── Extractive fallback ────────────────────────────────────────────────────
+    # Translate title if needed
     if not _is_spanish_quick(title_es) and not _is_spanish_quick(title_orig):
         title_es = _translate_to_es(title_orig or title_es)
         time.sleep(0.3)
 
-    if summary and _is_spanish(summary):
-        sentences = [s.strip() for s in re.split(r'(?<=[.!?])\s+', summary) if len(s.strip()) > 30]
-        intro = " ".join(sentences[:3]) if sentences else summary[:280]
-    else:
-        cat_phrases = {
-            "Regulación":   f"{source} publica nueva normativa con impacto directo en el sector asegurador. Los supervisores refuerzan su posición en un contexto de cambio regulatorio acelerado.",
-            "Inversión":    f"Nueva operación de inversión en el ecosistema insurtech según {source}. El movimiento refleja el apetito inversor por soluciones digitales en seguros.",
-            "Tecnología":   f"{source} informa sobre un avance tecnológico que redefine procesos clave del sector asegurador. La adopción de estas soluciones marca la diferencia competitiva.",
-            "Catástrofes":  f"Nuevo evento con implicaciones para el mercado asegurador global, según {source}. El impacto en reservas y pricing será significativo.",
-            "Fraude":       f"{source} alerta sobre nuevas dinámicas de fraude que presionan los márgenes técnicos de las aseguradoras.",
-            "Vida y Salud": f"Novedad relevante en el segmento de vida y salud según {source}, con implicaciones para la distribución y el pricing.",
-            "Automóvil":    f"Actualización del mercado de seguro de automóvil con potencial impacto en frecuencia y severidad, según {source}.",
-            "Embebido":     f"Avance en el modelo de distribución embedded insurance que presiona a los canales tradicionales, según {source}.",
-        }
-        intro = cat_phrases.get(cat, f"{source} publica información relevante para el sector asegurador con implicaciones estratégicas a corto plazo.")
+    # ── Build intro from actual article content ──────────────────────────────
+    # Priority: (1) translate summary → (2) use summary in English → (3) minimal template
+    intro = ""
+    if summary:
+        sents = [s.strip() for s in re.split(r'(?<=[.!?])\s+', summary) if len(s.strip()) > 40]
+        raw = " ".join(sents[:3]) if sents else summary[:400]
+        if _is_spanish(raw):
+            intro = raw
+        else:
+            translated = _translate_to_es(raw[:600])
+            time.sleep(0.3)
+            if translated and translated.strip() != raw[:600].strip():
+                intro = translated.strip()
+            else:
+                # Translation unavailable — use English summary; it's real content
+                intro = raw[:350]
 
-    bullets = []
-    if why:
-        bullets.append({"q": "¿Por qué importa?", "a": why})
+    if not intro:
+        # Only as absolute last resort: minimal factual sentence, never a generic template
+        intro = f"Según {source}, este movimiento tiene implicaciones directas para el sector asegurador en términos de {(signal_label or cat).lower()}."
+
+    # Clean up common summary artifacts (leading bullets, dashes)
+    intro = re.sub(r'^[\s•·\-–—]+', '', intro).strip()
+
+    # ── Build bullets — article-specific, zero padding ───────────────────────
+    label = signal_label or cat
+
+    # Bullet 1 — the sharpest specific fact (amount / % / quote / entity)
+    key_fact = _extract_key_fact(title_orig or title_es, summary)
+    # Skip if key_fact is essentially the same text as the intro (first 60 chars overlap)
+    if key_fact and intro and key_fact[:60].lower() == intro[:60].lower():
+        key_fact = ""
+    # Skip if key_fact is just the title restated
+    if key_fact and (title_orig or title_es) and key_fact[:50].lower() in (title_orig or title_es)[:80].lower():
+        key_fact = ""
+    b1 = {"q": "El dato clave:", "a": key_fact} if key_fact else None
+
+    # Bullet 2 — deal amount or why_matters
+    b2 = None
     if deal and deal.get("amount_str") and deal["amount_str"] != "—":
         rnd = f" ({deal['round']})" if deal.get("round") and deal["round"] != "—" else ""
-        bullets.append({"q": "La operación:", "a": f"{deal['amount_str']}{rnd} — una de las mayores detectadas en el sector en las últimas semanas."})
-    if signal_label:
-        bullets.append({"q": "Tipo de señal:", "a": f"{signal_label}. Nuestro sistema lo clasifica como evento de alto impacto para el mercado asegurador."})
-    bullets.append({"q": "Fuente:", "a": f"{source}, publicación de referencia en el sector."})
-    while len(bullets) < 3:
-        bullets.append({"q": "Para saber más:", "a": "Consulta el artículo completo con todos los datos y contexto."})
+        b2 = {"q": "La operación:", "a": f"{deal['amount_str']}{rnd}, una de las mayores transacciones detectadas en el sector en las últimas semanas."}
+    elif why:
+        b2 = {"q": "¿Por qué importa?", "a": why}
 
-    return {"title": title_es, "intro": intro, "bullets": bullets[:3]}
+    # Bullet 3 — forward-looking, signal-specific (the one template we keep — it's analytical)
+    fwd_map = {
+        "Regulación":          "Las aseguradoras deberán revisar sus modelos de cumplimiento y posiblemente provisionar costes de adaptación normativa.",
+        "M&A":                 "La consolidación reduce actores independientes y abre oportunidades para distribuidores y proveedores de tecnología.",
+        "Inversión":           "El capital invertido anticipa las áreas donde los incumbentes afrontarán mayor presión competitiva en los próximos 12-24 meses.",
+        "Clima & Catástrofes": "El sector deberá revisar modelos de pricing y cobertura en las zonas afectadas ante el incremento de eventos extremos.",
+        "Tecnología":          "Las aseguradoras sin plan de integración tecnológica arriesgan rezagarse en eficiencia operativa y experiencia de cliente.",
+        "Fraude":              "La inversión en analítica avanzada y verificación digital es prioritaria para proteger los márgenes técnicos.",
+        "Vida y Salud":        "El segmento salud crece a doble dígito; los actores sin oferta digital perderán cuota frente a las insurtechs.",
+        "Automóvil":           "Movilidad conectada y vehículos eléctricos siguen redefiniendo la tarificación y la gestión de siniestros.",
+        "Embebido":            "La distribución embebida crece a doble dígito; los canales tradicionales deben reinventarse para no perder relevancia.",
+        "Liderazgo":           "Los cambios de liderazgo suelen anticipar reestructuraciones y nuevas apuestas estratégicas en los 6-18 meses siguientes.",
+    }
+    b3 = {"q": "¿Qué vigilar?", "a": fwd_map.get(label, "Seguimiento recomendado desde las perspectivas de riesgo técnico, regulatorio y competitivo.")}
+
+    # Assemble — always 3 bullets
+    bullets = [b for b in [b1, b2, b3] if b]
+    if len(bullets) < 3:
+        # Use a second summary sentence as "El contexto:" to fill the gap
+        sents = [s.strip() for s in re.split(r'(?<=[.!?])\s+', summary or "")
+                 if len(s.strip()) > 40 and re.match(r'^[A-ZÁÉÍÓÚ"\d]', s.strip())]
+        ctx_text = sents[1] if len(sents) > 1 else sents[0] if sents else intro[:140]
+        ctx_bullet = {"q": "El contexto:", "a": ctx_text[:200].rstrip(".") + "."}
+        if not b1 and not b2:
+            bullets = [ctx_bullet, b3]
+        elif not b1:
+            bullets = [ctx_bullet, b2, b3]
+        else:
+            bullets = [b1, ctx_bullet, b3]
+    bullets = bullets[:3]
+
+    return {"title": title_es, "intro": intro, "bullets": bullets}
 
 
 # ── Intro editorial del día ────────────────────────────────────────────────────
@@ -264,7 +368,18 @@ def generate_newsletter(articles: list):
         return
 
     pool.sort(key=lambda x: x.get("signal_score", 0), reverse=True)
-    top5 = pool[:5]
+
+    # Enforce source diversity: max 2 articles from the same source
+    top5 = []
+    source_count: dict = {}
+    for a in pool:
+        src = a.get("source", "")
+        if source_count.get(src, 0) >= 2:
+            continue
+        top5.append(a)
+        source_count[src] = source_count.get(src, 0) + 1
+        if len(top5) == 5:
+            break
 
     # Week articles for stats
     week = [a for a in articles if _try_after(a.get("published_at",""), cutoff7)]
@@ -274,6 +389,29 @@ def generate_newsletter(articles: list):
 
     # Build editorial per article
     editorials = [_ai_editorial(a) for a in top5]
+
+    # ── Post-process: eliminate duplicate "¿Por qué importa?" bullets ──────────
+    # "¿Qué vigilar?" is intentionally sector-level so repetition is acceptable.
+    # "¿Por qué importa?" and "El dato clave:" should be unique per article.
+    seen_why: set = set()
+    for idx, (a, ed) in enumerate(zip(top5, editorials)):
+        new_bullets = []
+        for b in ed["bullets"]:
+            if b["q"] in ("¿Por qué importa?", "El dato clave:"):
+                key = b["a"][:70]
+                if key in seen_why:
+                    # Replace with a short extractive sentence from the summary
+                    summary_sents = [s.strip() for s in re.split(r'(?<=[.!?])\s+',
+                                     a.get("summary", "")) if len(s.strip()) > 40]
+                    alt = summary_sents[1] if len(summary_sents) > 1 else summary_sents[0] if summary_sents else ""
+                    if alt and alt[:60] not in seen_why:
+                        new_bullets.append({"q": b["q"], "a": alt[:200]})
+                        seen_why.add(alt[:60])
+                    # else just drop the duplicate — 2 bullets is better than a repeated one
+                    continue
+                seen_why.add(key)
+            new_bullets.append(b)
+        ed["bullets"] = new_bullets if new_bullets else ed["bullets"]
 
     # Compute reading time
     def _bullets_text(bullets):
@@ -314,6 +452,10 @@ def generate_newsletter(articles: list):
     articles_html = ""
     for i, (a, ed) in enumerate(zip(top5, editorials), 1):
         cat   = a.get("category", "General")
+        # When OpenAI wasn't available during ingestion, category defaults to "General"
+        # Use signal_label as a more accurate display label
+        signal_label_disp = a.get("signal_label", "")
+        display_cat = signal_label_disp if (cat == "General" and signal_label_disp) else cat
         icon  = cat_icons.get(cat, "📰")
         # Use AI/free-translated Spanish title from editorial (always in Spanish)
         title = ed.get("title") or a.get("title", "") or a.get("title_original", "")
@@ -344,20 +486,24 @@ def generate_newsletter(articles: list):
             )
 
         signal_badge = ""
-        if signal_label and score >= 18:
-            sig_icon = a.get("signal_icon", "⚡")
+        sig_icon = a.get("signal_icon", "⚡")
+        # Show badge only if signal_label adds info beyond what display_cat already shows
+        if signal_label and score >= 18 and signal_label != display_cat:
             signal_badge = (
                 f' <span style="font-size:10px;font-weight:700;color:#f59e0b;'
                 f'background:#f59e0b22;border:1px solid #f59e0b44;border-radius:4px;'
                 f'padding:1px 7px">{sig_icon} {signal_label}</span>'
             )
+        elif display_cat == signal_label and signal_label:
+            # Use signal icon inline with the category label
+            icon = sig_icon
 
         articles_html += f"""
         <!-- Article {i} -->
         <tr><td style="padding:28px 0 0;border-top:1px solid #3a2e1e">
           <p style="margin:0 0 8px;font-size:11px;font-weight:800;color:#c0392b;
                     text-transform:uppercase;letter-spacing:1px">
-            {i}. {icon} {cat}{signal_badge}
+            {i}. {icon} {display_cat}{signal_badge}
           </p>
           <h2 style="margin:0 0 14px;font-size:21px;font-weight:800;line-height:1.3;color:#f5f0e8">
             {title}
