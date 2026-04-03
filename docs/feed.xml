@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Fri, 03 Apr 2026 01:14:40 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 03 Apr 2026 06:56:37 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Best Insurance for Stored Vehicles: Allstate, Erie, Travelers</title>
+    <link>https://coverager.com/best-insurance-for-stored-vehicles-allstate-erie-travelers/</link>
+    <description>Best 3 Insurers for Stored Vehicles While Allstate took the top spot, Erie and Travelers came in as close runners-up. Erie Insurance has lower starting premiums than Allstate, at just $35 per month. Travelers has plans that start at $40 a month for stored vehicles.</description>
+    <pubDate>Fri, 03 Apr 2026 06:56:08 +0000</pubDate>
+    <guid>https://coverager.com/best-insurance-for-stored-vehicles-allstate-erie-travelers/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Liberty Mutual Names Vlad Barbalat to Lead Global Risk, Capital Alignment</title>
     <link>https://iireporter.com/liberty-mutual-names-vlad-barbalat-to-lead-global-risk-capital-alignment/</link>
@@ -407,14 +415,6 @@
     <description>Andy Buddell has joined global insurance and reinsurance broking group Howden as Chief Operating Officer (COO) for Asia, based in Malaysia. Adding: “Andy’s appointment is a key step in strengthening our regional foundation as we continue to scale and innovate across Asia.” Buddell joined Howden following a seven-year tenure at French insurer AXA, where he most recently served as Director of Operations, International markets. Buddell will oversee operational strategy as the group continues to scale and innovate across the region.</description>
     <pubDate>Thu, 02 Apr 2026 06:59:07 +0000</pubDate>
     <guid>https://www.reinsurancene.ws/howden-appoints-andy-buddell-as-coo-for-asia/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>BMS Group integrates EigenPrism into iVision platform</title>
-    <link>https://www.reinsurancene.ws/bms-group-integrates-eigenprism-into-ivision-platform/</link>
-    <description>BMS Group, an independent insurance and reinsurance broker, has partnered with EigenRisk to integrate the EigenPrism platform into its catastrophe risk management system, iVision. Integrating EigenRisk’s leading technology into iVision creates a powerful, end-to-end platform that helps clients reduce claims through advanced alerting, manage large losses in high-exposure areas, and build more resilient, profitable portfolios.” Through the addition of EigenPrism, the platform now incorporates data from more than 30 providers, along with geo-visualisation tools and alerting features available across desktop and mobile environments.</description>
-    <pubDate>Thu, 02 Apr 2026 06:59:07 +0000</pubDate>
-    <guid>https://www.reinsurancene.ws/bms-group-integrates-eigenprism-into-ivision-platform/</guid>
     <category>General</category>
   </item>
 </channel>
