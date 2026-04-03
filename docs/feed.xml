@@ -5,8 +5,33 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Fri, 03 Apr 2026 12:37:10 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 03 Apr 2026 18:32:35 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Guardian Completes FINEOS Integration to Enhance Leave Management</title>
+    <link>https://iireporter.com/guardian-completes-fineos-integration-to-enhance-leave-management/</link>
+    <description>(Image source: Guardian Life Group Benefits website.) The Guardian Life Insurance Company of America (New York) has completed the integration of FINEOS AdminSuite into its Guardian Absence Solutions platform, establishing a modern core system for managing absence and disability benefits. Faster Deployment of New Offerings, Greater Flexibility in Plan Design Guardian has also introduced additional broker and employer support capabilities, including its Absence Management Academy, a training program designed to help brokers advise clients on absence-related strategies, alongside expanded educational content and reporting on employee leave experiences. The integration replaces fragmented workflows with a single, cloud-based platform that connects plan administration, claims, billing and absence management, enabling real-time data visibility and coordination across the benefits lifecycle.</description>
+    <pubDate>Fri, 03 Apr 2026 18:32:26 +0000</pubDate>
+    <guid>https://iireporter.com/guardian-completes-fineos-integration-to-enhance-leave-management/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>The Week’s 10 Biggest Funding Rounds: Largest Financings Went To Defense, Wearables, Energy And Security</title>
+    <link>https://news.crunchbase.com/venture/biggest-funding-rounds-ai-defense-wearables-energy-saronic/</link>
+    <description>This is a weekly feature that runs down the week’s top 10 announced funding rounds in the U.S. Check out last week’s biggest funding deal roundup here . Other big funding recipients hailed from sectors including fitness wearables, energy tech, cybersecurity and AI infrastructure, among others.</description>
+    <pubDate>Fri, 03 Apr 2026 18:32:18 +0000</pubDate>
+    <guid>https://news.crunchbase.com/venture/biggest-funding-rounds-ai-defense-wearables-energy-saronic/</guid>
+    <category>General</category>
+    <enclosure url="https://news.crunchbase.com/wp-content/uploads/Top_10_.jpeg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>Pen Underwriting secures Zurich and Hiscox backing for non-standard home insurance</title>
+    <link>https://coverager.com/pen-underwriting-secures-zurich-and-hiscox-backing-for-non-standard-home-insurance/</link>
+    <description>The post Pen Underwriting secures Zurich and Hiscox backing for non-standard home insurance appeared first on Coverager - Insurance news and insights . Pen Underwriting secured a multi-year capacity deal with Zurich UK and Hiscox to support its non-standard home insurance business across the UK, Channel Islands, and Isle of Man. Their collective backing, and trust in Pen’s proven expertise in underwriting, means we have significant scope to grow our already large portfolio and meet the rising demand for specialist property insurance as well as from customers with standard homes but specialist needs.</description>
+    <pubDate>Fri, 03 Apr 2026 18:32:14 +0000</pubDate>
+    <guid>https://coverager.com/pen-underwriting-secures-zurich-and-hiscox-backing-for-non-standard-home-insurance/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Just Because We Can: The Strategic Risks Of Automating Everything</title>
     <link>https://news.crunchbase.com/ai/strategic-risks-automating-everything-sagie/</link>
@@ -393,31 +418,6 @@
     <pubDate>Thu, 02 Apr 2026 12:44:11 +0000</pubDate>
     <guid>https://www.insurtechinsights.com/accelerant-appoints-linda-s-huber-as-chief-financial-officer/</guid>
     <category>General</category>
-  </item>
-  <item>
-    <title>Gyde acquires Avid Health</title>
-    <link>https://coverager.com/gyde-acquires-avid-health/</link>
-    <description>Gyde , an AI-native brokerage platform, has acquired Avid Health, a Medicare-focused agency based in Palm Beach, Florida. As part of the transaction, Avid Health brokers will use Gyde’s platform, including GydeOS and Gia. Avid Health specializes in Medicare Advantage, Medicare Supplement, and Part D, serving beneficiaries—particularly those aging into Medicare—through plan selection and ongoing policy management.</description>
-    <pubDate>Thu, 02 Apr 2026 12:44:07 +0000</pubDate>
-    <guid>https://coverager.com/gyde-acquires-avid-health/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Pendulum Swings Continue to Shape Insurance Technology Strategy</title>
-    <link>https://iireporter.com/pendulum-swings-continue-to-shape-insurance-technology-strategy/</link>
-    <description>Cloud strategy presents another example of the pendulum in motion. One of our CIO Study Group members once remarked that the ideal outcome would be to identify the optimal resting point for the pendulum and simply stop it there. Across all of these domains—organizational structure, sourcing strategy, infrastructure—the pattern holds.</description>
-    <pubDate>Thu, 02 Apr 2026 06:59:22 +0000</pubDate>
-    <guid>https://iireporter.com/pendulum-swings-continue-to-shape-insurance-technology-strategy/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>California Drought, Wildfire Risks Grow as Snow Falls Short</title>
-    <link>https://www.claimsjournal.com/news/national/2026/04/02/336656.htm</link>
-    <description>The lack of snow may usher in drought across much of California, raising wildfire risks later in the year and further stressing crops and wildlife as resources dry up. California is heading into its dry season with just a fraction of the snow it typically has across its highest peaks at the end of its winter months, raising the prospects of drought across the most populous U.S. Statewide, California has just 18% of the snow a normal winter would bring to its mountains, according to the Department of Water Resources.</description>
-    <pubDate>Thu, 02 Apr 2026 06:59:20 +0000</pubDate>
-    <guid>https://www.claimsjournal.com/news/national/2026/04/02/336656.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.claimsjournal.com/app/uploads/2026/04/Snow-Covered-Mountains-Loom-Over-Los-Angeles_Bloomberg-580x387.jpg" type="image/jpeg" length="0"/>
   </item>
 </channel>
 </rss>
