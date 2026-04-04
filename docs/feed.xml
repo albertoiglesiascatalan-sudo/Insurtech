@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sat, 04 Apr 2026 06:46:35 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 04 Apr 2026 12:30:06 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>IA y talento: la brecha generacional marca el futuro del empleo</title>
+    <link>https://www.inese.es/ia-y-talento-la-brecha-generacional-marca-el-futuro-del-empleo/</link>
+    <description>Según el informe Tendencias en Automatización de Experis , el 22,7% de los jóvenes teme ser sustituido por estas tecnologías, por encima de millennials (20,5%), Generación X (17,2%) y baby boomers (13,1%), lo que evidencia una brecha generacional en la percepción del futuro laboral. No obstante, la sustitución directa de empleo sigue siendo limitada: solo el 14% de las empresas ha reemplazado trabajadores temporales por soluciones automatizadas, lo que confirma que, por ahora, la IA actúa más como complemento que como sustituto del talento humano. La Generación Z es la que muestra mayor inquietud ante el impacto de la inteligencia artificial en el empleo.</description>
+    <pubDate>Sat, 04 Apr 2026 12:29:56 +0000</pubDate>
+    <guid>https://www.inese.es/ia-y-talento-la-brecha-generacional-marca-el-futuro-del-empleo/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Kayna Targets SMB Insurance through Vertical SaaS Platforms</title>
     <link>https://iireporter.com/kayna-targets-smb-insurance-through-vertical-saas-platforms/</link>
@@ -409,15 +417,6 @@
     <guid>https://www.insurancejournal.com/news/international/2026/04/02/864366.htm</guid>
     <category>General</category>
     <enclosure url="https://www.insurancejournal.com/app/uploads/2026/04/traffic-on-M25-in-hertfordshire-UK-367023748-Depositphotos-580x435.jpg" type="image/jpeg" length="0"/>
-  </item>
-  <item>
-    <title>Stolen Renoir, Cézanne and Matisse Were Probably Uninsured, Market Sources Say</title>
-    <link>https://www.insurancejournal.com/news/international/2026/04/02/864372.htm</link>
-    <description>Three paintings by French masters Pierre-Auguste Renoir, Paul Cézanne and Henri Matisse stolen from a museum in northern Italy last week were probably not insured, according to market sources. They stole Cézanne’s “Tasse et Plat de Cerises” (Cup and Plate of Cherries), Renoir’s “Les Poissons” (The Fish) and Matisse’s “Odalisque sur la Terrasse” (Odalisque on the Terrace), police said. The lack of commercial insurance for paintings like the stolen ones is not uncommon, market sources say.</description>
-    <pubDate>Thu, 02 Apr 2026 12:44:13 +0000</pubDate>
-    <guid>https://www.insurancejournal.com/news/international/2026/04/02/864372.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.insurancejournal.com/app/uploads/2026/04/matisse-painting-stolen-in-italy-AP-580x395.jpg" type="image/jpeg" length="0"/>
   </item>
 </channel>
 </rss>
