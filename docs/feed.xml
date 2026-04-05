@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sun, 05 Apr 2026 12:31:26 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 05 Apr 2026 18:27:16 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Zinnia updates SmartOffice platform for advisors</title>
+    <link>https://coverager.com/zinnia-updates-smartoffice-platform-for-advisors/</link>
+    <description>Zinnia updated its SmartOffice platform, introducing a redesigned experience aimed at simplifying workflows for life and annuity advisors. Zinnia also integrated annuity quoting, submission, and tracking through its AnnuityNet add-on, allowing advisors to manage applications in real time within the same system. The changes are designed to reduce administrative work and streamline post-sale servicing, with the goal of helping advisors execute faster and manage more activity from a single platform.</description>
+    <pubDate>Sun, 05 Apr 2026 18:26:47 +0000</pubDate>
+    <guid>https://coverager.com/zinnia-updates-smartoffice-platform-for-advisors/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>IA y talento: la brecha generacional marca el futuro del empleo</title>
     <link>https://www.inese.es/ia-y-talento-la-brecha-generacional-marca-el-futuro-del-empleo/</link>
@@ -408,15 +416,6 @@
     <guid>https://www.insurancejournal.com/news/international/2026/04/02/864357.htm</guid>
     <category>General</category>
     <enclosure url="https://www.insurancejournal.com/app/uploads/2026/04/oil-tankers-anchored-near-strait-of-hormuz-getty-580x387.jpg" type="image/jpeg" length="0"/>
-  </item>
-  <item>
-    <title>UK Motor Finance Scandal to Cost Lenders $12 Billion</title>
-    <link>https://www.insurancejournal.com/news/international/2026/04/02/864366.htm</link>
-    <description>The motor finance industry must pay around 9.1 billion pounds ($12 billion) to compensate UK motorists for unfair vehicle loans under the market regulator’s trimmed, final bill for one of Britain’s costliest financial mis-selling scandals. The headline number, unveiled by the Financial Conduct Authority (FCA) after market hours on Monday, was lower than an originally proposed 11 billion pounds amid pushback during a consultation with the industry, which includes Lloyds, Barclays, Close Brothers, and the finance arms of vehicle manufacturers. The redress scheme has rattled the industry and tested the mettle of the FCA, which is seeking to draw a line under a 17-year scandal by balancing its duty to protect consumers from harm with government pressure to boost growth and competition by easing the regulatory burden.</description>
-    <pubDate>Thu, 02 Apr 2026 12:44:13 +0000</pubDate>
-    <guid>https://www.insurancejournal.com/news/international/2026/04/02/864366.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.insurancejournal.com/app/uploads/2026/04/traffic-on-M25-in-hertfordshire-UK-367023748-Depositphotos-580x435.jpg" type="image/jpeg" length="0"/>
   </item>
 </channel>
 </rss>
