@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sun, 05 Apr 2026 18:27:16 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 06 Apr 2026 01:21:47 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Liberty Mutual Announces Leadership Restructuring for CRS and LMI</title>
+    <link>https://www.carriermanagement.com/news/2026/04/05/286386.htm</link>
+    <description>Liberty Mutual announced a new leadership structure across the company’s Global Risk Solutions (GRS) and Liberty Mutual Investments (LMI) businesses late last week, appointing Vlad Barbalat president of Global Risk &amp; Capital Solutions. We have a great opportunity to connect our risk, capital and technology capabilities so we can move faster and deliver better outcomes for our customers and partners.” Liberty Mutual believes the new leadership structure will also position it to deliver on a 2030 aspiration to be the preeminent global insurance and capital solutions partner. Barbalat is, and will continue, to serve as chief investment officer of Liberty Mutual Group, reporting to Chairman, President and Chief Executive Officer Tim Sweeney.</description>
+    <pubDate>Mon, 06 Apr 2026 01:19:09 +0000</pubDate>
+    <guid>https://www.carriermanagement.com/news/2026/04/05/286386.htm</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Zinnia updates SmartOffice platform for advisors</title>
     <link>https://coverager.com/zinnia-updates-smartoffice-platform-for-advisors/</link>
@@ -407,15 +415,6 @@
     <pubDate>Thu, 02 Apr 2026 12:44:14 +0000</pubDate>
     <guid>https://www.reinsurancene.ws/santam-syndicate-1918-appoints-nigel-tatlock-as-head-of-property/</guid>
     <category>General</category>
-  </item>
-  <item>
-    <title>Secret Codes and Yuan Fees Get Ships Through Iran’s Hormuz Tollbooth</title>
-    <link>https://www.insurancejournal.com/news/international/2026/04/02/864357.htm</link>
-    <description>Iran agreed to allow 20 Pakistani vessels to transit through the strait, but the country only had a few flagged ships in the Gulf. The arrangement shows how Iran’s Islamic Revolutionary Guard Corps is exerting considerable control over shipping through the Strait of Hormuz, the critical maritime chokepoint through which a fifth of the world’s oil and liquefied natural gas normally transits. Iran’s National Security Committee has approved a bill that would impose fees on Strait of Hormuz, the semi-official Fars news agency reported, citing a member of the committee.</description>
-    <pubDate>Thu, 02 Apr 2026 12:44:14 +0000</pubDate>
-    <guid>https://www.insurancejournal.com/news/international/2026/04/02/864357.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.insurancejournal.com/app/uploads/2026/04/oil-tankers-anchored-near-strait-of-hormuz-getty-580x387.jpg" type="image/jpeg" length="0"/>
   </item>
 </channel>
 </rss>

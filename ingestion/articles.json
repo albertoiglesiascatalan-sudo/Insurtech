@@ -1,5 +1,23 @@
 [
   {
+    "id": "liberty-mutual-announces-leadership-restructuring-for-crs-and-lmi",
+    "title": "Liberty Mutual Announces Leadership Restructuring for CRS and LMI",
+    "title_original": "Liberty Mutual Announces Leadership Restructuring for CRS and LMI",
+    "url": "https://www.carriermanagement.com/news/2026/04/05/286386.htm",
+    "summary": "Liberty Mutual announced a new leadership structure across the company’s Global Risk Solutions (GRS) and Liberty Mutual Investments (LMI) businesses late last week, appointing Vlad Barbalat president of Global Risk & Capital Solutions. We have a great opportunity to connect our risk, capital and technology capabilities so we can move faster and deliver better outcomes for our customers and partners.” Liberty Mutual believes the new leadership structure will also position it to deliver on a 2030 aspiration to be the preeminent global insurance and capital solutions partner. Barbalat is, and will continue, to serve as chief investment officer of Liberty Mutual Group, reporting to Chairman, President and Chief Executive Officer Tim Sweeney.",
+    "category": "General",
+    "source": "Carrier Management",
+    "published_at": "2026-04-06T01:19:09.127039+00:00",
+    "image_url": "",
+    "signal_score": 12,
+    "signal_label": "Cambio de Liderazgo",
+    "signal_icon": "👔",
+    "why_matters": "Los cambios de liderazgo suelen anticipar cambios estratégicos.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
+  },
+  {
     "id": "zinnia-updates-smartoffice-platform-for-advisors",
     "title": "Zinnia updates SmartOffice platform for advisors",
     "title_original": "Zinnia updates SmartOffice platform for advisors",
@@ -9,7 +27,7 @@
     "source": "Coverager",
     "published_at": "2026-04-05T18:26:47.332324+00:00",
     "image_url": "",
-    "signal_score": 12,
+    "signal_score": 11,
     "signal_label": "",
     "signal_icon": "",
     "why_matters": "",
