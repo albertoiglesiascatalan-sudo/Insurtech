@@ -5,8 +5,171 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Wed, 08 Apr 2026 12:53:57 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 08 Apr 2026 19:01:05 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Kingstone Selects ZestyAI Model for California Expansion</title>
+    <link>https://iireporter.com/kingstone-selects-zestyai-model-for-california-expansion/</link>
+    <description>“ZestyAI’s Z-FIRE model provides the property-level intelligence we need to underwrite with precision in a complex market such as California.” Kingstone says the model enables more granular risk differentiation by analyzing property-specific characteristics, including building materials, vegetation, topography and defensible space. (Kingston, N.Y.) has selected the Z-FIRE wildfire risk model from ZestyAI (San Francisco, Calif.) to support its planned entry into the California homeowners insurance market. The model will be used to assess wildfire exposure at the individual property level, supporting rating and underwriting decisions as Kingstone expands on an excess and surplus lines basis.</description>
+    <pubDate>Wed, 08 Apr 2026 19:00:58 +0000</pubDate>
+    <guid>https://iireporter.com/kingstone-selects-zestyai-model-for-california-expansion/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>Genpact Integrates Parallel API to Enhance AI Research Workflows</title>
+    <link>https://iireporter.com/genpact-integrates-parallel-api-to-enhance-ai-research-workflows/</link>
+    <description>(Image source: Parallel Web Systems homepage.) Genpact (New York) has integrated web research capabilities from Parallel Web Systems (Palo Alto, Calif.) into its enterprise AI architecture to automate workflows and improve decision-making across insurance and sales operations. “While automation attempts struggle with real-world complexity, especially in highly regulated industries, our partnership with Parallel replaces repetitive human effort with continuous agentic research that integrates seamlessly into enhanced decision-making systems,” says Sanjeev Vohra, Chief Technology and Innovation Officer, Genpact. The integration embeds Parallel’s API into Genpact’s systems, enabling real-time data retrieval, automated research and structured outputs to support business processes, including property/casualty claims.</description>
+    <pubDate>Wed, 08 Apr 2026 19:00:58 +0000</pubDate>
+    <guid>https://iireporter.com/genpact-integrates-parallel-api-to-enhance-ai-research-workflows/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>AI Escalates Fraud Risk and Detection Arms Race</title>
+    <link>https://iireporter.com/ai-escalates-fraud-risk-and-detection-arms-race/</link>
+    <description>AI is enhancing insurers’ ability to detect fraud—but it is also equipping fraudsters with more powerful tools, accelerating an ongoing arms race. While detection and prevention efforts have improved over time, fraud remains widespread, costly, and often underreported. Artificial intelligence is rapidly becoming integral to insurance operations, including underwriting, claims processing, and fraud detection.</description>
+    <pubDate>Wed, 08 Apr 2026 19:00:57 +0000</pubDate>
+    <guid>https://iireporter.com/ai-escalates-fraud-risk-and-detection-arms-race/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>Toilet Paper Warehouse in California Destroyed by Fire; Employee Arrested</title>
+    <link>https://www.claimsjournal.com/news/national/2026/04/08/336762.htm</link>
+    <description>has been arrested on arson charges after a massive fire broke out Tuesday at the facility in California that serves around 50 million people. The 1.2 million-square-foot warehouse — located in Ontario, about 35 miles outside of Los Angeles — houses facial tissue and toilet paper, according to a local Fox report. Ontario Deputy Fire Chief Mike Wedell told Bloomberg News the building’s roof completely collapsed and all products inside were destroyed.</description>
+    <pubDate>Wed, 08 Apr 2026 19:00:56 +0000</pubDate>
+    <guid>https://www.claimsjournal.com/news/national/2026/04/08/336762.htm</guid>
+    <category>General</category>
+    <enclosure url="https://www.claimsjournal.com/app/uploads/2026/04/A-Kimberly-Clark-toilet-paper-distribution-center_Bloomberg-580x435.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>Telenor Sued Over Claims It Exposed Myanmar Customers to Junta Repression</title>
+    <link>https://www.claimsjournal.com/news/national/2026/04/08/336767.htm</link>
+    <description>A Swedish non-profit filed a class action lawsuit against Telenor on Tuesday on behalf of over 1,200 people whose phone data it says the Norwegian telecom’s Myanmar subsidiary shared with the country’s military junta following a 2021 coup. Telenor, which has since exited Myanmar, said it believed there was nothing in the lawsuit that the company had not already addressed and “in our view it is unlikely that such a claim will succeed.” The lawsuit, filed in Norway by the Justice and Accountability Initiative, alleges Telenor Myanmar shared the call logs and location data of suspected political opponents of the junta, exposing them to repression and leading to the execution of at least one prominent activist and the prosecution of another. ‘Terrible’ If Data Was Misused By Junta, Telenor Says Telenor, which is 54% owned by the Norwegian state, was informed of plans to file the suit in a pre-action letter in October and said at the time it had been “legally required to provide traffic data to the authorities.” “Telenor Myanmar was operating on the ground in a war zone,” the company said in an email to Reuters on Wednesday, adding that refusing the military authorities’ requests could have led to “imprisonment, torture or the death penalty” for local employees.</description>
+    <pubDate>Wed, 08 Apr 2026 19:00:56 +0000</pubDate>
+    <guid>https://www.claimsjournal.com/news/national/2026/04/08/336767.htm</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>Alert Fatigue Drags Down IT Production Environments, Leads to Costly Outages</title>
+    <link>https://www.carriermanagement.com/news/2026/04/08/286535.htm</link>
+    <description>A new survey on IT production environments sheds light on the growing problem of alert fatigue. Based on a survey of 1,039 SRE, DevOps and IT operations professionals, the 2026 State of Production Reliability and AI Adoption Report reveals “an industry at an inflection point: reactive, alert-driven incident response is no longer sufficient for the scale and complexity of modern production environments, and the path forward requires autonomous systems that can prevent, resolve and optimize operations end to end.” “This data highlights a gap in how today’s tools support modern production environments,” said Gou Rao, CEO and co-founder of NeuBird AI. Current production environments outpace incident management practices built to support them, and this deficiency is now leading to measurable failures, the survey showed.</description>
+    <pubDate>Wed, 08 Apr 2026 19:00:55 +0000</pubDate>
+    <guid>https://www.carriermanagement.com/news/2026/04/08/286535.htm</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>Berkshire-owned PacifiCorp Utility Ruling Win Could Reduce Oregon Wildfire Damages</title>
+    <link>https://www.carriermanagement.com/news/2026/04/08/286541.htm</link>
+    <description>An Oregon appeals court on Wednesday ruled in favor of PacifiCorp in litigation over a series of Oregon wildfires in 2020, saying a trial judge erred in letting the case against the Berkshire Hathaway-owned utility proceed as a class action. The decision by the Oregon Court of Appeals in Salem could reduce PacifiCorp’s overall liability, which the utility has estimated could total tens of billions of dollars. PacifiCorp has denied claims by thousands of Oregon residents and business owners who accused it of causing several wildfires by negligently failing to shut off power lines during a Labor Day weekend windstorm in 2020.</description>
+    <pubDate>Wed, 08 Apr 2026 19:00:55 +0000</pubDate>
+    <guid>https://www.carriermanagement.com/news/2026/04/08/286541.htm</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>U.S. E&amp;S Growth Slows Again; Declining Berkshire Volume Tops Leaders</title>
+    <link>https://www.carriermanagement.com/news/2026/04/08/286549.htm</link>
+    <description>Across the industry, S&amp;P GMI attributed the overall slowdown in E&amp;S premium growth to declining commercial property premiums amid intensified market competition. A recent analysis by S&amp;P Global Market Intelligence reveals that the pace of growth in the U.S. excess and surplus lines market slowed to 7.8% in 2025, marking the first single-digit growth rate recorded since 2017.</description>
+    <pubDate>Wed, 08 Apr 2026 19:00:55 +0000</pubDate>
+    <guid>https://www.carriermanagement.com/news/2026/04/08/286549.htm</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>Franklin Templeton: No evidence of weakening fundamentals in cat bonds, stays overweight</title>
+    <link>https://www.artemis.bm/news/franklin-templeton-no-evidence-weakening-fundamentals-catastrophe-bonds/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=franklin-templeton-no-evidence-weakening-fundamentals-catastrophe-bonds</link>
+    <description>Franklin Templeton Investment Solutions, the hedge fund-focused arm of the global asset manager, has maintained its overweight conviction on the catastrophe bond asset class, with the firm citing that while yields and spreads have compressed compared to last year, the market remains healthy, with no evidence of weakening fundamentals. “Although yields and spreads have compressed compared to this time last year, the market remains healthy, with no evidence of weakening fundamentals.” The firm noted that by mid-March, spreads had widened from year-end levels, which was primarily driven by seasonal technical factors rather than underlying fundamentals. However, on the renewal side, approximately US$14.7 billion of catastrophe bonds are scheduled to mature in 2026, compared to US$13.7 billion in 2025, which as Franklin Templeton notes, implies roughly US$1 billion of incremental new issuance potential compared to last year’s figure.</description>
+    <pubDate>Wed, 08 Apr 2026 19:00:47 +0000</pubDate>
+    <guid>https://www.artemis.bm/news/franklin-templeton-no-evidence-weakening-fundamentals-catastrophe-bonds/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=franklin-templeton-no-evidence-weakening-fundamentals-catastrophe-bonds</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>Parametrix delighted by investor support for Hannover Re parametric cloud outage cat bond: Haran</title>
+    <link>https://www.artemis.bm/news/parametrix-delighted-by-investor-support-for-hannover-re-parametric-cloud-outage-cat-bond-haran/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=parametrix-delighted-by-investor-support-for-hannover-re-parametric-cloud-outage-cat-bond-haran</link>
+    <description>Parametrix is delighted to see expanded support from investors across the market to cover the tail risk of cloud outage events through Hannover Re’s successful renewal of its landmark parametric catastrophe bond, Cumulus Re (Series 2026-1) , Sharon Haran, Managing Director of Parametrix Analytics, has said. Much like Hannover Re’s previous two transactions, this new Cumulus Re 2026-1 cloud outage catastrophe bond features a parametric trigger, which is based on data related to outages of major US cloud provider regions and designed by Parametrix, a specialist in modelling and analytics for parametric cloud downtime cyber risk transfer. As Artemis reported on March 9th, Hannover Re sponsored a second successful renewal of its landmark parametric cloud outage catastrophe bond, this time securing $35 million in retrocessional cyber reinsurance protection covering cloud outage events through the Cumulus Re (Series 2026-1) issuance.</description>
+    <pubDate>Wed, 08 Apr 2026 19:00:47 +0000</pubDate>
+    <guid>https://www.artemis.bm/news/parametrix-delighted-by-investor-support-for-hannover-re-parametric-cloud-outage-cat-bond-haran/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=parametrix-delighted-by-investor-support-for-hannover-re-parametric-cloud-outage-cat-bond-haran</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>The Baldwin Group launches member-owned captive for construction clients</title>
+    <link>https://www.reinsurancene.ws/the-baldwin-group-launches-member-owned-captive-for-construction-clients/</link>
+    <description>The Baldwin Group, an insurance distribution firm, has launched Azimuth Re, Ltd., a new member-owned group captive tailored for its construction clients, in partnership with Innovative Captive Strategies. Andy O’Brien, Partner at The Baldwin Group, commented, “In today’s ultra-competitive construction environment, the strongest contractors are those who can most effectively balance growth, risk, and profitability with precision and discipline. “By creating a peer group of best-in-class contractors and equipping them with industry-leading risk management, claims, and safety advisory, we’re building a model designed to outperform the standard insurance market while empowering our clients to transform risk management discipline into a competitive advantage.” Greg Deems, Senior Partner, The Baldwin Group, added, “What makes Azimuth different is its model of collective responsibility.</description>
+    <pubDate>Wed, 08 Apr 2026 19:00:46 +0000</pubDate>
+    <guid>https://www.reinsurancene.ws/the-baldwin-group-launches-member-owned-captive-for-construction-clients/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>Revell succeeds Watkins as Swiss Re’s Head of Marine &amp; Energy for P&amp;C Re</title>
+    <link>https://www.reinsurancene.ws/revell-succeeds-watkins-as-swiss-res-head-of-marine-energy-for-pc-re/</link>
+    <description>Global reinsurer Swiss Re has announced the appointment of Suzanne Revell as Head of Marine &amp; Energy for P&amp;C Re, succeeding Adam Watkins, effective 1 June 2026. In her new position, based in London, Revell will be responsible for Swiss Re’s global Marine &amp; Energy portfolio, including its strategic direction, underwriting priorities and market representation and lead the underwriting team across all regions. The executive joined Swiss Re in 2017 and currently serves as Head of Marine &amp; Energy UK and leads the Political Violence &amp; Terror portfolio.</description>
+    <pubDate>Wed, 08 Apr 2026 19:00:46 +0000</pubDate>
+    <guid>https://www.reinsurancene.ws/revell-succeeds-watkins-as-swiss-res-head-of-marine-energy-for-pc-re/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>Facultative reinsurance expands role in Asia Pacific as insurers pursue growth and stability: Aon</title>
+    <link>https://www.reinsurancene.ws/facultative-reinsurance-expands-role-in-asia-pacific-as-insurers-pursue-growth-and-stability-aon/</link>
+    <description>Aon, a global provider of risk, retirement and health solutions, reports that facultative reinsurance is playing an increasingly significant role across Asia Pacific, as insurers look to support expansion while managing volatility. By making greater use of facultative reinsurance, Aon explains that insurers are able to provide higher limits and more competitive terms, while also entering new sectors and geographic markets. The broker notes that insurers are using facultative reinsurance to manage U.S.</description>
+    <pubDate>Wed, 08 Apr 2026 19:00:46 +0000</pubDate>
+    <guid>https://www.reinsurancene.ws/facultative-reinsurance-expands-role-in-asia-pacific-as-insurers-pursue-growth-and-stability-aon/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>South Dakota Construction Company Sued Over Whistleblower’s Firing</title>
+    <link>https://www.insurancejournal.com/news/midwest/2026/04/08/865003.htm</link>
+    <description>Department of Labor has filed suit against a Valley Springs, South Dakota construction contractor for the wrongful termination of an employee who reported a severe work-related injury. District Court for the District of South Dakota, asks the court to hold the company and its successor liable for illegal retaliation. OSHA determined Stone Hill Excavation LLC, and its successor Split Rock Sand &amp; Gravel, violated the whistleblower provisions of the Occupational Safety and Health Act by firing the worker two days after the injury was reported.</description>
+    <pubDate>Wed, 08 Apr 2026 19:00:45 +0000</pubDate>
+    <guid>https://www.insurancejournal.com/news/midwest/2026/04/08/865003.htm</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>Texas Cannabis Businesses Sue State to Block Smokeable Hemp Ban</title>
+    <link>https://www.insurancejournal.com/news/southcentral/2026/04/08/865007.htm</link>
+    <description>Texas hemp industry leaders and advocacy groups have sued the state to block new regulations that eliminate natural smokeable hemp products and increase licensing fees. The Texas Hemp Business Council, Hemp Industry &amp; Farmers of America, and several Texas-based dispensaries and manufacturers filed for a temporary restraining order against the Texas Department of State Health Services and the Texas Health and Human Services Commission on Tuesday, alleging that the agencies have overstepped their constitutional authority by rewriting the statutory definitions of hemp established by lawmakers in 2019. “These Texas officials and state agencies are clearly attempting to create new law in direct contradiction to what the Texas legislature intended.” The Texas Department of State Health Services released regulations on consumable hemp-derived THC products that went into effect on March 31.</description>
+    <pubDate>Wed, 08 Apr 2026 19:00:45 +0000</pubDate>
+    <guid>https://www.insurancejournal.com/news/southcentral/2026/04/08/865007.htm</guid>
+    <category>General</category>
+    <enclosure url="https://www.insurancejournal.com/app/uploads/2026/04/Hemp-Industry-Texas-580x387.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>Another State, Tennessee, Warns Insurers About the Proper Use of Drone Images</title>
+    <link>https://www.insurancejournal.com/news/southeast/2026/04/08/865024.htm</link>
+    <description>The Tennessee Department of Commerce and Insurance has joined a few other states in urging insurers to be careful about using aerial imagery in making claims and nonrenewal decisions, following some complaints from homeowners. The department is not aiming to limit the use of drones and satellite images by insurers, but said in a bulletin Wednesday that “insurers must be mindful, though, that aerial imagery…has its limitations and should not be the only information utilized in an insurer’s decision-making process.” If bird’s-eye shots of a property do not accurately reflect the condition of a roof, the images alone are not sufficient to indicate that a roof must be replaced, reads the bulletin from Insurance Commissioner Carter Lawrence. “Denying a claim based solely on unclear or imprecise aerial images that do not accurately reflect the current state of the subject property constitutes an unfair claims practice in violation of Tenn.</description>
+    <pubDate>Wed, 08 Apr 2026 19:00:45 +0000</pubDate>
+    <guid>https://www.insurancejournal.com/news/southeast/2026/04/08/865024.htm</guid>
+    <category>General</category>
+    <enclosure url="https://www.insurancejournal.com/app/uploads/2026/04/drone-on-roof-Adobe-580x356.jpeg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>Munich Re Ventures joins $100m+ Starfish Space Series B led by Point72 Ventures</title>
+    <link>https://www.insurtechinsights.com/munich-re-ventures-joins-100m-starfish-space-series-b-led-by-point72-ventures/</link>
+    <description>Starfish Space has raised more than $100m in a Series B funding round led by Point72 Ventures, with participation from a broad syndicate of strategic and financial investors, including Munich Re Ventures. Seattle-based Starfish Space develops in-orbit satellite servicing technology through its Otter spacecraft platform, designed to extend the life of geostationary satellites and support end-of-life disposal in low Earth orbit. The round also included backing from Activate Capital, Shield Capital, Industrious Ventures, NightDragon, NFX, Toyota Ventures, PSL Ventures, Nomi Capital, Gaingels, and Overlap Holdings.</description>
+    <pubDate>Wed, 08 Apr 2026 19:00:44 +0000</pubDate>
+    <guid>https://www.insurtechinsights.com/munich-re-ventures-joins-100m-starfish-space-series-b-led-by-point72-ventures/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>Aon expands digital infrastructure team amid rising data center demand</title>
+    <link>https://coverager.com/aon-expands-digital-infrastructure-team-amid-rising-data-center-demand/</link>
+    <description>Aon has made two senior appointments to expand its digital infrastructure capabilities, as demand for data centers, cloud, and AI-related projects continues to grow. The firm hired Stephen Fox as Managing Director within its Digital Infrastructure Lifecycle Solutions practice and named Brian Hearst as Global Digital Infrastructure Builders Risk Leader. “As digital infrastructure becomes more capital‑intensive and systemically important, clients need advisors who can bridge technical risk, underwriting appetite and access to diversified sources of capital.</description>
+    <pubDate>Wed, 08 Apr 2026 19:00:40 +0000</pubDate>
+    <guid>https://coverager.com/aon-expands-digital-infrastructure-team-amid-rising-data-center-demand/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>Howden launches actuarial &amp; longevity practice with Hymans Robertson deal</title>
+    <link>https://coverager.com/howden-launches-actuarial-longevity-practice-with-hymans-robertson-deal/</link>
+    <description>Howden Group Holdings has agreed to acquire the Insurance and Financial Services Consulting Team from Hymans Robertson LLP , expanding its actuarial and longevity advisory capabilities and formally launching a new global practice. The deal will establish Howden Insurance Actuarial &amp;amp; Longevity (Howden IAL), combining the Hymans Robertson IFS team with actuarial and longevity specialists previously integrated into Howden through Barnett Waddingham . The practice will consist of around 90 specialists, increasing Howden’s capacity to support insurers across core actuarial and risk functions.</description>
+    <pubDate>Wed, 08 Apr 2026 19:00:40 +0000</pubDate>
+    <guid>https://coverager.com/howden-launches-actuarial-longevity-practice-with-hymans-robertson-deal/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>Howden-backed Rosetta Risk Management site goes inactive</title>
+    <link>https://coverager.com/howden-backed-rosetta-risk-management-site-goes-inactive/</link>
+    <description>Rosetta Risk Management , a construction-focused insurtech backed by Howden Ventures, appears to have gone offline. Rosetta Risk Management aimed to help insurers improve underwriting by providing more structured construction risk data, with the goal of supporting better pricing and broader insurability in a complex segment. Howden Ventures backed the company as part of that transition, highlighting the role of data in improving risk evaluation and helping unlock underwriting capacity in construction insurance.</description>
+    <pubDate>Wed, 08 Apr 2026 19:00:40 +0000</pubDate>
+    <guid>https://coverager.com/howden-backed-rosetta-risk-management-site-goes-inactive/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>GAO: Wind Risk Linked to Larger Insurance Premium Jumps Than Wildfire</title>
     <link>https://www.carriermanagement.com/news/2026/04/08/286514.htm</link>
@@ -247,171 +410,6 @@
     <description>Aon’s Reinsurance Solutions, the reinsurance division of global broker Aon, has announced the appointment of Jose Maria Lopez as Marine Product Coordinator for EMEA Facultative Reinsurance. Lopez joined Aon in October 2014 and has since held a number of senior marine leadership roles, including Marine Associate Manager and, most recently, Marine Regional Practice Leader within Aon’s Reinsurance Solutions since 2018. This role is in addition to Lopez’s current responsibilities leading the Latin America Marine team.</description>
     <pubDate>Wed, 08 Apr 2026 07:05:09 +0000</pubDate>
     <guid>https://www.reinsurancene.ws/aons-reinsurance-solutions-appoints-jose-maria-lopez-as-marine-product-coordinator/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Pen Underwriting agrees long-term partnership to support non-standard property business</title>
-    <link>https://www.reinsurancene.ws/pen-underwriting-agrees-long-term-partnership-to-support-non-standard-property-business/</link>
-    <description>Andrew Booth, Managing Director of Property &amp; Personal at Pen Underwriting, commented: “We are absolutely delighted to be expanding our decades-long capacity collaboration with Zurich into non-standard household risks and excited to be joining forces with Hiscox in its first strategic partnership with Pen. Pen Underwriting, a multi-class and multi-territory managing general agent (MGA), has entered into a multi-year strategic arrangement to support its non-standard household insurance portfolio across the UK, Channel Islands, and Isle of Man. “Their collective backing, and trust in Pen’s proven expertise in underwriting, means we have significant scope to grow our already large portfolio and meet the rising demand for specialist property insurance as well as from customers with standard homes but specialist needs.</description>
-    <pubDate>Wed, 08 Apr 2026 07:05:09 +0000</pubDate>
-    <guid>https://www.reinsurancene.ws/pen-underwriting-agrees-long-term-partnership-to-support-non-standard-property-business/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Odd Mistereggen joins Gallagher Re as Fac broker, EMEA</title>
-    <link>https://www.reinsurancene.ws/odd-mistereggen-joins-gallagher-re-as-fac-broker-emea/</link>
-    <description>Global reinsurance broker Gallagher Re has announced the appointment of Odd Kåre Engh Mistereggen as Facultative Broker, EMEA. Joining the company from rival broker Howden Re, Mistereggen brings a strong analytical approach to complex risk management, drawing on a robust background in project management, retail broking, and reinsurance. Specialising in P&amp;C risk transfer, captives, and facultative reinsurance, Mistereggen has deep experience in designing bespoke solutions for client exposures across areas including PDBI, CAR/EAR, and casualty.</description>
-    <pubDate>Wed, 08 Apr 2026 07:05:09 +0000</pubDate>
-    <guid>https://www.reinsurancene.ws/odd-mistereggen-joins-gallagher-re-as-fac-broker-emea/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Viewpoint: The Missing Link in Commercial? No Paper Trail is Costing Insurers</title>
-    <link>https://www.insurancejournal.com/news/southeast/2026/04/08/864858.htm</link>
-    <description>For commercial property insurers, that missing history is not an abstraction, it is a direct source of claims uncertainty, underwriting exposure, and loss adjustment cost. Consider the moment a major commercial building changes hands. The volume of technical data produced on a contemporary commercial project would have been unimaginable a generation ago.</description>
-    <pubDate>Wed, 08 Apr 2026 07:05:09 +0000</pubDate>
-    <guid>https://www.insurancejournal.com/news/southeast/2026/04/08/864858.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.insurancejournal.com/app/uploads/2026/04/commercial-construction-Adobe-580x387.jpeg" type="image/jpeg" length="0"/>
-  </item>
-  <item>
-    <title>Truck Rates at Highest Since 2022 Add to Inflation Pressures</title>
-    <link>https://www.insurancejournal.com/news/national/2026/04/08/864874.htm</link>
-    <description>Haulers have responded by raising the weekly per-mile fuel surcharge paid by shippers to its highest since 2022, according to Truckstop.com data. Those surcharges come on top of a months-long increase in truck-equipment rates, which are charged to move goods around the country and are higher in part due to trucker shortages. Trucking operators saw diesel prices spike by almost 50% since the start of the US-Israel war against Iran at the end of February.</description>
-    <pubDate>Wed, 08 Apr 2026 07:05:08 +0000</pubDate>
-    <guid>https://www.insurancejournal.com/news/national/2026/04/08/864874.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.insurancejournal.com/app/uploads/2026/04/truck-stop-diesel-trucking-Bloomberg-580x386.jpg" type="image/jpeg" length="0"/>
-  </item>
-  <item>
-    <title>Conflicto en Medio Oriente: ¿Puede afectar la seguridad digital de bancos de América Latina?</title>
-    <link>https://iupana.com/2026/04/07/conflicto-en-medio-oriente-puede-afectar-la-seguridad-digital-de-bancos-de-america-latina/</link>
-    <description>La banca latinoamericana podría estar expuesta a riesgos que no controla, debido a su dependencia de proveedores tecnológicos globales, que la conecta con conflictos como el de Medio Oriente. Aun así, expertos en seguridad discrepan sobre si ese riesgo es real o todavía remoto. Regístrate gratis o inicia sesión para leer el artículo completo y descubrir: Perspectivas estratégicas sobre innovación, regulación y tendencias en banca digital y fintech Entrevistas con líderes que están transformando el sector financiero en la región Reportes y estudios que anticipan los cambios clave del mercado Acceso prioritario a información para tomar decisiones informadas y fortalecer tu liderazgo Únete a la comunidad de ejecutivos que marcan la diferencia en la transformación digital de la banca.</description>
-    <pubDate>Wed, 08 Apr 2026 01:16:06 +0000</pubDate>
-    <guid>https://iupana.com/2026/04/07/conflicto-en-medio-oriente-puede-afectar-la-seguridad-digital-de-bancos-de-america-latina/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Majesco Launches Spring ’26 Release with AI, Workflow Enhancements</title>
-    <link>https://iireporter.com/majesco-launches-spring-26-release-with-ai-workflow-enhancements/</link>
-    <description>Majesco’s Spring ’26 Release reflects the company’s vision for the future of insurance software; intelligent, embedded, operationally relevant, and built to create measurable business impact for today’s insurance carriers.” For property/casualty insurers, the release includes enhancements to automate high-volume workflows, integrate real-time analytics and improve underwriting and pricing processes. Majesco (Morristown, N.J.) has launched its Spring ’26 Release, introducing new capabilities designed to streamline workflows, enhance automation and expand AI-driven functionality across its insurance platform. The release focuses on reducing operational friction by integrating task management, analytics and AI into core insurance processes, enabling insurers to manage policy, billing and claims workflows within a Manish Shah, President and Chief Product Officer, Majesco.</description>
-    <pubDate>Wed, 08 Apr 2026 01:16:02 +0000</pubDate>
-    <guid>https://iireporter.com/majesco-launches-spring-26-release-with-ai-workflow-enhancements/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Origami Risk Expands Platform with AI, Workflow Automation Tools</title>
-    <link>https://iireporter.com/origami-risk-expands-platform-with-ai-workflow-automation-tools/</link>
-    <description>Origami Risk (Chicago) has launched new platform solutions and enhancements designed to automate workflows and deliver real-time insights across claims, policy administration and financial operations. Origami Risk has also introduced a Book of Business Transfer solution that allows insurers and brokers to move large volumes of policies through a governed bulk process, reducing the need for manual reassignment and minimizing errors and compliance risk. All new capabilities are available to Origami Risk customers.</description>
-    <pubDate>Wed, 08 Apr 2026 01:16:02 +0000</pubDate>
-    <guid>https://iireporter.com/origami-risk-expands-platform-with-ai-workflow-automation-tools/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Cleared for takeoff: war rates remain stable as airlines seek new routes</title>
-    <link>https://insuranceasianews.com/cleared-for-takeoff-war-rates-remain-stable-as-airlines-seek-new-routes/</link>
-    <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
-    <pubDate>Wed, 08 Apr 2026 01:15:58 +0000</pubDate>
-    <guid>https://insuranceasianews.com/cleared-for-takeoff-war-rates-remain-stable-as-airlines-seek-new-routes/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>California AG Opposing Oil Pipeline Special Permit to Waive Safety Regulation</title>
-    <link>https://www.insurancejournal.com/news/west/2026/04/07/864669.htm</link>
-    <description>Pipeline and Hazardous Materials Safety Administration’s consideration of Sable Offshore Corp.’s request for a special permit to waive a safety regulation and transport oil through Lines CA-324 and CA-325 in Santa Barbara and Kern counties. California Attorney General Rob Bonta is opposing efforts to wave safety regulations for the Sable oil pipeline. PHSMA is trying to assert federal jurisdiction over the onshore lines by reclassifying them as “interstate,” issuing Sable an emergency permit waiving compliance its safety regulation requiring evaluation and remediation of pipeline corrosion.</description>
-    <pubDate>Wed, 08 Apr 2026 01:15:50 +0000</pubDate>
-    <guid>https://www.insurancejournal.com/news/west/2026/04/07/864669.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.insurancejournal.com/app/uploads/2014/06/oil_spill-580x386.jpg" type="image/jpeg" length="0"/>
-  </item>
-  <item>
-    <title>Two Firefighters Killed in Collision During Search for Missing Woman</title>
-    <link>https://www.insurancejournal.com/news/east/2026/04/07/864909.htm</link>
-    <description>Two firefighters traveling in a utility vehicle along a Pennsylvania road during a search for a missing woman were killed in a head-on crash with a car, officials said. No further details about the arrest or the search for the missing woman were immediately available Sunday. Autopsies on the firefighters, both residents of Fleetwood, were scheduled for Monday.</description>
-    <pubDate>Wed, 08 Apr 2026 01:15:49 +0000</pubDate>
-    <guid>https://www.insurancejournal.com/news/east/2026/04/07/864909.htm</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Why Insurance Needs Specialized AI: The Vertical AI Difference</title>
-    <link>https://coverager.com/why-insurance-needs-specialized-ai-the-vertical-ai-difference/</link>
-    <description>From underwriting to policy renewals, and even marketing content creation, industry-specific Vertical AI is touching many areas of an insurance company&amp;#8217;s business. How Vertical AI Empowers Insurance Agencies Now here&amp;#8217;s where Vertical AI fits in. Investing, Growing, and Succeeding with Specialized AI The future of insurance is here.</description>
-    <pubDate>Wed, 08 Apr 2026 01:15:46 +0000</pubDate>
-    <guid>https://coverager.com/why-insurance-needs-specialized-ai-the-vertical-ai-difference/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Aon says record reinsurance capital is fueling insurer growth ambitions</title>
-    <link>https://coverager.com/aon-says-record-reinsurance-capital-is-fueling-insurer-growth-ambitions/</link>
-    <description>Aon says reinsurance buyers entered the April 1, 2026 renewal with unusually strong leverage, supported by a record $785 billion in global reinsurance capital. Aon frames it as a growth tool, with buyers using favorable conditions to lower costs, improve capital efficiency, and expand into new business lines, geographies, and risk categories. According to the firm, that capital strength helped insurers buy more protection, secure broader structures, and push through double digit rate reductions in several markets, particularly across Asia Pacific.</description>
-    <pubDate>Wed, 08 Apr 2026 01:15:46 +0000</pubDate>
-    <guid>https://coverager.com/aon-says-record-reinsurance-capital-is-fueling-insurer-growth-ambitions/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Licencias bancarias en México: más que regulación, una apuesta estratégica</title>
-    <link>https://iupana.com/2026/04/07/licencias-bancarias-mexico-mas-que-regulacion-apuesta-estrategica/</link>
-    <description>Tras años de operar bajo licencias que les permitieron ofrecer servicios como créditos o ahorros, ahora varias fintechs en México buscan dar el salto hacia la banca múltiple, un cambio con el que podrán operar con un marco regulatorio más amplio y competir de frente con la banca tradicional. “Vamos a llegar al último rincón de México, eso no lo duden. Espero tener todo eso montado este año y, ahora sí, convertirnos en el banco favorito de todo México”, asegura Juan Guerra, director ejecutivo de Revolut México.</description>
-    <pubDate>Tue, 07 Apr 2026 18:45:18 +0000</pubDate>
-    <guid>https://iupana.com/2026/04/07/licencias-bancarias-mexico-mas-que-regulacion-apuesta-estrategica/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Google Adds Mental Health Tools to Gemini Chatbot After Lawsuit</title>
-    <link>https://www.claimsjournal.com/news/national/2026/04/07/336735.htm</link>
-    <description>Alphabet Inc.’s Google plans to introduce new mental health support features for its Gemini chatbot as the company and rivals, like OpenAI, have faced several lawsuits accusing their artificial intelligence tools of leading to harm. Gemini will add an interface directing chatbot users to a support hotline when the conversation indicates “a potential crisis related to suicide or self-harm,” Google said in a blog post on Tuesday. In March, the family of a deceased 36-year-old man in Florida sued Google, claiming that his use of Gemini culminated in a “four-day descent into violent missions and coached suicide.” At the time, Google said the chatbot referred the man to a crisis hotline many times but promised to improve the tool’s safeguards.</description>
-    <pubDate>Tue, 07 Apr 2026 18:45:14 +0000</pubDate>
-    <guid>https://www.claimsjournal.com/news/national/2026/04/07/336735.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.claimsjournal.com/app/uploads/2026/04/Google-Gemini-AI-webpage_Bloomberg-580x401.jpg" type="image/jpeg" length="0"/>
-  </item>
-  <item>
-    <title>Russia-Linked Hackers Hijack Routers to Steal Passwords, UK Says</title>
-    <link>https://www.claimsjournal.com/news/national/2026/04/07/336738.htm</link>
-    <description>Russian government-linked hackers are compromising popular internet routers to steal passwords for email accounts and other online services, the U.K.’s National Cyber Security Centre has warned. The hackers, a group known as APT28, are associated with Russia’s GRU military intelligence agency, according to research published Tuesday by the U.K. British cyber officials said they have observed the alleged Russian intruders targeting routers manufactured by companies such as MikroTik and TP-Link.</description>
-    <pubDate>Tue, 07 Apr 2026 18:45:13 +0000</pubDate>
-    <guid>https://www.claimsjournal.com/news/national/2026/04/07/336738.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.claimsjournal.com/app/uploads/2026/04/Keyboard-with-English-and-Russian-keys_Bloomberg-580x389.jpg" type="image/jpeg" length="0"/>
-  </item>
-  <item>
-    <title>Police Chases Lead to 8 Deaths Across the U.S. in Less Than a Week</title>
-    <link>https://www.carriermanagement.com/news/2026/04/07/286448.htm</link>
-    <description>A series of police pursuits has led to at least eight deaths around the country in less than a week amid ongoing calls from some law enforcement experts to curb risky high-speed car chases. And in California, three people were killed in vehicle crashes during police pursuits in separate incidents last week. The deadly incidents are among the hundreds of fatalities that occur during police chases each year.</description>
-    <pubDate>Tue, 07 Apr 2026 18:45:13 +0000</pubDate>
-    <guid>https://www.carriermanagement.com/news/2026/04/07/286448.htm</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Stanley Tumbler Maker Prevails in Lawsuit Over Lead Scare</title>
-    <link>https://www.carriermanagement.com/news/2026/04/07/286452.htm</link>
-    <description>A federal judge dismissed a proposed class-action lawsuit accusing the maker of Stanley tumblers of concealing that the popular water bottles contained lead. Litigation over the tumblers began after reports of possible lead contamination went viral on social media in early 2024. But in a 41-page decision, Lin said the plaintiffs did not show the use of lead in Stanley tumblers would be material to reasonable consumers.</description>
-    <pubDate>Tue, 07 Apr 2026 18:45:12 +0000</pubDate>
-    <guid>https://www.carriermanagement.com/news/2026/04/07/286452.htm</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Devastating Hawaii Kona Storms Cause Estimated $1B in Losses</title>
-    <link>https://www.carriermanagement.com/news/2026/04/07/286458.htm</link>
-    <description>The double Kona storm patterns caused Honolulu to break a 75-year-old 24-hour record, with rainfall totaling nearly 50 inches on Maui and 39 inches on Hawaii. FEMA estimated that more than 400,000 properties statewide don’t carry flood insurance, increasing the likelihood of uninsured losses for homeowners, small businesses, and the agricultural sector. Hawaii’s multi-day storm event last month resulted in swaths of heavy rain totaling up to 25 inches in some areas, according to analysis by Marsh’s Guy Carpenter.</description>
-    <pubDate>Tue, 07 Apr 2026 18:45:11 +0000</pubDate>
-    <guid>https://www.carriermanagement.com/news/2026/04/07/286458.htm</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Florida Retirement System Pension grows ILS allocation to 1% of fund, around $2.23bn</title>
-    <link>https://www.artemis.bm/news/florida-retirement-system-pension-grows-ils-allocation-to-1-of-fund-around-2-23bn/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=florida-retirement-system-pension-grows-ils-allocation-to-1-of-fund-around-2-23bn</link>
-    <description>The Florida Retirement System Pension Plan, which is administered by the Florida State Board of Administration, saw its allocation to insurance-linked securities funds and reinsurance strategies rising to make up 1% of total pension fund assets by the end of 2025, which equated to around $2.23 billion invested. By 2023, the Florida Retirement System pension fund allocation to ILS investments reached the $1 billion dollar mark, with the State Board of Administration developing a plan to capitalise on higher rates and returns possible in a harder reinsurance market to as much as double it . Those allocations are made on behalf of the giant Florida Retirement System Pension Plan, which reached total fund assets of over $222.5 billion by the end of 2025.</description>
-    <pubDate>Tue, 07 Apr 2026 18:45:05 +0000</pubDate>
-    <guid>https://www.artemis.bm/news/florida-retirement-system-pension-grows-ils-allocation-to-1-of-fund-around-2-23bn/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=florida-retirement-system-pension-grows-ils-allocation-to-1-of-fund-around-2-23bn</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Court of Appeals weighs in on Vesttoo LOC reinsurance broker responsibilities</title>
-    <link>https://www.artemis.bm/news/court-of-appeals-weighs-in-on-vesttoo-loc-reinsurance-broker-responsibilities/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=court-of-appeals-weighs-in-on-vesttoo-loc-reinsurance-broker-responsibilities</link>
-    <description>The United States Court of Appeals has weighed in on a lawsuit regarding the Vesttoo fraud and the fake letters of credit (LOC) that underpinned reinsurance deals linked to the company, with a finding that could have some ramifications for brokers. The appeal in question came under the lawsuit filed by Porch Group against broker Gallagher Re, regarding the Vesttoo reinsurance letter of credit (LOC) collateral fraud. Porch claims that, “Gallagher incorrectly represented the collateral letter as a letter of credit, ignored red flags throughout the transaction process, assured HOA that the collateral was valid, and assured HOA it could “safely” allow Vesttoo’s $25 million withdrawal from the reinsurance account,” the appeal court ruling states (HOA being Homeowners of America, a Porch insurer subsidiary).</description>
-    <pubDate>Tue, 07 Apr 2026 18:45:04 +0000</pubDate>
-    <guid>https://www.artemis.bm/news/court-of-appeals-weighs-in-on-vesttoo-loc-reinsurance-broker-responsibilities/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=court-of-appeals-weighs-in-on-vesttoo-loc-reinsurance-broker-responsibilities</guid>
     <category>General</category>
   </item>
 </channel>
