@@ -5,8 +5,32 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Fri, 10 Apr 2026 18:38:12 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 11 Apr 2026 01:11:30 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Hippo Builds Unified Claims Platform with Embedded AI</title>
+    <link>https://iireporter.com/hippo-builds-unified-claims-platform-with-embedded-ai/</link>
+    <description>Hippo (San Jose, Calif.) is reflecting that shift in a unified, AI-enabled claims platform designed to support the full lifecycle of a claim while changing how work is distributed between systems and adjusters. “We’ve delivered a new unified claims platform that serves as a single operating system for our adjusters, a single source of truth for claims data,” says Kyle Ramsay, Chief Product Officer, Hippo. The platform provides “end-to-end AI assistance across the claims lifecycle, from intake to flagging to document generation and more,” Ramsay says, describing a system with AI embedded directly into workflow rather than deployed as a separate tool.</description>
+    <pubDate>Sat, 11 Apr 2026 01:11:21 +0000</pubDate>
+    <guid>https://iireporter.com/hippo-builds-unified-claims-platform-with-embedded-ai/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>Ceasefire’s limited lifeline for insurers</title>
+    <link>https://insuranceasianews.com/ceasefires-limited-lifeline-for-insurer/</link>
+    <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
+    <pubDate>Sat, 11 Apr 2026 01:11:17 +0000</pubDate>
+    <guid>https://insuranceasianews.com/ceasefires-limited-lifeline-for-insurer/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>Standard Life launches private markets pension default</title>
+    <link>https://coverager.com/standard-life-launches-private-markets-pension-default/</link>
+    <description>Standard Life has launched Future Opportunities, a new workplace pension default strategy that gives defined contribution members access to private markets as part of their retirement savings mix. The offering is available for trust-based products and is positioned as an alternative to the company’s existing Sustainable Multi Asset default, with a long-term target of around 25% in private market assets. The strategy will gradually add private equity, real assets, private debt, and venture capital, alongside public market holdings, with private markets specialist Future Growth Capital supporting asset selection and portfolio construction.</description>
+    <pubDate>Sat, 11 Apr 2026 01:11:04 +0000</pubDate>
+    <guid>https://coverager.com/standard-life-launches-private-markets-pension-default/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>DXC Launches AI Workflow Apps to Streamline P&amp;C Operations</title>
     <link>https://iireporter.com/dxc-launches-ai-workflow-apps-to-streamline-pc-operations/</link>
@@ -387,30 +411,6 @@
     <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
     <pubDate>Fri, 10 Apr 2026 07:14:05 +0000</pubDate>
     <guid>https://insuranceasianews.com/allianz-hires-bryce-hatton-as-head-of-motor-fleet-underwriting-in-australia/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Atrium partners with Sofix to launch AI-powered BrokerBrief for claims operations</title>
-    <link>https://www.reinsurancene.ws/atrium-partners-with-sofix-to-launch-ai-powered-brokerbrief-for-claims-operations/</link>
-    <description>Atrium, a specialist insurer operating within the Lloyd’s market, has partnered with insurtech provider Sofix to introduce BrokerBrief, an AI-driven solution designed to enhance claims handling. Developed by Sofix and integrated into Atrium’s existing claims management system, BrokerBrief converts early-stage claim notifications and related documentation into clear, structured summaries. “BrokerBrief turns unstructured claims information into a structured, continuously refreshed view of the claim, helping handlers and adjusters act faster and make better-informed decisions,” commented Carla Viana, Chief Data Scientist at Sofix.</description>
-    <pubDate>Fri, 10 Apr 2026 07:13:52 +0000</pubDate>
-    <guid>https://www.reinsurancene.ws/atrium-partners-with-sofix-to-launch-ai-powered-brokerbrief-for-claims-operations/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Willis Re adds William Morritt to its broking team</title>
-    <link>https://www.reinsurancene.ws/willis-re-adds-william-morritt-to-its-broking-team/</link>
-    <description>Willis Re, a reinsurance advisory and broking joint venture between Bain Capital (BCIS) and WTW, has appointed William ‘Bill’ Morritt to its broking team. Lucy Clarke, Board Member, Willis Re, commented on the appointment, “We are pleased to welcome Bill to Willis Re as part of the continued growth of our broking team. Most recently, he served at Guy Carpenter, the reinsurance broking arm of Marsh, and has previously held senior roles at Willis and JLT Re.</description>
-    <pubDate>Fri, 10 Apr 2026 07:13:51 +0000</pubDate>
-    <guid>https://www.reinsurancene.ws/willis-re-adds-william-morritt-to-its-broking-team/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Kevin Rampe appointed Global Claims Officer at Chubb</title>
-    <link>https://www.reinsurancene.ws/kevin-rampe-appointed-global-claims-officer-at-chubb/</link>
-    <description>Kevin Rampe has been appointed as Senior Vice President, Chubb Group, Global Claims Officer, effective immediately, taking on responsibility for global claims management, while also retaining his responsibilities as Head of North America Claims. Kevin has my full trust in further enhancing the world-class experience we provide globally.” Rampe joined Chubb in 2005 as the company’s Global Compliance Officer. In his expanded role, the executive will lead the company’s claims organisation all around the world and be responsible for all aspects of executive claims management, service and administration for Chubb through its worldwide network of claims offices.</description>
-    <pubDate>Fri, 10 Apr 2026 07:13:51 +0000</pubDate>
-    <guid>https://www.reinsurancene.ws/kevin-rampe-appointed-global-claims-officer-at-chubb/</guid>
     <category>General</category>
   </item>
 </channel>
