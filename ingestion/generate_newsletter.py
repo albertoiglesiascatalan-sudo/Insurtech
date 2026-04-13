@@ -204,8 +204,11 @@ def _ai_editorial(article: dict) -> dict:
     # Priority: (1) translate summary → (2) use summary in English → (3) minimal template
     intro = ""
     if summary:
+        # Always cut at sentence boundaries — never mid-word/mid-sentence
         sents = [s.strip() for s in re.split(r'(?<=[.!?])\s+', summary) if len(s.strip()) > 40]
-        raw = " ".join(sents[:3]) if sents else summary[:400]
+        raw = " ".join(sents[:3]) if sents else (sents[0] if sents else "")
+        if not raw:
+            raw = re.split(r'(?<=[.!?])\s+', summary.strip())[0]  # at least first sentence
         if _is_spanish(raw):
             intro = raw
         else:
@@ -214,8 +217,8 @@ def _ai_editorial(article: dict) -> dict:
             if translated and translated.strip() != raw[:600].strip():
                 intro = translated.strip()
             else:
-                # Translation unavailable — use English summary; it's real content
-                intro = raw[:350]
+                # Translation unavailable — use English; real content beats any template
+                intro = raw  # full sentences, never hard-clipped
 
     if not intro:
         # Only as absolute last resort: minimal factual sentence, never a generic template
@@ -554,10 +557,7 @@ def generate_newsletter(articles: list):
 
         img_html = ""
         if image:
-            img_html = f"""
-        <tr><td style="padding:0 0 20px">
-          <img src="{image}" alt="" width="100%" style="display:block;border-radius:8px;max-height:280px;object-fit:cover" />
-        </td></tr>"""
+            img_html = f'<div style="padding:0 0 20px 0"><img src="{image}" alt="" width="100%" style="display:block;border-radius:8px;max-height:260px;object-fit:cover" /></div>'
 
         bullets_html = ""
         for b in ed["bullets"]:
