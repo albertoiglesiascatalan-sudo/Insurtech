@@ -5,8 +5,25 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sat, 18 Apr 2026 06:55:42 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 18 Apr 2026 12:35:04 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>India Approves $1.4 Billion Maritime Insurance Pool</title>
+    <link>https://www.insurancejournal.com/news/international/2026/04/18/866456.htm</link>
+    <description>India has approved a 129.8-billion-rupee ($1.4 billion) guarantee for a maritime insurance pool, a minister said on Saturday, as wars and sanctions prompt insurers to withdraw cover, threatening trade flows. The insurance pool will cover all maritime risks, including hull and machinery, cargo and war risk, the statement said. “There was a need for a domestic maritime risk covering pool to maintain sovereignty and continuity of trade in face of withdrawal of coverage due to sanctions or due to geopolitical tensions,” according to a statement issued by the government.</description>
+    <pubDate>Sat, 18 Apr 2026 12:34:39 +0000</pubDate>
+    <guid>https://www.insurancejournal.com/news/international/2026/04/18/866456.htm</guid>
+    <category>General</category>
+    <enclosure url="https://www.insurancejournal.com/app/uploads/2026/03/aerial-view-of-crude-oil-ship-298891924-AdobeStock-580x322.jpeg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>Markel launches FintechRisk+ in Australia</title>
+    <link>https://coverager.com/markel-launches-fintechrisk-in-australia/</link>
+    <description>Markel has introduced its FintechRisk+ product in Australia, expanding its modular fintech insurance offering to a new market. FintechRisk+ builds on a product first launched in the London market in 2016 and later expanded across Europe, Canada, and Asia, where Markel reports significant growth in its fintech portfolio. Australia’s fintech sector, with more than 800 companies and strong projected growth, represents a key opportunity for specialty insurers looking to package liability and cyber risks into modular offerings.</description>
+    <pubDate>Sat, 18 Apr 2026 12:34:35 +0000</pubDate>
+    <guid>https://coverager.com/markel-launches-fintechrisk-in-australia/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Vertafore Advances ‘Distribution Velocity’ with AI Platform</title>
     <link>https://iireporter.com/vertafore-advances-distribution-velocity-with-ai-platform/</link>
@@ -398,22 +415,6 @@
     <description>La presidenta de Unespa, Mirenchu del Valle, ha participado e n la sesión inaugural del Rendez-Vous de l’Assurance de Casablanca , que concluyó ayer, y que organiza la Fédération Marocaine de l’Assurance, bajo la Presidencia de Mohamed Hassan Bensalah. Durante la sesión inaugural se firmó un acuerdo de cooperación entre la Fédération Marocaine de l’Assurance y la Asociación de Seguros de Omán (AOA), para potenciar el intercambio de experiencias y el fortalecimiento de la cooperación entre ambos mercados. Este destacó en su intervención de apertura las profundas transformaciones que se están produciendo en el sector, entre la aceleración tecnológica, la aparición de nuevos riesgos y la necesidad de preservar lo que es la base del seguro: la confianza.</description>
     <pubDate>Fri, 17 Apr 2026 07:17:43 +0000</pubDate>
     <guid>https://www.inese.es/unespa-participa-en-el-rendez-vous-de-lassurance-de-casablanca/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Los gruistas piden a la DGSFP que intervenga para que las aseguradoras actualicen sus tarifas</title>
-    <link>https://www.inese.es/los-gruistas-piden-a-la-dgsfp-que-intervenga-para-que-las-aseguradoras-actualicen-sus-tarifas/</link>
-    <description>Como adelantaron ayer nuestros colegas de Infotaller , la Alianza Nacional de Auxilio en Carretera ha elevado una consulta a la Dirección General de Seguros y Fondos de Pensiones (DGSFP) sobre el creciente riesgo en la viabilidad del servicio de grúas en España, ante el «incumplimiento sistemático» de las aseguradoras en actualizar las tarifas conforme al alza del precio del combustible , lo que podría afectar el servicio. Por ello, la Alianza insta a la DGSFP a auditar estas prácticas como parte de sus funciones de control y le pide que emita un informe o criterio interpretativo que clarifique el alcance de las prácticas de las aseguradoras desde el punto de vista del cumplimiento normativo. Recuerda al respecto que, según el artículo 38 de la Ley 15/2009 de contrato de transporte terrestre de mercancías, es imperativo que las tarifas se ajusten a la evolución del precio del combustible.</description>
-    <pubDate>Fri, 17 Apr 2026 07:17:42 +0000</pubDate>
-    <guid>https://www.inese.es/los-gruistas-piden-a-la-dgsfp-que-intervenga-para-que-las-aseguradoras-actualicen-sus-tarifas/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Eiopa propone reducir el contenido de 13 guías de Solvencia II</title>
-    <link>https://www.inese.es/eiopa-propone-reducir-el-contenido-de-13-guias-de-solvencia-ii/</link>
-    <description>Eiopa ha lanzado una consulta pública para recabar opiniones sobre su propuesta de simplificar el marco de Solvencia II mediante la reducción del contenido de 13 guías supervisoras , con el objetivo de disminuir la carga administrativa del sector. En total, las guías objeto de revisión suman 294 directrices que Eiopa plantea acortar de forma significativa, en línea con su objetivo de reducir su extensión al menos un 25% cuando sea posible. El supervisor europeo subraya que la consulta se centra exclusivamente en la simplificación de las guías existentes y no contempla, por ahora, la introducción de nuevos requisitos.</description>
-    <pubDate>Fri, 17 Apr 2026 07:17:41 +0000</pubDate>
-    <guid>https://www.inese.es/eiopa-propone-reducir-el-contenido-de-13-guias-de-solvencia-ii/</guid>
     <category>General</category>
   </item>
 </channel>
