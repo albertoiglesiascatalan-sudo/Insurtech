@@ -9,11 +9,11 @@
     "source": "Coverager",
     "published_at": "2026-04-26T12:37:55.740840+00:00",
     "image_url": "",
-    "signal_score": 18,
+    "signal_score": 17,
     "signal_label": "Disrupción",
     "signal_icon": "🚀",
     "why_matters": "Introduce un modelo o tecnología que puede alterar la cadena de valor.",
-    "is_signal": true,
+    "is_signal": false,
     "deal": null,
     "amplified": false
   },
