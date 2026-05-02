@@ -5,8 +5,33 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Fri, 01 May 2026 18:55:05 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 02 May 2026 01:28:48 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Leave Becomes Engagement Infrastructure at Guardian</title>
+    <link>https://iireporter.com/leave-becomes-engagement-infrastructure-at-guardian/</link>
+    <description>(Image source: Guardian Absence Solutions homepage.) Guardian Life Insurance Company of America (New York) is reframing absence management around a simple but consequential idea: leave is no longer an administrative process. The result, Vanscavish suggests, is that absence is evolving into a form of engagement infrastructure—connecting income protection, regulatory execution, and employee experience in a single continuum. Guardian’s expansion of its paid leave rider—now available in 40 states—is one response to this environment.</description>
+    <pubDate>Sat, 02 May 2026 01:28:35 +0000</pubDate>
+    <guid>https://iireporter.com/leave-becomes-engagement-infrastructure-at-guardian/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>You can’t insure your way out of a heatwave</title>
+    <link>https://insuranceasianews.com/you-cant-insure-your-way-out-of-a-heatwave/</link>
+    <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
+    <pubDate>Sat, 02 May 2026 01:28:32 +0000</pubDate>
+    <guid>https://insuranceasianews.com/you-cant-insure-your-way-out-of-a-heatwave/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>The Week’s 10 Biggest Funding Rounds: Defense Tech Leads With Multiple Large Deals, Topped By $600M For Space Security Startup True Anomaly</title>
+    <link>https://news.crunchbase.com/venture/biggest-funding-rounds-defense-aerospace-ai-fintech/</link>
+    <description>venture deals this week were led by a massive defense tech raise for space security startup True Anomaly . True Anomaly develops space security and in-orbit defense systems, an area drawing increasing venture investor attention amid rising geopolitical tensions. True Anomaly , $600M, aerospace and defense: Centennial, Colorado-based True Anomaly raised a massive $600 million Series D led by Eclipse and Riot Ventures , with participation from a long list of other backers including Accel , 645 Ventures , G Squared , Acme Capital , Menlo Ventures and Paradigm .</description>
+    <pubDate>Sat, 02 May 2026 01:28:23 +0000</pubDate>
+    <guid>https://news.crunchbase.com/venture/biggest-funding-rounds-defense-aerospace-ai-fintech/</guid>
+    <category>General</category>
+    <enclosure url="https://news.crunchbase.com/wp-content/uploads/Top_10_.jpeg" type="image/jpeg" length="0"/>
+  </item>
   <item>
     <title>Aclaimant and NFP Expand RMIS Partnership</title>
     <link>https://iireporter.com/aclaimant-and-nfp-expand-rmis-partnership/</link>
@@ -393,30 +418,6 @@
     <guid>https://www.insurancejournal.com/news/midwest/2026/05/01/868069.htm</guid>
     <category>General</category>
     <enclosure url="https://www.insurancejournal.com/app/uploads/2026/05/Missouri-Hail-Damage-580x349.jpg" type="image/jpeg" length="0"/>
-  </item>
-  <item>
-    <title>ACORD Study Links Digital Maturity to Insurer Outperformance</title>
-    <link>https://iireporter.com/acord-study-links-digital-maturity-to-insurer-outperformance/</link>
-    <description>ACORD (Little Falls, N.J.) has released its 2026 Insurance Digital Maturity Study, finding that just seven percent of the world’s largest insurers achieve a level of digital maturity associated with sustained outperformance—reinforcing a widening gap between leaders and the rest of the market. The study, which analyzed 210 insurers representing roughly 60 percent of global premium, finds that digital maturity is no longer defined by the presence of technology, but by how effectively carriers translate digital capabilities into measurable business outcomes. ACORD segments insurers into five categories based on digital maturity: The report reinforces a theme that has surfaced repeatedly across recent carrier strategies: technology investment alone does not produce competitive advantage.</description>
-    <pubDate>Fri, 01 May 2026 01:51:05 +0000</pubDate>
-    <guid>https://iireporter.com/acord-study-links-digital-maturity-to-insurer-outperformance/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>What Costco Reveals About Insurance Modernization</title>
-    <link>https://iireporter.com/what-costco-reveals-about-insurance-modernization/</link>
-    <description>That observation prompted a question: what might insurance learn from this? For insurance leaders navigating modernization and AI transformation, this paradox offers a useful lesson. Over the weekend, while shopping at Costco, I noticed the green-screen computer terminals and felt as if I had stepped back in time.</description>
-    <pubDate>Fri, 01 May 2026 01:51:05 +0000</pubDate>
-    <guid>https://iireporter.com/what-costco-reveals-about-insurance-modernization/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Ardonagh, Sompo, Howden, Aon: 12 APAC insurance people moves of the week</title>
-    <link>https://insuranceasianews.com/ardonagh-sompo-howden-aon-12-apac-insurance-people-moves-of-the-week/</link>
-    <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
-    <pubDate>Fri, 01 May 2026 01:51:02 +0000</pubDate>
-    <guid>https://insuranceasianews.com/ardonagh-sompo-howden-aon-12-apac-insurance-people-moves-of-the-week/</guid>
-    <category>General</category>
   </item>
 </channel>
 </rss>
