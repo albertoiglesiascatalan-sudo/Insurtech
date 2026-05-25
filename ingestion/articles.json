@@ -1,5 +1,23 @@
 [
   {
+    "id": "beyond-the-canvas-apac-fine-art-and-specie-insurance-boom-fuelled-by-rising-risk",
+    "title": "Beyond the canvas: APAC fine art and specie insurance boom fuelled by rising risks, shifting wealth patterns",
+    "title_original": "Beyond the canvas: APAC fine art and specie insurance boom fuelled by rising risks, shifting wealth patterns",
+    "url": "https://insuranceasianews.com/rising-risks-shifting-wealth-patterns-drive-apac-fine-art-and-specie-insurance-boom/",
+    "summary": "To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles",
+    "category": "General",
+    "source": "Insurance Asia News",
+    "published_at": "2026-05-25T02:06:50.882191+00:00",
+    "image_url": "",
+    "signal_score": 8,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
+  },
+  {
     "id": "south-koreas-db-insurance-set-to-complete-fortegra-acquisition",
     "title": "South Korea’s DB Insurance set to complete Fortegra acquisition",
     "title_original": "South Korea’s DB Insurance set to complete Fortegra acquisition",
@@ -9,7 +27,7 @@
     "source": "Insurance Asia News",
     "published_at": "2026-05-24T12:55:23.950523+00:00",
     "image_url": "",
-    "signal_score": 23,
+    "signal_score": 21,
     "signal_label": "M&A",
     "signal_icon": "🤝",
     "why_matters": "Consolida el mercado y puede redefinir la competencia en el sector.",
@@ -27,7 +45,7 @@
     "source": "Coverager",
     "published_at": "2026-05-24T12:55:10.647872+00:00",
     "image_url": "",
-    "signal_score": 21,
+    "signal_score": 19,
     "signal_label": "Disrupción",
     "signal_icon": "🚀",
     "why_matters": "Introduce un modelo o tecnología que puede alterar la cadena de valor.",
@@ -9091,24 +9109,6 @@
       "amount_str": "$2500M",
       "round": "Bridge"
     },
-    "amplified": false
-  },
-  {
-    "id": "brown-brown-targets-25-submission-automation-with-ai-while-ruling-out-job-cuts",
-    "title": "Brown & Brown targets 25% submission automation with AI while ruling out job cuts",
-    "title_original": "Brown & Brown targets 25% submission automation with AI while ruling out job cuts",
-    "url": "https://www.insurtechinsights.com/brown-brown-targets-25-submission-automation-with-ai-while-ruling-out-job-cuts/",
-    "summary": "The post Brown &amp; Brown targets 25% submission automation with AI while ruling out job cuts appeared first on Insurtech Insights . Brown &amp; Brown outlined an expanded AI strategy during its Q1 2026 earnings call, saying the brokerage expects artificial intelligence to automate more than 25% of submission workflows across many wholesale and program businesses, while emphasizing that the technology is intended to augment employees rather than replace them. Brown &amp; Brown also highlighted several additional AI use cases now in production, including: AI-powered policy checking agents that automate proposal comparisons and policy reviews Systems capable of summarizing complex insurance policies for customers A proprietary billing platform that interfaces with carrier portals to automate billing extraction and validation workflows The company said the billing automation platform alone is saving more than 50,000 hours annually.",
-    "category": "General",
-    "source": "InsurTech Insights",
-    "published_at": "2026-05-12T19:25:56.535585+00:00",
-    "image_url": "",
-    "signal_score": 12,
-    "signal_label": "IA & Tecnología",
-    "signal_icon": "🤖",
-    "why_matters": "Tecnología con potencial de transformar operaciones o experiencia de cliente.",
-    "is_signal": false,
-    "deal": null,
     "amplified": false
   }
 ]
