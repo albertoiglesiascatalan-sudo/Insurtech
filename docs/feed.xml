@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sat, 06 Jun 2026 19:02:31 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 07 Jun 2026 02:13:37 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>biBerk updates homepage, highlights 1.7 million policies sold</title>
+    <link>https://coverager.com/biberk-updates-homepage-highlights-1-7-million-policies-sold/</link>
+    <description>biBERK , Berkshire Hathaway&amp;#8217;s direct-to-consumer small business insurance carrier, has launched a redesigned homepage that prominently states the company has sold more than 1.7 million policie. The update marks a notable shift from biBerk&amp;#8217;s previous homepage, which highlighted that the company had served more than 500,000 business owners. According to Similarweb data, biberk.com generated approximately 3.4 million visits between February and April 2026, averaging 1.13 million monthly visits and 692,000 monthly unique visitors.</description>
+    <pubDate>Sun, 07 Jun 2026 02:12:26 +0000</pubDate>
+    <guid>https://coverager.com/biberk-updates-homepage-highlights-1-7-million-policies-sold/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>AXA UK launches free climate resilience program for SMEs</title>
     <link>https://coverager.com/axa-uk-launches-free-climate-resilience-program-for-smes/</link>
@@ -406,15 +414,6 @@
     <guid>https://www.claimsjournal.com/news/national/2026/06/05/337993.htm</guid>
     <category>General</category>
     <enclosure url="https://www.claimsjournal.com/app/uploads/2026/06/Petra-Hielkema-in-London_Bloomberg-580x387.jpg" type="image/jpeg" length="0"/>
-  </item>
-  <item>
-    <title>IBM, AT&amp;T Accused by Whistleblower of Covering Up Foreign Hacks</title>
-    <link>https://www.claimsjournal.com/news/national/2026/06/05/338002.htm</link>
-    <description>and AT&amp;T Inc.’s computer systems were repeatedly breached by foreign hackers, and the companies concealed those intrusions from the U.S. William Barlow, IBM’s former vice president of threat intelligence, alleged in the complaint that the companies failed to disclose multiple breaches over years by attackers linked to foreign governments and made false assurances about the security of their systems in order to win and keep federal contracts. The whistleblower complaint against IBM and AT&amp;T was filed under seal in 2020 and is still pending before a federal court in New York.</description>
-    <pubDate>Fri, 05 Jun 2026 09:25:12 +0000</pubDate>
-    <guid>https://www.claimsjournal.com/news/national/2026/06/05/338002.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.claimsjournal.com/app/uploads/2026/06/Microsoft-hackathon-participant-580x387.jpg" type="image/jpeg" length="0"/>
   </item>
 </channel>
 </rss>
