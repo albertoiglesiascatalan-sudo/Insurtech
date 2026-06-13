@@ -5,8 +5,24 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sat, 13 Jun 2026 13:20:36 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 13 Jun 2026 19:04:59 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Foyer integrates Tractable’s AI into car claims process</title>
+    <link>https://coverager.com/foyer-integrates-tractables-ai-into-car-claims-process/</link>
+    <description>Foyer has partnered with Tractable to introduce AI-powered image analysis into its motor claims process for minor incidents. By combining their industry expertise with our artificial intelligence technologies, we are helping to reinvent the claims process, making it faster, more transparent, and simpler for policyholders, while meeting the industry’s highest standards.&amp;#8221; &amp;#8211; Giacomo Mariotti, general manager at Tractable. The Luxembourg-based insurer will use Tractable&amp;#8217;s technology to automatically assess vehicle damage from photos submitted by policyholders, enabling faster claims handling and more efficient case management.</description>
+    <pubDate>Sat, 13 Jun 2026 19:04:34 +0000</pubDate>
+    <guid>https://coverager.com/foyer-integrates-tractables-ai-into-car-claims-process/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>Fujitsu and Daiichi Life launch quantum computing research</title>
+    <link>https://coverager.com/fujitsu-and-daiichi-life-launch-quantum-computing-research/</link>
+    <description>Fujitsu and Daiichi Life Group have launched a joint research project to explore the use of quantum technology in insurance asset management. The research will use Dai-ichi Life Insurance&amp;#8217;s real-world asset management operations as a testing ground and evaluate performance using quantum simulators and quantum computers. Under the partnership, Fujitsu will provide expertise in quantum algorithms along with access to its quantum computing infrastructure, including a large-scale quantum simulator comprising 1,024 FX700 supercomputer nodes.</description>
+    <pubDate>Sat, 13 Jun 2026 19:04:34 +0000</pubDate>
+    <guid>https://coverager.com/fujitsu-and-daiichi-life-launch-quantum-computing-research/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Sompo launches new environmental strategy</title>
     <link>https://coverager.com/sompo-launches-new-environmental-strategy/</link>
@@ -397,22 +413,6 @@
     <description>In their new roles, Ogilvie, based in London, and Dart, based in Bermuda, will hold responsibility for leading their respective teams, managing portfolio performance, and contributing to the expansion of Willis Re’s reinsurance platform. Willis Re, the reinsurance advisory and broking joint venture between WTW and Bain Capital, has announced that it has appointed Jonathan Ogilvie as Global Head of Non-Marine Specialties, and Chris Dart as Head of Treaty Reinsurance, Bermuda, effective immediately. Before he joined Willis Re, Ogilvie served as Head of Property Retrocession in Bermuda at broker Guy Carpenter and previously held management positions within the company’s London operations, working across property, specialty and casualty lines.</description>
     <pubDate>Fri, 12 Jun 2026 09:53:17 +0000</pubDate>
     <guid>https://www.artemis.bm/news/willis-re-continues-leadership-expansion-with-ogilvie-and-dart-hires-in-london-bermuda/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=willis-re-continues-leadership-expansion-with-ogilvie-and-dart-hires-in-london-bermuda</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Willis Re expands leadership team with two senior appointments in London and Bermuda</title>
-    <link>https://www.reinsurancene.ws/willis-re-expands-leadership-team-with-two-senior-appointments-in-london-and-bermuda/</link>
-    <description>Willis Re said Ogilvie, based in London, and Dart, based in Bermuda, will lead their respective teams, oversee portfolio performance and support the continued expansion of its reinsurance platform. “Their appointments represent an important step in our continued development, enhancing our capabilities, broadening our market reach and positioning us to support clients globally with increasingly sophisticated solutions.” Ogilvie has more than 20 years of experience across the insurance, reinsurance and retrocession markets in both London and Bermuda. Before joining Willis Re, he served as Head of Property Retrocession in Bermuda at Guy Carpenter and previously held management positions within the firm’s London operations, working across property, specialty and casualty lines.</description>
-    <pubDate>Fri, 12 Jun 2026 09:53:16 +0000</pubDate>
-    <guid>https://www.reinsurancene.ws/willis-re-expands-leadership-team-with-two-senior-appointments-in-london-and-bermuda/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Descartes and Nextpower launch parametric insurance solution for extreme wind conditions</title>
-    <link>https://www.reinsurancene.ws/descartes-and-nextpower-launch-parametric-insurance-solution-for-extreme-wind-conditions/</link>
-    <description>Descartes Underwriting, a specialist in corporate parametric re/insurance solutions for climate and emerging risks, and Nextpower™, a provider of solar and power technology solutions for utility-scale power plants, have partnered to launch an integrated parametric insurance solution for extreme wind conditions. This partnership reflects our commitment to supporting the resilience of critical renewable infrastructure in the global energy transition economy.” Descartes’ climate scientists and natural risk modellers leverage real-time wind speed data from Nextpower’s on-site meteorological stations to set parametric insurance triggers. While Nextpower’s tracking systems provide word-class physical resilience against severe wind, the Descartes policy has been designed to complement as a financial backstop for extreme weather events that exceed normal operating conditions.</description>
-    <pubDate>Fri, 12 Jun 2026 09:53:16 +0000</pubDate>
-    <guid>https://www.reinsurancene.ws/descartes-and-nextpower-launch-parametric-insurance-solution-for-extreme-wind-conditions/</guid>
     <category>General</category>
   </item>
 </channel>
