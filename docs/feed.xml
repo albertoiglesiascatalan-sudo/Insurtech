@@ -5,8 +5,24 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sun, 21 Jun 2026 13:44:01 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 21 Jun 2026 19:11:12 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Week in Review — June 15–18, 2026</title>
+    <link>https://coverager.com/week-in-review-june-15-18-2026/</link>
+    <description>IAG invested in mental-health platform Sonder; Securian Canada backed June Health. The WSJ reported on State Farm&amp;#8217;s agency overhaul , noting that agents who want to remain with the carrier beyond 2027 will need to sign new contracts with revised compensation structures and sales targets. The changes appear to be a defensive response to rising distribution costs, the emergence of AI-driven direct sales, and Progressive&amp;#8217;s growing momentum.</description>
+    <pubDate>Sun, 21 Jun 2026 19:10:36 +0000</pubDate>
+    <guid>https://coverager.com/week-in-review-june-15-18-2026/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>dodoAI raises ¥280M seed for enterprise AI governance platform</title>
+    <link>https://coverager.com/dodoai-raises-%c2%a5280m-seed-for-enterprise-ai-governance-platform/</link>
+    <description>Tokyo-based dodoAI has closed a ¥280 million seed round led by Genesia Ventures. dodoAI offers what it calls a &amp;#8220;Sovereign Agentic OS,&amp;#8221; a governance layer for AI agents performing corporate work. The company disclosed one insurance use case: a pilot project with a large property and casualty insurer in which dodoAI applied AI-driven development to a single subsystem within a core platform consisting of roughly 300 subsystems.</description>
+    <pubDate>Sun, 21 Jun 2026 19:10:36 +0000</pubDate>
+    <guid>https://coverager.com/dodoai-raises-%c2%a5280m-seed-for-enterprise-ai-governance-platform/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Generali launches the Generali Excellence Academy</title>
     <link>https://coverager.com/generali-launches-the-generali-excellence-academy/</link>
@@ -397,24 +413,6 @@
     <pubDate>Fri, 19 Jun 2026 10:08:52 +0000</pubDate>
     <guid>https://www.insurancejournal.com/news/southcentral/2026/06/19/874368.htm</guid>
     <category>General</category>
-  </item>
-  <item>
-    <title>Space Startups Seek Insurance for Orbital AI Data Centers</title>
-    <link>https://www.insurancejournal.com/news/international/2026/06/19/874489.htm</link>
-    <description>Blue Origin and a host of space startups, including Orbital, Starcloud, Lonestar Data Holdings and Cowboy Space, have also signaled their intention to launch space-based data centers. Space companies have spoken with insurers about coverage for orbital AI data centers, a sign of early progress for an experimental industry backed by Elon Musk’s SpaceX and Jeff Bezos’ Blue Origin. Securing insurance is critical for companies trying to move orbital data centers from concept to reality.</description>
-    <pubDate>Fri, 19 Jun 2026 10:08:52 +0000</pubDate>
-    <guid>https://www.insurancejournal.com/news/international/2026/06/19/874489.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.insurancejournal.com/app/uploads/2026/06/global-telecoms-networks-connected-via-data-centers-satellites-642396270-Depositphotos-580x249.jpg" type="image/jpeg" length="0"/>
-  </item>
-  <item>
-    <title>US and Iran Delay Nuclear Talks as Lebanon Clashes Worsen</title>
-    <link>https://www.insurancejournal.com/news/international/2026/06/19/874494.htm</link>
-    <description>The US and Iran have postponed the start of their negotiations over a permanent peace deal and restricting the Islamic Republic’s nuclear program.It’s uncertain why the talks, meant to be held in Switzerland on Friday, have been delayed, though Israel and Iran-backed Hezbollah militants clashed overnight in southern Lebanon. Iran has insisted on a ceasefire in Lebanon as part of an interim deal with the US finalized this week. Trump has sworn at Israeli Prime Minister Benjamin Netanyahu in calls, accusing him of almost scuppering this week’s memorandum of understanding with Iran by escalating strikes in Lebanon.</description>
-    <pubDate>Fri, 19 Jun 2026 10:08:52 +0000</pubDate>
-    <guid>https://www.insurancejournal.com/news/international/2026/06/19/874494.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.insurancejournal.com/app/uploads/2026/06/smoke-from-israeli-strike-in-southern-lebanon-getty-580x326.jpg" type="image/jpeg" length="0"/>
   </item>
 </channel>
 </rss>
