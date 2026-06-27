@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sat, 27 Jun 2026 08:24:26 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 27 Jun 2026 13:04:50 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Maximum Information launches PsiClone for live hurricane monitoring</title>
+    <link>https://coverager.com/maximum-information-launches-psiclone-for-live-hurricane-monitoring/</link>
+    <description>Maximum Information launched PsiClone, a live event monitoring platform that lets insurers, reinsurers and underwriting teams track portfolio exposure during active tropical cyclones. It extends monitoring up to 15 days ahead using continuous ECMWF ensemble forecast analytics, beyond the sub-week deterministic tracks many workflows rely on. Users can monitor TIV, PD and BI exposure against live ensemble forecasts, set exposure thresholds, automate reporting and support claims mobilization.</description>
+    <pubDate>Sat, 27 Jun 2026 13:04:25 +0000</pubDate>
+    <guid>https://coverager.com/maximum-information-launches-psiclone-for-live-hurricane-monitoring/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Insurity’s Cassiopeia Release Expands AI Capabilities</title>
     <link>https://iireporter.com/insuritys-cassiopeia-release-expands-ai-capabilities/</link>
@@ -407,14 +415,6 @@
     <description>Responding to customer demand, specialist insurance provider CFC has launched a programme of updates to embed affirmative artificial intelligence (AI) coverage within its portfolio. By implementing explicit AI-related language across seven key policies, this rollout provides clients with certainty on the handling of AI related risks, moving away from reliance on implied or silent coverage. Rather than relying on implied or silent coverage, we see value in being explicit about how AI is treated.” The updates are designed to eliminate ambiguity, fostering more consistent claims outcomes.</description>
     <pubDate>Fri, 26 Jun 2026 08:47:14 +0000</pubDate>
     <guid>https://www.reinsurancene.ws/cfc-adds-affirmative-ai-coverage/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>UK businesses increasingly exposed as flood preparedness declines: Previsico</title>
-    <link>https://www.reinsurancene.ws/uk-businesses-increasingly-exposed-as-flood-preparedness-declines-previsico/</link>
-    <description>Previsico noted that it highlights a “deepening paradox” where awareness of flood risk is increasing, but preparedness has fallen sharply, leaving businesses, insurers, and asset holders dangerously exposed. A new report from flood forecasting firm Previsico, based on insights from more than 70 UK organisational leaders, has found a sharp decline in flood preparedness despite rising awareness of risk. “And alarmingly, 20.93% of respondents noted that uncertainty around future flood risk made investment a challenge, suggesting that further education and increased availability of tailored data are necessary to help organisations to understand potential risk,” Previsico added.</description>
-    <pubDate>Fri, 26 Jun 2026 08:47:13 +0000</pubDate>
-    <guid>https://www.reinsurancene.ws/uk-businesses-increasingly-exposed-as-flood-preparedness-declines-previsico/</guid>
     <category>General</category>
   </item>
 </channel>
