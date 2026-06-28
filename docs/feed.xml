@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sun, 28 Jun 2026 13:10:21 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 28 Jun 2026 19:00:05 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>CorVel launches market-based medical bill repricing solution</title>
+    <link>https://coverager.com/corvel-launches-market-based-medical-bill-repricing-solution/</link>
+    <description>CorVel Corporation has introduced Marketwise Repricing, a new medical bill repricing solution designed to help employers, insurers, and third-party administrators reduce medical costs by applying market-based reimbursement methodologies within existing bill review programs. The Fort Worth-based risk management and workers&amp;#8217; compensation services provider said the solution addresses shortcomings in traditional network and repricing approaches, which may not accurately reflect local market conditions due to variations in medical billing across states, providers, and care settings. According to CorVel, Marketwise Repricing uses real-world reimbursement data to deliver pricing that better aligns with local market dynamics and is particularly useful for out-of-network claims and jurisdictions with limited or no medical fee schedules.</description>
+    <pubDate>Sun, 28 Jun 2026 18:59:40 +0000</pubDate>
+    <guid>https://coverager.com/corvel-launches-market-based-medical-bill-repricing-solution/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Shinhan, Korea Investment submit letters of intent for Lotte Insurance: report</title>
     <link>https://insuranceasianews.com/shinhan-korea-investment-submit-letters-of-intend-for-lotte-insurance-report/</link>
@@ -407,14 +415,6 @@
     <description>Berkshire Hathaway GUARD has launched a Contractors General Liability and Inland Marine insurance solution for artisan contractors, expanding its small commercial product lineup. The offering is designed for contractors that do not maintain a permanent physical location and primarily work at third-party sites and job locations. The product is initially available in Arizona, Illinois, Indiana, Michigan, Minnesota, and Pennsylvania, with additional state expansions planned later this year.</description>
     <pubDate>Fri, 26 Jun 2026 13:57:30 +0000</pubDate>
     <guid>https://coverager.com/guard-launches-contractors-package/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Pharmacists Mutual launches PM Healthcare Protect</title>
-    <link>https://coverager.com/pharmacists-mutual-launches-pm-healthcare-protect/</link>
-    <description>Pharmacists Mutual launched PM Healthcare Protect, a new product brand offering commercial insurance solutions for healthcare professionals and business owners. Founded in 1909 and headquartered in Algona, Iowa, Pharmacists Mutual Insurance Group is a specialty insurer serving healthcare professionals across all 50 states and the District of Columbia. PM Healthcare Protect combines professional liability coverage with business insurance products such as general liability and commercial property insurance, providing healthcare businesses with a single source for coverage.</description>
-    <pubDate>Fri, 26 Jun 2026 13:57:30 +0000</pubDate>
-    <guid>https://coverager.com/pharmacists-mutual-launches-pm-healthcare-protect/</guid>
     <category>General</category>
   </item>
 </channel>
