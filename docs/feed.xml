@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sun, 28 Jun 2026 02:09:53 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 28 Jun 2026 08:38:41 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Hull war rates more than halve after US-Iran ceasefire: report</title>
+    <link>https://insuranceasianews.com/hull-war-rates-more-than-halve-after-us-iran-ceasefire-report/</link>
+    <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
+    <pubDate>Sun, 28 Jun 2026 08:38:28 +0000</pubDate>
+    <guid>https://insuranceasianews.com/hull-war-rates-more-than-halve-after-us-iran-ceasefire-report/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Supply Shocks Beyond Hormuz: Other Ports Face ‘High’ Risk of Disruption</title>
     <link>https://www.carriermanagement.com/news/2026/06/27/289516.htm</link>
@@ -410,14 +418,6 @@
     <guid>https://www.claimsjournal.com/news/national/2026/06/26/338470.htm</guid>
     <category>General</category>
     <enclosure url="https://www.claimsjournal.com/app/uploads/2026/06/Hot-visitor-in-London_Bloomberg-580x387.jpg" type="image/jpeg" length="0"/>
-  </item>
-  <item>
-    <title>Taiping Indonesia complete first cross-border renminbi reinsurance deal</title>
-    <link>https://insuranceasianews.com/taiping-indonesia-complete-first-cross-border-renminbi-reinsurance-deal/</link>
-    <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
-    <pubDate>Fri, 26 Jun 2026 08:47:22 +0000</pubDate>
-    <guid>https://insuranceasianews.com/taiping-indonesia-complete-first-cross-border-renminbi-reinsurance-deal/</guid>
-    <category>General</category>
   </item>
 </channel>
 </rss>
