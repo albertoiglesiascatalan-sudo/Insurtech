@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sun, 28 Jun 2026 19:00:05 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 29 Jun 2026 02:10:02 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>‘Sweet spot for global insurance’: regulatory confidence key to attracting global insurers to Asia</title>
+    <link>https://insuranceasianews.com/sweet-spot-for-global-insurance-regulatory-confidence-key-to-attracting-global-insurers-to-asia/</link>
+    <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
+    <pubDate>Mon, 29 Jun 2026 02:09:47 +0000</pubDate>
+    <guid>https://insuranceasianews.com/sweet-spot-for-global-insurance-regulatory-confidence-key-to-attracting-global-insurers-to-asia/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>CorVel launches market-based medical bill repricing solution</title>
     <link>https://coverager.com/corvel-launches-market-based-medical-bill-repricing-solution/</link>
@@ -407,14 +415,6 @@
     <description>PetGPT, a new app available within ChatGPT, allows US dog and cat owners to compare pet insurance quotes from multiple providers without leaving the AI platform. Beyond price comparisons, PetGPT also provides information about breed-specific health conditions and typical treatment costs, helping pet owners better understand the value of different insurance options. We tried quoting pet insurance for both a dog and a cat using the website version, and in both cases the quotes displayed were from Lemonade, Spot, and Fetch .</description>
     <pubDate>Fri, 26 Jun 2026 13:57:30 +0000</pubDate>
     <guid>https://coverager.com/petgpt-launches-pet-insurance-comparison-app-in-chatgpt/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>GUARD launches contractors package</title>
-    <link>https://coverager.com/guard-launches-contractors-package/</link>
-    <description>Berkshire Hathaway GUARD has launched a Contractors General Liability and Inland Marine insurance solution for artisan contractors, expanding its small commercial product lineup. The offering is designed for contractors that do not maintain a permanent physical location and primarily work at third-party sites and job locations. The product is initially available in Arizona, Illinois, Indiana, Michigan, Minnesota, and Pennsylvania, with additional state expansions planned later this year.</description>
-    <pubDate>Fri, 26 Jun 2026 13:57:30 +0000</pubDate>
-    <guid>https://coverager.com/guard-launches-contractors-package/</guid>
     <category>General</category>
   </item>
 </channel>
