@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sat, 04 Jul 2026 18:52:36 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 05 Jul 2026 01:49:42 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>June 2026 Agency Appointment Report</title>
+    <link>https://coverager.com/june-2026-agency-appointment-report/</link>
+    <description>Coverager published its Agency Distribution report for June 2026. Notable moves on the P&amp;amp;C side: CoverTree, the manufactured home insurance agency that has raised $25 million to date, was appointed by Integon, part of Allstate. NEXT Insurance appointed 29 agencies, including established commercial brokerages like Hibbs-Hallmark &amp;amp; Company and a less obvious fit — Buy Life Insurance Now, LLC, a life insurance agency.</description>
+    <pubDate>Sun, 05 Jul 2026 01:49:24 +0000</pubDate>
+    <guid>https://coverager.com/june-2026-agency-appointment-report/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Prudential seeks $135 million from R&amp;W insurers over Assurance IQ deal</title>
     <link>https://coverager.com/prudential-seeks-135-million-from-rw-insurers-over-assurance-iq-deal/</link>
@@ -400,14 +408,6 @@
     <description>Swiss Re Corporate Solutions, the commercial insurance arm of Swiss Re, has appointed Yann Krattiger as Head of Commercial Growth Initiatives for Alternative Risk Transfer (ART). In his new position, Krattiger will focus on driving commercial growth initiatives across the company’s Alternative Risk Transfer business. Prior to his latest appointment, he previously served as Head of Alternative Risk Transfer EMEA and also held the position of Head Structured Fronting IRS.</description>
     <pubDate>Thu, 02 Jul 2026 19:06:08 +0000</pubDate>
     <guid>https://www.reinsurancene.ws/swiss-re-corso-appoints-new-head-of-commercial-growth-initiatives-for-alternative-risk-transfer/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Travelers launches proprietary LLM tailored to property casualty business</title>
-    <link>https://www.reinsurancene.ws/travelers-launches-proprietary-llm-tailored-to-property-casualty-business/</link>
-    <description>The Travelers Companies, Inc., a provider of property and casualty insurance for auto, home and business, has developed TravelersLLM, a proprietary large language model tailored to its property and casualty business. Trained on millions of company documents and built by Travelers engineers and data scientists, TravelersLLM builds on the company’s domain expertise by enhancing underwriting analysis, accelerating research and model development, facilitating access to decades of institutional knowledge, and improving workflows. TravelersLLM reflects the company’s continued commitment to deploying advanced technology powered by proprietary data and serves as a foundational capability for agentic applications across the enterprise.</description>
-    <pubDate>Thu, 02 Jul 2026 19:06:07 +0000</pubDate>
-    <guid>https://www.reinsurancene.ws/travelers-launches-proprietary-llm-tailored-to-property-casualty-business/</guid>
     <category>General</category>
   </item>
 </channel>
