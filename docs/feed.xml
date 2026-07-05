@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sun, 05 Jul 2026 08:37:43 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 05 Jul 2026 13:03:21 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Ardonagh launches specialty insurtech Axiiem</title>
+    <link>https://coverager.com/ardonagh-launches-specialty-insurtech-axiiem/</link>
+    <description>The Ardonagh Group has launched Axiiem, a specialty insurance technology business aimed at connecting brokers, insurers, and capacity providers through a proprietary digital trading platform. Ardonagh said Axiiem uses technology developed internally over several years to streamline specialty insurance placement through data-driven underwriting and portfolio distribution. The launch follows Ardonagh&amp;#8217;s investments in data infrastructure, analytics, and AI, including the creation of Ardonagh Intelligence in 2025.</description>
+    <pubDate>Sun, 05 Jul 2026 13:02:53 +0000</pubDate>
+    <guid>https://coverager.com/ardonagh-launches-specialty-insurtech-axiiem/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Marsh appoints Melody Carr as national head of technical claims advocacy for the Pacific</title>
     <link>https://insuranceasianews.com/marsh-appoints-melody-carr-as-national-head-of-technical-claims-advocacy-for-the-pacific/</link>
@@ -400,14 +408,6 @@
     <description>However, according to Kroll, for investors, this transition transforms the valuation process into a critical exercise in translating complex, macro-sensitive actuarial assumptions into clear market pricing. Given the firm’s background in sidecars, we asked the executives what key considerations Kroll considers when valuing casualty sidecar arrangements. Kroll is known across the industry for supporting sponsors, investors and intermediaries throughout the sidecar lifecycle by providing independent analysis that is designed to hold up in transaction environments, reporting, and stakeholder review.</description>
     <pubDate>Thu, 02 Jul 2026 19:06:08 +0000</pubDate>
     <guid>https://www.artemis.bm/news/casualty-sidecar-valuation-requires-assessing-macro-sensitivities-alongside-models-kroll/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=casualty-sidecar-valuation-requires-assessing-macro-sensitivities-alongside-models-kroll</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>AM Best sees shift towards underwriting discipline as delegated authority market expands</title>
-    <link>https://www.reinsurancene.ws/am-best-sees-shift-towards-underwriting-discipline-as-delegated-authority-market-expands/</link>
-    <description>Global credit rating agency AM Best has said the delegated underwriting authority enterprises (DUAE) market remains on a strong growth trajectory, although insurers are becoming increasingly selective about the capacity they provide, placing greater emphasis on underwriting performance and long-term profitability. AM Best said more organisations now hold underwriting authority across more than three-quarters of their delegated authority agreements. While DUAEs have helped insurers develop specialist products and respond to emerging risks, the agency believes the market is entering a period where underwriting discipline is taking priority over premium growth.</description>
-    <pubDate>Thu, 02 Jul 2026 19:06:08 +0000</pubDate>
-    <guid>https://www.reinsurancene.ws/am-best-sees-shift-towards-underwriting-discipline-as-delegated-authority-market-expands/</guid>
     <category>General</category>
   </item>
 </channel>
