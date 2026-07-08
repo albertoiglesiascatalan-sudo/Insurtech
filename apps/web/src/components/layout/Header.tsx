@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Search, Menu, X, Zap } from "lucide-react";
+import { Search, Menu, X, Zap, Wheat } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
@@ -12,6 +12,7 @@ const NAV_LINKS = [
   { href: "/for/founder", label: "Founders" },
   { href: "/newsletter", label: "Newsletter" },
   { href: "/bookmarks", label: "Saved" },
+  { href: "/bakery", label: "🍞 Panadería" },
 ];
 
 export function Header() {
@@ -51,6 +52,13 @@ export function Header() {
               className="p-2 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition"
             >
               <Search className="w-5 h-5" />
+            </Link>
+            <Link
+              href="/bakery"
+              className="hidden md:flex items-center gap-1.5 p-2 text-amber-600 hover:text-amber-700 hover:bg-amber-50 rounded-lg transition"
+              title="Panadería"
+            >
+              <Wheat className="w-5 h-5" />
             </Link>
             <Link
               href="/newsletter"
