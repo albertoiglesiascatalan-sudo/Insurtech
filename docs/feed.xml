@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sat, 18 Jul 2026 12:45:40 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 18 Jul 2026 18:43:42 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Bamboo partners with MS Transverse</title>
+    <link>https://coverager.com/bamboo-partners-with-ms-transverse/</link>
+    <description>MGA Bamboo Insurance announced the launch of a new partnership with MS Transverse, expanding its admitted homeowners and dwelling fire capacity in California. MS Transverse enhances our ability to continue writing in challenging markets while offering more competitive and configurable pricing options for agents and their clients.&amp;#8221; – John Chu, CEO of Bamboo Insurance. The partnership adds approximately $150 million in new admitted capacity and introduces additional options within Bamboo&amp;#8217;s existing portfolio, increasing affordability and flexibility in high-demand, catastrophe-exposed regions.</description>
+    <pubDate>Sat, 18 Jul 2026 18:43:17 +0000</pubDate>
+    <guid>https://coverager.com/bamboo-partners-with-ms-transverse/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Iran Renews Attacks on Gulf States After Another Night of US strikes</title>
     <link>https://www.insurancejournal.com/news/international/2026/07/18/878126.htm</link>
@@ -405,15 +413,6 @@
     <guid>https://www.insurancejournal.com/news/national/2026/07/17/877965.htm</guid>
     <category>General</category>
     <enclosure url="https://www.insurancejournal.com/app/uploads/2026/07/National-Cyber-Director-Sean-Cairncross-Bloomberg-580x387.jpg" type="image/jpeg" length="0"/>
-  </item>
-  <item>
-    <title>US Aims to Set Guardrails for Autonomous Vehicle Behavior</title>
-    <link>https://www.insurancejournal.com/news/national/2026/07/17/877969.htm</link>
-    <description>The Trump administration is working to develop new safety requirements governing how autonomous vehicles behave on the road as the industry contends with a series of safety mishaps. NHTSA initially plans to seek comment from the public and industry stakeholders with the goal of identifying “behavioral competencies” for autonomous vehicles, with tests to measure performance. The goal is to craft objective safety standards “so that a manufacturer who is producing the vehicle can know with certainty whether or not the vehicle meets the requirements,” Morrison said.</description>
-    <pubDate>Fri, 17 Jul 2026 07:49:39 +0000</pubDate>
-    <guid>https://www.insurancejournal.com/news/national/2026/07/17/877969.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.insurancejournal.com/app/uploads/2026/07/Waymo-car-lot-San-Francisco-Bloomberg-580x399.jpg" type="image/jpeg" length="0"/>
   </item>
 </channel>
 </rss>
