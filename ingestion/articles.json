@@ -1,5 +1,23 @@
 [
   {
+    "id": "i-havent-seen-risk-this-high-for-years-shipping-industry-veteran-tim-huxley-on-u",
+    "title": "‘I haven’t seen risk this high for years’: shipping industry veteran Tim Huxley on unprecedented pressures facing shipowners",
+    "title_original": "‘I haven’t seen risk this high for years’: shipping industry veteran Tim Huxley on unprecedented pressures facing shipowners",
+    "url": "https://insuranceasianews.com/i-havent-seen-risk-this-high-for-years-shipping-industry-veteran-tim-huxley-on-unprecedented-pressures-facing-shipowners/",
+    "summary": "To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles",
+    "category": "General",
+    "source": "Insurance Asia News",
+    "published_at": "2026-07-27T01:46:29.962323+00:00",
+    "image_url": "",
+    "signal_score": 8,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
+  },
+  {
     "id": "travelers-remains-open-to-m-a-following-strong-q2",
     "title": "Travelers remains open to M&A following strong Q2",
     "title_original": "Travelers remains open to M&A following strong Q2",
@@ -9,7 +27,7 @@
     "source": "Coverager",
     "published_at": "2026-07-26T18:52:32.513071+00:00",
     "image_url": "",
-    "signal_score": 46,
+    "signal_score": 45,
     "signal_label": "M&A",
     "signal_icon": "🤝",
     "why_matters": "Consolida el mercado y puede redefinir la competencia en el sector.",
@@ -27,11 +45,11 @@
     "source": "Coverager",
     "published_at": "2026-07-26T18:52:32.436812+00:00",
     "image_url": "",
-    "signal_score": 18,
+    "signal_score": 17,
     "signal_label": "Disrupción",
     "signal_icon": "🚀",
     "why_matters": "Introduce un modelo o tecnología que puede alterar la cadena de valor.",
-    "is_signal": true,
+    "is_signal": false,
     "deal": null,
     "amplified": false
   },
@@ -45,7 +63,7 @@
     "source": "Coverager",
     "published_at": "2026-07-26T12:53:02.409199+00:00",
     "image_url": "",
-    "signal_score": 15,
+    "signal_score": 13,
     "signal_label": "Cambio de Liderazgo",
     "signal_icon": "👔",
     "why_matters": "Los cambios de liderazgo suelen anticipar cambios estratégicos.",
@@ -63,7 +81,7 @@
     "source": "Coverager",
     "published_at": "2026-07-26T12:53:02.355972+00:00",
     "image_url": "",
-    "signal_score": 17,
+    "signal_score": 15,
     "signal_label": "Disrupción",
     "signal_icon": "🚀",
     "why_matters": "Introduce un modelo o tecnología que puede alterar la cadena de valor.",
@@ -81,11 +99,11 @@
     "source": "Coverager",
     "published_at": "2026-07-26T12:53:02.297193+00:00",
     "image_url": "",
-    "signal_score": 18,
+    "signal_score": 16,
     "signal_label": "Inversión",
     "signal_icon": "💰",
     "why_matters": "Nueva financiación que puede acelerar la competencia en el sector.",
-    "is_signal": true,
+    "is_signal": false,
     "deal": null,
     "amplified": false
   },
@@ -969,7 +987,7 @@
     "why_matters": "Consolida el mercado y puede redefinir la competencia en el sector.",
     "is_signal": false,
     "deal": null,
-    "amplified": true
+    "amplified": false
   },
   {
     "id": "this-years-scs-loss-totals-will-fall-below-average-kcc-analysis",
@@ -1095,7 +1113,7 @@
     "why_matters": "Consolida el mercado y puede redefinir la competencia en el sector.",
     "is_signal": true,
     "deal": null,
-    "amplified": true
+    "amplified": false
   },
   {
     "id": "global-mutual-insurance-sector-reaches-record-1-61-trillion-in-premiums-icmif",
@@ -1257,7 +1275,7 @@
     "why_matters": "Consolida el mercado y puede redefinir la competencia en el sector.",
     "is_signal": true,
     "deal": null,
-    "amplified": true
+    "amplified": false
   },
   {
     "id": "root-launches-auto-insurance-in-new-jersey",
@@ -9053,24 +9071,6 @@
     "signal_label": "",
     "signal_icon": "",
     "why_matters": "",
-    "is_signal": false,
-    "deal": null,
-    "amplified": false
-  },
-  {
-    "id": "antares-ceo-michael-van-der-straaten-dies-at-58",
-    "title": "Antares’ CEO Michael van der Straaten Dies at 58",
-    "title_original": "Antares’ CEO Michael van der Straaten Dies at 58",
-    "url": "https://www.insurancejournal.com/news/international/2026/07/14/877518.htm",
-    "summary": "Antares, the specialist global re/insurance group, announced the death of its chief executive officer Michael van der Straaten. “It is with great sadness that we announce that Michael van der Straaten, CEO of Antares, passed away unexpectedly this weekend following a short illness,” according to Antares, the international operations of Qatar Insurance Group (QIC), a major insurer in the Middle East and North Africa (MENA) region. van der Straaten, 58, was named CEO of Antares (formerly named QIC Global ), in 2020.",
-    "category": "General",
-    "source": "Insurance Journal",
-    "published_at": "2026-07-14T18:58:54.526445+00:00",
-    "image_url": "",
-    "signal_score": 14,
-    "signal_label": "Cambio de Liderazgo",
-    "signal_icon": "👔",
-    "why_matters": "Los cambios de liderazgo suelen anticipar cambios estratégicos.",
     "is_signal": false,
     "deal": null,
     "amplified": false
