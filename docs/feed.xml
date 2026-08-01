@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sat, 01 Aug 2026 01:30:19 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 01 Aug 2026 07:59:08 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Bring It On: AI Strategy Sways Underwriter Choices of Employers</title>
+    <link>https://www.carriermanagement.com/news/2026/08/01/290620.htm</link>
+    <description>Now, according to a recent survey, nearly three-quarters say they’re opting for companies with clear AI strategies as employers. Specifically, according to the report based on the responses of underwriters and executives who are mainly involved in writing commercial P/C lines of insurance, 72% said a structured AI strategy would matter to them when considering new roles. Related articles: Your Tech Stack Is Your Recruiting Strategy (Whether You Know It or Not) ; Ranking: Who Are the Insurance Industry’s AI Talent, Maturity Leaders?</description>
+    <pubDate>Sat, 01 Aug 2026 07:58:56 +0000</pubDate>
+    <guid>https://www.carriermanagement.com/news/2026/08/01/290620.htm</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Hasar Accelerates Sapiens’ North American Transformation</title>
     <link>https://iireporter.com/hasar-accelerates-sapiens-north-american-transformation/</link>
@@ -405,14 +413,6 @@
     <description>(Image source: Mutual Capital Group website.) Mutual Capital Group (Wyalusing, Pa.) has selected ZestyAI (San Francisco) property analytics for underwriting, pricing and inspection decisions. The deployment will support Mutual Capital Group companies Tuscarora Wayne Insurance Company, Keystone National Insurance Company and Lebanon Valley Insurance Company, according to a ZestyAI statement. Mutual Capital Group is adopting two ZestyAI solutions.</description>
     <pubDate>Fri, 31 Jul 2026 08:29:14 +0000</pubDate>
     <guid>https://iireporter.com/mutual-capital-group-adopts-zestyai/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Mercedes-Benz Recalling 310,000 US Vehicles Citing Risk of Failure to Detect Open Door</title>
-    <link>https://www.claimsjournal.com/news/national/2026/07/31/339205.htm</link>
-    <description>Related: Mercedes-Benz Recalling 144,000 US Vehicles for Display Issues The failure to detect an open door, due to a corroded micro-switch in driver’s door lock, could prevent the auto-park brake from engaging automatically and result in a vehicle rollaway, the agency said. due to risk of failure to detect an open door, the U.S. Mercedes-Benz is recalling 310,667 vehicles in the U.S.</description>
-    <pubDate>Fri, 31 Jul 2026 08:29:13 +0000</pubDate>
-    <guid>https://www.claimsjournal.com/news/national/2026/07/31/339205.htm</guid>
     <category>General</category>
   </item>
 </channel>
