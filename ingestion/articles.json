@@ -1,5 +1,23 @@
 [
   {
+    "id": "protec-general-insurance-appoints-subramanyam-brahmajosyula-as-head-of-underwrit",
+    "title": "Protec General Insurance appoints Subramanyam Brahmajosyula as head of underwriting, reinsurance",
+    "title_original": "Protec General Insurance appoints Subramanyam Brahmajosyula as head of underwriting, reinsurance",
+    "url": "https://insuranceasianews.com/protec-general-insurance-appoints-subramanyam-brahmajosyula-as-head-of-underwriting-reinsurance/",
+    "summary": "To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles",
+    "category": "General",
+    "source": "Insurance Asia News",
+    "published_at": "2026-08-16T06:50:49.405135+00:00",
+    "image_url": "",
+    "signal_score": 12,
+    "signal_label": "Cambio de Liderazgo",
+    "signal_icon": "👔",
+    "why_matters": "Los cambios de liderazgo suelen anticipar cambios estratégicos.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
+  },
+  {
     "id": "inszone-acquires-hocker-family-insurance",
     "title": "Inszone acquires Hocker Family Insurance",
     "title_original": "Inszone acquires Hocker Family Insurance",
@@ -9,7 +27,7 @@
     "source": "Coverager",
     "published_at": "2026-08-15T18:44:05.811335+00:00",
     "image_url": "",
-    "signal_score": 35,
+    "signal_score": 33,
     "signal_label": "M&A",
     "signal_icon": "🤝",
     "why_matters": "Consolida el mercado y puede redefinir la competencia en el sector.",
@@ -27,7 +45,7 @@
     "source": "Coverager",
     "published_at": "2026-08-15T18:44:05.651979+00:00",
     "image_url": "",
-    "signal_score": 11,
+    "signal_score": 9,
     "signal_label": "",
     "signal_icon": "",
     "why_matters": "",
@@ -45,7 +63,7 @@
     "source": "Coverager",
     "published_at": "2026-08-15T12:49:08.426979+00:00",
     "image_url": "",
-    "signal_score": 15,
+    "signal_score": 14,
     "signal_label": "Disrupción",
     "signal_icon": "🚀",
     "why_matters": "Introduce un modelo o tecnología que puede alterar la cadena de valor.",
@@ -9107,28 +9125,6 @@
     "why_matters": "Impacto directo en exposición, pricing y reservas del sector.",
     "is_signal": false,
     "deal": null,
-    "amplified": false
-  },
-  {
-    "id": "new-jersey-settles-trucker-misclassification-claims-for-2-7-million",
-    "title": "New Jersey Settles Trucker Misclassification Claims for $2.7 Million",
-    "title_original": "New Jersey Settles Trucker Misclassification Claims for $2.7 Million",
-    "url": "https://www.insurancejournal.com/news/east/2026/08/04/880078.htm",
-    "summary": "The New Jersey Department of Labor and Workforce Development (NJDOL) has reached a $2.7 million settlement with STG Logistics, Inc. This settlement resolves the first lawsuit filed under New Jersey’s 2021 law that permits the state to file suit in New Jersey Superior Court against employers who have misclassified workers as independent contractors. STG Logistics purchased XPO’s New Jersey intermodal business in 2022 and assumed liability for the its past employment practices.",
-    "category": "General",
-    "source": "Insurance Journal",
-    "published_at": "2026-08-04T08:14:20.459762+00:00",
-    "image_url": "https://www.insurancejournal.com/app/uploads/2026/06/truck-driver-Adobe-580x387.jpeg",
-    "signal_score": 17,
-    "signal_label": "Inversión",
-    "signal_icon": "💰",
-    "why_matters": "Nueva financiación que puede acelerar la competencia en el sector.",
-    "is_signal": false,
-    "deal": {
-      "amount_m": 2.7,
-      "amount_str": "$2M",
-      "round": "—"
-    },
     "amplified": false
   }
 ]
