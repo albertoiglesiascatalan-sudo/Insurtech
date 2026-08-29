@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sat, 29 Aug 2026 12:13:58 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 29 Aug 2026 16:08:13 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Mazda partners with AAA and HAAS Alert on roadside safety</title>
+    <link>https://coverager.com/mazda-partners-with-aaa-and-haas-alert-on-roadside-safety/</link>
+    <description>Mazda North American Operations has partnered with AAA and connected-vehicle technology company HAAS Alert to warn approaching drivers when a Mazda vehicle is stopped on the roadside. By working with AAA and HAAS Alert, we&amp;#8217;re extending the protection of a Mazda vehicle to not only our customers, but also to everyone on the road around it.&amp;#8221; &amp;#8211; Jennifer Morrison, Director of Vehicle Safety Strategy at Mazda North American Operations. At the same time, HAAS Alert’s Safety Cloud sends “Slow Down, Move Over” alerts to approaching drivers through supported vehicle dashboards and navigation apps.</description>
+    <pubDate>Sat, 29 Aug 2026 16:07:41 +0000</pubDate>
+    <guid>https://coverager.com/mazda-partners-with-aaa-and-haas-alert-on-roadside-safety/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Skyward Group names Apollo CFO as successor</title>
     <link>https://coverager.com/skyward-group-names-apollo-cfo-as-successor/</link>
@@ -408,15 +416,6 @@
     <pubDate>Thu, 27 Aug 2026 17:13:55 +0000</pubDate>
     <guid>https://coverager.com/hippo-to-expand-homeowners-insurance/</guid>
     <category>General</category>
-  </item>
-  <item>
-    <title>PwC International Can’t Exit Evergrande Case, HK Court Rules</title>
-    <link>https://www.claimsjournal.com/news/national/2026/08/27/339792.htm</link>
-    <description>Deputy High Court Judge Patrick Fung said the evidence PwC International submitted as part of its arguments to exit the case was “inadequate and unsatisfactory,” according to a judgment delivered on Wednesday. A Hong Kong court declined to remove PricewaterhouseCoopers International Ltd. The case centers on PwC’s auditing work for Evergrande, an emblem of China’s property crisis since it defaulted in 2021.</description>
-    <pubDate>Thu, 27 Aug 2026 05:42:19 +0000</pubDate>
-    <guid>https://www.claimsjournal.com/news/national/2026/08/27/339792.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.claimsjournal.com/app/uploads/2026/08/Evergrande-City-Plaza_Bloomberg-580x387.jpg" type="image/jpeg" length="0"/>
   </item>
 </channel>
 </rss>
