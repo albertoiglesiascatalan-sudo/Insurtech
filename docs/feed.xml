@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sun, 30 Aug 2026 15:52:49 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 30 Aug 2026 20:27:34 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Aon nears ~$17B deal to buy USI</title>
+    <link>https://coverager.com/aon-nears-17b-deal-to-buy-usi/</link>
+    <description>According to a report by the Wall Street Journal, Aon is close to signing a deal with private equity firm KKR to buy insurance brokerage USI Insurance Services for around $17 billion including debt. The report said that the deal could be announced as soon as Monday. KKR, alongside Canadian pension investor CDPQ, acquired USI in 2017 from private equity firm Onex for $4.3 billion.</description>
+    <pubDate>Sun, 30 Aug 2026 20:27:02 +0000</pubDate>
+    <guid>https://coverager.com/aon-nears-17b-deal-to-buy-usi/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>International reinsurers to absorb most insured losses from Nepal flash floods: AM Best</title>
     <link>https://insuranceasianews.com/international-reinsurers-to-absorb-most-insured-losses-from-nepal-flash-floods-am-best/</link>
@@ -407,15 +415,6 @@
     <guid>https://www.insurancejournal.com/news/midwest/2026/08/27/883143.htm</guid>
     <category>General</category>
     <enclosure url="https://www.insurancejournal.com/app/uploads/2025/03/EEOC-laptop-AdobeStock-580x387.jpeg" type="image/jpeg" length="0"/>
-  </item>
-  <item>
-    <title>Carnival Cruise Line Wins New Trial After $10M Verdict in Sex Assault Suit</title>
-    <link>https://www.insurancejournal.com/news/southeast/2026/08/27/883149.htm</link>
-    <description>Carnival Cruise Line, long the subject of lawsuits accusing its crew members of unwanted sexual advances on passengers, has won a new trial in a case in which a Florida jury awarded $10.3 million to a young woman who said she was assaulted in 2018. “…We reverse the district court’s grant of partial summary judgment on the false imprisonment claim, vacate in part the judgment of the district court as to the false imprisonment and sexual assault claims, and remand for a new trial on the false imprisonment and sexual assault claims,” the U.S. The appellate judges agreed with Carnival’s argument that the lower federal court in southern Florida erred by not allowing the jury to hear about an FBI report that had concluded that the sexual encounter on the cruise ship was consensual.</description>
-    <pubDate>Thu, 27 Aug 2026 17:13:59 +0000</pubDate>
-    <guid>https://www.insurancejournal.com/news/southeast/2026/08/27/883149.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.insurancejournal.com/app/uploads/2026/08/Depositphotos_654679166_S-580x435.jpg" type="image/jpeg" length="0"/>
   </item>
 </channel>
 </rss>
