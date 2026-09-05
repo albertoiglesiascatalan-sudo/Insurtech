@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sat, 05 Sep 2026 14:23:38 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 05 Sep 2026 20:00:28 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Bridge Specialty Group names Todd Wood chief underwriting officer</title>
+    <link>https://coverager.com/bridge-specialty-group-names-todd-wood-chief-underwriting-officer/</link>
+    <description>Bridge Specialty Group appointed Todd Wood chief underwriting officer for its North American wholesale business. Wood joined Bridge Specialty Group in 2023 through its acquisition of New England Excess Exchange, where he has served as president since 2019. Wood will oversee underwriting strategy, standards and quality controls across the company’s North American operations.</description>
+    <pubDate>Sat, 05 Sep 2026 19:55:31 +0000</pubDate>
+    <guid>https://coverager.com/bridge-specialty-group-names-todd-wood-chief-underwriting-officer/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Capex ‘super-cycle’ among largest commercial P&amp;C opportunities in decades: Swiss Re</title>
     <link>https://www.reinsurancene.ws/capex-super-cycle-among-largest-commercial-pc-opportunities-in-decades-swiss-re/</link>
@@ -403,15 +411,6 @@
     <pubDate>Fri, 04 Sep 2026 10:19:42 +0000</pubDate>
     <guid>https://www.reinsurancene.ws/reinsurers-likely-to-be-more-disciplined-at-jan-1-than-in-past-soft-markets-storr-antares/</guid>
     <category>General</category>
-  </item>
-  <item>
-    <title>Viewpoint: Global Reinsurance Pricing to Remain Under Pressure Through 2027</title>
-    <link>https://www.insurancejournal.com/news/international/2026/09/04/883905.htm</link>
-    <description>Abundant capacity and lower-than-expected catastrophe losses in recent years suggest that reinsurance pricing will remain under pressure through 2027. S&amp;P Global Ratings maintains a stable view of the global reinsurance sector. As a result, reinsurers are likely to face increasing pressure to loosen terms and conditions, while property and casualty (P/C) reinsurers’ underwriting margins and overall profitability will gradually compress over 2026-2027.</description>
-    <pubDate>Fri, 04 Sep 2026 10:19:41 +0000</pubDate>
-    <guid>https://www.insurancejournal.com/news/international/2026/09/04/883905.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.insurancejournal.com/app/uploads/2020/01/reinsurance-arrow-580x435.jpg" type="image/jpeg" length="0"/>
   </item>
 </channel>
 </rss>
