@@ -5,8 +5,32 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Wed, 09 Sep 2026 20:24:29 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 10 Sep 2026 02:03:56 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Insurity Announces Ratio Content and Rating Engine</title>
+    <link>https://www.carriermanagement.com/news/2026/09/09/291800.htm</link>
+    <description>Insurity, a provider of software and analytics for the property/casualty insurance industry, announced Ratio Content and Rating Engine, an API-first regulatory content and externalized rating engine for admitted commercial property/casualty carriers. Ratio Content and Rating Engine closes that gap, giving carriers the speed and flexibility to rate the commercial business they actually write.” Ratio Content and Rating Engine turns machine readable bureau content into production ready policy logic and provides the rating performance to support commercial policies. Ratio Content and Rating Engine is source-agnostic and designed to support bureau and carrier-specific content, subject to applicable licensing.</description>
+    <pubDate>Thu, 10 Sep 2026 02:03:41 +0000</pubDate>
+    <guid>https://www.carriermanagement.com/news/2026/09/09/291800.htm</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>As cyberattacks surge across Asia, call increases for insurance-led resilience</title>
+    <link>https://insuranceasianews.com/as-cyberattacks-surge-across-asia-call-increases-for-insurance-led-resilience/</link>
+    <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
+    <pubDate>Thu, 10 Sep 2026 02:03:39 +0000</pubDate>
+    <guid>https://insuranceasianews.com/as-cyberattacks-surge-across-asia-call-increases-for-insurance-led-resilience/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>Estrella Insurance expands to Orange County</title>
+    <link>https://coverager.com/estrella-insurance-expands-to-orange-county/</link>
+    <description>Estrella Insurance has opened its first Orange County agency in Santa Ana, California. The office is owned by Matheus Gould-Alexandre, a former insurance sales agent who is fluent in English, Spanish and Portuguese. Tustin Avenue, the agency offers auto, homeowners, renters and Mexico auto insurance.</description>
+    <pubDate>Thu, 10 Sep 2026 02:03:29 +0000</pubDate>
+    <guid>https://coverager.com/estrella-insurance-expands-to-orange-county/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>AI in Portfolio Management: A Tool, Not a Decision Maker</title>
     <link>https://iireporter.com/ai-in-portfolio-management-a-tool-not-a-decision-maker/</link>
@@ -389,30 +413,6 @@
     <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
     <pubDate>Wed, 09 Sep 2026 02:09:31 +0000</pubDate>
     <guid>https://insuranceasianews.com/in-a-time-of-war-will-others-follow-in-japans-wake/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Pacific Life Re executes first asset-intensive reinsurance deal in Hong Kong</title>
-    <link>https://insuranceasianews.com/pacific-life-re-executes-first-asset-intensive-reinsurance-deal-in-hong-kong/</link>
-    <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
-    <pubDate>Wed, 09 Sep 2026 02:09:30 +0000</pubDate>
-    <guid>https://insuranceasianews.com/pacific-life-re-executes-first-asset-intensive-reinsurance-deal-in-hong-kong/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Axa XL appoints Markus Posberg as property, construction, energy CUO for APAC and Europe</title>
-    <link>https://insuranceasianews.com/axa-xl-appoints-markus-posberg-as-property-construction-energy-cuo-for-apac-and-europe/</link>
-    <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
-    <pubDate>Wed, 09 Sep 2026 02:09:29 +0000</pubDate>
-    <guid>https://insuranceasianews.com/axa-xl-appoints-markus-posberg-as-property-construction-energy-cuo-for-apac-and-europe/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Nationwide adds actively managed fund strategy to fixed indexed annuity</title>
-    <link>https://coverager.com/nationwide-adds-actively-managed-fund-strategy-to-fixed-indexed-annuity/</link>
-    <description>Nationwide claims New Heights Select is the first fixed indexed annuity to include a strategy linked to an actively managed mutual fund. Nationwide , Annexus and Capital Group are adding a strategy linked to the American Funds Growth Fund of America Class F-3 mutual fund to the Nationwide New Heights Select fixed indexed annuity suite. Nationwide and Annexus previously introduced a registered index-linked annuity offering strategies tied to an actively managed fund.</description>
-    <pubDate>Wed, 09 Sep 2026 02:09:17 +0000</pubDate>
-    <guid>https://coverager.com/nationwide-adds-actively-managed-fund-strategy-to-fixed-indexed-annuity/</guid>
     <category>General</category>
   </item>
 </channel>
