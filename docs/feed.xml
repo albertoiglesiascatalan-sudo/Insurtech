@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sat, 12 Sep 2026 14:46:59 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 12 Sep 2026 20:02:41 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>EverPeak goes direct in Georgia</title>
+    <link>https://coverager.com/everpeak-goes-direct-in-georgia/</link>
+    <description>EverPeak Insurance has launched direct online quoting in Georgia, marking a shift beyond its existing distribution through Attune. Georgia businesses can now obtain quotes through EverPeak’s website. In other states, visitors are directed to submit their contact information for a local EverPeak agent, who will typically provide coverage options within one business day.</description>
+    <pubDate>Sat, 12 Sep 2026 20:02:13 +0000</pubDate>
+    <guid>https://coverager.com/everpeak-goes-direct-in-georgia/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>L&amp;G appoints technology, data and innovation chief</title>
     <link>https://coverager.com/lg-appoints-technology-data-and-innovation-chief/</link>
@@ -409,14 +417,6 @@
     <guid>https://www.insurancejournal.com/news/national/2026/09/11/884701.htm</guid>
     <category>General</category>
     <enclosure url="https://www.insurancejournal.com/app/uploads/2026/03/Anthropic-logo-research-building-AdobeStock-580x326.jpeg" type="image/jpeg" length="0"/>
-  </item>
-  <item>
-    <title>Mosaic launches AI Lab</title>
-    <link>https://coverager.com/mosaic-launches-ai-lab/</link>
-    <description>Mosaic Insurance has launched an AI Lab and Forward Deployed Engineer program to develop and deploy AI tools across underwriting, claims, finance, and operations. Mosaic said the lab will reuse AI infrastructure across projects and draw on the company’s policy, loss, and operational data. Our AI Lab exists to build AI that runs in production, on real data, solving real problems—and the FDE model is how we scale that without losing the speed and discipline that makes it work.&amp;#8221; &amp;#8211; Mosaic Co-CEO Mitch Blaser.</description>
-    <pubDate>Fri, 11 Sep 2026 10:22:26 +0000</pubDate>
-    <guid>https://coverager.com/mosaic-launches-ai-lab/</guid>
-    <category>General</category>
   </item>
 </channel>
 </rss>
