@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sun, 13 Sep 2026 15:28:09 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 13 Sep 2026 20:14:00 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Insurance Risks Losing Expertise to Retirements</title>
+    <link>https://www.insurancethoughtleadership.com/talent-gap/insurance-risks-losing-expertise-retirements</link>
+    <description>The insurance industry's persistent talent crunch goes far deeper than a hiring gap – it's also becoming a knowledge gap, as the accumulated judgment of a workforce built over decades retires faster than it can be replaced. Bureau of Labor Statistics estimates roughly 400,000 insurance professionals will have retired in the last half-decade alone. Today's average insurance employee is in their mid-40s to mid-50s, depending on the line of business.</description>
+    <pubDate>Sun, 13 Sep 2026 20:13:27 +0000</pubDate>
+    <guid>https://www.insurancethoughtleadership.com/talent-gap/insurance-risks-losing-expertise-retirements</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Mosaic expands North American financial lines business</title>
     <link>https://coverager.com/mosaic-expands-north-american-financial-lines-business/</link>
@@ -406,14 +414,6 @@
     <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
     <pubDate>Fri, 11 Sep 2026 10:22:39 +0000</pubDate>
     <guid>https://insuranceasianews.com/gallagher-re-mds-group-howden-bowring-marsh-charles-taylor-12-apac-insurance-people-moves-of-the-week/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>London P&amp;I on the hook for Ocean Melody carrier after fatal blaze</title>
-    <link>https://insuranceasianews.com/london-pi-on-the-hook-for-ocean-melody-carrier-after-fatal-blaze/</link>
-    <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
-    <pubDate>Fri, 11 Sep 2026 10:22:39 +0000</pubDate>
-    <guid>https://insuranceasianews.com/london-pi-on-the-hook-for-ocean-melody-carrier-after-fatal-blaze/</guid>
     <category>General</category>
   </item>
 </channel>
