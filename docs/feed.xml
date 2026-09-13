@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sat, 12 Sep 2026 20:02:41 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 13 Sep 2026 02:01:04 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Hagerty Family Trust to sell $111 million in stock</title>
+    <link>https://coverager.com/hagerty-family-trust-to-sell-111-million-in-stock/</link>
+    <description>is selling 9.25 million Hagerty shares at $11.95 each in an upsized secondary offering valued at approximately $110.5 million. shares for the benefit of the Kim Hagerty Revocable Trust. The underwriters have a 30-day option to purchase an additional 1.39 million shares, potentially increasing the offering to about $127.1 million.</description>
+    <pubDate>Sun, 13 Sep 2026 02:00:33 +0000</pubDate>
+    <guid>https://coverager.com/hagerty-family-trust-to-sell-111-million-in-stock/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>EverPeak goes direct in Georgia</title>
     <link>https://coverager.com/everpeak-goes-direct-in-georgia/</link>
@@ -408,15 +416,6 @@
     <guid>https://www.insurancejournal.com/news/southeast/2026/09/11/884687.htm</guid>
     <category>General</category>
     <enclosure url="https://www.insurancejournal.com/app/uploads/2026/08/physician-dispensing-DP-580x387.jpg" type="image/jpeg" length="0"/>
-  </item>
-  <item>
-    <title>Lawmakers Call for New AI Rules After Anthropic Researchers’ Safety Warnings</title>
-    <link>https://www.insurancejournal.com/news/national/2026/09/11/884701.htm</link>
-    <description>lawmakers this week called for new rules to govern AI, after an Anthropic researcher went public with his concerns about the technology escaping human control. The reaction was broader than after previous statements from OpenAI and Anthropic staffers about safety concerns, drawing input from lawmakers who do not often forcefully engage in debates over how to govern AI. The lawmakers’ statements came in response to concerns raised this week by Anthropic researcher Jacob Coxon, who accused OpenAI and Anthropic of ⁠racing toward AI advancements without acting responsibly.</description>
-    <pubDate>Fri, 11 Sep 2026 10:22:28 +0000</pubDate>
-    <guid>https://www.insurancejournal.com/news/national/2026/09/11/884701.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.insurancejournal.com/app/uploads/2026/03/Anthropic-logo-research-building-AdobeStock-580x326.jpeg" type="image/jpeg" length="0"/>
   </item>
 </channel>
 </rss>
