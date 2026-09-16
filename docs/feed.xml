@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Tue, 15 Sep 2026 20:49:09 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 16 Sep 2026 02:18:03 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Rising cyber threats put the brakes on APAC’s softening insurance market</title>
+    <link>https://insuranceasianews.com/rising-cyber-threats-put-a-brake-on-apacs-softening-insurance-market/</link>
+    <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
+    <pubDate>Wed, 16 Sep 2026 02:17:45 +0000</pubDate>
+    <guid>https://insuranceasianews.com/rising-cyber-threats-put-a-brake-on-apacs-softening-insurance-market/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Patra Launches Agentic Managed Services</title>
     <link>https://iireporter.com/patra-launches-agentic-managed-services/</link>
@@ -407,14 +415,6 @@
     <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
     <pubDate>Tue, 15 Sep 2026 02:26:40 +0000</pubDate>
     <guid>https://insuranceasianews.com/atc-owned-motor-mga-mb-insurance-enters-new-zealand-market/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Peak3 launches the first global insurance AI-DLC, alongside its AI-native core system</title>
-    <link>https://coverager.com/peak3-launches-the-first-global-insurance-ai-dlc-alongside-its-ai-native-core-system/</link>
-    <description>The post Peak3 launches the first global insurance AI-DLC, alongside its AI-native core system appeared first on Coverager - Insurance news and insights . Peak3, a global provider of digital and AI-driven insurance software, today announced Graphene v4 , the AI-native evolution of its insurance core platform, and Graphene Harness , an end-to-end AI-driven delivery lifecycle (AI-DLC) for building, testing, migrating and maintaining insurance systems. Graphene v4 also widens functional breadth across all three major business lines: the complete group health lifecycle including provider network management; commercial lines with co-insurance and reinsurance administered inside the core; indexed universal life and crypto-denominated policies; and native Takaful support alongside conventional business.</description>
-    <pubDate>Tue, 15 Sep 2026 02:26:26 +0000</pubDate>
-    <guid>https://coverager.com/peak3-launches-the-first-global-insurance-ai-dlc-alongside-its-ai-native-core-system/</guid>
     <category>General</category>
   </item>
 </channel>
