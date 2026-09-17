@@ -5,8 +5,24 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Wed, 16 Sep 2026 20:49:11 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 17 Sep 2026 02:23:22 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Why Automation-First AI Falls Short in Specialty Lines</title>
+    <link>https://www.carriermanagement.com/features/2026/09/16/292004.htm</link>
+    <description>A system can identify every limit, exclusion and endorsement in a policy and still get the coverage analysis wrong. It may read every page yet miss how an endorsement changes the coverage grant, where an excess layer departs from the underlying coverage, or how the facts change a provision’s meaning. Coverage is a promise wrapped in documents.</description>
+    <pubDate>Thu, 17 Sep 2026 02:23:07 +0000</pubDate>
+    <guid>https://www.carriermanagement.com/features/2026/09/16/292004.htm</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>‘The highs are very high, the lows are very low’: New Zealand’s volatile, super-soft P&amp;C market faces a turning point</title>
+    <link>https://insuranceasianews.com/the-highs-are-very-high-the-lows-are-very-low-new-zealands-volatile-super-soft-pc-market-faces-a-turning-point/</link>
+    <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
+    <pubDate>Thu, 17 Sep 2026 02:23:05 +0000</pubDate>
+    <guid>https://insuranceasianews.com/the-highs-are-very-high-the-lows-are-very-low-new-zealands-volatile-super-soft-pc-market-faces-a-turning-point/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Transamerica Expands Empathy Support</title>
     <link>https://iireporter.com/transamerica-expands-empathy-support/</link>
@@ -397,22 +413,6 @@
     <description>(Greg Alling, President, Casualty Solutions, Verisk. Source: Verisk.) Verisk (Jersey City, N.J.) has named Greg Alling President, Casualty Solutions, effective immediately. “Greg is a recognized authority in casualty claims handling, with a rare combination of deep industry expertise and a track record of building software and AI solutions,” comments Steve Kauderer, President, Verisk Claims Solutions.</description>
     <pubDate>Tue, 15 Sep 2026 20:48:53 +0000</pubDate>
     <guid>https://iireporter.com/verisk-names-greg-alling-president-casualty-solutions/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Monitaur Offers FlightSim Standalone</title>
-    <link>https://iireporter.com/monitaur-offers-flightsim-standalone/</link>
-    <description>(Image source: Monitaur FlightSim webpage.) Monitaur (Boston) has made FlightSim, the objective validation capability inside its AI governance platform, available as a standalone solution. “As the proliferation and impacts of AI and agents continue to accelerate, human review capacity and generalized evaluation, testing, and validation techniques fall short.” Clark says making FlightSim available as a standalone offering will let a broader group of companies use Monitaur’s AI validation expertise without adopting the full governance platform. Monitaur says standalone availability will let companies use FlightSim in deployment stacks and vendor-management security processes.</description>
-    <pubDate>Tue, 15 Sep 2026 20:48:53 +0000</pubDate>
-    <guid>https://iireporter.com/monitaur-offers-flightsim-standalone/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>OSHA Releases List of Top 10 Cited Workplace Hazards in 2026</title>
-    <link>https://www.carriermanagement.com/news/2026/09/15/291957.htm</link>
-    <description>worksites where injuries were reported, the Occupational Safety and Health Administration (OSHA) has compiled a preliminary list of the top 10 most commonly cited workplace hazards for fiscal year 2026 (October 1, 2025, through August 31, 2026). The list provides insight into the preventable injuries, illnesses, and deaths related to these workplace hazards.</description>
-    <pubDate>Tue, 15 Sep 2026 20:48:52 +0000</pubDate>
-    <guid>https://www.carriermanagement.com/news/2026/09/15/291957.htm</guid>
     <category>General</category>
   </item>
 </channel>
