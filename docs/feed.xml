@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sun, 20 Sep 2026 10:44:24 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 20 Sep 2026 15:33:05 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Angle Health raises $200 million</title>
+    <link>https://coverager.com/angle-health-raises-200-million/</link>
+    <description>Angle Health has secured a $200 million Series C financing at a $2.7 billion valuation. The transaction also includes a $400 million tender offer for existing shareholders, bringing the total financing announcement to $600 million. Founded in 2019 and launched in 2021, the San Francisco-based health benefits company offers customizable employer health plans across 47 states.</description>
+    <pubDate>Sun, 20 Sep 2026 15:32:38 +0000</pubDate>
+    <guid>https://coverager.com/angle-health-raises-200-million/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>AIG appoints Daina Muceniece as regional head of trade credit for APAC</title>
     <link>https://insuranceasianews.com/aig-appoints-daina-muceniece-as-regional-head-of-trade-credit-for-apac/</link>
@@ -405,15 +413,6 @@
     <pubDate>Fri, 18 Sep 2026 10:25:13 +0000</pubDate>
     <guid>https://www.insurancejournal.com/news/national/2026/09/18/885473.htm</guid>
     <category>General</category>
-  </item>
-  <item>
-    <title>White House Weighs Incubator for Cyber Research, Startups</title>
-    <link>https://www.insurancejournal.com/news/national/2026/09/18/885557.htm</link>
-    <description>The White House’s Office of the National Cyber Director has been drafting an executive order that would establish a program to research and develop cyber technologies that are aligned with the priorities of the US government, the people said, asking not to be identified because the plans aren’t yet public. The Trump administration is weighing a plan to establish a government-led incubator aimed at investing in cybersecurity research and spinning out startups focused on developing tools for the government to use, according to people familiar with the situation. Inside the US government, the effort has been compared with the way Israel closely aligns its military priorities with the focus of cybersecurity startups, venture capital investments and academic research in the country, according to the people familiar with the plans.</description>
-    <pubDate>Fri, 18 Sep 2026 10:25:13 +0000</pubDate>
-    <guid>https://www.insurancejournal.com/news/national/2026/09/18/885557.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.insurancejournal.com/app/uploads/2024/09/White-House-cloudy-Bloomberg-580x387.jpg" type="image/jpeg" length="0"/>
   </item>
 </channel>
 </rss>

@@ -1,5 +1,27 @@
 [
   {
+    "id": "angle-health-raises-200-million",
+    "title": "Angle Health raises $200 million",
+    "title_original": "Angle Health raises $200 million",
+    "url": "https://coverager.com/angle-health-raises-200-million/",
+    "summary": "Angle Health has secured a $200 million Series C financing at a $2.7 billion valuation. The transaction also includes a $400 million tender offer for existing shareholders, bringing the total financing announcement to $600 million. Founded in 2019 and launched in 2021, the San Francisco-based health benefits company offers customizable employer health plans across 47 states.",
+    "category": "General",
+    "source": "Coverager",
+    "published_at": "2026-09-20T15:32:38.529384+00:00",
+    "image_url": "",
+    "signal_score": 33,
+    "signal_label": "Inversión",
+    "signal_icon": "💰",
+    "why_matters": "Nueva financiación que puede acelerar la competencia en el sector.",
+    "is_signal": true,
+    "deal": {
+      "amount_m": 200.0,
+      "amount_str": "$200M",
+      "round": "Series C"
+    },
+    "amplified": false
+  },
+  {
     "id": "aig-appoints-daina-muceniece-as-regional-head-of-trade-credit-for-apac",
     "title": "AIG appoints Daina Muceniece as regional head of trade credit for APAC",
     "title_original": "AIG appoints Daina Muceniece as regional head of trade credit for APAC",
@@ -9,7 +31,7 @@
     "source": "Insurance Asia News",
     "published_at": "2026-09-20T10:44:10.511673+00:00",
     "image_url": "",
-    "signal_score": 12,
+    "signal_score": 11,
     "signal_label": "Cambio de Liderazgo",
     "signal_icon": "👔",
     "why_matters": "Los cambios de liderazgo suelen anticipar cambios estratégicos.",
@@ -27,11 +49,11 @@
     "source": "Coverager",
     "published_at": "2026-09-19T20:14:01.334197+00:00",
     "image_url": "",
-    "signal_score": 18,
+    "signal_score": 17,
     "signal_label": "IA & Tecnología",
     "signal_icon": "🤖",
     "why_matters": "Tecnología con potencial de transformar operaciones o experiencia de cliente.",
-    "is_signal": true,
+    "is_signal": false,
     "deal": null,
     "amplified": false
   },
@@ -9059,24 +9081,6 @@
       "amount_str": "$2000M",
       "round": "—"
     },
-    "amplified": false
-  },
-  {
-    "id": "gallagher-re-asia-pacific-ex-chair-mark-morley-joins-xs-global-treaty-team",
-    "title": "Gallagher Re Asia Pacific ex-chair Mark Morley joins XS Global treaty team",
-    "title_original": "Gallagher Re Asia Pacific ex-chair Mark Morley joins XS Global treaty team",
-    "url": "https://insuranceasianews.com/gallagher-re-asia-ex-chair-mark-morley-joins-xs-global-treaty-team/",
-    "summary": "To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles",
-    "category": "General",
-    "source": "Insurance Asia News",
-    "published_at": "2026-09-06T14:46:20.478081+00:00",
-    "image_url": "",
-    "signal_score": 6,
-    "signal_label": "Cambio de Liderazgo",
-    "signal_icon": "👔",
-    "why_matters": "Los cambios de liderazgo suelen anticipar cambios estratégicos.",
-    "is_signal": false,
-    "deal": null,
     "amplified": false
   }
 ]
