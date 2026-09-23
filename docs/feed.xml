@@ -5,8 +5,32 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Tue, 22 Sep 2026 21:06:54 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 23 Sep 2026 02:41:09 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Resolve, Triage, and Enrich: What Makes the First Mile of Intake Work</title>
+    <link>https://www.carriermanagement.com/features/2026/09/22/292166.htm</link>
+    <description>Insurance teams are continuously trying to reduce friction at intake. Before a single field is populated, the workflow has to answer one question correctly: who, or what, is this record about? It is the precondition that makes enrichment trustworthy.</description>
+    <pubDate>Wed, 23 Sep 2026 02:40:52 +0000</pubDate>
+    <guid>https://www.carriermanagement.com/features/2026/09/22/292166.htm</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>‘Calculated risk, not uninsurable’: marine insurers urged to stay the course amid Strait of Hormuz conflict</title>
+    <link>https://insuranceasianews.com/calculated-risk-not-uninsurable-marine-insurers-urged-to-stay-the-course-amid-strait-of-hormuz-conflict/</link>
+    <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
+    <pubDate>Wed, 23 Sep 2026 02:40:49 +0000</pubDate>
+    <guid>https://insuranceasianews.com/calculated-risk-not-uninsurable-marine-insurers-urged-to-stay-the-course-amid-strait-of-hormuz-conflict/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>IAG to seek public benefits approval after competition watchdog halts RAC Insurance acquisition</title>
+    <link>https://insuranceasianews.com/iag-to-seek-public-benefits-approval-after-accc-halts-rac-insurance-acquisition/</link>
+    <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
+    <pubDate>Wed, 23 Sep 2026 02:40:48 +0000</pubDate>
+    <guid>https://insuranceasianews.com/iag-to-seek-public-benefits-approval-after-accc-halts-rac-insurance-acquisition/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>NFU Mutual Selects Bloomberg, Clearwater</title>
     <link>https://iireporter.com/nfu-mutual-selects-bloomberg-clearwater/</link>
@@ -391,30 +415,6 @@
     <description>Source: Lilitzpa.com.) Lititz Mutual Insurance Company (Lititz, Pa.) has selected Guidewire (San Mateo, Calif.) ProNavigator to give employees and independent agents AI-powered answers and guidance within underwriting and claims workflows. Lititz Mutual will use ProNavigator to provide instant answers drawn from company policies, procedures and expertise, according to a Guidewire statement. “By embedding intelligence directly into daily operational workflows, Lititz Mutual is giving agents, adjusters, and underwriters faster access to the answers they need, right when they need them,” comments Joseph D’Souza, General Manager, ProNavigator, Guidewire.</description>
     <pubDate>Mon, 21 Sep 2026 21:52:34 +0000</pubDate>
     <guid>https://iireporter.com/lititz-mutual-selects-guidewire-pronavigator/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>When AI Agents Escape, Who Pays?</title>
-    <link>https://iireporter.com/when-ai-agents-escape-who-pays/</link>
-    <description>For now, however, organizations deploying agents should assume they will be held responsible for what those agents do—even when an agent exceeds its intended authority. How did the agents break out of their internal testing environment? How did agents that were supposed to work independently begin communicating and collaborating?</description>
-    <pubDate>Mon, 21 Sep 2026 21:52:34 +0000</pubDate>
-    <guid>https://iireporter.com/when-ai-agents-escape-who-pays/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Unison Risk Advisors raises $13.95 million</title>
-    <link>https://coverager.com/unison-risk-advisors-raises-13-95-million/</link>
-    <description>Unison Risk Advisors , the Cleveland-based insurance brokerage group, reported a $13.95 million equity offering in a Form D filed with the SEC on September 18. Unison marked the offering as connected to a business combination, but the filing does not identify a transaction or explain how the proceeds will be used. The minimum investment was $13.95 million, matching the total offering amount.</description>
-    <pubDate>Mon, 21 Sep 2026 21:52:17 +0000</pubDate>
-    <guid>https://coverager.com/unison-risk-advisors-raises-13-95-million/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>EverPeak® expands to Georgia: instant, online workers’ comp insurance for small businesses</title>
-    <link>https://coverager.com/everpeak-expands-to-georgia-instant-online-workers-comp-insurance-for-small-businesses/</link>
-    <description>EverPeak ® expands to Georgia: instant, online workers&amp;#8217; comp insurance for small businesses New offering brings straightforward, reliable workers&amp;#8217; comp coverage directly to Georgia small business owners, backed by more than a century of industry experience EverPeak , a workers&amp;#8217; compensation insurance solution built on the success of its Colorado-based direct channel with Pinnacol Assurance, today announced the launch of its direct-to-customer insurance offering in Georgia. The post EverPeak® expands to Georgia: instant, online workers&amp;#8217; comp insurance for small businesses appeared first on Coverager - Insurance news and insights . The expansion marks EverPeak&amp;#8217;s first step in bringing its fast, digital-first workers&amp;#8217; comp experience directly to small businesses in the U.S., giving Georgia business owners, even those with complex risk, a quicker, simpler way to get covered.</description>
-    <pubDate>Mon, 21 Sep 2026 21:52:17 +0000</pubDate>
-    <guid>https://coverager.com/everpeak-expands-to-georgia-instant-online-workers-comp-insurance-for-small-businesses/</guid>
     <category>General</category>
   </item>
 </channel>
