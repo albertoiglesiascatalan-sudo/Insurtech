@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sat, 26 Sep 2026 15:47:21 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 26 Sep 2026 20:49:02 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Fast vs. Convenience</title>
+    <link>https://coverager.com/fast-vs-convenience/</link>
+    <description>Insurtechs built fast and convenient buying experiences, but convenience alone didn&amp;#8217;t win customers. Convenience beats fast for most people, most of the time. In the late &amp;#8217;70s, Citytrust bank in Connecticut ran a newspaper ad promising to make banking “fast and convenient.” It’s the kind of phrase you read without reading, like “fair and honest” or “quick and easy,” a pair of words fused into one general sense of being good.</description>
+    <pubDate>Sat, 26 Sep 2026 20:48:38 +0000</pubDate>
+    <guid>https://coverager.com/fast-vs-convenience/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Buenas Fuentes:  Revolut avanza planes de banco en Argentina</title>
     <link>https://iupana.com/2026/09/25/buenas-fuentes-revolut-avanza-planes-de-banco-argentina/</link>
@@ -406,14 +414,6 @@
     <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
     <pubDate>Fri, 25 Sep 2026 02:44:47 +0000</pubDate>
     <guid>https://insuranceasianews.com/iag-reaches-settlement-with-credit-suisse-over-greensill-capital-collapse/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Groupama expands Continuity partnership in France</title>
-    <link>https://coverager.com/groupama-expands-continuity-partnership-in-france/</link>
-    <description>Groupama has signed a multi-year agreement with Continuity to use its AI-based risk management tools across the insurer’s nine regional branches in mainland France. The partnership began as a pilot with Groupama Centre-Atlantique in 2021 and expanded to all nine branches by 2025. The new agreement formalizes the broader rollout for Groupama’s professional and corporate P&amp;amp;C business.</description>
-    <pubDate>Fri, 25 Sep 2026 02:44:31 +0000</pubDate>
-    <guid>https://coverager.com/groupama-expands-continuity-partnership-in-france/</guid>
     <category>General</category>
   </item>
 </channel>
