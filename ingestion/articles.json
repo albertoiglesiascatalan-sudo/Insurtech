@@ -1,5 +1,23 @@
 [
   {
+    "id": "buyers-returning-to-apac-property-retro-market-trend-set-to-continue-marsh-re",
+    "title": "Buyers returning to APAC property retro market, trend set to continue: Marsh Re",
+    "title_original": "Buyers returning to APAC property retro market, trend set to continue: Marsh Re",
+    "url": "https://insuranceasianews.com/buyers-returning-to-apac-property-retro-market-trend-set-to-continue-marsh-re/",
+    "summary": "To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles",
+    "category": "General",
+    "source": "Insurance Asia News",
+    "published_at": "2026-09-28T02:49:20.742846+00:00",
+    "image_url": "",
+    "signal_score": 8,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
+  },
+  {
     "id": "assurity-launches-quick-issue-critical-illness-product",
     "title": "Assurity launches Quick Issue Critical Illness product",
     "title_original": "Assurity launches Quick Issue Critical Illness product",
@@ -9,7 +27,7 @@
     "source": "Coverager",
     "published_at": "2026-09-27T11:36:26.954210+00:00",
     "image_url": "",
-    "signal_score": 23,
+    "signal_score": 22,
     "signal_label": "Inversión",
     "signal_icon": "💰",
     "why_matters": "Nueva financiación que puede acelerar la competencia en el sector.",
@@ -27,7 +45,7 @@
     "source": "Insurance Asia News",
     "published_at": "2026-09-27T02:42:57.135644+00:00",
     "image_url": "",
-    "signal_score": 8,
+    "signal_score": 6,
     "signal_label": "Cambio de Liderazgo",
     "signal_icon": "👔",
     "why_matters": "Los cambios de liderazgo suelen anticipar cambios estratégicos.",
@@ -45,7 +63,7 @@
     "source": "Insurance Asia News",
     "published_at": "2026-09-27T02:42:56.281717+00:00",
     "image_url": "",
-    "signal_score": 20,
+    "signal_score": 18,
     "signal_label": "Regulación",
     "signal_icon": "⚖️",
     "why_matters": "Puede requerir adaptación regulatoria en los próximos meses.",
@@ -811,7 +829,7 @@
     "why_matters": "",
     "is_signal": false,
     "deal": null,
-    "amplified": true
+    "amplified": false
   },
   {
     "id": "pacific-life-re-appoints-mei-sum-chan-as-head-of-medical-analytics",
@@ -865,7 +883,7 @@
     "why_matters": "Nueva financiación que puede acelerar la competencia en el sector.",
     "is_signal": false,
     "deal": null,
-    "amplified": true
+    "amplified": false
   },
   {
     "id": "crypto-exchange-bitget-says-hackers-stole-352-million",
@@ -959,7 +977,7 @@
     "why_matters": "",
     "is_signal": false,
     "deal": null,
-    "amplified": true
+    "amplified": false
   },
   {
     "id": "groupama-expands-continuity-partnership-in-france",
@@ -9083,28 +9101,6 @@
     "why_matters": "",
     "is_signal": false,
     "deal": null,
-    "amplified": false
-  },
-  {
-    "id": "hagerty-family-trust-to-sell-111-million-in-stock",
-    "title": "Hagerty Family Trust to sell $111 million in stock",
-    "title_original": "Hagerty Family Trust to sell $111 million in stock",
-    "url": "https://coverager.com/hagerty-family-trust-to-sell-111-million-in-stock/",
-    "summary": "is selling 9.25 million Hagerty shares at $11.95 each in an upsized secondary offering valued at approximately $110.5 million. shares for the benefit of the Kim Hagerty Revocable Trust. The underwriters have a 30-day option to purchase an additional 1.39 million shares, potentially increasing the offering to about $127.1 million.",
-    "category": "General",
-    "source": "Coverager",
-    "published_at": "2026-09-13T02:00:33.614875+00:00",
-    "image_url": "",
-    "signal_score": 13,
-    "signal_label": "Inversión",
-    "signal_icon": "💰",
-    "why_matters": "Nueva financiación que puede acelerar la competencia en el sector.",
-    "is_signal": false,
-    "deal": {
-      "amount_m": 111.0,
-      "amount_str": "$111M",
-      "round": "—"
-    },
     "amplified": false
   }
 ]
