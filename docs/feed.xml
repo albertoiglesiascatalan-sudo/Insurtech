@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Thu, 01 Oct 2026 17:49:34 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 01 Oct 2026 22:05:19 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>October 2026 ITL FOCUS: Change Management</title>
+    <link>https://www.insurancethoughtleadership.com/leadership/october-2026-itl-focus-change-management</link>
+    <description>ITL FOCUS is a monthly initiative featuring topics related to innovation in risk management and insurance. Read the full interview to find out what red flags signal a change management program in trouble, why smaller carriers are often better at transformation than their larger counterparts, and what Bhandari thinks the industry has stopped doing that it should start doing again. Change management can no longer be viewed as a one-time project discipline.</description>
+    <pubDate>Thu, 01 Oct 2026 22:04:54 +0000</pubDate>
+    <guid>https://www.insurancethoughtleadership.com/leadership/october-2026-itl-focus-change-management</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>KYND Adds AI Detection for Cyber Underwriting</title>
     <link>https://iireporter.com/kynd-adds-ai-detection-for-cyber-underwriting/</link>
@@ -406,14 +414,6 @@
     <description>Attorneys for three cancer patients told a Missouri jury on Tuesday that Bayer’s Monsanto unit failed to adequately test its Roundup weedkiller before selling it, starting a trial that could help determine the viability of some Roundup lawsuits after a U.S. Related: Bayer Faces Test of $7.25B Roundup Settlement In Missouri Court Tuesday’s case before a different St. “To this day, they’ve never done all the testing they’ve needed to do.” Related: Bayer’s Supreme Court Win in Roundup Case No ‘Silver Bullet’ Bayer has denied the claims and said that decades of studies have shown glyphosate, Roundup’s active ingredient, is safe and does not cause cancer.</description>
     <pubDate>Wed, 30 Sep 2026 17:07:35 +0000</pubDate>
     <guid>https://www.claimsjournal.com/news/national/2026/09/30/340468.htm</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Rogue AI Agents Pose Uncertain Legal Risk for Anthropic</title>
-    <link>https://www.carriermanagement.com/news/2026/09/30/292384.htm</link>
-    <description>Anthropic could face legal claims from customers and users over the actions of rogue artificial intelligence agents, though the legal framework is uncertain, the company said in the prospectus for its stock market debut seen by Reuters. While it gears up for what could be the largest initial public offering ever, Anthropic faces the possibility of vast unknown legal risk if its agentic AI technology — designed to maintain deep access to customers’ systems and run autonomously for days at a time — goes rogue. A string of incidents involving rogue AI agents, from OpenAI’s autonomous agents hacking an AI startup and breaching an Australian health data portal, to several cybersecurity incidents involving Anthropic’s Claude AI models, has led to debate among researchers, investors and lawmakers over who is liable for harm from an autonomous AI system.</description>
-    <pubDate>Wed, 30 Sep 2026 17:07:34 +0000</pubDate>
-    <guid>https://www.carriermanagement.com/news/2026/09/30/292384.htm</guid>
     <category>General</category>
   </item>
 </channel>
