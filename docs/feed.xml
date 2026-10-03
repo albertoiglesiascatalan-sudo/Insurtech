@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sat, 03 Oct 2026 10:45:22 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 03 Oct 2026 15:29:15 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Summit expands workers’ comp coverage to Maryland and Washington, D.C.</title>
+    <link>https://coverager.com/summit-expands-workers-comp-coverage-to-maryland-and-washington-d-c/</link>
+    <description>The post Summit expands workers’ comp coverage to Maryland and Washington, D.C. Summit , a member of Great American Insurance Group, has expanded its workers’ compensation offering to Maryland and Washington, D.C. Based in Lakeland, Florida, Summit provides workers’ compensation coverage and related services, including claims management and loss prevention, across 18 states and Washington, D.C.</description>
+    <pubDate>Sat, 03 Oct 2026 15:24:24 +0000</pubDate>
+    <guid>https://coverager.com/summit-expands-workers-comp-coverage-to-maryland-and-washington-d-c/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Buenas fuentes: Nu rechaza adquisición de Monzo y Swift apuesta por pagos con número telefónico</title>
     <link>https://iupana.com/2026/10/02/buenas-fuentes-nu-rechaza-adquisicion-monzo-swift-apuesta-pagos-numero-telefonico/</link>
@@ -410,15 +418,6 @@
     <pubDate>Thu, 01 Oct 2026 17:49:21 +0000</pubDate>
     <guid>https://iireporter.com/bolttech-bold-penguin-form-global-distribution-alliance/</guid>
     <category>General</category>
-  </item>
-  <item>
-    <title>EU’s Insurance Watchdog Warns of Risks Tied to Extreme Heat</title>
-    <link>https://www.claimsjournal.com/news/national/2026/10/01/340490.htm</link>
-    <description>Europe’s insurance and pensions watchdog warned extreme heat is adding to the risks the two industries face. “Our preliminary study shows that it could become a material risk factor for certain insurance lines and pension providers, despite offsetting factors and strong diversification across products and risks.” The warning is the latest by EU authorities charged with safeguarding the bloc’s economic stability. The credit ratings company said that while the recent wildfires are unlikely to significantly affect scores, more frequent extreme weather events risk undermining “the resilience, insurability, liquidity, and valuation of certain assets and borrowers.” It urged lenders to check the extent to which potential losses can be mitigated through insurance and other instruments.</description>
-    <pubDate>Thu, 01 Oct 2026 17:49:21 +0000</pubDate>
-    <guid>https://www.claimsjournal.com/news/national/2026/10/01/340490.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.claimsjournal.com/app/uploads/2026/10/469558266-580x387.jpg" type="image/jpeg" length="0"/>
   </item>
 </channel>
 </rss>
