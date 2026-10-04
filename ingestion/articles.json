@@ -1,5 +1,23 @@
 [
   {
+    "id": "japan-watchdog-moves-to-suspend-prudential-life-insurance-over-fraud-scandal",
+    "title": "Japan watchdog moves to suspend Prudential Life Insurance over fraud scandal",
+    "title_original": "Japan watchdog moves to suspend Prudential Life Insurance over fraud scandal",
+    "url": "https://insuranceasianews.com/japan-watchdog-moves-to-suspend-prudential-life-insurance-over-fraud-scandal/",
+    "summary": "To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles",
+    "category": "General",
+    "source": "Insurance Asia News",
+    "published_at": "2026-10-04T11:26:35.202043+00:00",
+    "image_url": "",
+    "signal_score": 8,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
+  },
+  {
     "id": "gallagher-acquires-albany-insurance",
     "title": "Gallagher acquires Albany Insurance",
     "title_original": "Gallagher acquires Albany Insurance",
@@ -9,7 +27,7 @@
     "source": "Coverager",
     "published_at": "2026-10-04T03:09:17.279473+00:00",
     "image_url": "",
-    "signal_score": 37,
+    "signal_score": 35,
     "signal_label": "M&A",
     "signal_icon": "🤝",
     "why_matters": "Consolida el mercado y puede redefinir la competencia en el sector.",
@@ -27,11 +45,11 @@
     "source": "Coverager",
     "published_at": "2026-10-04T03:09:17.232038+00:00",
     "image_url": "",
-    "signal_score": 18,
+    "signal_score": 16,
     "signal_label": "Disrupción",
     "signal_icon": "🚀",
     "why_matters": "Introduce un modelo o tecnología que puede alterar la cadena de valor.",
-    "is_signal": true,
+    "is_signal": false,
     "deal": null,
     "amplified": false
   },
@@ -45,7 +63,7 @@
     "source": "Coverager",
     "published_at": "2026-10-03T15:24:24.993630+00:00",
     "image_url": "",
-    "signal_score": 10,
+    "signal_score": 7,
     "signal_label": "",
     "signal_icon": "",
     "why_matters": "",
@@ -9079,24 +9097,6 @@
       "amount_str": "$16M",
       "round": "—"
     },
-    "amplified": false
-  },
-  {
-    "id": "credit-acceptance-reaches-710m-predatory-auto-lending-settlement-with-most-state",
-    "title": "Credit Acceptance Reaches $710M Predatory Auto Lending Settlement With Most States",
-    "title_original": "Credit Acceptance Reaches $710M Predatory Auto Lending Settlement With Most States",
-    "url": "https://www.claimsjournal.com/news/national/2026/09/18/340199.htm",
-    "summary": "The settlement announced on Thursday also resolves claims that Credit Acceptance, one of the nation’s largest subprime auto lenders, helped car dealers push consumers to buy unnecessary add-on products, such as vehicle service contracts, and insurance that they did not need or were never told about. to resolve charges it drove thousands of borrowers with low incomes and low credit scores into predatory auto loans it knew they could not afford. Credit Acceptance will forgive $634 million of debt owed by more than 55,000 borrowers who took out loans between November 2015 and November 2025, pay $60 million in restitution to thousands of other borrowers, and pay a $15.5 million penalty, New York Attorney General Letitia James said.",
-    "category": "General",
-    "source": "Claims Journal",
-    "published_at": "2026-09-18T10:25:29.650208+00:00",
-    "image_url": "",
-    "signal_score": 9,
-    "signal_label": "Inversión",
-    "signal_icon": "💰",
-    "why_matters": "Nueva financiación que puede acelerar la competencia en el sector.",
-    "is_signal": false,
-    "deal": null,
     "amplified": false
   }
 ]
