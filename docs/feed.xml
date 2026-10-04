@@ -5,8 +5,24 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sat, 03 Oct 2026 20:18:31 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 04 Oct 2026 03:09:34 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Gallagher acquires Albany Insurance</title>
+    <link>https://coverager.com/gallagher-acquires-albany-insurance/</link>
+    <description>Gallagher has acquired Albany Insurance Services Limited, a New Zealand-based retail insurance broker. Albany Insurance serves commercial and personal lines clients in New Zealand’s Auckland and Canterbury regions. The team, led by Jeremy Bleakley, will operate under Carl O’Shea, head of Gallagher’s New Zealand retail brokerage operations.</description>
+    <pubDate>Sun, 04 Oct 2026 03:09:17 +0000</pubDate>
+    <guid>https://coverager.com/gallagher-acquires-albany-insurance/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>Ripe launches online classic car insurance in the UK</title>
+    <link>https://coverager.com/ripe-launches-online-classic-car-insurance-in-the-uk/</link>
+    <description>UK digital MGA Ripe Thinking has launched Ripe Classic Cars, an insurance product for classic, modern classic and collectible vehicles underwritten by ERS. Ripe says claims will be handled by classic car specialists and a repair network focused on restoring vehicles to their original condition. The product runs on Juice, Ripe’s underwriting and distribution platform, and adds to a portfolio of more than 20 consumer and small business insurance products.</description>
+    <pubDate>Sun, 04 Oct 2026 03:09:17 +0000</pubDate>
+    <guid>https://coverager.com/ripe-launches-online-classic-car-insurance-in-the-uk/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Summit expands workers’ comp coverage to Maryland and Washington, D.C.</title>
     <link>https://coverager.com/summit-expands-workers-comp-coverage-to-maryland-and-washington-d-c/</link>
@@ -401,22 +417,6 @@
     <description>ITL FOCUS is a monthly initiative featuring topics related to innovation in risk management and insurance. Read the full interview to find out what red flags signal a change management program in trouble, why smaller carriers are often better at transformation than their larger counterparts, and what Bhandari thinks the industry has stopped doing that it should start doing again. Change management can no longer be viewed as a one-time project discipline.</description>
     <pubDate>Thu, 01 Oct 2026 22:04:54 +0000</pubDate>
     <guid>https://www.insurancethoughtleadership.com/leadership/october-2026-itl-focus-change-management</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>KYND Adds AI Detection for Cyber Underwriting</title>
-    <link>https://iireporter.com/kynd-adds-ai-detection-for-cyber-underwriting/</link>
-    <description>(Image source:KYND website.) KYND (Austin, Texas) has launched an AI discovery capability designed to help cyber insurers identify AI technologies across an organization’s external digital footprint during risk selection. “If the same AI technologies and dependencies are showing up repeatedly across insureds, that can quickly become an accumulation issue.” KYND says the capability builds on its broader technology-detection platform, which also identifies services and tools including payment and cloud platforms, analytics and tracking pixels, session-recording technology, identity and access management systems and website infrastructure. The capability works from a single domain and does not require information supplied directly by the insured, giving underwriters an independently observed source of data to use alongside proposal forms and underwriting discussions.</description>
-    <pubDate>Thu, 01 Oct 2026 17:49:21 +0000</pubDate>
-    <guid>https://iireporter.com/kynd-adds-ai-detection-for-cyber-underwriting/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>bolttech, Bold Penguin Form Global Distribution Alliance</title>
-    <link>https://iireporter.com/bolttech-bold-penguin-form-global-distribution-alliance/</link>
-    <description>(Image source: IIR.) bolttech (Singapore) and Bold Penguin (Dublin, Ohio) have formed a global strategic alliance to develop a combined commercial and personal lines insurance distribution offering for agents, insurers and embedded distribution partners in the U.S., Europe and Asia. The companies say the arrangement will combine Bold Penguin’s commercial lines distribution technology and carrier network with bolttech’s personal lines capabilities, AI-enabled workflows and international insurance distribution infrastructure. For Bold Penguin, the alliance provides a route to expand its commercial lines capabilities internationally while adding bolttech personal lines offerings for its U.S.</description>
-    <pubDate>Thu, 01 Oct 2026 17:49:21 +0000</pubDate>
-    <guid>https://iireporter.com/bolttech-bold-penguin-form-global-distribution-alliance/</guid>
     <category>General</category>
   </item>
 </channel>
