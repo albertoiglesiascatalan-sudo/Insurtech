@@ -5,8 +5,24 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Thu, 08 Oct 2026 22:35:15 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 09 Oct 2026 03:24:05 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Insurers urged to step up as risk managers confront ‘flock of black swans’</title>
+    <link>https://insuranceasianews.com/insurers-urged-to-step-up-as-risk-managers-confront-flock-of-black-swans/</link>
+    <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
+    <pubDate>Fri, 09 Oct 2026 03:23:45 +0000</pubDate>
+    <guid>https://insuranceasianews.com/insurers-urged-to-step-up-as-risk-managers-confront-flock-of-black-swans/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>Tuvalu becomes 13th member of PCRIC, securing cyclone coverage</title>
+    <link>https://insuranceasianews.com/tuvalu-becomes-13th-member-of-pcric-securing-cyclone-coverage/</link>
+    <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
+    <pubDate>Fri, 09 Oct 2026 03:23:44 +0000</pubDate>
+    <guid>https://insuranceasianews.com/tuvalu-becomes-13th-member-of-pcric-securing-cyclone-coverage/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Applied Net Marks Rhodes’ Farewell and AI’s Next Chapter</title>
     <link>https://iireporter.com/applied-net-marks-rhodes-farewell-and-ais-next-chapter/</link>
@@ -395,23 +411,6 @@
     <pubDate>Wed, 07 Oct 2026 12:12:05 +0000</pubDate>
     <guid>https://insuranceasianews.com/lockton-taps-kenichiro-miki-as-senior-consultant-for-japan-business/</guid>
     <category>General</category>
-  </item>
-  <item>
-    <title>Mitsui Bussan Pana Harrison appoints Alice Lim as head of general insurance</title>
-    <link>https://insuranceasianews.com/mitsui-bussan-pana-harrison-appoints-alice-lim-as-head-of-general-insurance/</link>
-    <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
-    <pubDate>Wed, 07 Oct 2026 12:12:04 +0000</pubDate>
-    <guid>https://insuranceasianews.com/mitsui-bussan-pana-harrison-appoints-alice-lim-as-head-of-general-insurance/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>North America’s Startup Funding Falls In Q3 As AI Giants Eye The Public Markets</title>
-    <link>https://news.crunchbase.com/venture/q3-2026-north-america-startup-funding-falls-ai-exits-data/</link>
-    <description>Funding to North American startups declined sequentially in the third quarter and came in well below the all-time peak. We’ll start with late stage, since that’s where most startup funding went. Artificial intelligence remained the prevailing theme for startup investors.</description>
-    <pubDate>Wed, 07 Oct 2026 12:11:56 +0000</pubDate>
-    <guid>https://news.crunchbase.com/venture/q3-2026-north-america-startup-funding-falls-ai-exits-data/</guid>
-    <category>General</category>
-    <enclosure url="https://news.crunchbase.com/wp-content/uploads/Frontier-AI-labs-N-Am.jpg" type="image/jpeg" length="0"/>
   </item>
 </channel>
 </rss>
