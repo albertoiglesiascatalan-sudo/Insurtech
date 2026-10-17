@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sat, 17 Oct 2026 09:50:02 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 17 Oct 2026 14:32:57 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Simplicity Group adds Denver RIA and Chicago tax shop in back-to-back deals</title>
+    <link>https://coverager.com/simplicity-group-adds-denver-ria-and-chicago-tax-shop-in-back-to-back-deals/</link>
+    <description>Simplicity Group bought two advisory firms on consecutive days this week, adding wealth management in Denver and a tax-led planning practice in Chicago. On Wednesday, Simplicity said it acquired Zen Wealth Management Group, a Chicago firm founded by Eddie Patel, who becomes a Simplicity partner. Key members of the MAIA team, including Scott Marek, Chandler te Velde and Desmond Dimond, will operate as Simplicity Wealth Advisors: Denver.</description>
+    <pubDate>Sat, 17 Oct 2026 14:32:35 +0000</pubDate>
+    <guid>https://coverager.com/simplicity-group-adds-denver-ria-and-chicago-tax-shop-in-back-to-back-deals/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Adjuster Created Law Firm and Fake Claim to Defraud Insurer of $1M, Officials Charge</title>
     <link>https://www.claimsjournal.com/news/national/2026/10/16/340753.htm</link>
@@ -405,14 +413,6 @@
     <description>An MGA writing one program for one carrier in a few states may see few form changes a year. Why a Form Change Can Become a Project Under a delegated authority agreement, an MGA may produce policy documents on the carrier’s behalf, but the carrier retains responsibility. In admitted lines, a revised form may take effect on different dates in different states, and policies in force usually keep their forms until renewal.</description>
     <pubDate>Fri, 16 Oct 2026 01:57:40 +0000</pubDate>
     <guid>https://iireporter.com/can-the-mga-keep-up-with-carrier-form-changes/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>AskNicely, JAVLN Formalize Broker Experience Partnership</title>
-    <link>https://iireporter.com/asknicely-javln-formalize-broker-experience-partnership/</link>
-    <description>(Image source: AskNicely.) AskNicely (Portland, Ore.) and JAVLN have formalized a partnership intended to help insurance brokerages combine operational client data with real-time customer feedback. Brokerages already use JAVLN Officetech to manage documents, correspondence, tasks and workflows within Microsoft 365, while AskNicely captures client feedback at policy and claims touchpoints and flags clients that may require attention. “JAVLN runs the business, we help brokers hear their clients,” comments Tony Ward, CEO, AskNicely.</description>
-    <pubDate>Fri, 16 Oct 2026 01:57:40 +0000</pubDate>
-    <guid>https://iireporter.com/asknicely-javln-formalize-broker-experience-partnership/</guid>
     <category>General</category>
   </item>
 </channel>
