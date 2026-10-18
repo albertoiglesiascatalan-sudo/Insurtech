@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sun, 18 Oct 2026 15:00:25 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 18 Oct 2026 19:48:05 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Breaking Bot</title>
+    <link>https://coverager.com/breaking-bot/</link>
+    <description>This month, property management software giant RealPage paused new activations of EliseAI integrations on its platform. RealPage entered into an agreement with EliseAI several years ago, allowing access to specific APIs for &amp;#8220;specific, agreed-upon use cases,&amp;#8221; according to a customer letter shared with Multifamily Dive. RealPage now alleges that EliseAI exceeded that agreement&amp;#8217;s scope with the launch of Apollo, according to President and CEO Dirk Wakeham.</description>
+    <pubDate>Sun, 18 Oct 2026 19:47:37 +0000</pubDate>
+    <guid>https://coverager.com/breaking-bot/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>MGT brings products to ChatGPT and Claude</title>
     <link>https://coverager.com/mgt-brings-products-to-chatgpt-and-claude/</link>
@@ -405,15 +413,6 @@
     <guid>https://www.insurancejournal.com/news/national/2026/10/16/889136.htm</guid>
     <category>General</category>
     <enclosure url="https://www.insurancejournal.com/app/uploads/2025/10/cyber-insurance-tech-and-network-concept-400223243-AdobeStock-580x309.jpeg" type="image/jpeg" length="0"/>
-  </item>
-  <item>
-    <title>Cyber Rates Are Down, Risks Are Up but Small Businesses Slow to Adopt</title>
-    <link>https://www.insurancejournal.com/news/national/2026/10/16/889133.htm</link>
-    <description>Despite lower rates and growing risks, adoption remains low among small- and mid-sized businesses, with the market penetration for cyber insurance estimated at just 10% to 20%, according to Swiss Re. The commercial cyber insurance market is strong and growing, but small to midsize businesses may be falling behind as cybercriminals ramp up AI efforts. “Cyber insurance is an important part of a comprehensive risk management strategy, particularly for small and midsize businesses with fewer resources to recover from an attack,” Kevelighan said.</description>
-    <pubDate>Fri, 16 Oct 2026 10:18:04 +0000</pubDate>
-    <guid>https://www.insurancejournal.com/news/national/2026/10/16/889133.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.insurancejournal.com/app/uploads/2026/05/ey-and-iif-580x325.jpg" type="image/jpeg" length="0"/>
   </item>
 </channel>
 </rss>

@@ -1,5 +1,23 @@
 [
   {
+    "id": "breaking-bot",
+    "title": "Breaking Bot",
+    "title_original": "Breaking Bot",
+    "url": "https://coverager.com/breaking-bot/",
+    "summary": "This month, property management software giant RealPage paused new activations of EliseAI integrations on its platform. RealPage entered into an agreement with EliseAI several years ago, allowing access to specific APIs for &#8220;specific, agreed-upon use cases,&#8221; according to a customer letter shared with Multifamily Dive. RealPage now alleges that EliseAI exceeded that agreement&#8217;s scope with the launch of Apollo, according to President and CEO Dirk Wakeham.",
+    "category": "General",
+    "source": "Coverager",
+    "published_at": "2026-10-18T19:47:37.200559+00:00",
+    "image_url": "",
+    "signal_score": 16,
+    "signal_label": "Cambio de Liderazgo",
+    "signal_icon": "👔",
+    "why_matters": "Los cambios de liderazgo suelen anticipar cambios estratégicos.",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
+  },
+  {
     "id": "mgt-brings-products-to-chatgpt-and-claude",
     "title": "MGT brings products to ChatGPT and Claude",
     "title_original": "MGT brings products to ChatGPT and Claude",
@@ -9,7 +27,7 @@
     "source": "Coverager",
     "published_at": "2026-10-18T14:59:59.085310+00:00",
     "image_url": "",
-    "signal_score": 12,
+    "signal_score": 11,
     "signal_label": "",
     "signal_icon": "",
     "why_matters": "",
@@ -27,7 +45,7 @@
     "source": "Coverager",
     "published_at": "2026-10-18T10:01:18.930953+00:00",
     "image_url": "",
-    "signal_score": 24,
+    "signal_score": 23,
     "signal_label": "Regulación",
     "signal_icon": "⚖️",
     "why_matters": "Puede requerir adaptación regulatoria en los próximos meses.",
@@ -45,7 +63,7 @@
     "source": "Coverager",
     "published_at": "2026-10-18T10:01:18.869953+00:00",
     "image_url": "",
-    "signal_score": 28,
+    "signal_score": 27,
     "signal_label": "Cambio de Liderazgo",
     "signal_icon": "👔",
     "why_matters": "Los cambios de liderazgo suelen anticipar cambios estratégicos.",
@@ -63,7 +81,7 @@
     "source": "Coverager",
     "published_at": "2026-10-17T19:46:29.874601+00:00",
     "image_url": "",
-    "signal_score": 31,
+    "signal_score": 29,
     "signal_label": "M&A",
     "signal_icon": "🤝",
     "why_matters": "Consolida el mercado y puede redefinir la competencia en el sector.",
@@ -963,7 +981,7 @@
     "why_matters": "Consolida el mercado y puede redefinir la competencia en el sector.",
     "is_signal": true,
     "deal": null,
-    "amplified": true
+    "amplified": false
   },
   {
     "id": "can-the-mga-keep-up-with-carrier-form-changes",
@@ -1071,7 +1089,7 @@
     "why_matters": "Consolida el mercado y puede redefinir la competencia en el sector.",
     "is_signal": true,
     "deal": null,
-    "amplified": true
+    "amplified": false
   },
   {
     "id": "business-interruption-claims-approach-1m-average-says-allianz",
@@ -1655,7 +1673,7 @@
     "why_matters": "Consolida el mercado y puede redefinir la competencia en el sector.",
     "is_signal": true,
     "deal": null,
-    "amplified": true
+    "amplified": false
   },
   {
     "id": "coverforce-brings-commercial-insurance-quoting-to-chatgpt",
@@ -9057,24 +9075,6 @@
     "source": "Claims Journal",
     "published_at": "2026-09-30T17:07:36.040437+00:00",
     "image_url": "https://www.claimsjournal.com/app/uploads/2026/09/469524405-580x384.jpg",
-    "signal_score": 2,
-    "signal_label": "",
-    "signal_icon": "",
-    "why_matters": "",
-    "is_signal": false,
-    "deal": null,
-    "amplified": false
-  },
-  {
-    "id": "bayer-faces-trial-test-of-remaining-roundup-claims-after-supreme-court-win",
-    "title": "Bayer Faces Trial Test of Remaining Roundup Claims After Supreme Court Win",
-    "title_original": "Bayer Faces Trial Test of Remaining Roundup Claims After Supreme Court Win",
-    "url": "https://www.claimsjournal.com/news/national/2026/09/30/340468.htm",
-    "summary": "Attorneys for three cancer patients told a Missouri jury on Tuesday that Bayer’s Monsanto unit failed to adequately test its Roundup weedkiller before selling it, starting a trial that could help determine the viability of some Roundup lawsuits after a U.S. Related: Bayer Faces Test of $7.25B Roundup Settlement In Missouri Court Tuesday’s case before a different St. “To this day, they’ve never done all the testing they’ve needed to do.” Related: Bayer’s Supreme Court Win in Roundup Case No ‘Silver Bullet’ Bayer has denied the claims and said that decades of studies have shown glyphosate, Roundup’s active ingredient, is safe and does not cause cancer.",
-    "category": "General",
-    "source": "Claims Journal",
-    "published_at": "2026-09-30T17:07:35.778311+00:00",
-    "image_url": "",
     "signal_score": 2,
     "signal_label": "",
     "signal_icon": "",
