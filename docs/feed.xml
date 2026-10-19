@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Mon, 19 Oct 2026 17:52:44 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 19 Oct 2026 21:48:32 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>California Adds Voluntary Review Before Insurers File Rate Applications</title>
+    <link>https://www.insurancejournal.com/news/west/2026/10/19/889586.htm</link>
+    <description>Insurers seeking personal and commercial lines rate changes in California can go through a voluntary review process that makes the California Department of Insurance’s initial rate analysis public before they formally file rate applications. The regulation is designed to complement the department’s Complete Rate Application Regulation, which requires insurers to provide comprehensive information before applications are publicly noticed. California Insurance Commissioner Ricardo Lara on Monday introduced the Comprehensiveness Review Regulation, which allows the CDI to publish initial rate range indications, issues identified in insurer submissions and projected premium savings from its review.</description>
+    <pubDate>Mon, 19 Oct 2026 21:48:12 +0000</pubDate>
+    <guid>https://www.insurancejournal.com/news/west/2026/10/19/889586.htm</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>For Insurance Carriers Heading Into 2027, Surf’s Up!</title>
     <link>https://iireporter.com/for-insurance-carriers-heading-into-2027-surfs-up/</link>
@@ -404,14 +412,6 @@
     <description>Simplicity Group bought two advisory firms on consecutive days this week, adding wealth management in Denver and a tax-led planning practice in Chicago. On Wednesday, Simplicity said it acquired Zen Wealth Management Group, a Chicago firm founded by Eddie Patel, who becomes a Simplicity partner. Key members of the MAIA team, including Scott Marek, Chandler te Velde and Desmond Dimond, will operate as Simplicity Wealth Advisors: Denver.</description>
     <pubDate>Sat, 17 Oct 2026 14:32:35 +0000</pubDate>
     <guid>https://coverager.com/simplicity-group-adds-denver-ria-and-chicago-tax-shop-in-back-to-back-deals/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Adjuster Created Law Firm and Fake Claim to Defraud Insurer of $1M, Officials Charge</title>
-    <link>https://www.claimsjournal.com/news/national/2026/10/16/340753.htm</link>
-    <description>A former claims adjuster has been charged with defrauding the Pennsylvania insurer he worked for by taking payment of nearly $1 million for an accident claim under the guise that he was with a law firm representing the claimant. According to investigators, Johnson, while employed at Donegal in 2024 and 2025, created and opened Elite Injury Representatives, which appeared to be a law firm, and utilized his position as a claims adjuster to input fraudulent documentation into the Donegal claims file. Investigators maintain that Johnson, of Indiana, was employed as a claims adjuster by Donegal Insurance when he steered payment of $949,639 from Donegal to Elite Injury Representatives.</description>
-    <pubDate>Fri, 16 Oct 2026 20:10:42 +0000</pubDate>
-    <guid>https://www.claimsjournal.com/news/national/2026/10/16/340753.htm</guid>
     <category>General</category>
   </item>
 </channel>
