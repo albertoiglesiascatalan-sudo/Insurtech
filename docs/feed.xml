@@ -5,8 +5,24 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Thu, 22 Oct 2026 20:56:48 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 23 Oct 2026 02:17:57 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Changing economics of insurance call for transparency, long-term view: Prudential’s Douglas Flint</title>
+    <link>https://insuranceasianews.com/changing-economics-of-insurance-call-for-transparency-long-term-view/</link>
+    <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
+    <pubDate>Fri, 23 Oct 2026 02:17:40 +0000</pubDate>
+    <guid>https://insuranceasianews.com/changing-economics-of-insurance-call-for-transparency-long-term-view/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>Apollo and Generali to launch Red Bridge syndicate at Lloyd’s</title>
+    <link>https://coverager.com/apollo-and-generali-to-launch-red-bridge-syndicate-at-lloyds/</link>
+    <description>Apollo Underwriting , a Skyward Group company, has partnered with Generali to launch Red Bridge Syndicate 2031 at Lloyd’s. Red Bridge will allow Lloyd’s members to participate in Generali’s outward reinsurance program, which covers multiple lines of business across Europe. The launch will bring Apollo’s total number of syndicates under management to 11, expanding its third-party syndicate management business and generating additional fee-based revenue for Skyward Group.</description>
+    <pubDate>Fri, 23 Oct 2026 02:17:32 +0000</pubDate>
+    <guid>https://coverager.com/apollo-and-generali-to-launch-red-bridge-syndicate-at-lloyds/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Rapyd busca crecer hasta 60% en LatAm con nuevos productos para la cartera de PayU</title>
     <link>https://iupana.com/2026/10/22/rapyd-busca-crecer-hasta-60-latam-nuevos-productos-cartera-payu/</link>
@@ -400,24 +416,6 @@
     <pubDate>Thu, 22 Oct 2026 10:45:57 +0000</pubDate>
     <guid>https://www.reinsurancene.ws/msig-uk-strengthens-executive-team-with-senior-underwriting-and-claims-appointments/</guid>
     <category>General</category>
-  </item>
-  <item>
-    <title>US Urges Fix for Widely Used Software After Critical Alerts</title>
-    <link>https://www.insurancejournal.com/news/national/2026/10/22/889905.htm</link>
-    <description>The US government is working to address and stop any potential cybersecurity issues stemming from flaws in PHP, a widely used open-source software, that may impact federal agencies and American critical infrastructure, according to a White House official. The programming language, called PHP, contains two vulnerabilities which could potentially expose organizations using it in websites and software platforms to cyberattacks. The developers responsible for maintaining PHP said Wednesday they released software updates to patch the vulnerabilities, urging users to adopt those changes immediately.</description>
-    <pubDate>Thu, 22 Oct 2026 10:45:56 +0000</pubDate>
-    <guid>https://www.insurancejournal.com/news/national/2026/10/22/889905.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.insurancejournal.com/app/uploads/2023/05/cables-feed-into-server-in-comms-room-bloomberg-580x387.jpg" type="image/jpeg" length="0"/>
-  </item>
-  <item>
-    <title>Former Trident Reciprocal CEO Ordered to Pay $468K in Attorney and Arbitrator Fees</title>
-    <link>https://www.insurancejournal.com/news/southeast/2026/10/22/889930.htm</link>
-    <description>16, Salzman answered that, ordering Moller to pay some $337,800 in Trident attorneys’ fees plus another $127,476 in compensation and expenses for the arbitrator himself. Trident Reciprocal Exchange is one of the new kids on the Florida block. But the firm’s journey has been marked by a big distraction and lots of litigation that had nothing to do with claims or coverage: Trident’s former CEO and co-founder, Maria Moller, a veteran of the Florida insurance business, was fired in early 2025.</description>
-    <pubDate>Thu, 22 Oct 2026 10:45:56 +0000</pubDate>
-    <guid>https://www.insurancejournal.com/news/southeast/2026/10/22/889930.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.insurancejournal.com/app/uploads/2026/10/shoes-on-the-floor-with-Depositphotos_102041908_S-580x387.jpg" type="image/jpeg" length="0"/>
   </item>
 </channel>
 </rss>
