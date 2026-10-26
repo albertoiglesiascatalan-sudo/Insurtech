@@ -5,8 +5,57 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Mon, 26 Oct 2026 17:46:56 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 26 Oct 2026 22:00:09 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>National Life Expands Annuity Portfolio Features</title>
+    <link>https://iireporter.com/national-life-expands-annuity-portfolio-features/</link>
+    <description>(Image source: National Life Group website.) National Life Group (Montpelier, Vt./Addison, Texas) has expanded its annuity portfolio with new index crediting options, enhanced lifetime-income features and additional waiver provisions for qualifying health events. “These enhancements are about giving financial professionals and their clients more choices—whether they’re focused on growth potential today, dependable income tomorrow or greater financial flexibility when life doesn’t go according to plan.” National Life has added three index choices to its annuity portfolio: the Bloomberg Mavin 10 Index, Nasdaq-100 Chronos 10% Index and S&amp;P 500 10% Intraday Edge Growth TCA Index. Oran Blumenfeld, VP, Annuity Operations, National Life Group.</description>
+    <pubDate>Mon, 26 Oct 2026 21:59:53 +0000</pubDate>
+    <guid>https://iireporter.com/national-life-expands-annuity-portfolio-features/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>Some Observations About Anthropic’s IPO Filing</title>
+    <link>https://news.crunchbase.com/public/anthropic-ipo-filing-ai-earnings-growth-risks/</link>
+    <description>In an S-1 filing today preceding what could be the largest IPO ever , Anthropic laid out extensive new details about its earnings, growth, key stakeholders and the risks it faces going forward. Anthropic also posted a $693 million operating income loss for the first half of 2026, down about two-thirds from last year. Its net loss for this year’s first half was $80 billion, of which about 90% stemmed from what it called a “change in fair value of convertible notes, derivative liabilities, and SAFE s.” Each of Anthropic’s seven founders holds between 230,000 and 246,000 shares of Class A stock, per the S-1.</description>
+    <pubDate>Mon, 26 Oct 2026 21:59:43 +0000</pubDate>
+    <guid>https://news.crunchbase.com/public/anthropic-ipo-filing-ai-earnings-growth-risks/</guid>
+    <category>General</category>
+    <enclosure url="https://news.crunchbase.com/wp-content/uploads/IPO_train.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>Buy or Build? Yes.</title>
+    <link>https://www.insurancethoughtleadership.com/data-analytics/buy-or-build-yes</link>
+    <description>A lot of carriers are looking at what AI can do now and asking some version of the same question: Hold on a minute, the world changed, so should we just build everything ourselves? I've spent the last decade building and running Clearcover , an AI-native carrier, and now Dearborn Labs , an AI-native software development firm built specifically for insurance; if anyone was going to tell you to build everything, it would probably be me. But when people ask me whether to buy or build, my answer is...yes.</description>
+    <pubDate>Mon, 26 Oct 2026 21:59:38 +0000</pubDate>
+    <guid>https://www.insurancethoughtleadership.com/data-analytics/buy-or-build-yes</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>Revolut plans private company investment offering</title>
+    <link>https://coverager.com/revolut-plans-private-company-investment-offering/</link>
+    <description>Working with Carne Group, Revolut plans to let eligible customers invest in private companies through its app, alongside stocks, ETFs and bonds. Revolut has incorporated Revolut Ventures ahead of a planned launch in 2027, according to Rolandas Juteika, who leads wealth and trading at the company. The offering aims to broaden retail access to investments historically reserved for institutional investors.</description>
+    <pubDate>Mon, 26 Oct 2026 21:59:38 +0000</pubDate>
+    <guid>https://coverager.com/revolut-plans-private-company-investment-offering/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>Symetra and TIAA launch Mariner Re</title>
+    <link>https://coverager.com/symetra-and-tiaa-launch-mariner-re/</link>
+    <description>Symetra and TIAA have launched Mariner Re, a Bermuda-domiciled Class E reinsurer backed by a $750 million equity investment from TIAA. Mariner Re will provide capital to support Symetra’s annuity growth through a flow reinsurance arrangement effective October 1, 2026. Symetra Investment Management and TIAA-owned Nuveen will manage the reinsurer’s investments, combining their insurance asset management and institutional investment capabilities.</description>
+    <pubDate>Mon, 26 Oct 2026 21:59:38 +0000</pubDate>
+    <guid>https://coverager.com/symetra-and-tiaa-launch-mariner-re/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>L&amp;G launches standalone critical illness coverage</title>
+    <link>https://coverager.com/lg-launches-standalone-critical-illness-cover/</link>
+    <description>Legal &amp; General has launched standalone critical illness cover, allowing advisers to recommend the product separately from life insurance or alongside other protection policies. The product provides the same critical illness coverage as L&amp;amp;G’s existing combined life and critical illness products, including children’s cover options. The offering expands L&amp;amp;G’s existing life and critical illness range.</description>
+    <pubDate>Mon, 26 Oct 2026 21:59:38 +0000</pubDate>
+    <guid>https://coverager.com/lg-launches-standalone-critical-illness-cover/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>«Liderar es crear las condiciones para que otros lleguen incluso más lejos que tú»</title>
     <link>https://www.inese.es/liderar-es-crear-las-condiciones-para-que-otros-lleguen-incluso-mas-lejos-que-tu/</link>
@@ -363,54 +412,6 @@
     <description>The post Sproutr Elevates Jeff Breault, CPCU, to Head of Insurance to Lead Program Design &amp;amp; Standards appeared first on InsurTech Magazine . Insurance programme design and product development firm Sproutr has officially announced the promotion of Jeff Breault, CPCU , to Head of Insurance . We design it the right way the first time, so they can focus on the rest of the business knowing the program underneath it is built to last,&amp;#8221; added Jeff Breault, CPCU, Head of Insurance .</description>
     <pubDate>Sat, 24 Oct 2026 19:54:55 +0000</pubDate>
     <guid>https://insurtechmagazine.com/sproutr-elevates-jeff-breault-cpcu-to-head-of-insurance-to-lead-program-design-standards/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>FSB Regional Consultative Group for Sub-Saharan Africa meets in Maseru</title>
-    <link>https://www.fsb.org/2026/10/fsb-regional-consultative-group-for-sub-saharan-africa-meets-in-maseru/</link>
-    <description>The Financial Stability Board (FSB) Regional Consultative Group for Sub-Saharan Africa (RCG SSA) met on 23–24 October 2026 in Maseru, Lesotho, hosted by the Central Bank of Lesotho. Co-chaired by Lesetja Kganyago, Governor of the South African Reserve Bank, and Denny Kalyalya, Governor of the Bank of Zambia, the meeting covered a range of issues, including: Members also discussed cross-RCG coordination and key messages from the Sub-Saharan Africa region to the FSB Plenary. The meeting brought together senior officials from central banks, financial authorities and regulatory bodies in the region to discuss key financial stability topics.</description>
-    <pubDate>Sat, 24 Oct 2026 14:58:52 +0000</pubDate>
-    <guid>https://www.fsb.org/2026/10/fsb-regional-consultative-group-for-sub-saharan-africa-meets-in-maseru/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Readily raises $11 million Series A</title>
-    <link>https://coverager.com/readily-raises-11-million-series-a/</link>
-    <description>San Francisco-based Readily , an AI compliance platform serving health plans and other healthcare organizations, raised an $11 million Series A led by Define Ventures, with participation from Y Combinator and the California Health Care Foundation Innovation Fund. Readily plans to use the funding to expand beyond compliance workflows into broader oversight of operational execution and emerging risks. Care Health Plan is among the organizations working with Readily.</description>
-    <pubDate>Sat, 24 Oct 2026 14:58:44 +0000</pubDate>
-    <guid>https://coverager.com/readily-raises-11-million-series-a/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Atlian raises pre-seed funding for construction insurance software</title>
-    <link>https://coverager.com/atlian-raises-pre-seed-funding-for-construction-insurance-software/</link>
-    <description>Atlian , a London startup building AI software for construction insurance brokers, has raised a pre-seed round led by Fuel Ventures. Founded by James Buckley-Thorp, who previously founded life insurance startup Bequest and was an early team member at Zego, Atlian helps independent UK brokers identify construction projects, assess risks and prepare submissions. The funding will support Atlian’s commercial launch, expand its construction data and fund the appointment of a head of sales from the broker market.</description>
-    <pubDate>Sat, 24 Oct 2026 14:58:44 +0000</pubDate>
-    <guid>https://coverager.com/atlian-raises-pre-seed-funding-for-construction-insurance-software/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Gallagher acquires Texas benefits agency Mund Group</title>
-    <link>https://coverager.com/gallagher-acquires-texas-benefits-agency-mund-group/</link>
-    <description>has acquired The Mund Group, a New Braunfels, Texas-based employee benefits agency. “The Mund Group has a long-standing reputation in their community and will expand our employee benefits capabilities in Texas,” said Gallagher Chairman and CEO J. The Mund Group provides benefits consulting and health and welfare program solutions to businesses across Texas.</description>
-    <pubDate>Sat, 24 Oct 2026 14:58:44 +0000</pubDate>
-    <guid>https://coverager.com/gallagher-acquires-texas-benefits-agency-mund-group/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>ITC Brief: Sixfold Broadens AI’s Role in Underwriting</title>
-    <link>https://iireporter.com/itc-brief-sixfold-broadens-ais-role-in-underwriting/</link>
-    <description>(Image source: Sixfold website.) Sixfold (New York) is expanding its underwriting AI beyond submission review and recommendations toward a system that can advance work from intake toward a quote, drawing on an insurer’s guidelines, past decisions and broader business context, according to Roger Ferrandis, Head of Partnerships, Sixfold. Learning From Underwriting Decisions Sixfold’s AI monitors underwriting decisions and identifies patterns that may warrant changes to formal guidelines, according to Ferrandis. Integrating Data and Expanding Distribution Ferrandis’ responsibilities encompass both extending Sixfold’s distribution and developing integrations that enrich underwriting decisions.</description>
-    <pubDate>Sat, 24 Oct 2026 02:15:13 +0000</pubDate>
-    <guid>https://iireporter.com/itc-brief-sixfold-broadens-ais-role-in-underwriting/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>ITC Brief: Insurity Targets Core Systems Costs With AI</title>
-    <link>https://iireporter.com/itc-brief-insurity-targets-core-systems-costs-with-ai/</link>
-    <description>Source: Insurity.) Insurers should expect AI to change more than the features available in their core systems. They should also expect it to reduce the time, effort and expense required to implement those systems and keep them current, according to Jatin Atre, CEO, Insurity . In comments shared in connection with IIR’s meeting with Insurity during the event, Atre described an opportunity to challenge the economics carriers have come to accept around core modernization.</description>
-    <pubDate>Sat, 24 Oct 2026 02:15:13 +0000</pubDate>
-    <guid>https://iireporter.com/itc-brief-insurity-targets-core-systems-costs-with-ai/</guid>
     <category>General</category>
   </item>
 </channel>
