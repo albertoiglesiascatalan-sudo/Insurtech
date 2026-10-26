@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sun, 25 Oct 2026 20:05:40 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 26 Oct 2026 02:03:15 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Energy transition reshaping insurance risk as uninsured supply chains, strained models meet mainstream parametric cover with persistent basis risk</title>
+    <link>https://insuranceasianews.com/231651-2/</link>
+    <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
+    <pubDate>Mon, 26 Oct 2026 02:02:58 +0000</pubDate>
+    <guid>https://insuranceasianews.com/231651-2/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>ITC Brief: Tinubu Connects Surety Workflows, Embeds AI</title>
     <link>https://iireporter.com/itc-brief-tinubu-connects-surety-workflows-embeds-ai/</link>
@@ -403,14 +411,6 @@
     <description>AI safety research group METR said on Thursday a pilot exercise to stress-test OpenAI’s internal monitoring system uncovered several new vulnerabilities, including an exploit that AI agents could have used to keep hundreds of their recent actions from being monitored. The researchers found a way OpenAI’s Codex coding agents could, in principle, bypass safety restrictions and take any action available to the user running them, as well as two settings that could switch off monitoring for new agents. Only about 75% to 94% of OpenAI’s internal AI agent traffic from models at least as powerful as GPT-5.5 was eligible for monitoring, the researchers estimated.</description>
     <pubDate>Fri, 23 Oct 2026 10:37:33 +0000</pubDate>
     <guid>https://www.claimsjournal.com/news/national/2026/10/23/340884.htm</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Chubb CEO Greenberg: Industry Has to ‘Put Arms Around’ AI Liability</title>
-    <link>https://www.claimsjournal.com/news/national/2026/10/23/340886.htm</link>
-    <description>“As an industry, we have to put our arms around this,” he said, adding that the industry “had to do this with emerging liabilities over the last 50 years, and there’s a pretty good template to follow.” Greenberg described AI liability as a “growing and emerging exposure” which is “not contemplated in casualty underwriting to date.” He said he can imagine “a combination of coverage clarifications, ultimately – exclusions and separate AI-related liability coverages.” “This will all emerge along with underwriting and pricing to discern between risks,” he added. The insurance industry has dealt with emerging risks in the past, and Chubb CEO Evan G. Speaking during a conference call to discuss third quarter earnings, Greenberg was asked about insurance coverage for AI liability.</description>
-    <pubDate>Fri, 23 Oct 2026 10:37:33 +0000</pubDate>
-    <guid>https://www.claimsjournal.com/news/national/2026/10/23/340886.htm</guid>
     <category>General</category>
   </item>
 </channel>
