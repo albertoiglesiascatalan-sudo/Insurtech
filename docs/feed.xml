@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Thu, 29 Oct 2026 22:07:45 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 30 Oct 2026 03:21:41 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>‘Huge opportunity, if we get it right’: brokers told to look beyond traditional insurance as risk pressures mount</title>
+    <link>https://insuranceasianews.com/brokers-told-to-look-beyond-traditional-insurance-as-risk-pressures-mount/</link>
+    <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
+    <pubDate>Fri, 30 Oct 2026 03:16:52 +0000</pubDate>
+    <guid>https://insuranceasianews.com/brokers-told-to-look-beyond-traditional-insurance-as-risk-pressures-mount/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>El fraude más allá de las aplicaciones: fintechs y el reto de proteger al usuario</title>
     <link>https://iupana.com/2026/10/29/el-fraude-mas-alla-de-las-aplicaciones/</link>
@@ -405,15 +413,6 @@
     <pubDate>Thu, 29 Oct 2026 11:53:42 +0000</pubDate>
     <guid>https://www.reinsurancene.ws/pacific-life-re-announces-protection-leadership-changes-across-global-markets/</guid>
     <category>General</category>
-  </item>
-  <item>
-    <title>New Data Centers Projected to Emit More Carbon Than All of Mexico</title>
-    <link>https://www.insurancejournal.com/news/national/2026/10/29/890656.htm</link>
-    <description>The environmental nonprofit Union of Concerned Scientists in January projected that fossil-fuel-powered electricity for data centers could increase US power-sector emissions by 19% to 29% , or as much as 342 million tons a year by 2035. If the rush to build AI data centers leads to the upper bounds of the emissions projected by these researchers, it represents a reversal of a two-decade economic and policy trend toward less US power-sector climate pollution. The surge in construction of fossil-fueled power plants to run AI data centers is set to undo 15 years’ worth of greenhouse gas reductions from US electricity generation, according to an internal analysis by the Sierra Club.</description>
-    <pubDate>Thu, 29 Oct 2026 11:53:40 +0000</pubDate>
-    <guid>https://www.insurancejournal.com/news/national/2026/10/29/890656.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.insurancejournal.com/app/uploads/2026/02/microsoft-data-center-in-virginia-bloomberg-580x387.jpg" type="image/jpeg" length="0"/>
   </item>
 </channel>
 </rss>
