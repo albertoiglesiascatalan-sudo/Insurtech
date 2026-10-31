@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Fri, 30 Oct 2026 21:45:14 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 31 Oct 2026 02:59:18 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Looking beyond market cycles</title>
+    <link>https://insuranceasianews.com/looking-beyond-market-cycles/</link>
+    <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
+    <pubDate>Sat, 31 Oct 2026 02:59:02 +0000</pubDate>
+    <guid>https://insuranceasianews.com/looking-beyond-market-cycles/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>USAA’s Termeer Challenges Insurers to Prioritize Consumer Prosperity</title>
     <link>https://iireporter.com/usaas-termeer-challenges-insurers-to-prioritize-consumer-prosperity/</link>
@@ -407,14 +415,6 @@
     <description>Avante (Seattle) has raised $30 million in Series A funding to expand its AI platform for corporate benefits teams, bringing total funding to $40 million. Avante says the funding will support global expansion and further development of AI agents that help benefits teams analyze programs, evaluate vendors and complete recurring work. “Benefits teams are responsible for one of the largest and most consequential investments their companies make, yet they’re still operating with outdated information, archaic spreadsheets, and technology built for another era,” comments Rohan D’Souza, CEO and Co-Founder, Avante.</description>
     <pubDate>Thu, 29 Oct 2026 22:07:31 +0000</pubDate>
     <guid>https://iireporter.com/avante-raises-30m-to-expand-ai-platform-for-benefits-teams/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Insurity Dorado Release Expands Rating, AI Risk Intelligence</title>
-    <link>https://iireporter.com/insurity-dorado-release-expands-rating-ai-risk-intelligence/</link>
-    <description>Insurity (Hartford, Conn.) has introduced its Dorado release, adding new capabilities across rating, regulatory content management, AI-powered risk analysis and core insurance workflows. Insurity positions Dorado as a practical release focused on helping insurers reduce operational effort while accelerating product changes and improving risk decision-making across the P&amp;C lifecycle. “From rating complex commercial policies in seconds to putting AI-powered insights directly into the hands of decision makers, Dorado reflects our commitment to helping insurers move at the speed of their ambitions.” Dorado also extends AI capabilities within SpatialKey, including natural-language analysis and broader access to geospatial risk information for business users.</description>
-    <pubDate>Thu, 29 Oct 2026 22:07:31 +0000</pubDate>
-    <guid>https://iireporter.com/insurity-dorado-release-expands-rating-ai-risk-intelligence/</guid>
     <category>General</category>
   </item>
 </channel>
