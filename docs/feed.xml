@@ -5,8 +5,24 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sat, 31 Oct 2026 16:26:18 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 31 Oct 2026 20:45:00 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Corgi raises $30 million</title>
+    <link>https://coverager.com/corgi-raises-30-million/</link>
+    <description>San Francisco-based Corgi Insurance Services has raised approximately $30 million from 11 investors, according to a Form D signed October 30, 2026. Corgi sold 271,875 shares for total proceeds of $29,999,558. Corgi was incorporated in Delaware in 2024.</description>
+    <pubDate>Sat, 31 Oct 2026 20:44:14 +0000</pubDate>
+    <guid>https://coverager.com/corgi-raises-30-million/</guid>
+    <category>General</category>
+  </item>
+  <item>
+    <title>Arch to acquire Premier Dealer Services</title>
+    <link>https://coverager.com/arch-to-acquire-premier-dealer-services/</link>
+    <description>Arch Insurance North America has agreed to acquire Premier Dealer Holding Corp., including its subsidiary Premier Dealer Services (PDS), expanding its automotive finance and insurance business. Arch said the deal will bring together its specialty insurance expertise with PDS’s administration capabilities, technology infrastructure and dealer relationships. Founded in 1998 and based in Dublin, Ohio, PDS provides automotive protection and loyalty products, administration services, technology and training to dealerships.</description>
+    <pubDate>Sat, 31 Oct 2026 20:44:14 +0000</pubDate>
+    <guid>https://coverager.com/arch-to-acquire-premier-dealer-services/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Willis’ Asia natural resources head Nicki Tilney departs</title>
     <link>https://insuranceasianews.com/willis-asia-natural-resources-head-nicki-tilney-departs/</link>
@@ -399,22 +415,6 @@
     <description>MS Amlin has launched an AI-powered wordings tool, known internally as Wordy Bot, that analyses reinsurance contracts against its underwriting standards. Wordy Bot identifies missing clauses, wording differences, and potential inconsistencies for review by MS Amlin's underwriters and Wordings team. The tool is already deployed for MS Amlin's North American Property reinsurance book and will support the team during the 1 January renewal season.</description>
     <pubDate>Fri, 30 Oct 2026 11:46:29 +0000</pubDate>
     <guid>https://www.insurtechinsights.com/news/ms-amlin-launches-ai-wordings-tool-wordy-bot-for-reinsurance-contracts/7158/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>‘Huge opportunity, if we get it right’: brokers told to look beyond traditional insurance as risk pressures mount</title>
-    <link>https://insuranceasianews.com/brokers-told-to-look-beyond-traditional-insurance-as-risk-pressures-mount/</link>
-    <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
-    <pubDate>Fri, 30 Oct 2026 03:16:52 +0000</pubDate>
-    <guid>https://insuranceasianews.com/brokers-told-to-look-beyond-traditional-insurance-as-risk-pressures-mount/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>El fraude más allá de las aplicaciones: fintechs y el reto de proteger al usuario</title>
-    <link>https://iupana.com/2026/10/29/el-fraude-mas-alla-de-las-aplicaciones/</link>
-    <description>Las diversas capas de seguridad implementadas por una fintech pueden verse superadas si un engaño, vía ingeniería social, logra que el cliente revele sus credenciales o realice operaciones, lo que pone a prueba los controles antifraude de estas empresas. Accede al análisis que impulsa la toma de decisiones en la banca latinoamericana Este contenido exclusivo está disponible solo para miembros registrados de iupana. Regístrate gratis o inicia sesión para leer el artículo completo y descubrir: Perspectivas estratégicas sobre innovación, regulación y tendencias en banca digital y fintech Entrevistas con líderes que están transformando el sector financiero en la región Reportes y estudios que anticipan los cambios clave del mercado Acceso prioritario a información para tomar decisiones informadas y fortalecer tu liderazgo Únete a la comunidad de ejecutivos que marcan la diferencia en la transformación digital de la banca.</description>
-    <pubDate>Thu, 29 Oct 2026 22:07:37 +0000</pubDate>
-    <guid>https://iupana.com/2026/10/29/el-fraude-mas-alla-de-las-aplicaciones/</guid>
     <category>General</category>
   </item>
 </channel>
