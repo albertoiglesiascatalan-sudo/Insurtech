@@ -1,5 +1,23 @@
 [
   {
+    "id": "insurance-capacity-follows-visibility",
+    "title": "Insurance Capacity Follows Visibility",
+    "title_original": "Insurance Capacity Follows Visibility",
+    "url": "https://www.insurancethoughtleadership.com/commercial-lines/insurance-capacity-follows-visibility",
+    "summary": "But the technology already exists to increase visibility into risks. If it cannot, capacity must be withdrawn. Cancellation is the tool of a market that cannot see its exposure.",
+    "category": "General",
+    "source": "Insurance Thought Leadership",
+    "published_at": "2026-11-01T21:25:50.347125+00:00",
+    "image_url": "",
+    "signal_score": 8,
+    "signal_label": "",
+    "signal_icon": "",
+    "why_matters": "",
+    "is_signal": false,
+    "deal": null,
+    "amplified": false
+  },
+  {
     "id": "decesos-un-ramo-en-plena-transformacion-resiste-a-las-tecnologicas",
     "title": "Decesos, un ramo en plena transformación, resiste a las tecnológicas",
     "title_original": "Decesos, un ramo en plena transformación, resiste a las tecnológicas",
@@ -9,7 +27,7 @@
     "source": "INESE",
     "published_at": "2026-11-01T12:17:22.863240+00:00",
     "image_url": "",
-    "signal_score": 13,
+    "signal_score": 11,
     "signal_label": "",
     "signal_icon": "",
     "why_matters": "",
@@ -27,7 +45,7 @@
     "source": "Insurance Asia News",
     "published_at": "2026-11-01T12:12:50.107019+00:00",
     "image_url": "",
-    "signal_score": 8,
+    "signal_score": 6,
     "signal_label": "",
     "signal_icon": "",
     "why_matters": "",
@@ -45,7 +63,7 @@
     "source": "Insurance Asia News",
     "published_at": "2026-11-01T12:12:49.061432+00:00",
     "image_url": "",
-    "signal_score": 24,
+    "signal_score": 22,
     "signal_label": "M&A",
     "signal_icon": "🤝",
     "why_matters": "Consolida el mercado y puede redefinir la competencia en el sector.",
@@ -63,7 +81,7 @@
     "source": "Coverager",
     "published_at": "2026-10-31T20:44:14.825758+00:00",
     "image_url": "",
-    "signal_score": 27,
+    "signal_score": 24,
     "signal_label": "Inversión",
     "signal_icon": "💰",
     "why_matters": "Nueva financiación que puede acelerar la competencia en el sector.",
@@ -85,7 +103,7 @@
     "source": "Coverager",
     "published_at": "2026-10-31T20:44:14.751880+00:00",
     "image_url": "",
-    "signal_score": 17,
+    "signal_score": 14,
     "signal_label": "M&A",
     "signal_icon": "🤝",
     "why_matters": "Consolida el mercado y puede redefinir la competencia en el sector.",
@@ -581,7 +599,7 @@
     "why_matters": "Consolida el mercado y puede redefinir la competencia en el sector.",
     "is_signal": true,
     "deal": null,
-    "amplified": true
+    "amplified": false
   },
   {
     "id": "aig-to-acquire-everests-chile-business-completes-colombia-deal",
@@ -1083,7 +1101,7 @@
     "why_matters": "Impacto directo en exposición, pricing y reservas del sector.",
     "is_signal": true,
     "deal": null,
-    "amplified": true
+    "amplified": false
   },
   {
     "id": "california-braces-for-floods-as-atmospheric-river-threatens",
@@ -1137,7 +1155,7 @@
     "why_matters": "Consolida el mercado y puede redefinir la competencia en el sector.",
     "is_signal": true,
     "deal": null,
-    "amplified": true
+    "amplified": false
   },
   {
     "id": "insurity-adds-ai-powered-insights-and-geospatial-tools-in-dorado-release",
@@ -1267,7 +1285,7 @@
     "why_matters": "Impacto directo en exposición, pricing y reservas del sector.",
     "is_signal": true,
     "deal": null,
-    "amplified": true
+    "amplified": false
   },
   {
     "id": "strengthening-the-crisis-preparedness-community-in-an-interconnected-world",
@@ -1339,7 +1357,7 @@
     "why_matters": "Impacto directo en exposición, pricing y reservas del sector.",
     "is_signal": true,
     "deal": null,
-    "amplified": true
+    "amplified": false
   },
   {
     "id": "nephilas-multi-year-efforts-driving-higher-ils-revenues-markels-crowley",
@@ -1465,7 +1483,7 @@
     "why_matters": "Consolida el mercado y puede redefinir la competencia en el sector.",
     "is_signal": true,
     "deal": null,
-    "amplified": true
+    "amplified": false
   },
   {
     "id": "rainier-partners-invests-in-texas-mga-platform-apex-insurance-services",
@@ -1483,7 +1501,7 @@
     "why_matters": "Los cambios de liderazgo suelen anticipar cambios estratégicos.",
     "is_signal": false,
     "deal": null,
-    "amplified": true
+    "amplified": false
   },
   {
     "id": "wtw-reports-q3-2026-revenue-of-2-46bn-and-4-organic-growth",
@@ -9093,24 +9111,6 @@
     "signal_label": "Inversión",
     "signal_icon": "💰",
     "why_matters": "Nueva financiación que puede acelerar la competencia en el sector.",
-    "is_signal": false,
-    "deal": null,
-    "amplified": false
-  },
-  {
-    "id": "berkshire-hathaway-specialty-insurance-enters-poland",
-    "title": "Berkshire Hathaway Specialty Insurance enters Poland",
-    "title_original": "Berkshire Hathaway Specialty Insurance enters Poland",
-    "url": "https://coverager.com/berkshire-hathaway-specialty-insurance-enters-poland/",
-    "summary": "Berkshire Hathaway Specialty Insurance announced its entry into the Polish market and the appointment of Carsten Keune as Country Manager, Poland. In his new position, Carsten will lead BHSI’s business in Poland, and Central &amp; Eastern Europe, shaping its market strategy and building strong relationships with customers and brokers. Across Central &amp; Eastern Europe, BHSI offers a broad range of commercial insurance solutions, including Property, Casualty, Construction, Energy, Executive and Professional Lines, Marine, and Multinational insurance.",
-    "category": "General",
-    "source": "Coverager",
-    "published_at": "2026-10-19T17:52:23.213353+00:00",
-    "image_url": "",
-    "signal_score": 6,
-    "signal_label": "",
-    "signal_icon": "",
-    "why_matters": "",
     "is_signal": false,
     "deal": null,
     "amplified": false

@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sun, 01 Nov 2026 12:17:35 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 01 Nov 2026 21:26:18 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Insurance Capacity Follows Visibility</title>
+    <link>https://www.insurancethoughtleadership.com/commercial-lines/insurance-capacity-follows-visibility</link>
+    <description>But the technology already exists to increase visibility into risks. If it cannot, capacity must be withdrawn. Cancellation is the tool of a market that cannot see its exposure.</description>
+    <pubDate>Sun, 01 Nov 2026 21:25:50 +0000</pubDate>
+    <guid>https://www.insurancethoughtleadership.com/commercial-lines/insurance-capacity-follows-visibility</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Decesos, un ramo en plena transformación, resiste a las tecnológicas</title>
     <link>https://www.inese.es/decesos-un-ramo-en-plena-transformacion-resiste-a-las-tecnologicas/</link>
@@ -407,15 +415,6 @@
     <guid>https://www.insurancejournal.com/news/international/2026/10/30/890898.htm</guid>
     <category>General</category>
     <enclosure url="https://www.insurancejournal.com/app/uploads/2026/10/hsbc-branch-vancouver-bloomberg-580x386.jpg" type="image/jpeg" length="0"/>
-  </item>
-  <item>
-    <title>Japan’s Cyberattack Surge Tests Its Push to Strengthen Defenses</title>
-    <link>https://www.insurancejournal.com/news/international/2026/10/30/890903.htm</link>
-    <description>Japan is facing an intense wave of AI-powered cyberattacks that’s laid bare the vulnerability of one of the world’s largest economies to a new breed of hacking. The wave of cyberattacks comes with high stakes because Japan’s industrial conglomerates are key links in the global technology supply chain and the country boasts the world’s second-largest savings pool, all of which are attractive targets for hackers. The crisis is also forcing Prime Minister Sanae Takaichi to accelerate plans to bring Japan’s cybersecurity up to the levels of its peers, part of her agenda of making the nation more resilient to external threats.</description>
-    <pubDate>Fri, 30 Oct 2026 11:46:30 +0000</pubDate>
-    <guid>https://www.insurancejournal.com/news/international/2026/10/30/890903.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.insurancejournal.com/app/uploads/2026/10/tokyo-tower-in-tokyo-japan-bloomberg-580x387.jpg" type="image/jpeg" length="0"/>
   </item>
 </channel>
 </rss>
