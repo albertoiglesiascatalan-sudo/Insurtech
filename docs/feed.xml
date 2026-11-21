@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sat, 21 Nov 2026 13:50:00 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 21 Nov 2026 22:31:47 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Gradient AI launches underwriting tool</title>
+    <link>https://coverager.com/gradient-ai-launches-underwriting-tool/</link>
+    <description>Gradient AI has launched Sentinel, a group health underwriting tool that uses lab results to identify potentially high-cost conditions before they appear in medical or pharmacy claims. The tool uses the same census information as SAIL, allowing existing customers to add it to their underwriting workflow without adopting a separate system. Sentinel is available as an add-on to SAIL, the company’s group health and stop-loss underwriting platform.</description>
+    <pubDate>Sat, 21 Nov 2026 22:31:20 +0000</pubDate>
+    <guid>https://coverager.com/gradient-ai-launches-underwriting-tool/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Amwins launches clinical trials insurance product</title>
     <link>https://coverager.com/amwins-launches-clinical-trials-insurance-product/</link>
@@ -406,14 +414,6 @@
     <description>Thursday of a fire at a single-family log cabin-style home on Hueber Drive. Two people are deceased following a house fire in Sanbornton, the New Hampshire State Fire Marshal has reported. Toomey and Sanbornton fire and police chiefs said a 911 call came in at 1:52 a.m.</description>
     <pubDate>Thu, 19 Nov 2026 23:58:49 +0000</pubDate>
     <guid>https://www.insurancejournal.com/news/east/2026/11/19/893196.htm</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Aon launches surety program for data centers</title>
-    <link>https://coverager.com/aon-launches-surety-program-for-data-centers/</link>
-    <description>Aon announced a new surety program for U.S. &amp;#8220;The scale of investment in data centers is creating significant demand for upgraded grid infrastructure and new financing solutions. The new solution uses a preferred panel of insurers and offers single-provider bonds and shared-surety structures, which allow multiple insurers to provide separate instruments that collectively meet an overall security requirement.</description>
-    <pubDate>Thu, 19 Nov 2026 23:58:48 +0000</pubDate>
-    <guid>https://coverager.com/aon-launches-surety-program-for-data-centers/</guid>
     <category>General</category>
   </item>
 </channel>
