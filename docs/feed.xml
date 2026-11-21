@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sat, 21 Nov 2026 04:33:56 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 21 Nov 2026 13:50:00 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Amwins launches clinical trials insurance product</title>
+    <link>https://coverager.com/amwins-launches-clinical-trials-insurance-product/</link>
+    <description>Amwins has launched an exclusive clinical trials insurance product through its Brokerage division, offering $25 million limits on paper pre-licensed in more than 115 countries. The product was developed with an unnamed Lloyd’s syndicate and is available exclusively through Amwins brokers. Coverage includes clinical trials indemnity, no-fault compensation, clinical testing liability, public and products liability, professional liability and medical malpractice.</description>
+    <pubDate>Sat, 21 Nov 2026 13:49:34 +0000</pubDate>
+    <guid>https://coverager.com/amwins-launches-clinical-trials-insurance-product/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Private equity grows an appetite for insurance</title>
     <link>https://insuranceasianews.com/private-equity-grows-an-appetite-for-insurance/</link>
@@ -406,14 +414,6 @@
     <description>Aon announced a new surety program for U.S. &amp;#8220;The scale of investment in data centers is creating significant demand for upgraded grid infrastructure and new financing solutions. The new solution uses a preferred panel of insurers and offers single-provider bonds and shared-surety structures, which allow multiple insurers to provide separate instruments that collectively meet an overall security requirement.</description>
     <pubDate>Thu, 19 Nov 2026 23:58:48 +0000</pubDate>
     <guid>https://coverager.com/aon-launches-surety-program-for-data-centers/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Insurance Payments Need to Move Faster. So Does the Data Behind Them.</title>
-    <link>https://coverager.com/insurance-payments-need-to-move-faster-so-does-the-data-behind-them/</link>
-    <description>The post Insurance Payments Need to Move Faster. Moving premium dollars faster keeps cash flowing and coverage bound, but what happens when payments show up without the data to match them ? The insurance industry has spent years trying to speed up premium payments, and for good reason.</description>
-    <pubDate>Thu, 19 Nov 2026 23:58:48 +0000</pubDate>
-    <guid>https://coverager.com/insurance-payments-need-to-move-faster-so-does-the-data-behind-them/</guid>
     <category>General</category>
   </item>
 </channel>
