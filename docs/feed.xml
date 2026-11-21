@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Fri, 20 Nov 2026 23:27:57 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 21 Nov 2026 04:33:56 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Private equity grows an appetite for insurance</title>
+    <link>https://insuranceasianews.com/private-equity-grows-an-appetite-for-insurance/</link>
+    <description>To view the full article and get unlimited access to InsuranceAsia News's exclusive insight across 5,000+ articles</description>
+    <pubDate>Sat, 21 Nov 2026 04:33:39 +0000</pubDate>
+    <guid>https://insuranceasianews.com/private-equity-grows-an-appetite-for-insurance/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Buenas Fuentes: OpenAI entra a pagos agénticos</title>
     <link>https://iupana.com/2026/11/20/buenas-fuentes-openai-entra-a-pagos-agenticos/</link>
@@ -406,14 +414,6 @@
     <description>The post Insurance Payments Need to Move Faster. Moving premium dollars faster keeps cash flowing and coverage bound, but what happens when payments show up without the data to match them ? The insurance industry has spent years trying to speed up premium payments, and for good reason.</description>
     <pubDate>Thu, 19 Nov 2026 23:58:48 +0000</pubDate>
     <guid>https://coverager.com/insurance-payments-need-to-move-faster-so-does-the-data-behind-them/</guid>
-    <category>General</category>
-  </item>
-  <item>
-    <title>Gallagher launches financial wellbeing platform</title>
-    <link>https://coverager.com/gallagher-launches-financial-wellbeing-platform/</link>
-    <description>Gallagher has launched a financial wellbeing platform through Gallagher Guide, giving US employers a way to offer employees financial education, digital tools and access to money coaches. Employers can use the platform’s reporting and analytics to track workforce financial wellbeing trends and evaluate how employees use existing benefits. The service is provided through Your Money Line , a third-party financial coaching platform.</description>
-    <pubDate>Thu, 19 Nov 2026 23:58:48 +0000</pubDate>
-    <guid>https://coverager.com/gallagher-launches-financial-wellbeing-platform/</guid>
     <category>General</category>
   </item>
 </channel>
