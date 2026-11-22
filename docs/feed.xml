@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sun, 22 Nov 2026 03:48:41 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 22 Nov 2026 13:42:54 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Aviva adds open driving option for minifleet vans</title>
+    <link>https://coverager.com/aviva-adds-open-driving-option-for-minifleet-vans/</link>
+    <description>Aviva has introduced an open driving option for eligible vans under its Minifleet product, allowing businesses to cover drivers who meet policy criteria without naming each person individually. The option is available to fleet-rated businesses with at least three vehicles through Fast Trade or E-Trade. Brokers can still apply vehicle-specific driving restrictions.</description>
+    <pubDate>Sun, 22 Nov 2026 13:42:28 +0000</pubDate>
+    <guid>https://coverager.com/aviva-adds-open-driving-option-for-minifleet-vans/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Gradient AI launches underwriting tool</title>
     <link>https://coverager.com/gradient-ai-launches-underwriting-tool/</link>
@@ -407,14 +415,6 @@
     <guid>https://www.insurancejournal.com/news/east/2026/11/19/893181.htm</guid>
     <category>General</category>
     <enclosure url="https://www.insurancejournal.com/app/uploads/2026/11/Kalshi-logo-Deposit-580x326.jpg" type="image/jpeg" length="0"/>
-  </item>
-  <item>
-    <title>Two Perish in New Hampshire Log Cabin Home Fire</title>
-    <link>https://www.insurancejournal.com/news/east/2026/11/19/893196.htm</link>
-    <description>Thursday of a fire at a single-family log cabin-style home on Hueber Drive. Two people are deceased following a house fire in Sanbornton, the New Hampshire State Fire Marshal has reported. Toomey and Sanbornton fire and police chiefs said a 911 call came in at 1:52 a.m.</description>
-    <pubDate>Thu, 19 Nov 2026 23:58:49 +0000</pubDate>
-    <guid>https://www.insurancejournal.com/news/east/2026/11/19/893196.htm</guid>
-    <category>General</category>
   </item>
 </channel>
 </rss>
