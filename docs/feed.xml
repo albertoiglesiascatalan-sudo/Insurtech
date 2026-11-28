@@ -5,8 +5,16 @@
   <link>https://albertoiglesiascatalan-sudo.github.io/Insurtech</link>
   <description>Noticias globales de insurtech, actualizadas cada 6 horas.</description>
   <language>es</language>
-  <lastBuildDate>Sat, 28 Nov 2026 00:46:41 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 28 Nov 2026 14:40:40 +0000</lastBuildDate>
   <atom:link href="https://albertoiglesiascatalan-sudo.github.io/Insurtech/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Nibbles expands pet insurance offering</title>
+    <link>https://coverager.com/nibbles-expands-pet-insurance-offering/</link>
+    <description>The addition follows Nibbles’ existing partnership with Rainwalk and Physicians Mutual and broadens its pet insurance offering. Nibbles, a credit card startup that includes pet insurance as a cardholder benefit, has expanded its insurance provider network to include Kanguro Insurance and Cimarron Insurance Company. Nibbles has not publicly disclosed the reason for adding the new insurance partners.</description>
+    <pubDate>Sat, 28 Nov 2026 14:40:16 +0000</pubDate>
+    <guid>https://coverager.com/nibbles-expands-pet-insurance-offering/</guid>
+    <category>General</category>
+  </item>
   <item>
     <title>Indonesia’s insurers brace for a capital reckoning</title>
     <link>https://insuranceasianews.com/indonesias-insurers-brace-for-a-capital-reckoning/</link>
@@ -400,15 +408,6 @@
     <pubDate>Wed, 25 Nov 2026 16:20:26 +0000</pubDate>
     <guid>https://www.reinsurancene.ws/price-forbes-launches-dedicated-healthcare-life-sciences-division-appoints-henry-as-ceo/</guid>
     <category>General</category>
-  </item>
-  <item>
-    <title>How Will This Year’s Macy’s Thanksgiving Day Parade Weather the Storm?</title>
-    <link>https://www.insurancejournal.com/news/east/2026/11/25/893755.htm</link>
-    <description>The 100th Macy’s Thanksgiving Day Parade is set for Thursday morning in New York City, but gusty winds and periods of heavy rain in the forecast could keep its famous giant character balloons close to the ground. Under New York City safety rules, 34 mph is the maximum wind gust limit — alongside a 23 mph sustained wind cap — for flying giant balloons at the Thanksgiving Day Parade. Related : How Niche Insurance Shielded Bad Bunny From Bad Weather Those limits were established after the 1997 parade, when gusts over 40 mph slammed The Cat in the Hat balloon into a lamppost on Central Park West.</description>
-    <pubDate>Wed, 25 Nov 2026 16:20:25 +0000</pubDate>
-    <guid>https://www.insurancejournal.com/news/east/2026/11/25/893755.htm</guid>
-    <category>General</category>
-    <enclosure url="https://www.insurancejournal.com/app/uploads/2026/11/Macys-Thanksgiving-Parade-580x387.jpeg" type="image/jpeg" length="0"/>
   </item>
 </channel>
 </rss>
